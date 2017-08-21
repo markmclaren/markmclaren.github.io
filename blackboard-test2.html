@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="css/blackboard-channel.css" />
+  </head>
+  <body>
+    <div class="blackboardCourses">
+      Loading course list from Blackboard...
+    </div>
+    <script src="webjars/requirejs/2.3.3/require.min.js"></script>    
+    <script>
+      var require = {
+        config: {
+          'baseUrl' : '',
+          'blackboard-channel': {
+            'host': '',
+            'courseLink': '',
+          }
+        }
+      };
+      require(["scripts/main"]);
+    </script>
+  </body>
+</html>
