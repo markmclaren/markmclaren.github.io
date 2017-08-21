@@ -7,19 +7,15 @@
     <div class="blackboardCourses">
       Loading course list from Blackboard...
     </div>
+    <script src="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/webjars/requirejs/2.3.3/require.min.js"></script>    
     <script>
-      var require = {
-        config: {
+    require.config({
           'baseUrl' : 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
           'blackboard-channel': {
             'host': 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
             'courseLink': 'https://wwwtestdev-ole.bris.ac.uk/webapps/blackboard/execute/launcher?&url=&type=Course&id=',
-          }
-        }
-      };
-    </script>
-    <script src="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/webjars/requirejs/2.3.3/require.min.js"></script>    
-    <script>
+           }
+    });
     require(["js/blackboard-channel"]);
     </script>
   </body>
