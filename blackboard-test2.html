@@ -13,10 +13,10 @@
     //'host': 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
     require.config({
           'baseUrl' : 'https://localhost:8443/js/',
-          'blackboard-channel' : {
+          'config' : { 'blackboard-channel' : {
           'host': 'https://localhost:8443/',
           'courseLink': 'https://wwwtestdev-ole.bris.ac.uk/webapps/blackboard/execute/launcher?&url=&type=Course&id=',
-          },
+          }},
     });
     require(["blackboard-channel"]);
     </script>
