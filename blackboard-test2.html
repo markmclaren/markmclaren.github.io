@@ -1,24 +1,24 @@
 <html>
   <head>
     <title>Courses</title>
-    <link rel="stylesheet" type="text/css" href="css/blackboard-channel.css" />
+    <link rel="stylesheet" type="text/css" href="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/css/blackboard-channel.css" />
   </head>
   <body>
     <div class="blackboardCourses">
       Loading course list from Blackboard...
     </div>
-    <script src="webjars/requirejs/2.3.3/require.min.js"></script>    
+    <script src="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/webjars/requirejs/2.3.3/require.min.js"></script>    
     <script>
       var require = {
         config: {
-          'baseUrl' : '',
+          'baseUrl' : 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
           'blackboard-channel': {
-            'host': '',
-            'courseLink': '',
+            'host': 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
+            'courseLink': 'https://wwwtestdev-ole.bris.ac.uk/webapps/blackboard/execute/launcher?&url=&type=Course&id=',
           }
         }
       };
-      require(["scripts/main"]);
+      require(["js/blackboard-channel"]);
     </script>
   </body>
 </html>
