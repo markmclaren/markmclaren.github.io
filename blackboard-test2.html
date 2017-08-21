@@ -10,9 +10,11 @@
     <script src="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/webjars/requirejs/2.3.3/require.min.js"></script>    
     <script>
     require.config({
-          'baseUrl' : 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/js/',
-            'host': 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
-            'courseLink': 'https://wwwtestdev-ole.bris.ac.uk/webapps/blackboard/execute/launcher?&url=&type=Course&id=',
+          'baseUrl' : 'https://localhost:8443/js/',
+          'host': 'https://localhost:8443/',
+          //'baseUrl' : 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/js/',
+          //'host': 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
+          'courseLink': 'https://wwwtestdev-ole.bris.ac.uk/webapps/blackboard/execute/launcher?&url=&type=Course&id=',
     });
     require(["blackboard-channel"]);
     </script>
