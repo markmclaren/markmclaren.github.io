@@ -7,7 +7,6 @@
     <div class="blackboardCourses">
       Loading course list from Blackboard...
     </div>
-    <script src="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/webjars/requirejs/2.3.3/require.min.js"></script>    
     <script>
       var require = {
         config: {
@@ -18,7 +17,10 @@
           }
         }
       };
-      require(["js/blackboard-channel"]);
+    </script>
+    <script src="https://web-blackboard-channel.neptune-preprod.bris.ac.uk/webjars/requirejs/2.3.3/require.min.js"></script>    
+    <script>
+    require(["js/blackboard-channel"]);
     </script>
   </body>
 </html>
