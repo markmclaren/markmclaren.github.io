@@ -13,7 +13,7 @@ JSONP({
 
 /*
 $.ajax({
-    url: "http://localhost:8080/KIS/data.js",
+    url: "http://markmclaren.github.io/KIS/data.js",
     dataType: "jsonp",
     jsonpCallback: "getKisData",
     success: function (result) {
