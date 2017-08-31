@@ -1,7 +1,7 @@
 let data;
 
 JSONP({
-    url: 'http://localhost:8080/KIS/data.js',
+    url: 'http://markmclaren.github.io/KIS/data.js',
     callbackFunc: 'getKisData',
     success: function(result) { 
         data = result;
