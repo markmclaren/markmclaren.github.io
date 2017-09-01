@@ -14,7 +14,7 @@ JSONP({
 // render assessment stats
 function renderAssessmentStatistics() {
     const assessmentTitle = (`
-    <h1>Assessment</h1>
+    <h2 class="module-heading"><span class="mh-text">Assessment</span></h2>
     <p>How work is assessed, by year for this course.</p>
   `);
 
@@ -37,7 +37,7 @@ function renderAssessmentStatistics() {
 // render teaching stats
 function renderTeachingStatistics() {
     const assessmentTitle = (`
-    <h1>Teaching</h1>
+    <h2 class="module-heading"><span class="mh-text">Teaching</span></h2>
     <p>The percentage of time spent in different learning activities, by year for this course.</p>
   `);
 
