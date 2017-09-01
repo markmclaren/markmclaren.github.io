@@ -1,8 +1,8 @@
 let data;
 
 JSONP({
-    url: 'https://markmclaren.github.io/KIS/data.js',
-    callbackFunc: 'getKisData',
+    url: 'https://hesa-broadcaster.neptune-preprod.bris.ac.uk/kiscourse',
+    data: { courseId: '10007786+8MDYF017UU-201516+1' },    
     success: function(result) { 
         data = result;
         console.log(data);
@@ -10,23 +10,6 @@ JSONP({
         renderTeachingStatistics();
     }
 });
-
-/*
-$.ajax({
-    url: "https://markmclaren.github.io/KIS/data.js",
-    dataType: "jsonp",
-    jsonpCallback: "getKisData",
-    success: function (result) {
-        data = result;
-        console.log(data);
-        renderAssessmentStatistics();
-        renderTeachingStatistics();
-    },
-    error : function (xhr, status, errorThrown){
-        console.log(xhr);
-    }
-});
-*/
 
 // render assessment stats
 function renderAssessmentStatistics() {
