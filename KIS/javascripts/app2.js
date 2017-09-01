@@ -2,7 +2,7 @@ let data;
 
 JSONP({
     url: 'https://hesa-broadcaster.neptune-preprod.bris.ac.uk/kiscourse',
-    data: { courseId: '10007786+8MDYF017UU-201516+1' },    
+    data: { courseId: $courseId },    
     success: function(result) { 
         data = result;
         console.log(data);
