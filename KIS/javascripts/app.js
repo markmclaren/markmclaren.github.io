@@ -1,7 +1,7 @@
 let data;
 
 JSONP({
-    url: 'http://markmclaren.github.io/KIS/data.js',
+    url: 'https://markmclaren.github.io/KIS/data.js',
     callbackFunc: 'getKisData',
     success: function(result) { 
         data = result;
@@ -13,7 +13,7 @@ JSONP({
 
 /*
 $.ajax({
-    url: "http://markmclaren.github.io/KIS/data.js",
+    url: "https://markmclaren.github.io/KIS/data.js",
     dataType: "jsonp",
     jsonpCallback: "getKisData",
     success: function (result) {
