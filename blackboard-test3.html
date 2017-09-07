@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/css/blackboard-channel.css" />
+  </head>
+  <body>
+    <div class="blackboardCourses">
+      Loading course list from Blackboard...
+    </div>
+    <script src="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/webjars/requirejs/2.3.3/require.min.js"></script>    
+    <script>
+    require.config({
+          'baseUrl' : 'https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/js/',
+          'config' : { 'blackboard-channel' : {
+          'host': 'https://web-blackboard-channel.neptune-preprod.bris.ac.uk/',
+          }},
+    });
+    require(["blackboard-channel"]);
+    </script>
+  </body>
+</html>
+
