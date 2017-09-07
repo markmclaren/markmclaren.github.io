@@ -1,19 +1,22 @@
 <html>
   <head>
     <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/css/blackboard-channel.css" />
   </head>
   <body>
-<p> 
-<script type="text/javascript" src="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/prime.js"></script> 
-<!--
-<script type="text/javascript" src="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/js/iframeResizer.min.js"></script> 
--->
-<iframe scrolling="no" 
-        src="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/courses" 
-        style="border: none; overflow: hidden; width: 100%"></iframe>
-<!--
-<script>iFrameResize({log: true})</script> </p>
--->
+    <div class="blackboardCourses">
+      Loading course list from Blackboard...
+    </div>
+    <script>
+      var require = {
+        config: {
+          'blackboard-channel': {
+            'host': ''
+          }
+        }
+      };
+    </script>
+    <script data-main="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/js/blackboard-channel" 
+                  src="https://wwwstaging-ole.bris.ac.uk/webapps/uob-mybristol-b2-bb_bb60/webjars/requirejs/2.3.3/require.min.js"></script>
   </body>
 </html>
-
