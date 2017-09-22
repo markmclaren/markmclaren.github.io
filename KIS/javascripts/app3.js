@@ -3,7 +3,8 @@ let data;
 $courseId = '8MDYF017UU-201516';
 
 $.ajax({
-    url: "https://hesa-broadcaster.neptune-preprod.bris.ac.uk/kiscourse",
+    //url: "https://hesa-broadcaster.neptune-preprod.bris.ac.uk/kiscourse",
+    url: "https://hesa-broadcaster.neptune-prod.bris.ac.uk/kiscourse",
     data: { courseId: $courseId },       
     success: function (result) {
         data = result;
