@@ -1,5 +1,6 @@
 let data;
 
+$courseId = '8MDYF017UU-201516';
 
 $.ajax({
     url: "https://hesa-broadcaster.neptune-preprod.bris.ac.uk/kiscourse",
