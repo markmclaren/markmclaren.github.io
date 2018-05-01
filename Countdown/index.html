@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Countdown</title>
+<script src="countdown.min.js"></script>
+<style>
+  body {
+    background-color: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  }
+  #title1 {
+    font-size: 130px;
+	margin: 35px;
+	font-weight: bold;
+  }
+  #title2 {
+    font-size: 55px;
+	margin: 18px;
+	font-weight: bold;
+  }
+
+  /* secondaryCount */
+  #countdown {
+    font-size: 65px;
+  }
+  
+  /* primaryCount */
+  #countdown span:first-of-type {
+    display: block;
+    font-size: 130px;
+  }
+</style>
+</head>
+<body>
+<div id='title1'>
+The W&#9917;rld Cup
+</div>
+<div id='title2'>
+starts in ...
+</div>
+<div id="countdown"></div>
+<script>
+  // Turn off comma delimiter
+  countdown.setLabels(null, null, ' ', ' ', null, null);
+  countdown(
+    new Date("Jun 14, 2018 16:00:00"),
+    function(ts) {
+      document.getElementById('countdown').innerHTML = ts.toHTML("span");
+    },
+    countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+</script>
+</body>
+</html>
