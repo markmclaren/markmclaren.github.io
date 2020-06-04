@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>IT Status Page</title>
+    <style type="text/css">
+        div.statuses ul {
+            margin: 0
+        }
+
+        div.statuses ul li {
+            list-style: none
+        }
+
+        .current-status-indicator {
+            width: 12px;
+            height: 12px;
+            margin: 0 0 0 5px;
+            display: inline-block;
+            border-radius: 6px
+        }
+
+        .current-status-indicator.small {
+            width: 8px;
+            height: 8px;
+            margin: 0 0 0 5px;
+            display: inline-block;
+            border-radius: 4px
+        }
+
+        .current-status-indicator.green {
+            background: #27ae60
+        }
+
+        .current-status-indicator.yellow {
+            background: #ffa837
+        }
+
+        .current-status-indicator.red {
+            background: #c44031
+        }
+
+        .current-status-indicator.blue {
+            background: #00aaf0
+        }
+    </style>
+</head>
+<body>
+    <div class="statuses"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>    
+    <script type="text/javascript">
+        $('.statuses').ready(function ($) {
+            var statusAPI = "https://api.status.io/1.0/status/5798d20cc211074a0e000edf";
+            var indicators = {};
+            indicators[100] = "green";
+            indicators[200] = "blue";
+            indicators[300] = "yellow";
+            indicators[400] = "yellow";
+            indicators[500] = "red";
+            indicators[600] = "red";
+            $.getJSON(statusAPI)
+                .done(function (data) {
+                    var ul = $('<ul>');
+                    var li;
+                    $.each(data.result.status, function (s, status) {
+                        li = $('<li>');
+                        li.append($('<div>')
+                            .addClass("current-status-indicator")
+                            .addClass(indicators[status.status_code])
+                            .attr('title', status.status));
+                        li.append($('<span>').addClass("current-status-description").text(" " + status.status + " - " + status.name));
+                        ul.append(li);
+                    })
+                    $('div.statuses').first().append(ul);
+                })
+        });
+    </script>
+</body>
+</html>
