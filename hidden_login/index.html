@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="hidden-username" class="hidden">Username:</label>
+        <input type="text" id="hidden-username" name="hidden-username" class="hidden">
+
+        <label for="hidden-password" class="hidden">Password:</label>
+        <input type="password" id="hidden-password" name="hidden-password" class="hidden">
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+
+</html>
