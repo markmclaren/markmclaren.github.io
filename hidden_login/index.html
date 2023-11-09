@@ -22,10 +22,11 @@
     <h2>Login</h2>
     <form action="/login" method="post">
         <label for="username" class="hidden">Username:</label>
-        <input type="text" id="username" name="username" class="hidden" value="hidden-username">
+        <input type="text" id="username" name="username" class="hidden" value="hidden-username" autocomplete="username">
 
         <label for="password" class="hidden">Password:</label>
-        <input type="password" id="password" name="current-password" class="hidden" value="hidden-password">
+        <input type="password" id="password" name="password" class="hidden" value="hidden-password"
+            autocomplete="current-password">
 
         <input type="submit" value="Login">
     </form>
