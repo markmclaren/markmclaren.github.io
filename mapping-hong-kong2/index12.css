@@ -1,0 +1,69 @@
+body {
+  background-color: #1e293b;
+  background-color: #40362b;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.column {
+  height: calc(100vh - 100px);
+  padding: 20px;
+}
+
+.column1 {
+  border-radius: 20px 0 0 20px;
+  background-color: #334255;
+  background-color: #554f45;
+  color: #e2e8f0;
+  overflow-y: scroll;
+}
+
+.column2 {
+  border-radius: 0 20px 20px 0;
+}
+
+#map-container {
+  position: relative;
+}
+
+.slider-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.slider {
+  width: 150px;
+}
+
+#information {
+  text-align: center;
+}
+
+#information a {
+  display: block;
+}
+
+#information a img {
+  border: solid #000 3px;
+}
+
+.maplibregl-legend-title-label,
+.maplibregl-legend-onlyRendered-checkbox,
+.maplibregl-legend-onlyRendered-label,
+.maplibregl-legend-list br,
+button.maplibregl-legend-close-button {
+  display: none;
+}
