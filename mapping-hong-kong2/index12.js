@@ -25,6 +25,7 @@ const popupTemplate = `
 const lotTemplate = `
 {{#lotname}}
 <h6>{{lotname}}</h6>
+<div>{{lotnumber}}</div>
 {{/lotname}}
 {{^lotname}}
 <h6>{{lotnumber}}</h6>
@@ -38,6 +39,24 @@ const lotTemplate = `
     {{/imageArray}}
 </div>
 {{/image}}
+{{#classification}}
+<div>Classification: {{classification}}</div>
+{{/classification}}
+{{#memorial number}}
+<div>Memorial number: {{memorial number}}</div>
+{{/memorial number}}
+{{#date of deed}}
+<div>Date of deed: {{date of deed}}</div>
+{{/date of deed}}
+{{#date of registry}}
+<div>Date of registry: {{date of registry}}</div>
+{{/date of registry}}
+{{#holder(s)}}
+<div>Holder(s): {{holder(s)}}</div>
+{{/holder(s)}}
+{{#section}}
+<div>Section: {{section}}</div>
+{{/section}}
 `;
 
 function getYear() {
@@ -194,6 +213,36 @@ window.addEventListener("load", (event) => {
                   "case",
                   ["has", "image_source"],
                   "#C62F2F", // Red color if the lot has image_source property
+                  [
+                    "any",
+                    [
+                      "all",
+                      ["has", "classification"],
+                      ["!=", ["get", "classification"], ""],
+                    ],
+                    [
+                      "all",
+                      ["has", "memorial number"],
+                      ["!=", ["get", "memorial number"], ""],
+                    ],
+                    [
+                      "all",
+                      ["has", "date of deed"],
+                      ["!=", ["get", "date of deed"], ""],
+                    ],
+                    [
+                      "all",
+                      ["has", "date of registry"],
+                      ["!=", ["get", "date of registry"], ""],
+                    ],
+                    [
+                      "all",
+                      ["has", "holder(s)"],
+                      ["!=", ["get", "holder(s)"], ""],
+                    ],
+                    ["all", ["has", "section"], ["!=", ["get", "section"], ""]],
+                  ],
+                  "yellow",
                   "#8B8686", // Default color
                 ],
                 "fill-outline-color": "#000000",
@@ -387,7 +436,12 @@ window.addEventListener("load", (event) => {
 
       // Function to preprocess the JSON data
       function preprocessData(data) {
-        const imageArray = data.image.split("; ").map((item) => item.trim());
+        console.log(data);
+        let imageArray = [];
+        // Check if data.image is defined and is a string
+        if (typeof data.image === "string") {
+          imageArray = data.image.split("; ").map((item) => item.trim());
+        }
         return {
           ...data,
           imageArray,
