@@ -399,6 +399,7 @@ window.addEventListener("load", (event) => {
             case "roads":
               selectedStyle = {
                 "line-color": ColourRoads,
+                "line-width": 2,
               };
               layout = {
                 "line-sort-key": 100,
@@ -555,6 +556,22 @@ window.addEventListener("load", (event) => {
               },
             });
             addHover(item.layer);
+          }
+
+          if (styleName === "roads") {
+            layersArray.push({
+              id: item.layer + "-outline",
+              source: "example_source",
+              "source-layer": item.layer,
+              type: "line",
+              layout: {
+                "line-sort-key": 99,
+              },
+              paint: {
+                "line-color": "#000",
+                "line-width": 4,
+              },
+            });
           }
         });
 
