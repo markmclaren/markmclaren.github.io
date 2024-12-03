@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf"></script>
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .jumping .frog-jump-1 {
+            animation: jumpSprite 0.4s infinite;
+        }
+
+        .jumping .frog-jump-2 {
+            animation: jumpSprite 0.4s infinite reverse;
+        }
+
+        @keyframes jumpSprite {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+    <script>
+        const coordinates = document.getElementById('coordinates');
+
+        // Function to create a circular hole around a point
+        function createCircularHole(coords, radius) {
+            return turf.circle(coords, radius, { steps: 64 });
+        }
+
+        class FrogCharacter {
+            constructor(map, startingPosition) {
+                this.map = map;
+                this.position = startingPosition;
+                this.isJumping = false;
+                this.currentDirection = 'front';
+                this.radius = 0.75; // Radius in kilometers
+                let initialCircle = createCircularHole(startingPosition, this.radius);
+                let uncoveredAreaTmp = turf.featureCollection([]);
+                uncoveredAreaTmp.features.push(initialCircle);
+                this.uncoveredArea = uncoveredAreaTmp;
+                this.createMarker();
+                this.updateFogLayer();
+
+                // Add zoom listener to update frog size
+                this.map.on('zoom', this.updateMarkerSize.bind(this));
+                this.updateMarkerSize(); // Call it initially
+            }
+
+            updateFogLayer = function () {
+                const uncoveredHole = turf.convex(this.uncoveredArea);
+
+                const source = this.map.getSource('fog-layer');
+                if (source && uncoveredHole) {
+                    source.setData({
+                        type: 'FeatureCollection',
+                        features: [
+                            {
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Polygon',
+                                    coordinates: [
+                                        [
+                                            [-180, 90],
+                                            [180, 90],
+                                            [180, -90],
+                                            [-180, -90],
+                                            [-180, 90]
+                                        ],
+                                        uncoveredHole ? uncoveredHole.geometry.coordinates[0] : []
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+            };
+
+            createMarker() {
+                this.element = document.createElement('div');
+                this.element.className = 'frog-marker';
+
+                fetch('froggy3.svg')
+                    .then(response => response.text())
+                    .then(svgContent => {
+                        this.element.innerHTML = svgContent;
+                    });
+
+                this.updateMarkerSize(); // Initialize size
+
+                this.marker = new maplibregl.Marker({
+                    element: this.element,
+                    draggable: true
+                })
+                    .setLngLat(this.position)
+                    .addTo(this.map);
+
+                this.marker.parentObject = this;
+                this.marker.on("dragstart", function (e) {
+                    this.startPos = this.getLngLat();
+                });
+                this.marker.on("drag", function (e) {
+                    const endPos = this.getLngLat();
+                    const direction = endPos.lng > this.startPos.lng ? 1 : -1;
+
+                    document.querySelector('#frog-front').style.visibility = 'hidden';
+                    document.querySelector('#frog-side-1').style.visibility = 'visible';
+                    document.querySelector('#frog-side-2').style.visibility = 'visible';
+
+                    this.getElement().classList.add('jumping');
+
+                    const frogs = document.querySelector('#frogs');
+                    if (direction === 1) {
+                        frogs.removeAttribute("transform");
+                    } else {
+                        frogs.setAttribute("transform", "scale(-1, 1) translate(-210, 0)");
+                    }
+                });
+                this.marker.on("dragend", function (e) {
+                    const lngLat = this.getLngLat();
+                    let frogCoords = lngLat.toArray();
+
+                    this.getElement().classList.remove('jumping');
+                    const frogs = document.querySelector('#frogs');
+                    frogs.removeAttribute("transform");
+                    document.querySelector('#frog-front').style.visibility = 'visible';
+                    document.querySelector('#frog-side-1').style.visibility = 'hidden';
+                    document.querySelector('#frog-side-2').style.visibility = 'hidden';
+
+                    const circle = createCircularHole(frogCoords, this.parentObject.radius);
+                    this.parentObject.uncoveredArea.features.push(circle);
+
+                    this.parentObject.updateFogLayer();
+
+                    coordinates.style.display = 'block';
+                    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+                });
+            }
+
+            updateMarkerSize() {
+                //console.log('updateMarkerSize');
+                const zoom = this.map.getZoom();
+                //console.log('zoom', zoom);
+                const size = this.getSizeForZoom(zoom);
+                //console.log('size', size);
+                this.element.style.width = `${size}px`;
+                this.element.style.height = `${size}px`;
+            }
+
+            getSizeForZoom(zoom) {
+                if (zoom < 10) return 50;
+                if (zoom < 14) return 100;
+                if (zoom < 18) return 150;
+                return 200;
+            }
+        }
+
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: 'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+            center: [-60.9789, 13.9094],
+            zoom: 14
+        });
+
+        map.on('load', () => {
+            map.addSource('fog-layer', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: [
+                        {
+                            type: 'Feature',
+                            geometry: {
+                                type: 'Polygon',
+                                coordinates: [
+                                    [
+                                        [-180, 90],
+                                        [180, 90],
+                                        [180, -90],
+                                        [-180, -90],
+                                        [-180, 90]
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                }
+            });
+
+            map.addLayer({
+                id: 'fog-layer',
+                type: 'fill',
+                source: 'fog-layer',
+                paint: {
+                    'fill-color': 'rgba(200, 200, 255, 0.8)',
+                }
+            });
+
+            const frog = new FrogCharacter(map, [-60.9789, 13.9094]);
+        });
+    </script>
+</body>
+
+</html>
