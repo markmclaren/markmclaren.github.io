@@ -19,31 +19,16 @@
         bottom: 0;
         width: 100%;
       }
-      .menu-toggle {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 2;
-        background: #007bff; /* Blue background */
-        color: #ffffff; /* White text color */
-        padding: 10px;
-        font-family: Arial, sans-serif;
-        border-radius: 3px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        font-size: 24px;
-      }
-      .menu {
+      #menu {
         position: absolute;
         background: #fff;
         padding: 10px;
         font-family: Arial, sans-serif;
-        top: 50px;
+        top: 10px;
         right: 10px;
         z-index: 1;
         border-radius: 3px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: none;
       }
       #menu a {
         display: block;
@@ -73,6 +58,7 @@
         margin-top: 5px;
         margin-bottom: 3px;
       }
+      /* New color indicator styles */
       .color-indicator {
         display: inline-block;
         width: 12px;
@@ -85,8 +71,7 @@
   </head>
   <body>
     <div id="map"></div>
-    <div id="menu-toggle" class="menu-toggle">☰</div>
-    <div id="menu" class="menu"></div>
+    <div id="menu"></div>
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <script>
       var map = new maplibregl.Map({
@@ -315,15 +300,6 @@
           })
           .catch((error) => console.error("Error loading " + id + ": ", error));
       }
-
-      document.getElementById('menu-toggle').addEventListener('click', function() {
-        var menu = document.getElementById('menu');
-        if (menu.style.display === 'none') {
-          menu.style.display = 'block';
-        } else {
-          menu.style.display = 'none';
-        }
-      });
     </script>
   </body>
 </html>
