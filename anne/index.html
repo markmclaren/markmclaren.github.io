@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MapLibre Map with Markers and Directional Arrows</title>
+    <link
+      href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      #menu {
+        position: absolute;
+        background: #fff;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #menu a {
+        display: block;
+        margin: 0 0 5px 0;
+        padding: 5px;
+        color: #404040;
+        text-decoration: none;
+        border-left: 5px solid transparent;
+      }
+      #menu a:hover {
+        background-color: #f8f8f8;
+      }
+      #menu a.active {
+        background-color: rgba(56, 135, 190, 0.2);
+        font-weight: bold;
+      }
+      .maplibregl-popup {
+        max-width: 200px;
+      }
+      .maplibregl-popup-content {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      .category-label {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 3px;
+      }
+      /* New color indicator styles */
+      .color-indicator {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="menu"></div>
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <script>
+      var map = new maplibregl.Map({
+        container: "map",
+        style: "https://tiles.openfreemap.org/styles/liberty",
+        center: [-2.8458349, 51.4295311], // Clevedon, UK
+        zoom: 16,
+      });
+
+      const emptyImageData = new Uint8Array([0, 0, 0, 0]);
+
+      map.on('styleimagemissing', (e) => {
+        const id = e.id;
+        map.addImage(id, { width: 1, height: 1, data: emptyImageData });
+      });  
+      
+      // Store marker references for toggling visibility
+      var markers = {
+        Places: [],
+        Supermarkets: [],
+      };
+      
+      // Track the currently active walk
+      var activeWalk = "Walk1";
+      
+      // Store references to walk menu links
+      var walkLinks = {};
+      
+      // List of all walk layers
+      var walkLayers = ["Walk1", "Walk2", "Walk3"];
+      
+      // Define colors for walks and POIs
+      const colors = {
+        Walk1: "#FF8C00",  // Orange
+        Walk2: "#6A0DAD",  // Purple
+        Walk3: "#007bff",  // Blue
+        Places: "#00A896", // Teal
+        Supermarkets: "#E63946" // Red
+      };
+
+      map.on("load", async () => {
+        const patharrow = await map.loadImage("patharrow.png");
+        map.addImage("patharrow", patharrow.data, { sdf: true });
+
+        // Add all walk layers but only show the active one
+        addWalkLayer("Walk1", "Walk_1.geojson", colors.Walk1, "visible");
+        addWalkLayer("Walk2", "Walk_2.geojson", colors.Walk2, "none");
+        addWalkLayer("Walk3", "Walk_3.geojson", colors.Walk3, "none");
+
+        // Load places and supermarkets as markers
+        loadMarkers("Places", "Clevedon_Places.geojson", colors.Places);
+        loadMarkers("Supermarkets", "Clevedon_Supermarkets.geojson", colors.Supermarkets);
+
+        // Create menu container
+        var layersList = document.getElementById("menu");
+        
+        // Add walks category label
+        var walksLabel = document.createElement("div");
+        walksLabel.className = "category-label";
+        walksLabel.textContent = "Walks (Select One)";
+        layersList.appendChild(walksLabel);
+        
+        // Add walk toggle buttons
+        walkLayers.forEach(function (id) {
+          var link = document.createElement("a");
+          link.href = "#";
+          link.className = id === activeWalk ? "active" : "";
+          
+          // Add color indicator
+          var colorIndicator = document.createElement("span");
+          colorIndicator.className = "color-indicator";
+          colorIndicator.style.backgroundColor = colors[id];
+          link.appendChild(colorIndicator);
+          
+          // Add text
+          var textSpan = document.createElement("span");
+          textSpan.textContent = id;
+          link.appendChild(textSpan);
+          
+          link.setAttribute("data-walk-id", id);
+          
+          // Store reference to the link element
+          walkLinks[id] = link;
+          
+          link.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // If clicked on already active walk, do nothing
+            if (id === activeWalk) return;
+            
+            // Hide the currently active walk
+            map.setLayoutProperty(activeWalk, "visibility", "none");
+            map.setLayoutProperty(activeWalk + "-arrows", "visibility", "none");
+            
+            // Update active status in menu using stored reference
+            walkLinks[activeWalk].className = "";
+            
+            // Set new active walk
+            activeWalk = id;
+            
+            // Show the newly selected walk
+            map.setLayoutProperty(id, "visibility", "visible");
+            map.setLayoutProperty(id + "-arrows", "visibility", "visible");
+            
+            // Update active status in menu
+            link.className = "active";
+          };
+          layersList.appendChild(link);
+        });
+        
+        // Add POI category label
+        var poiLabel = document.createElement("div");
+        poiLabel.className = "category-label";
+        poiLabel.textContent = "Points of Interest";
+        layersList.appendChild(poiLabel);
+        
+        // Add POI toggle buttons
+        var poiLayers = ["Places", "Supermarkets"];
+        poiLayers.forEach(function (id) {
+          var link = document.createElement("a");
+          link.href = "#";
+          link.className = "active";
+          
+          // Add color indicator
+          var colorIndicator = document.createElement("span");
+          colorIndicator.className = "color-indicator";
+          colorIndicator.style.backgroundColor = colors[id];
+          link.appendChild(colorIndicator);
+          
+          // Add text
+          var textSpan = document.createElement("span");
+          textSpan.textContent = id;
+          link.appendChild(textSpan);
+          
+          link.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Toggle markers visibility
+            var visible = markers[id][0] && markers[id][0].getElement().style.display !== "none";
+            for (var i = 0; i < markers[id].length; i++) {
+              markers[id][i].getElement().style.display = visible ? "none" : "block";
+            }
+            link.className = visible ? "" : "active";
+          };
+          layersList.appendChild(link);
+        });
+      });
+
+      function addWalkLayer(id, geojsonUrl, color, initialVisibility) {
+        // Add the line source and layer
+        map.addSource(id, {
+          type: "geojson",
+          data: geojsonUrl,
+        });
+
+        // Add the walk line
+        map.addLayer({
+          id: id,
+          type: "line",
+          source: id,
+          layout: {
+            visibility: initialVisibility
+          },
+          paint: {
+            "line-color": color,
+            "line-width": 3,
+            "line-dasharray": [2, 1]
+          },
+        });
+
+        // Add arrows on the line
+        map.addLayer({
+          id: id + "-arrows",
+          type: "symbol",
+          source: id,
+          layout: {
+            visibility: initialVisibility,
+            "symbol-placement": "line",
+            "symbol-spacing": 80,
+            "icon-image": "patharrow",
+            "icon-size": 1.2,
+            "icon-offset": [0, -1],
+            "icon-rotate": 90,
+          },
+          paint: {
+            "icon-color": color,
+          },
+        });
+      }
+
+      function loadMarkers(id, geojsonUrl, color) {
+        fetch(geojsonUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            data.features.forEach(function (feature) {
+              // Create marker element
+              var el = document.createElement("div");
+              el.style.width = "20px";
+              el.style.height = "20px";
+              el.style.borderRadius = "50%";
+              el.style.backgroundColor = color;
+              el.style.border = "2px solid #fff";
+              el.style.cursor = "pointer";
+
+              // Create popup with name
+              var name = feature.properties.Name || "Unnamed Location";
+              var popup = new maplibregl.Popup({ offset: [0, -10] }).setHTML(
+                "<h3>" + name + "</h3>"
+              );
+
+              // Create the marker
+              var marker = new maplibregl.Marker({color: color})
+                .setLngLat(feature.geometry.coordinates)
+                .setPopup(popup)
+                .addTo(map);
+
+              // Add to markers collection for toggle functionality
+              markers[id].push(marker);
+            });
+          })
+          .catch((error) => console.error("Error loading " + id + ": ", error));
+      }
+    </script>
+  </body>
+</html>

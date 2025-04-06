@@ -1,0 +1,148 @@
+{
+    "type": "FeatureCollection",
+    "name": "Places",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "16 Yeoward Road (Home)",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8458349,
+                    51.4295311,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Teatro Lounge - Pub with Food",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8548195,
+                    51.435623,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Curzon Cinema",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8552651,
+                    51.4358298,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Clevedon Pier",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8614211,
+                    51.4426544,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Five The Beach - Cafe",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8611716,
+                    51.4409171,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Alexandra Vets",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8584514,
+                    51.4415475,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Little Harp Inn - Pub with Food",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8651332,
+                    51.4374771,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Clevedon Emporium - Curiosities",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8650197,
+                    51.4341951,
+                    0.0
+                ]
+            }
+        }
+    ]
+}
