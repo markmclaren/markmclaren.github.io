@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney & Beyond: April 18 - May 1, 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .australia-blue {
+            color: #00008B;
+        }
+
+        .australia-red {
+            color: #FF0000;
+        }
+
+        .hero-image {
+            background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .itinerary-day {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .itinerary-day:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #222;
+            border-bottom: 2px solid #444;
+            padding-bottom: 0.5rem;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .restaurant-info {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio (for responsive iframes) */
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Mobile Styles (Tailwind handles much of this, but here's a bit more) */
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero-image">
+        <div class="container">
+            <h1 class="text-4xl font-bold mb-4">Sydney & Beyond</h1>
+            <p class="text-xl">Your April 2025 Adventure</p>
+        </div>
+    </header>
+
+    <main class="container py-8">
+        <section class="mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="section-title">Welcome to Your Sydney Travel Handbook</h2>
+                    <p class="mb-4">April 18 - May 1, 2025</p>
+                    <p>This guide is designed to help you make the most of your trip to Sydney and the surrounding areas.
+                        It includes a detailed itinerary, activity suggestions, dining options, and helpful tips.</p>
+                </div>
+                <div>
+                    <h2 class="section-title">Important Resources</h2>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.australia.com/en-us" class="hover:text-blue-500" target="_blank">Tourism
+                                Australia</a></li>
+                        <li><a href="https://www.visitnsw.com/" class="hover:text-blue-500" target="_blank">Visit NSW</a>
+                        </li>
+                        <li><a href="https://transportnsw.info/" class="hover:text-blue-500" target="_blank">Transport
+                                for NSW</a></li>
+                        <li><a href="https://www.sydney.com/" class="hover:text-blue-500" target="_blank">Sydney.com</a>
+                        </li>
+                        <li><a href="https://www.sydneyoperahouse.com/" class="hover:text-blue-500"
+                                target="_blank">Sydney Opera House</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="section-title">Detailed Itinerary</h2>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 1: Friday, April 18th - Arrival in Sydney</h3>
+                <p><span class="font-semibold">5:20 PM:</span> Arrive at Sydney Airport (SYD). Pick up rental car. Check
+                    into your hotel (city center).</p>
+                <p><span class="font-semibold">Evening:</span> Relax and have dinner near your hotel. Consider a casual pub
+                    meal.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 2: Saturday, April 19th - Exploring Sydney</h3>
+                <p><span class="font-semibold">Morning:</span> Self-guided walking tour of The Rocks (historic district).</p>
+                <p><span class="font-semibold">Lunch:</span> The Rocks - many pubs and restaurants.</p>
+                <p><span class="font-semibold">Afternoon:</span> Sydney Opera House tour & walk around Circular Quay.</p>
+                <p><span class="font-semibold">Evening:</span> Dinner in Circular Quay.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 3: Sunday, April 20th - Aussie Rules & Cats</h3>
+                <p><span class="font-semibold">Morning:</span> Check out of hotel, travel to Matraville (granny annex).</p>
+                <p><span class="font-semibold">Afternoon:</span> Attend the Sydney Swans game!</p>
+                <p><span class="font-semibold">Evening:</span> Dinner in Matraville or nearby. Optional: Cat cafe visit (check
+                    hours).</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 4: Monday, April 21st - Great Pacific Drive to Kiama</h3>
+                <p><span class="font-semibold">Morning:</span> Start the Grand Pacific Drive.</p>
+                <p><span class="font-semibold">Stop 1:</span> Royal National Park (short bushwalk).</p>
+                <p><span class="font-semibold">Lunch:</span> Picnic or cafe in a coastal town.</p>
+                <p><span class="font-semibold">Stop 2:</span> Sea Cliff Bridge (photo stop).</p>
+                <p><span class="font-semibold">Afternoon/Evening:</span> Arrive in Kiama, check in, dinner.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 5: Tuesday, April 22nd - Kiama Exploration</h3>
+                <p><span class="font-semibold">Morning:</span> Kiama Blowhole (check tide times), Kiama Coast Walk.</p>
+                <p><span class="font-semibold">Lunch:</span> Kiama cafes/restaurants.</p>
+                <p><span class="font-semibold">Afternoon:</span> Explore Kiama Harbour (boat tour optional).</p>
+                <p><span class="font-semibold">Evening:</span> Dinner in Kiama.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 6: Wednesday, April 23rd - Drive to Blue Mountains</h3>
+                <p><span class="font-semibold">Morning:</span> Breakfast in Kiama, depart for the Blue Mountains.</p>
+                <p><span class="font-semibold">Afternoon:</span> Arrive in Blue Mountains (Katoomba or Leura), check in.</p>
+                <p><span class="font-semibold">Evening:</span> Dinner in the Blue Mountains.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 7: Thursday, April 24th - Blue Mountains & Return to Sydney</h3>
+                <p><span class="font-semibold">Morning:</span> Scenic walk (Three Sisters, Wentworth Falls, or Leura Cascades).</p>
+                <p><span class="font-semibold">Lunch:</span> Katoomba or Leura.</p>
+                <p><span class="font-semibold">Afternoon:</span> Scenic World (optional).</p>
+                <p><span class="font-semibold">Late Afternoon/Evening:</span> Drive back to Matraville, Sydney. Dinner.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 8: Friday, April 25th - Anzac Day</h3>
+                <p><span class="font-semibold">Anzac Day Observance:</span> Dawn Service (Cenotaph, Martin Place), Anzac Day
+                    March.</p>
+                <p><span class="font-semibold">Afternoon:</span> Reflect, visit Australian War Memorial (Hyde Park) (optional).</p>
+                <p><span class="font-semibold">Evening:</span> Quiet dinner.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 9: Saturday, April 26th - Sydney Exploration</h3>
+                <p><span class="font-semibold">Morning:</span> Taronga Zoo Sydney.</p>
+                <p><span class="font-semibold">Lunch:</span> Zoo or city.</p>
+                <p><span class="font-semibold">Afternoon:</span> Hyde Park & Museums (Australian Museum or Art Gallery of NSW).</p>
+                <p><span class="font-semibold">Evening:</span> Dinner in Surry Hills or Newtown.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 10: Sunday, April 27th - Family/Friend Visit (Flexible)</h3>
+                <p>Flexible day for your visit.</p>
+                <p><span class="font-semibold">Restaurant Suggestion:</span> Darling Harbour.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 11: Monday, April 28th - Family/Friend Visit (Flexible)</h3>
+                <p>Flexible day for your visit.</p>
+                <p><span class="font-semibold">Activity Suggestion:</span> Ferry trip to Manly.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 12: Tuesday, April 29th - Sydney Harbour Boat Trip</h3>
+                <p><span class="font-semibold">Morning/Afternoon:</span> Sydney Harbour boat trip (ferry or organized cruise).</p>
+                <p><span class="font-semibold">Evening:</span> Dinner in a waterfront restaurant.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 13: Wednesday, April 30th - Hidden Gems & Film</h3>
+                <p><span class="font-semibold">Morning:</span> Explore Sydney's neighborhoods (Paddington, Glebe, Newtown).</p>
+                <p><span class="font-semibold">Lunch:</span> In chosen suburb.</p>
+                <p><span class="font-semibold">Afternoon/Evening:</span> Film (independent cinema or 'Colin from Accounts' locations).</p>
+                <p><span class="font-semibold">Dinner:</span> Choose based on cuisine preference.</p>
+            </div>
+
+            <div class="itinerary-day">
+                <h3 class="text-2xl font-semibold mb-2">Day 14: Thursday, May 1st - Departure</h3>
+                <p><span class="font-semibold">Early Morning:</span> Depart from Sydney Airport (SYD) at 6:00 AM.</p>
+                <p><span class="font-semibold"></span> Return rental car.</p>
+            </div>
+
+        </section>
+
+        <section class="mb-8">
+            <h2 class="section-title">Restaurant Recommendations</h2>
+            <p>Here are some restaurant suggestions, keeping in mind your dietary needs (vegetarian, fish, fried chicken/steak).
+                It's always a good idea to check the latest menus and reviews online.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-semibold">Sydney</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Yellow (Potts Point):</span> Upscale vegetarian fine dining.
+                            <p class="restaurant-info">Pricey, but excellent for a special occasion.</p>
+                        </li>
+                        <li><span class="activity-title">Bodhi in the Park (CBD):</span> Vegan Yum Cha.
+                            <p class="restaurant-info">Great for lunch.</p>
+                        </li>
+                        <li><span class="activity-title">Spice Alley (Chippendale):</span> Various Asian cuisines.
+                            <p class="restaurant-info">Vibrant, many options.</p>
+                        </li>
+                        <li><span class="activity-title">Sean's Panaroma (Bondi):</span> Fresh seafood, vegetarian options.
+                            <p class="restaurant-info">Beautiful Bondi setting.</p>
+                        </li>
+                        <li><span class="activity-title">Mary's (Various Locations):</span> Burgers, fried chicken.
+                            <p class="restaurant-info">Casual, good for son's preference.</p>
+                        </li>
+                        <li><span class="activity-title">Italian Restaurants (Leichhardt):</span> Many trattorias/osterias.
+                            <p class="restaurant-info">Search in "Little Italy" for pasta, seafood.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Kiama</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">The Hungry Monkey:</span> Burgers (including vegetarian).
+                            <p class="restaurant-info">Casual, good for a quick bite.</p>
+                        </li>
+                        <li><span class="activity-title">Hanoi on Manning:</span> Vietnamese with vegetarian/seafood.
+                            <p class="restaurant-info">Fresh and flavorful.</p>
+                        </li>
+                        <li>Check local cafes/restaurants for fresh seafood and vegetarian pasta/salads.</li>
+                    </ul>
+                    <h4 class="font-semibold">Blue Mountains</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Leura Garage (Leura):</span> Modern Australian cuisine.
+                            <p class="restaurant-info">Good for variety.</p>
+                        </li>
+                        <li><span class="activity-title">Silk's Brasserie (Katoomba):</span> Fine dining, local produce.
+                            <p class="restaurant-info">For a more upscale experience.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="mb-8">
+            <h2 class="section-title">Activities by Interest</h2>
+            <p>Here are activities tailored to your interests:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-semibold">Cats</h4>
+                    <p>Search online for "cat cafe Sydney" for current options. Check local animal shelters for adoption
+                        events.</p>
+
+                    <h4 class="font-semibold">Historical Sites</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Sydney:</span> The Rocks, Hyde Park Barracks Museum, Vaucluse House,
+                            Susannah Place Museum, Cockatoo Island.</li>
+                        <li><span class="activity-title">Great Pacific Drive:</span> Wollongong Head Lighthouse, Kiama Pilot's
+                            Cottage Museum.</li>
+                        <li><span class="activity-title">Blue Mountains:</span> Historic towns of Katoomba and Leura.</li>
+                    </ul>
+
+                    <h4 class="font-semibold">TV and Films</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Cinemas:</span> Hayden Orpheum Picture Palace (Cremorne), Dendy
+                            Cinemas, Palace Cinemas.</li>
+                        <li><span class="activity-title">'Colin from Accounts':</span> Search for filming location guides (inner
+                            west).</li>
+                        <li><span class="activity-title">Studio Ghibli:</span> Check cinema listings for screenings.</li>
+                    </ul>
+
+                    <h4 class="font-semibold">Hidden Gems</h4>
+                    <p>Explore neighborhoods (Paddington, Glebe, Newtown, Surry Hills, Chippendale), markets, ferry trips
+                        to less-visited suburbs, small bars/cafes.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Australian Foods</h4>
+                    <p>Try modern Australian cuisine, seafood, vegetarian dishes with native vegetables, pub food. Sample
+                        Vegemite, Lamingtons, Pavlova, Tim Tams.</p>
+
+                    <h4 class="font-semibold">Australian Wildlife</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Zoos/Sanctuaries:</span> Taronga Zoo Sydney, Featherdale Sydney
+                            Wildlife Park, Symbio Wildlife Park, Australian Reptile Park. (Consider ethical views on zoos).
+                        </li>
+                        <li><span class="activity-title">Natural Viewing:</span> Royal National Park (bushwalking), beaches.
+                        </li>
+                    </ul>
+
+                    <h4 class="font-semibold">Walking Tours</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Self-Guided:</span> The Rocks Walking Tour (free), city council
+                            websites.</li>
+                        <li><span class="activity-title">Guided:</span> Search online for walking tour companies.</li>
+                    </ul>
+
+                    <h4 class="font-semibold">Culture</h4>
+                    <ul class="space-y-2">
+                        <li><span class="activity-title">Aboriginal Culture:</span> The Rocks Aboriginal Dreaming Tour, Art
+                            Gallery of NSW, Australian Museum.</li>
+                        <li><span class="activity-title">Museums:</span> Australian Museum, Art Gallery of NSW, Museum of
+                            Sydney.</li>
+                        <li><span class="activity-title">Festivals:</span> Check event listings during your visit.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="section-title">Transportation</h2>
+            <p>You'll have a rental car for the entire trip, which is ideal for the Great Pacific Drive and exploring
+                beyond the city center.</p>
+
+            <h4 class="font-semibold">Driving Tips</h4>
+            <ul class="list-disc list-inside">
+                <li>Drive on the left side of the road!</li>
+                <li>Be aware of speed limits and road rules.</li>
+                <li>Parking can be challenging and expensive in the city center. Consider parking at your accommodation or
+                    using park-and-ride facilities.</li>
+                <li>The Grand Pacific Drive is a scenic route; take your time and enjoy the views.</li>
+            </ul>
+
+            <h4 class="font-semibold">Public Transport in Sydney</h4>
+            <p>Sydney has a good public transport system (trains, buses, ferries, light rail). An Opal card is used for
+                fares.</p>
+            <p><a href="https://transportnsw.info/" class="hover:text-blue-500" target="_blank">Transport for NSW</a></p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Sydney Travel Guide. Created with love for your Australian adventure.</p>
+        <p>All images from Unsplash (unless otherwise noted).</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney, Australia Travel Handbook</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #005a87;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #005a87;
+        }
+        header h1 {
+            color: white;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .day-card {
+            background-color: #f9f9f9;
+            border-left: 4px solid #005a87;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        .day-card h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .attraction {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .attraction:last-child {
+            border-bottom: none;
+        }
+        .tip-box {
+            background-color: #e1f5fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .warning-box {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .map-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .map-container img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #005a87;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-tabs li {
+            margin-right: 5px;
+        }
+        .nav-tabs a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+        }
+        .nav-tabs a.active {
+            background-color: #005a87;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #005a87;
+            color: white;
+            border-radius: 5px;
+        }
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sydney, Australia Travel Handbook</h1>
+        <p>April 18 - May 1, 2025</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Welcome to Sydney!</h2>
+            <p>This travel handbook has been created specifically for your 14-day trip to Sydney, Australia. It includes your detailed itinerary, information about attractions, maps, and practical travel tips to help you make the most of your journey.</p>
+            <p>You mentioned that you've never been to Australia before, while your partner stayed there about 22 years ago. This guide aims to help you both navigate Sydney and its surroundings with confidence, focusing on your interests in cats, historical sites, TV shows (Colin from Accounts, Return to Paradise), films (Studio Ghibli), hidden gems, and Australian wildlife.</p>
+            <div class="tip-box">
+                <h3>Quick Reference</h3>
+                <ul>
+                    <li><strong>Time Zone:</strong> Australian Eastern Standard Time (AEST) - UTC+10</li>
+                    <li><strong>Currency:</strong> Australian Dollar (AUD)</li>
+                    <li><strong>Emergency Number:</strong> 000</li>
+                    <li><strong>Weather in April-May:</strong> Autumn season, 12-23°C (54-73°F)</li>
+                    <li><strong>Driving:</strong> Left side of the road (same as UK)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Itinerary Overview</h2>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Highlights</th>
+                    <th>Accommodation</th>
+                </tr>
+                <tr>
+                    <td>Apr 18</td>
+                    <td>Friday</td>
+                    <td>Arrival in Sydney</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 19</td>
+                    <td>Saturday</td>
+                    <td>Sydney Orientation</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 20</td>
+                    <td>Sunday</td>
+                    <td>Easter Sunday & Aussie Rules Football</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 21</td>
+                    <td>Monday</td>
+                    <td>Sydney Wildlife & Beaches</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 22</td>
+                    <td>Tuesday</td>
+                    <td>Great Pacific Drive Day 1</td>
+                    <td>Kiama</td>
+                </tr>
+                <tr>
+                    <td>Apr 23</td>
+                    <td>Wednesday</td>
+                    <td>Kiama Exploration</td>
+                    <td>Kiama</td>
+                </tr>
+                <tr>
+                    <td>Apr 24</td>
+                    <td>Thursday</td>
+                    <td>Blue Mountains</td>
+                    <td>Blue Mountains</td>
+                </tr>
+                <tr>
+                    <td>Apr 25</td>
+                    <td>Friday</td>
+                    <td>ANZAC Day</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 26</td>
+                    <td>Saturday</td>
+                    <td>Sydney Hidden Gems</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 27</td>
+                    <td>Sunday</td>
+                    <td>Family Visit Day</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 28</td>
+                    <td>Monday</td>
+                    <td>Family Visit Day</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 29</td>
+                    <td>Tuesday</td>
+                    <td>Historical Sydney</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>Apr 30</td>
+                    <td>Wednesday</td>
+                    <td>Coastal Exploration</td>
+                    <td>Matraville</td>
+                </tr>
+                <tr>
+                    <td>May 1</td>
+                    <td>Thursday</td>
+                    <td>Departure</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Detailed Daily Itinerary</h2>
+            
+            <div class="day-card">
+                <h3>Day 1: Friday, April 18, 2025 - Arrival in Sydney</h3>
+                <ul>
+                    <li><strong>5:20 PM</strong>: Arrival in Sydney</li>
+                    <li><strong>6:30 PM</strong>: Check-in at cousin's granny annex in Matraville</li>
+                    <li><strong>7:30 PM</strong>: Light dinner at a local restaurant in Matraville</li>
+                    <li><strong>9:00 PM</strong>: Early night to recover from jet lag</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> To help adjust to the time difference, try to stay awake until a reasonable local bedtime. Drink plenty of water during and after your flight to stay hydrated.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 2: Saturday, April 19, 2025 - Sydney Orientation</h3>
+                <ul>
+                    <li><strong>9:00 AM</strong>: Breakfast at a local café</li>
+                    <li><strong>10:30 AM</strong>: Drive to Circular Quay</li>
+                    <li><strong>11:00 AM</strong>: Explore Sydney Opera House and Sydney Harbour Bridge</li>
+                    <li><strong>1:00 PM</strong>: Lunch at Opera Bar (offers vegetarian options and seafood)</li>
+                    <li><strong>2:30 PM</strong>: Visit The Rocks historic district (walking tour)</li>
+                    <li><strong>4:30 PM</strong>: Visit Museum of Contemporary Art</li>
+                    <li><strong>6:30 PM</strong>: Dinner at Gigi Pizzeria in Newtown (Italian with excellent vegetarian options)</li>
+                    <li><strong>8:30 PM</strong>: Evening stroll along Darling Harbour</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Parking in the CBD can be expensive. Consider using a parking app like Parkopedia to find the best rates, or park at a train station outside the city and use public transport.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 3: Sunday, April 20, 2025 - Easter Sunday & Aussie Rules Football</h3>
+                <ul>
+                    <li><strong>9:00 AM</strong>: Easter breakfast at a local café</li>
+                    <li><strong>11:00 AM</strong>: Visit St. Mary's Cathedral for Easter service (optional)</li>
+                    <li><strong>12:30 PM</strong>: Lunch near Sydney Cricket Ground</li>
+                    <li><strong>1:30 PM</strong>: Gates open at Sydney Cricket Ground</li>
+                    <li><strong>3:20 PM</strong>: Sydney Swans vs Port Adelaide AFL match</li>
+                    <li><strong>6:30 PM</strong>: Post-game dinner at The Paddington (offers both vegetarian options and seafood)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> AFL games can get quite crowded. Arrive early to find parking and your seats. Consider bringing a light jacket as evenings can get cool.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 4: Monday, April 21, 2025 - Sydney Wildlife & Beaches</h3>
+                <ul>
+                    <li><strong>8:30 AM</strong>: Breakfast at a local café</li>
+                    <li><strong>10:00 AM</strong>: Visit Taronga Zoo (opportunity to see Australian wildlife)</li>
+                    <li><strong>1:00 PM</strong>: Lunch at the zoo</li>
+                    <li><strong>2:30 PM</strong>: Ferry back to Circular Quay</li>
+                    <li><strong>3:30 PM</strong>: Drive to Bondi Beach</li>
+                    <li><strong>4:00 PM</strong>: Explore Bondi Beach and coastal walk to Bronte</li>
+                    <li><strong>6:30 PM</strong>: Dinner at Icebergs Dining Room (panoramic ocean views, vegetarian options and excellent seafood)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The ferry to Taronga Zoo offers spectacular views of Sydney Harbour. Have your camera ready!</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 5: Tuesday, April 22, 2025 - Great Pacific Drive Day 1</h3>
+                <ul>
+                    <li><strong>8:00 AM</strong>: Breakfast and check out</li>
+                    <li><strong>9:00 AM</strong>: Begin Great Pacific Drive journey</li>
+                    <li><strong>10:00 AM</strong>: Royal National Park - stop at Audley and Wattamolla Beach</li>
+                    <li><strong>12:00 PM</strong>: Lunch at Scarborough Hotel (clifftop views)</li>
+                    <li><strong>1:30 PM</strong>: Sea Cliff Bridge - walk and photo opportunity</li>
+                    <li><strong>3:00 PM</strong>: Explore Wollongong and Nan Tien Temple (largest Buddhist temple in Southern Hemisphere)</li>
+                    <li><strong>5:00 PM</strong>: Continue to Kiama</li>
+                    <li><strong>6:00 PM</strong>: Check into accommodation in Kiama</li>
+                    <li><strong>7:00 PM</strong>: Dinner at The Hungry Monkey (vegetarian options available)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The Sea Cliff Bridge is a highlight of this drive. There's a parking area at the northern end where you can stop for photos and a walk along the pedestrian path.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 6: Wednesday, April 23, 2025 - Kiama Exploration</h3>
+                <ul>
+                    <li><strong>8:00 AM</strong>: Breakfast at a local café</li>
+                    <li><strong>9:30 AM</strong>: Visit Kiama Blowhole and Lighthouse</li>
+                    <li><strong>11:00 AM</strong>: Kiama Coastal Walk (partial)</li>
+                    <li><strong>1:00 PM</strong>: Lunch in Kiama</li>
+                    <li><strong>2:30 PM</strong>: Visit Minnamurra Rainforest Centre</li>
+                    <li><strong>4:30 PM</strong>: Return to Kiama</li>
+                    <li><strong>6:00 PM</strong>: Dinner at Hanoi on Manning (Asian cuisine with vegetarian options and seafood)</li>
+                    <li><strong>8:00 PM</strong>: Evening stroll along Kiama harbour</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The Kiama Blowhole is most active when the seas are coming from the southeast. Check local conditions to see the best time to visit during your stay.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 7: Thursday, April 24, 2025 - Blue Mountains</h3>
+                <ul>
+                    <li><strong>7:30 AM</strong>: Breakfast and check out</li>
+                    <li><strong>8:30 AM</strong>: Drive to Blue Mountains (approximately 3 hours)</li>
+                    <li><strong>11:30 AM</strong>: Arrive in Katoomba</li>
+                    <li><strong>12:00 PM</strong>: Lunch at Leura Garage (vegetarian options available)</li>
+                    <li><strong>1:30 PM</strong>: Visit Echo Point and Three Sisters</li>
+                    <li><strong>3:00 PM</strong>: Scenic World - railway, cableway, and walkway experiences</li>
+                    <li><strong>5:30 PM</strong>: Check into accommodation in Blue Mountains</li>
+                    <li><strong>7:00 PM</strong>: Dinner at Darley's Restaurant (fine dining with vegetarian options)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Mornings in the Blue Mountains can be misty, which creates beautiful atmospheric views. However, if you want clear views of the Three Sisters, mid-afternoon is often best.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 8: Friday, April 25, 2025 - ANZAC Day</h3>
+                <ul>
+                    <li><strong>4:00 AM</strong>: Early wake-up</li>
+                    <li><strong>4:20 AM</strong>: Attend Dawn Service at Martin Place, Sydney</li>
+                    <li><strong>6:00 AM</strong>: Breakfast near Martin Place</li>
+                    <li><strong>9:00 AM</strong>: Watch ANZAC Day March along Elizabeth Street</li>
+                    <li><strong>12:00 PM</strong>: Lunch in the city</li>
+                    <li><strong>2:00 PM</strong>: Visit Australian War Memorial in Hyde Park</li>
+                    <li><strong>4:00 PM</strong>: Return to Matraville</li>
+                    <li><strong>6:30 PM</strong>: Dinner at home or local restaurant</li>
+                    <li><strong>8:00 PM</strong>: Relaxing evening</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> ANZAC Day is a significant national day of remembrance in Australia. The Dawn Service is a moving experience, but dress warmly as pre-dawn can be quite cold.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 9: Saturday, April 26, 2025 - Sydney Hidden Gems</h3>
+                <ul>
+                    <li><strong>9:00 AM</strong>: Breakfast at a local café</li>
+                    <li><strong>10:30 AM</strong>: Visit Wendy's Secret Garden at Lavender Bay</li>
+                    <li><strong>12:00 PM</strong>: Lunch at The Grounds of Alexandria (cat-friendly venue with garden setting)</li>
+                    <li><strong>2:00 PM</strong>: Explore Newtown - street art, boutique shops, and bookstores</li>
+                    <li><strong>4:00 PM</strong>: Visit Sydney Park (cat-friendly area with walking paths)</li>
+                    <li><strong>6:30 PM</strong>: Dinner at Golden Century (Chinese seafood restaurant with vegetarian options)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The Grounds of Alexandria is not only a great place for lunch but also home to a resident cat named Kevin. It's a popular spot, so consider making a reservation.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 10: Sunday, April 27, 2025 - Family Visit Day</h3>
+                <ul>
+                    <li><strong>9:00 AM</strong>: Breakfast at home or local café</li>
+                    <li><strong>10:30 AM</strong>: Family/friend visit as planned</li>
+                    <li><strong>1:00 PM</strong>: Lunch with family/friends</li>
+                    <li><strong>Afternoon</strong>: Continue family/friend visit</li>
+                    <li><strong>6:30 PM</strong>: Dinner with family/friends or at a local restaurant</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 11: Monday, April 28, 2025 - Family Visit Day</h3>
+                <ul>
+                    <li><strong>9:00 AM</strong>: Breakfast at home or local café</li>
+                    <li><strong>10:30 AM</strong>: Family/friend visit as planned</li>
+                    <li><strong>1:00 PM</strong>: Lunch with family/friends</li>
+                    <li><strong>Afternoon</strong>: Continue family/friend visit</li>
+                    <li><strong>6:30 PM</strong>: Dinner with family/friends or at a local restaurant</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 12: Tuesday, April 29, 2025 - Historical Sydney</h3>
+                <ul>
+                    <li><strong>8:30 AM</strong>: Breakfast at a local café</li>
+                    <li><strong>10:00 AM</strong>: Visit Hyde Park Barracks Museum</li>
+                    <li><strong>12:00 PM</strong>: Lunch at Chat Thai (authentic Thai with vegetarian options)</li>
+                    <li><strong>1:30 PM</strong>: Visit State Library of NSW and Art Gallery of NSW</li>
+                    <li><strong>4:00 PM</strong>: Royal Botanic Garden walk</li>
+                    <li><strong>6:30 PM</strong>: Dinner at Fratelli Paradiso (authentic Italian with vegetarian options)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The Hyde Park Barracks Museum offers fascinating insights into Australia's convict history. Audio guides are available and recommended.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 13: Wednesday, April 30, 2025 - Coastal Exploration</h3>
+                <ul>
+                    <li><strong>8:30 AM</strong>: Breakfast at a local café</li>
+                    <li><strong>10:00 AM</strong>: Drive to Manly</li>
+                    <li><strong>10:30 AM</strong>: Manly to Spit Bridge Coastal Walk (partial)</li>
+                    <li><strong>1:00 PM</strong>: Lunch at Manly Wharf</li>
+                    <li><strong>2:30 PM</strong>: Ferry from Manly to Circular Quay (scenic harbour views)</li>
+                    <li><strong>3:30 PM</strong>: Visit Sydney Tower Eye for panoramic views</li>
+                    <li><strong>5:30 PM</strong>: Last-minute shopping in the city</li>
+                    <li><strong>7:00 PM</strong>: Farewell dinner at Quay Restaurant (fine dining with vegetarian options and seafood)</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The Manly Ferry is considered one of Sydney's best experiences, offering spectacular views of the harbour, Opera House, and Harbour Bridge. Sit on the outside deck for the best views.</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 14: Thursday, May 1, 2025 - Departure</h3>
+                <ul>
+                    <li><strong>3:30 AM</strong>: Wake up</li>
+                    <li><strong>4:00 AM</strong>: Final packing</li>
+                    <li><strong>4:30 AM</strong>: Drive to Sydney Airport</li>
+                    <li><strong>6:00 AM</strong>: Departure from Sydney</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Allow plenty of time to return your rental car and check in at the airport. International departures typically require check-in at least 2-3 hours before flight time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Special Interest Attractions</h2>
+            
+            <h3>Cat Lovers' Spots</h3>
+            <div class="attraction">
+                <h4>Catmosphere Cat Cafe</h4>
+                <p>Sydney's original cat cafe located in Surry Hills. Features include a Cat Lounge with adult cats, Treehouse with junior cats, Kittyland with kittens, Catflix Cat Cinema, and even Cat Yoga. All cats are rescues and many are available for adoption.</p>
+                <p><strong>Address:</strong> Surry Hills</p>
+                <p><strong>Website:</strong> <a href="https://catmospherecafe.com.au/" target="_blank">catmospherecafe.com.au</a></p>
+                <p><strong>Note:</strong> Bookings essential!</p>
+            </div>
+            
+            <div class="attraction">
+                <h4>The Grounds of Alexandria</h4>
+                <p>A popular cafe and garden setting that is home to a resident cat named Kevin. The venue is known for its beautiful gardens, delicious food, and Instagram-worthy settings.</p>
+                <p><strong>Address:</strong> Building 7A, 2 Huntley Street, Alexandria</p>
+                <p><strong>Website:</strong> <a href="https://thegrounds.com.au/" target="_blank">thegrounds.com.au</a></p>
+            </div>
+            
+            <h3>Historical Sites</h3>
+            <div class="attraction">
+                <h4>The Rocks</h4>
+                <p>Australia's oldest colonial settlement, featuring hidden alleys, cobblestone lanes, and centuries-old buildings. Take The Rocks Walking Tour to learn about the First Fleet and the area's fascinating history.</p>
+                <p><strong>Highlights:</strong> The Rocks Discovery Museum, Cadman's Cottage (Sydney's oldest surviving residential building), Susannah Place Museum</p>
+            </div>
+            
+            <div class="attraction">
+                <h4>Hyde Park Barracks</h4>
+                <p>A UNESCO World Heritage site that tells the story of Australia's convict history. The museum provides insights into early colonial Sydney.</p>
+                <p><strong>Address:</strong> Queens Square, Macquarie Street, Sydney</p>
+                <p><strong>Opening Hours:</strong> 10am-5pm daily</p>
+            </div>
+            
+            <div class="attraction">
+                <h4>Cockatoo Island</h4>
+                <p>A UNESCO World Heritage site in the middle of Sydney Harbour. Once a convict prison, it later became a shipyard. Today, you can explore its historic buildings and even stay overnight in tents or heritage houses.</p>
+                <p><strong>Access:</strong> Ferry from Circular Quay</p>
+            </div>
+            
+            <h3>Studio Ghibli Related</h3>
+            <div class="attraction">
+                <h4>Immersive Studio Ghibli Art Workshop</h4>
+                <p>A special event where you can immerse yourself in the world of Hayao Miyazaki through art.</p>
+                <p><strong>Location:</strong> Pastel Studio, Surry Hills</p>
+                <p><strong>Date:</strong> Saturday, March 8, 2025</p>
+                <p><strong>Note:</strong> This event will have passed by your visit, but check the venue for similar events during your stay.</p>
+            </div>
+            
+            <div class="attraction">
+                <h4>Kinokuniya Bookstore</h4>
+                <p>This Japanese bookstore has an extensive collection of Studio Ghibli merchandise, books, and sometimes hosts exhibitions related to Japanese animation.</p>
+                <p><strong>Address:</strong> The Galeries, 500 George St, Sydney</p>
+            </div>
+            
+            <h3>TV Show Filming Locations</h3>
+            <div class="attraction">
+                <h4>Colin from Accounts Locations</h4>
+                <p>This popular show was primarily filmed in Sydney's Inner West, including:</p>
+                <ul>
+                    <li>Camperdown (33 Hopetoun Street - main house location)</li>
+                    <li>Marrickville</li>
+                    <li>Ultimo</li>
+                </ul>
+            </div>
+            
+            <div class="attraction">
+                <h4>Return to Paradise Locations</h4>
+                <p>This show was filmed in the Illawarra coastal region south of Sydney and on Sydney's Northern Beaches:</p>
+                <ul>
+                    <li>Sea Cliff Bridge (featured in the show)</li>
+                    <li>Thirroul Village</li>
+                    <li>Wombarra Bowlo</li>
+                    <li>Stanwell Park Beach</li>
+                    <li>Bilgola on Sydney's Northern Beaches (surf club scenes)</li>
+                </ul>
+            </div>
+            
+            <h3>Australian Wildlife</h3>
+            <div class="attraction">
+                <h4>Taronga Zoo</h4>
+                <p>Home to over 4,000 animals including native Australian species like koalas, kangaroos, and platypus. The zoo offers spectacular views of Sydney Harbour.</p>
+                <p><strong>Address:</strong> Bradleys Head Rd, Mosman</p>
+                <p><strong>Access:</strong> Ferry from Circular Quay or drive</p>
+            </div>
+            
+            <div class="attraction">
+                <h4>Featherdale Wildlife Park</h4>
+                <p>Get up close with native Australian animals including opportunities to hand-feed kangaroos and have koala encounters.</p>
+                <p><strong>Address:</strong> 217-229 Kildare Rd, Doonside</p>
+                <p><strong>Note:</strong> Located in Western Sydney, about a 45-minute drive from the CBD</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Practical Travel Information</h2>
+            
+            <h3>Transportation</h3>
+            <div class="tip-box">
+                <h4>Opal Card</h4>
+                <p>The Opal card is Sydney's reloadable smart card for public transport, including trains, buses, ferries, and light rail. You can purchase and top up Opal cards at convenience stores, train stations, and Sydney Airport.</p>
+                <p>Benefits include daily and weekly fare caps, and off-peak discounts. Alternatively, you can use contactless payment with your credit/debit card.</p>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Driving in Sydney</h4>
+                <p>As UK residents, you'll be familiar with driving on the left side of the road. Your UK driving license is valid for driving in Australia as a tourist.</p>
+                <p><strong>Key points to remember:</strong></p>
+                <ul>
+                    <li>Speed limits: Urban areas 50 km/h, main roads 60-80 km/h, highways 100-110 km/h</li>
+                    <li>Strict enforcement of speed limits and drink-driving laws</li>
+                    <li>Seat belts mandatory for all passengers</li>
+                    <li>Mobile phone use while driving prohibited unless using hands-free</li>
+                    <li>Watch for clearway times on main roads (no parking during these times)</li>
+                </ul>
+            </div>
+            
+            <h3>Weather and What to Pack</h3>
+            <div class="tip-box">
+                <p>April-May is autumn in Australia. Temperatures in Sydney during this time typically range from:</p>
+                <ul>
+                    <li>April: 15-23°C (59-73°F)</li>
+                    <li>May: 12-20°C (54-68°F)</li>
+                </ul>
+                <p><strong>Packing suggestions:</strong></p>
+                <ul>
+                    <li>Light layers that can be added or removed</li>
+                    <li>A light jacket or sweater for evenings</li>
+                    <li>Comfortable walking shoes</li>
+                    <li>Sun protection (hat, sunscreen, sunglasses)</li>
+                    <li>A light raincoat or umbrella</li>
+                    <li>Swimwear (beaches are still enjoyable in autumn)</li>
+                </ul>
+            </div>
+            
+            <h3>Food and Dining</h3>
+            <div class="tip-box">
+                <p>Sydney has a diverse food scene with plenty of options for both vegetarians and seafood lovers.</p>
+                <p><strong>Italian Restaurants:</strong></p>
+                <ul>
+                    <li>Gigi Pizzeria (Newtown) - Vegetarian Italian</li>
+                    <li>Fratelli Paradiso (Potts Point) - Authentic Italian</li>
+                    <li>Lucio's (Paddington) - Fine Italian dining</li>
+                </ul>
+                <p><strong>Asian Restaurants:</strong></p>
+                <ul>
+                    <li>Chat Thai (multiple locations) - Authentic Thai with vegetarian options</li>
+                    <li>Golden Century (Chinatown) - Chinese seafood with vegetarian options</li>
+                    <li>Spice Temple (CBD) - Modern Chinese</li>
+                </ul>
+                <p><strong>Vegetarian Highlights:</strong></p>
+                <ul>
+                    <li>Yellow (Potts Point) - Vegetarian fine dining</li>
+                    <li>Bodhi (CBD) - Vegan yum cha in a beautiful garden setting</li>
+                    <li>Pilgrims (Cronulla) - Vegetarian cafe</li>
+                </ul>
+                <p><strong>Seafood Highlights:</strong></p>
+                <ul>
+                    <li>Sydney Fish Market (Pyrmont) - Fresh seafood</li>
+                    <li>Doyles (Watson Bay) - Classic Sydney seafood restaurant</li>
+                    <li>Saint Peter (Paddington) - Sustainable seafood</li>
+                </ul>
+            </div>
+            
+            <h3>Money and Payments</h3>
+            <div class="tip-box">
+                <p><strong>Currency:</strong> Australian Dollar (AUD)</p>
+                <p><strong>Exchange Rate:</strong> Approximately 1 GBP = 1.8-1.9 AUD (check current rates)</p>
+                <p><strong>Payment Methods:</strong></p>
+                <ul>
+                    <li>Credit/debit cards are widely accepted</li>
+                    <li>ATMs are readily available</li>
+                    <li>Contactless payment is common</li>
+                    <li>Some small businesses may have minimum card spend or surcharges</li>
+                </ul>
+                <p><strong>Tipping:</strong> Not customary or expected in Australia, but appreciated for exceptional service</p>
+            </div>
+            
+            <h3>Health and Safety</h3>
+            <div class="warning-box">
+                <p><strong>Emergency Number:</strong> 000 (Police, Fire, Ambulance)</p>
+                <p><strong>Sun Safety:</strong> Australian sun can be intense even in autumn. Use SPF 30+ sunscreen, wear a hat and sunglasses.</p>
+                <p><strong>Beach Safety:</strong> Always swim between the red and yellow flags at patrolled beaches. Be aware of rip currents.</p>
+                <p><strong>Wildlife:</strong> While dangerous wildlife is rarely an issue in urban areas, be cautious of spiders and insects in parks and gardens.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Maps and Navigation</h2>
+            
+            <div class="tip-box">
+                <p>You'll have a car for the entire trip, which is ideal for exploring Sydney and its surroundings. However, for city center exploration, public transport or walking is often more convenient due to traffic and parking limitations.</p>
+            </div>
+            
+            <h3>Sydney Public Transport</h3>
+            <p>The Opal network map shows train, bus, ferry, and light rail routes throughout Sydney. This will be useful when you choose to use public transport instead of driving.</p>
+            <div class="map-container">
+                <p>Reference the Sydney Opal network map in your maps folder: <strong>sydney_opal_network_map.pdf</strong></p>
+            </div>
+            
+            <h3>Kiama Area</h3>
+            <p>The Kiama Visitors Guide includes detailed maps of the Kiama region, highlighting attractions, beaches, and walking trails.</p>
+            <div class="map-container">
+                <p>Reference the Kiama Visitors Guide in your maps folder: <strong>kiama_visitors_guide.pdf</strong></p>
+            </div>
+            
+            <h3>Blue Mountains</h3>
+            <p>The Blue Mountains area is extensive with many lookouts, walking trails, and attractions.</p>
+            <div class="map-container">
+                <p>Key areas to visit in the Blue Mountains:</p>
+                <ul>
+                    <li>Echo Point and Three Sisters (Katoomba)</li>
+                    <li>Scenic World (Katoomba)</li>
+                    <li>Wentworth Falls</li>
+                    <li>Leura Village</li>
+                </ul>
+            </div>
+            
+            <h3>Online Maps and Navigation</h3>
+            <div class="tip-box">
+                <p>For real-time navigation, we recommend:</p>
+                <ul>
+                    <li><strong>Google Maps</strong> - Good for general navigation and public transport directions</li>
+                    <li><strong>Waze</strong> - Helpful for driving with real-time traffic updates</li>
+                    <li><strong>TripView</strong> - Excellent app for Sydney public transport timetables and planning</li>
+                    <li><strong>Transport for NSW</strong> - Official app with trip planning and Opal card management</li>
+                </ul>
+                <p>Consider downloading offline maps for areas where you might have limited mobile reception, such as parts of the Blue Mountains and along the Great Pacific Drive.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Final Tips and Recommendations</h2>
+            
+            <div class="tip-box">
+                <h3>Local Insights</h3>
+                <ul>
+                    <li>Australians are generally casual and friendly - don't be surprised by the use of first names and informal greetings</li>
+                    <li>Coffee culture is strong in Sydney - try a "flat white" for a local specialty</li>
+                    <li>Beaches are a way of life - even in autumn, locals enjoy the coastal lifestyle</li>
+                    <li>Wildlife can be found even in urban areas - keep an eye out for colorful birds, possums, and even flying foxes (fruit bats) at dusk</li>
+                    <li>Australians love their sports - the AFL game will be a great cultural experience</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h3>Money-Saving Tips</h3>
+                <ul>
+                    <li>Sunday is family day at many attractions with discounted rates</li>
+                    <li>Many museums and galleries offer free admission</li>
+                    <li>Take advantage of happy hours at bars (typically 4-6pm)</li>
+                    <li>Picnic in beautiful parks and beaches instead of eating out for every meal</li>
+                    <li>Use public transport during off-peak times for lower fares</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h3>Must-Try Experiences</h3>
+                <ul>
+                    <li>Take a ferry ride on Sydney Harbour - the views are spectacular</li>
+                    <li>Watch the sunset from a harbourside location</li>
+                    <li>Try Australian wines - the Hunter Valley is not far from Sydney</li>
+                    <li>Visit a local market - Paddington Markets (Saturdays) or Bondi Markets (Sundays) are popular</li>
+                    <li>Walk along coastal paths - the Bondi to Coogee walk is famous, but there are many others</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Sydney, Australia Travel Handbook | April 18 - May 1, 2025</p>
+        <p>Created especially for your journey. Have a wonderful trip!</p>
+    </footer>
+
+    <script>
+        // Simple tab functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Print functionality
+        function printHandbook() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
