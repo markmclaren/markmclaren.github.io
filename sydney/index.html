@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Australia Travel Handbook: April 18-May 1, 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .australia-blue {
+            color: #00008B;
+        }
+        
+        .australia-red {
+            color: #FF0000;
+        }
+        
+        .hero-image {
+            background-image: url('./images/hero-image.jpg'); /* Local image */
+            height: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .day-card {
+            border-left: 4px solid #00008B;
+        }
+        
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+        
+        .tip-card {
+            border-left: 4px solid #FF0000;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .anchor {
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .wildlife-card {
+            transition: all 0.3s ease;
+        }
+        
+        .wildlife-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .print-section {
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="relative">
+        <div class="hero-image relative">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <div class="text-center">
+                    <h1 class="text-white text-5xl font-bold mb-4">Sydney, Australia</h1>
+                    <p class="text-white text-xl">Travel Handbook: April 18 - May 1, 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-md z-50 py-4 px-6">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center space-x-1 md:space-x-6">
+                <li><a href="#itinerary" class="text-sm md:text-base px-2 py-1 rounded hover:bg-blue-100 australia-blue">Itinerary</a></li>
+                <li><a href="#maps" class="text-sm md:text-base px-2 py-1 rounded hover:bg-blue-100 australia-blue">Maps</a></li>
+                <li><a href="#dining" class="text-sm md:text-base px-2 py-1 rounded hover:bg-blue-100 australia-blue">Vegetarian Dining</a></li>
+                <li><a href="#wildlife" class="text-sm md:text-base px-2 py-1 rounded hover:bg-blue-100 australia-blue">Wildlife</a></li>
+                <li><a href="#culture" class="text-sm md:text-base px-2 py-1 rounded hover:bg-blue-100 australia-blue">Cultural Attractions</a></li>
+                <li><a href="#tips" class="text-sm md:text-base px-2 py-1 rounded hover:bg-blue-100 australia-blue">Travel Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Trip Overview -->
+        <section class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-3xl font-bold mb-6 australia-blue">Trip Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Trip Details</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">Duration:</span> 14 days (Apr 18 - May 1, 2025)</li>
+                        <li><span class="font-medium">Accommodation:</span> Granny annex in Matraville (partial stay)</li>
+                        <li><span class="font-medium">Transportation:</span> Rental car for the entire trip</li>
+                        <li><span class="font-medium">Special Events:</span> Aussie Rules Football (Easter Sunday), Anzac Day (Apr 25)</li>
+                        <li><span class="font-medium">Pre-planned Trips:</span> Great Pacific Drive, Kiama (2 nights), Blue Mountains (1 night)</li>
+                        <li><span class="font-medium">Family Visits:</span> April 27-28</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Trip Highlights</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-landmark text-blue-500 mr-2"></i> Sydney Opera House & Harbour Bridge</li>
+                        <li><i class="fas fa-mountain text-green-600 mr-2"></i> Blue Mountains National Park</li>
+                        <li><i class="fas fa-water text-blue-400 mr-2"></i> Kiama Blowhole & Coastal Walks</li>
+                        <li><i class="fas fa-route text-purple-500 mr-2"></i> Great Pacific Drive scenic route</li>
+                        <li><i class="fas fa-ship text-blue-600 mr-2"></i> Sydney Harbour Boat Trip</li>
+                        <li><i class="fas fa-football-ball text-brown-500 mr-2"></i> Aussie Rules Football Game</li>
+                        <li><i class="fas fa-monument text-gray-700 mr-2"></i> Anzac Day Commemorations</li>
+                        <li><i class="fas fa-paw text-yellow-600 mr-2"></i> Australian Wildlife Experiences</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Itinerary -->
+        <section id="itinerary" class="mb-12">
+            <span class="anchor"></span>
+            <h2 class="text-3xl font-bold mb-8 australia-blue">Detailed Itinerary</h2>
+            
+            <!-- Day 1 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 1: Friday, April 18 - Arrival in Sydney</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">5:20pm</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Arrive at Sydney Airport (SYD)</li>
+                            <li>Check into accommodation</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-2">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Rest and refresh</li>
+                            <li>First views of Opera House</li>
+                            <li>Early night to recover from jet lag</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tip:</p>
+                            <p class="text-sm">Purchase an Opal card for public transport. Available at airport shops, minimum $20 to start.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 2: Saturday, April 19 - Bondi Beach Experience</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Breakfast at a local café</li>
+                            <li>12 noon - Pick up rental car</li>
+                            <li>Drive to Bondi Beach</li>
+                            <li>Walk along the famous beach</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Bondi to Coogee coastal walk</li>
+                            <li>Visit Bondi Graffiti Wall</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Vegetarian dinner at Bangkok Bites</li>
+                            <li>Return to accommodation</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tip:</p>
+                            <p class="text-sm">Apply sunscreen generously and reapply throughout the day - Australia's sun is extremely strong.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 3: Sunday, April 20 - Aussie Rules Football Game</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Breakfast at accommodation</li>
+                            <li>Go to John's</li>
+                            <li>Check into Matraville accommodation</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-2">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Sydney Swans vs Port Adelaide</li>
+                            <li>First bounce: 3:20pm</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-yellow-50 p-4 rounded-md border-l-4 border-yellow-500">
+                            <p class="font-semibold">Aussie Rules Football:</p>
+                            <ul class="text-sm list-disc pl-5">
+                                <li>Sydney Cricket Ground (SCG)</li>
+                                <li>Gates open: 1:30pm</li>
+                                <li>Game start: 3:20pm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Days 4: Monday, April 21 - Great Pacific Drive</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Early start for Great Pacific Drive</li>
+                            <li>Royal National Park</li>
+                            <li>Stanwell Park (Return to Paradise)</li>
+                            <li>Drive across Sea Cliff Bridge (Return to Paradise)</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Arrive in Kiama</li>
+                            <li>Check into accommodation</li>
+                            <li>Visit famous Kiama Blowhole</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Dinner in Kiama</li>
+                            <li>First night in Kiama</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-water text-blue-500 mr-2"></i>Kiama Highlight:</p>
+                            <p class="text-sm">The Kiama Blowhole is one of the largest in the world, shooting water up to 25 meters in the air when conditions are right.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Days 5: Tuesday, April 22 - Kiama</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Kiama -> Jervis Bay (1 hour drive)</li>
+                            <li>Cathedral Rocks</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Explore Kiama Harbour (boat tour?)</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Dinner in Kiama</li>
+                            <li>Second night in Kiama</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-water text-blue-500 mr-2"></i>Kiama Highlight:</p>
+                            <p class="text-sm">The Kiama Blowhole is one of the largest in the world, shooting water up to 25 meters in the air when conditions are right.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 6 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 6: Wednesday, April 23 - Blue Mountains Day 1</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Leave Kiama early</li>
+                            <li>Kangeroo Valley</li>
+                            <li>Fitzroy Falls</li>
+                            <li>Drive to Blue Mountains (3 hours total)</li>
+                            <li>Arrive in Katoomba</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            
+                            <li>Short hike on one of the trails</li>
+                            <li>Visit Leura village</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Overnight in Blue Mountains</li>
+                            <li>Dinner at a local restaurant</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tip:</p>
+                            <p class="text-sm">Ask locals for their favorite hidden gems and vegetarian restaurants in the area.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 7: Thursday, April 24 - Blue Mountains Day 2</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><span class="fas fa-person-hiking mr-1"></span>Eagle Hawk Lookout</li>
+                            <li><span class="fas fa-person-hiking mr-1"></span>Landslide Lookout</li>
+                            <li><span class="fas fa-person-hiking mr-1"></span>Cahill's and Boars Head Lookout</li>
+                            <li>10am Explore Scenic World</li>
+                            <li>Lunch at Scenic World</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Visit Echo Point (Three Sisters)</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Return drive to Sydney</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-mountain text-green-700 mr-2"></i>Blue Mountains Highlight:</p>
+                            <p class="text-sm">Scenic World offers cable cars, the steepest incline railway in the world, and stunning walkways through ancient rainforest.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Day 8 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 8: Friday, April 25 - Anzac Day</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Early Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Anzac Day Observance: Dawn Service (Cenotaph, Martin Place), Anzac Day March.</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning/Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Attend Anzac Day March in Sydney (if timing permits)</li>
+                            <li>Visit Hyde Park and Anzac Memorial</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Quiet dinner respecting Anzac Day</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <p class="font-semibold text-red-800"><i class="fas fa-flag text-red-500 mr-2"></i>Anzac Day:</p>
+                            <p class="text-sm">Anzac Day is one of Australia's most important commemorative occasions, honoring those who served in all wars.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 9 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 9: Saturday, April 26 - Family/Friend Visit (Flexible)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-3">
+                        <p class="font-semibold">Full Day</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Spend the day with family/friends</li>
+                            <li>Let them show you their favorite local spots</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 10 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 10: Sunday, April 27 - Family/Friend Visit (Flexible)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-3">
+                        <p class="font-semibold">Full Day</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Spend the day with family/friends</li>
+                            <li>Let them show you their favorite local spots</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Day 11 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 11: Monday, April 28 - Sydney, Sydney Opera House & Darling Harbour</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Breakfast near accommodation</li>
+                            <li>The Rocks (historic district).</li>
+                            <li>Explore The Royal Botanic Garden</li>
+                            <li>Sydney Opera House guided tour</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Ferry to Darling Harbour</li>
+                            <li>SEA LIFE Aquarium visit?</li>
+                            <li>Shopping at Darling Quarter</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Dinner at a vegetarian-friendly restaurant in Darling Harbour</li>
+                            <li>Night views of the harbour</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tip:</p>
+                            <p class="text-sm">Book the Opera House tour in advance to secure your preferred time slot.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 12 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 12: Tuesday, April 29 - Manly Beach Day</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Drive to Circular Quay</li>
+                            <li>Ferry to Manly (30-minute scenic ride)</li>
+                            <li>Explore Manly Beach</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Walk the Manly to Spit Bridge coastal trail (partially)</li>
+                            <li>Swimming or sunbathing</li>
+                            <li>Shopping on The Corso</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Dinner at a waterfront restaurant</li>
+                            <li>Return ferry at sunset for city lights</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tip:</p>
+                            <p class="text-sm">The Manly Ferry offers one of the best harbor views in Sydney and is much cheaper than tourist cruises.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 13 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 13: Wednesday, April 30 - Art & Culture Day</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Visit Art Gallery of NSW</li>
+                            <li>Explore Aboriginal art collections</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Afternoon</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Return rental car</li>
+                            <li>Museum of Contemporary Art</li>
+                            <li>Wander through The Rocks historic district</li>
+                            <li>Souvenir shopping</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <p class="font-semibold">Evening</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Farewell dinner at a signature vegetarian restaurant</li>
+                            <li>Evening performance at Sydney Opera House (if available)</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-purple-50 p-3 rounded-md">
+                            <p class="font-semibold text-purple-800"><i class="fas fa-palette text-purple-500 mr-2"></i>Cultural Note:</p>
+                            <p class="text-sm">The Art Gallery of NSW has an excellent collection of Aboriginal and Torres Strait Islander art.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 14 -->
+            <div class="day-card mb-8 bg-white rounded-lg shadow-md p-6 pl-8">
+                <h3 class="text-2xl font-bold mb-2">Day 14: Thursday, May 1 - Departure</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-3">
+                        <p class="font-semibold">Early Morning</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Check out of accommodation</li>
+                            <li>Depart Sydney Airport for UK</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="bg-blue-50 p-3 rounded-md">
+                            <p class="font-semibold text-blue-800"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tip:</p>
+                            <p class="text-sm">Allow extra time for airport procedures. Sydney Airport recommends arriving 3 hours before international flights.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Maps Section -->
+        <section id="maps" class="mb-12">
+            <span class="anchor"></span>
+            <h2 class="text-3xl font-bold mb-8 australia-blue">Important Locations</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Sydney City Map -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-blue-50">Sydney City Center</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13251.049729059128!2d151.20463227979363!3d-33.86882263053788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccc0!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sus!4v1680856321817!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <p class="mb-2"><strong>Key Attractions:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Sydney Opera House</li>
+                            <li>Sydney Harbour Bridge</li>
+                            <li>Circular Quay</li>
+                            <li>The Rocks</li>
+                            <li>Royal Botanic Garden</li>
+                            <li>Darling Harbour</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bondi Beach Map -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-blue-50">Bondi Beach Area</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13259.125736095723!2d151.26522992977604!3d-33.89122133133207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ad9b824611df%3A0x1d017d69037a07c0!2sBondi%20Beach%20NSW%202026%2C%20Australia!5e0!3m2!1sen!2sus!4v1680856399997!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <p class="mb-2"><strong>Key Attractions:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Bondi Beach</li>
+                            <li>Bondi to Coogee Coastal Walk</li>
+                            <li>Bondi Icebergs Pool</li>
+                            <li>Campbell Parade</li>
+                            <li>Bondi Beach Graffiti Wall</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Blue Mountains Map -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-blue-50">Blue Mountains</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106430.95310983761!2d150.24444999522735!3d-33.70594289692277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b126eeff9d14f99%3A0x5017d681632cda0!2sKatoomba%20NSW%202780%2C%20Australia!5e0!3m2!1sen!2sus!4v1680856496450!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <p class="mb-2"><strong>Key Attractions:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Three Sisters (Echo Point)</li>
+                            <li>Scenic World</li>
+                            <li>Leura Village</li>
+                            <li>Wentworth Falls</li>
+                            <li>Grand Canyon Walking Track</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Kiama Map -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-blue-50">Kiama Area</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53280.27733649906!2d150.78463107444156!3d-34.67144818568168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b13672e59177c49%3A0x5017d681632a6f0!2sKiama%20NSW%202533%2C%20Australia!5e0!3m2!1sen!2sus!4v1680856581076!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <p class="mb-2"><strong>Key Attractions:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Kiama Blowhole</li>
+                            <li>Little Blowhole</li>
+                            <li>Kiama Coastal Walk</li>
+                            <li>Cathedral Rocks</li>
+                            <li>Bombo Headland Quarry</li>
+                            <li>Kiama Lighthouse</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- SCG Map -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-blue-50">Sydney Cricket Ground (Aussie Rules Football)</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.3867152780253!2d151.22193231520843!3d-33.89148788065012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae1e2c753187%3A0x88923a21077b88a4!2sSydney%20Cricket%20Ground!5e0!3m2!1sen!2sus!4v1680856622671!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <p class="mb-2"><strong>Game Details:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Sydney Swans vs Port Adelaide</li>
+                            <li>Sunday, April 20, 2025</li>
+                            <li>Gates Open: 1:30pm</li>
+                            <li>First Bounce: 3:20pm</li>
+                            <li>Public Transport: Buses from Central Station or walk from Central</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Featherdale Wildlife Park Map -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-blue-50">Featherdale Wildlife Park</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.3068587325144!2d150.8634235151962!3d-33.78999848068133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129ba57b8a5ff1%3A0x4fe3ada53a65b49b!2sFeatherdale%20Sydney%20Wildlife%20Park!5e0!3m2!1sen!2sus!4v1680856691124!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <p class="mb-2"><strong>Key Information:</strong></p>
+                        <ul class="list-disc pl-5">
+                            <li>Address: 217 Kildare Road, Doonside</li>
+                            <li>Hours: 8:00am - 5:00pm daily</li>
+                            <li>Over 2000 animals from 260+ species</li>
+                            <li>Hand-feeding opportunities</li>
+                            <li>Allow 2-3 hours for visit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Vegetarian Dining Guide -->
+        <section id="dining" class="mb-12">
+            <span class="anchor"></span>
+            <h2 class="text-3xl font-bold mb-8 australia-blue">Vegetarian Dining Guide</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <p class="mb-4">Sydney offers an impressive range of vegetarian and vegetarian-friendly dining options, from casual cafés to fine dining establishments. Many restaurants cater well to vegetarians, with clearly marked menu items and creative plant-based dishes. Being a vegetarian in Sydney is easy, and your Italian partner will also find plenty of authentic and fusion options to enjoy.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Restaurant 1 -->
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('./images/yellow-restaurant.jpg')"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Yellow</h3>
+                        <p class="text-sm text-gray-600 mb-2">57 Macleay St, Potts Point</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star-half-alt"></i></span>
+                            <span class="text-gray-600 text-sm ml-2">(Fine Dining)</span>
+                        </div>
+                        <p class="text-sm mb-3">A vegetarian fine dining establishment with creative, beautifully plated dishes. They offer a seasonal tasting menu showcasing local produce.</p>
+                        <p class="text-sm"><strong>Signature dishes:</strong> Charred cucumber with black garlic, Jerusalem artichoke tart</p>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 2 -->
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('./images/gigi-pizzeria.jpg')"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Gigi Pizzeria</h3>
+                        <p class="text-sm text-gray-600 mb-2">379 King St, Newtown</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-400 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-2">(Italian)</span>
+                        </div>
+                        <p class="text-sm mb-3">A completely plant-based Neapolitan pizzeria. Perfect for your Italian partner while still being 100% vegetarian-friendly.</p>
+                        <p class="text-sm"><strong>Signature dishes:</strong> Marinara pizza, Funghi e radicchio pizza</p>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 3 -->
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('./images/bodhi-restaurant.jpg')"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bodhi Restaurant</h3>
+                        <p class="text-sm text-gray-600 mb-2">2-4 College St, Sydney</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-400 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-2">(Vegan Yum Cha)</span>
+                        </div>
+                        <p class="text-sm mb-3">Set under fig trees, this restaurant serves vegan yum cha and pan-Asian cuisine. A beautiful setting in the heart of the city.</p>
+                        <p class="text-sm"><strong>Signature dishes:</strong> Steamed dumplings, peking "duck" pancakes</p>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 4 -->
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('./images/yullis.jpg')"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Yulli's</h3>
+                        <p class="text-sm text-gray-600 mb-2">417 Crown St, Surry Hills</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-400 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-2">(Global Fusion)</span>
+                        </div>
+                        <p class="text-sm mb-3">A lively restaurant and bar that promotes 'vegetables are freaking awesome' approach rather than trying to imitate meat dishes.</p>
+                        <p class="text-sm"><strong>Signature dishes:</strong> Kale and saltbush gyoza, pan-fried gnocchi</p>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 5 -->
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('./images/flyover-fritterie.jpg')"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Flyover Fritterie</h3>
+                        <p class="text-sm text-gray-600 mb-2">1/241-243 Commonwealth St, Surry Hills</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star-half-alt"></i></span>
+                            <span class="text-gray-400 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-2">(Indian Street Food)</span>
+                        </div>
+                        <p class="text-sm mb-3">This cozy spot specializes in Indian street food, with a focus on delicious fritters, curries, and chutneys. All vegetarian!</p>
+                        <p class="text-sm"><strong>Signature dishes:</strong> Pakora chaat, vegetable thali</p>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 6 -->
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('./images/cairo-takeaway.jpg')"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Cairo Takeaway</h3>
+                        <p class="text-sm text-gray-600 mb-2">81 Enmore Rd, Newtown</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-400 mr-1"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-2">(Egyptian)</span>
+                        </div>
+                        <p class="text-sm mb-3">An Egyptian diner with plenty of vegetarian options. Their vegetarian mixed plate is one of the best in town.</p>
+                        <p class="text-sm"><strong>Signature dishes:</strong> Spiced cauliflower, falafel plate, fattoush salad</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+                <h3 class="text-xl font-bold mb-4">Quick Vegetarian Dining Tips</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                        <span>Most restaurants in Sydney mark vegetarian options on their menus, often with a (V) symbol.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                        <span>Newtown and Surry Hills neighborhoods have the highest concentration of vegetarian-friendly establishments.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                        <span>Asian cuisines (Thai, Indian, Chinese) typically offer many vegetarian options.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                        <span>Sydney's farmers markets offer great fresh produce and ready-to-eat vegetarian food stalls.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                        <span>Most coffee shops offer plant-based milk alternatives.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                        <span>Bondi area has many health-focused cafés with excellent vegetarian options.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Wildlife Guide -->
+        <section id="wildlife" class="mb-12">
+            <span class="anchor"></span>
+            <h2 class="text-3xl font-bold mb-8 australia-blue">Australian Wildlife Guide</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <p class="mb-4">Australia is home to some of the world's most unique wildlife. Many of these animals can only be found in Australia, making wildlife viewing a must-do activity during your visit. Here's where and how to see Australia's iconic animals during your trip.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Wildlife Park -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-green-50">Featherdale Sydney Wildlife Park</h3>
+                    <img src="./images/featherdale-koala.jpg" alt="Koala at wildlife park" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <p class="mb-4">Located in Western Sydney, Featherdale is home to over 260 species of Australian native animals. This wildlife park offers more hands-on experiences than many other facilities, allowing you to hand-feed kangaroos and wallabies, and get up close to koalas.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Over 2000 animals including threatened species</li>
+                            <li>Hand-feed kangaroos and wallabies</li>
+                            <li>See Tasmanian devils, wombats, dingoes, and echidnas</li>
+                            <li>Visit the Quokka exhibit (the "happiest animal in the world")</li>
+                            <li>Various keeper talks and feeding sessions throughout the day</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Day 5 (April 22)</p>
+                    </div>
+                </div>
+                
+                <!-- Wild spotting locations -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <h3 class="text-xl font-semibold p-4 bg-green-50">Wildlife Spotting in Blue Mountains</h3>
+                    <img src="./images/blue-mountains.jpg" alt="Blue Mountains vista" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <p class="mb-4">The Blue Mountains National Park is home to a variety of native wildlife that can be spotted in their natural habitat. Early morning and late afternoon are the best times for wildlife spotting.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Look for wallabies and kangaroos in open grassy areas at dawn and dusk</li>
+                            <li>Spot unique bird species like crimson rosellas, yellow-tailed black cockatoos, and superb lyrebirds</li>
+                            <li>Lucky visitors might see wombats, particularly around Wentworth Falls area</li>
+                            <li>Keep an eye out for skinks and water dragons on sunny rocks</li>
+                            <li>Blue Mountains is home to various possums and gliders (nocturnal)</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Day 8 (April 25)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Animals to Look For</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Animal 1 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/kangaroo.jpg" alt="Kangaroo" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Kangaroo</h4>
+                        <p class="text-sm text-gray-700">Australia's iconic marsupial can be seen at Featherdale, where you can hand-feed them.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 2 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/koala.jpg" alt="Koala" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Koala</h4>
+                        <p class="text-sm text-gray-700">These sleepy marsupials spend most of their time in eucalyptus trees. Get close-up views at Featherdale.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 3 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/wombat.jpg" alt="Wombat" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Wombat</h4>
+                        <p class="text-sm text-gray-700">These burrowing marsupials are like bulldozers of the bush. See them at Featherdale or possibly in the wild in Blue Mountains.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 4 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/echidna.jpg" alt="Echidna" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Echidna</h4>
+                        <p class="text-sm text-gray-700">One of only two egg-laying mammals in the world. Their spines make them look like walking pincushions.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 5 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/tasmanian-devil.jpg" alt="Tasmanian Devil" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Tasmanian Devil</h4>
+                        <p class="text-sm text-gray-700">These carnivorous marsupials are known for their loud growls and powerful jaws. See them at Featherdale.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 6 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/quokka.jpg" alt="Quokka" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Quokka</h4>
+                        <p class="text-sm text-gray-700">Often called the happiest animal in the world due to their "smiling" appearance. See them at Featherdale.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 7 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/emu.jpg" alt="Emu" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Emu</h4>
+                        <p class="text-sm text-gray-700">The world's second-tallest bird. These flightless birds can be seen at Featherdale.</p>
+                    </div>
+                </div>
+                
+                <!-- Animal 8 -->
+                <div class="wildlife-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/platypus.jpg" alt="Platypus" class="w-full h-48 object-cover">
+                    <div class="p-3">
+                        <h4 class="font-bold mb-1">Platypus</h4>
+                        <p class="text-sm text-gray-700">This egg-laying mammal with a duck bill is one of Australia's most unusual creatures. Hard to spot in the wild, but can be seen at wildlife parks.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4">Wildlife Viewing Tips</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-paw"></i></span>
+                        <span>Keep a respectful distance from wild animals - never try to touch or feed wildlife outside designated areas.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-paw"></i></span>
+                        <span>Dawn and dusk are the best times to spot many Australian animals in the wild.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-paw"></i></span>
+                        <span>Drive carefully, especially around dawn and dusk, when animals are most active.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-paw"></i></span>
+                        <span>Bring binoculars for better wildlife spotting opportunities.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-paw"></i></span>
+                        <span>Listen for animal calls, especially bird songs, which can help locate wildlife.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1"><i class="fas fa-paw"></i></span>
+                        <span>Take plenty of photos, but avoid using flash around animals.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Cultural Attractions -->
+        <section id="culture" class="mb-12">
+            <span class="anchor"></span>
+            <h2 class="text-3xl font-bold mb-8 australia-blue">Cultural Attractions & Highlights</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Sydney Opera House -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/sydney-opera-house.jpg" alt="Sydney Opera House" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sydney Opera House</h3>
+                        <p class="mb-4">This UNESCO World Heritage site is Australia's most recognizable landmark. Designed by Danish architect Jørn Utzon, the building features distinctive sail-shaped shells that have made it one of the world's most photographed buildings.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Take a guided tour to learn about the building's history and design</li>
+                            <li>Consider attending a performance if time permits</li>
+                            <li>Walk around the entire exterior for different perspectives</li>
+                            <li>Visit at different times of day for changing lighting conditions</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Day 4 (April 21)</p>
+                    </div>
+                </div>
+                
+                <!-- Aussie Rules Football -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/aussie-rules-football.jpg" alt="Aussie Rules Football" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Aussie Rules Football Game</h3>
+                        <p class="mb-4">Experience Australia's unique sport at the Sydney Cricket Ground. The game combines elements of soccer, rugby, and basketball into a fast-paced, high-scoring spectacle that is quintessentially Australian.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Sydney Swans vs. Port Adelaide at Sydney Cricket Ground</li>
+                            <li>Sunday, April 20, 2025 (Easter Sunday)</li>
+                            <li>Gates open: 1:30pm, first bounce: 3:20pm</li>
+                            <li>Visit Sydney Swans HQ before the game for player appearances and museum</li>
+                            <li>Special Easter activities and entertainment at the ground</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Day 3 (April 20)</p>
+                    </div>
+                </div>
+                
+                <!-- Anzac Day -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/anzac-day.jpg" alt="Anzac Day commemoration" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Anzac Day Commemorations</h3>
+                        <p class="mb-4">Anzac Day is one of Australia's most important national occasions, honoring members of the Australian and New Zealand Army Corps (ANZAC) who served in all wars, conflicts, and peacekeeping operations.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Dawn Service at 5:30am - a solemn, moving ceremony</li>
+                            <li>Anzac Day March in Sydney CBD (begins 9am) - veterans and current service members march</li>
+                            <li>Visit the Anzac Memorial in Hyde Park</li>
+                            <li>Commemorative services throughout the day</li>
+                            <li>Experience "two-up" - a traditional gambling game only legal on Anzac Day</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Day 9 (April 26)</p>
+                    </div>
+                </div>
+                
+                <!-- The Rocks -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/the-rocks.jpg" alt="The Rocks district" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">The Rocks Historic District</h3>
+                        <p class="mb-4">The Rocks is Sydney's oldest neighborhood, where European settlement began in 1788. Today, its cobblestone streets are home to historic buildings, museums, galleries, shops, and restaurants.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Wander the narrow laneways and historic buildings</li>
+                            <li>Visit the Museum of Contemporary Art Australia</li>
+                            <li>Shop at The Rocks Markets (weekends)</li>
+                            <li>Take a guided history tour to learn about the area's convict past</li>
+                            <li>Enjoy panoramic views of the Opera House from multiple vantage points</li>
+                        </ul>
+                        <p><strong>Suggested on your itinerary:</strong> Day 13 (April 30)</p>
+                    </div>
+                </div>
+                
+                <!-- Art Galleries -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/art-gallery.jpg" alt="Art Gallery interior" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Art Galleries & Museums</h3>
+                        <p class="mb-4">Sydney boasts world-class art galleries and museums that showcase both international and Australian art, with particularly strong collections of Aboriginal and Torres Strait Islander works.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Art Gallery of NSW - free entry to permanent collections</li>
+                            <li>Museum of Contemporary Art Australia at The Rocks</li>
+                            <li>Australian Museum - natural history and cultural collections</li>
+                            <li>White Rabbit Gallery - contemporary Chinese art</li>
+                            <li>Carriageworks - contemporary multi-arts center</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Day 13 (April 30)</p>
+                    </div>
+                </div>
+                
+                <!-- Kiama and Great Pacific Drive -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./images/sea-cliff-bridge.jpg" alt="Sea Cliff Bridge" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Great Pacific Drive & Kiama</h3>
+                        <p class="mb-4">The Great Pacific Drive is one of Australia's most scenic coastal routes, starting in Royal National Park and winding along the coast to Kiama and beyond.</p>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Drive across the iconic Sea Cliff Bridge that curves out over the ocean</li>
+                            <li>Visit the famous Kiama Blowhole - a natural sea cave that shoots water up to 25 meters</li>
+                            <li>Walk the Kiama Coastal Track for stunning ocean views</li>
+                            <li>Explore Cathedral Rocks and Bombo Quarry for unique geological formations</li>
+                            <li>Enjoy the laid-back coastal atmosphere of Kiama town</li>
+                        </ul>
+                        <p><strong>Scheduled on your itinerary:</strong> Days 6-7 (April 23-24)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Travel Tips -->
+        <section id="tips" class="mb-12">
+            <span class="anchor"></span>
+            <h2 class="text-3xl font-bold mb-8 australia-blue">Essential Travel Tips</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Transportation -->
+                <div class="tip-card bg-white rounded-lg shadow-md p-6 pl-8">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-car-alt text-blue-500 mr-2"></i> Transportation</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">Opal Card:</span> Purchase an Opal card for public transport (trains, buses, ferries). Available at airport shops with a minimum $20 load.</li>
+                        <li><span class="font-medium">Driving:</span> Remember to drive on the left side of the road. Your UK license is valid for driving in Australia.</li>
+                        <li><span class="font-medium">Parking:</span> Sydney parking can be expensive. Look for "P" signs and check time restrictions carefully.</li>
+                        <li><span class="font-medium">Speed Limits:</span> Typically 50 km/h in urban areas, 100-110 km/h on highways. Speed cameras are common.</li>
+                        <li><span class="font-medium">Ferries:</span> Sydney's ferry network offers practical transportation and great views at the same time.</li>
+                    </ul>
+                </div>
+                
+                <!-- Weather & Clothing -->
+                <div class="tip-card bg-white rounded-lg shadow-md p-6 pl-8">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-cloud-sun text-yellow-500 mr-2"></i> Weather & Clothing</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">Autumn Weather:</span> April-May is autumn in Australia. Expect mild temperatures (15-22°C / 59-72°F) with cooler evenings.</li>
+                        <li><span class="font-medium">Layers:</span> Pack layers as temperatures can vary throughout the day.</li>
+                        <li><span class="font-medium">Sun Protection:</span> The Australian sun is extremely strong. Bring sunscreen (SPF 50+), a hat, and sunglasses.</li>
+                        <li><span class="font-medium">Rain Gear:</span> A light rain jacket is recommended as autumn can bring occasional showers.</li>
+                        <li><span class="font-medium">Walking Shoes:</span> Comfortable walking shoes are essential for city exploration and nature walks.</li>
+                    </ul>
+                </div>
+                
+                <!-- Health & Safety -->
+                <div class="tip-card bg-white rounded-lg shadow-md p-6 pl-8">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-first-aid text-red-500 mr-2"></i> Health & Safety</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">Travel Insurance:</span> Ensure you have comprehensive travel insurance that covers medical expenses.</li>
+                        <li><span class="font-medium">Emergency Number:</span> The emergency number in Australia is 000.</li>
+                        <li><span class="font-medium">Water:</span> Tap water is safe to drink throughout Australia.</li>
+                        <li><span class="font-medium">Sun Safety:</span> Apply sunscreen regularly and stay hydrated to prevent sunburn and heat exhaustion.</li>
+                        <li><span class="font-medium">Beach Safety:</span> Always swim between the red and yellow flags at patrolled beaches.</li>
+                    </ul>
+                </div>
+                
+                <!-- Money Matters -->
+                <div class="tip-card bg-white rounded-lg shadow-md p-6 pl-8">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-dollar-sign text-green-500 mr-2"></i> Money Matters</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">Currency:</span> Australian Dollar (AUD). Notify your bank about your travel plans to avoid card blocks.</li>
+                        <li><span class="font-medium">ATMs:</span> Widely available in cities and towns. Some may charge withdrawal fees.</li>
+                        <li><span class="font-medium">Credit Cards:</span> Widely accepted, but carry some cash for small purchases.</li>
+                        <li><span class="font-medium">Tipping:</span> Not required in Australia, but appreciated for exceptional service (10% is generous).</li>
+                        <li><span class="font-medium">Tax Refunds:</span> International visitors can claim a refund on the 10% Goods and Services Tax (GST) for purchases over AUD$300 from a single business.</li>
+                    </ul>
+                </div>
+                
+                <!-- Communication -->
+                <div class="tip-card bg-white rounded-lg shadow-md p-6 pl-8">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-mobile-alt text-purple-500 mr-2"></i> Communication</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">SIM Cards:</span> Purchase a local SIM card at the airport or in phone shops for affordable data and calls.</li>
+                        <li><span class="font-medium">WiFi:</span> Available in most accommodations, cafés, and public spaces, though speeds may vary.</li>
+                        <li><span class="font-medium">Time Zone:</span> Sydney is in Australian Eastern Standard Time (AEST), which is UTC+10. During your visit, the UK will be 9-10 hours behind Sydney.</li>
+                        <li><span class="font-medium">Power Adapters:</span> Australia uses Type I electrical outlets (230V, 50Hz). Bring an appropriate adapter.</li>
+                    </ul>
+                </div>
+                
+                <!-- Cultural Etiquette -->
+                <div class="tip-card bg-white rounded-lg shadow-md p-6 pl-8">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-handshake text-blue-500 mr-2"></i> Cultural Etiquette</h3>
+                    <ul class="space-y-3">
+                        <li><span class="font-medium">Casual Atmosphere:</span> Australians are generally casual and informal in their interactions.</li>
+                        <li><span class="font-medium">Greetings:</span> A simple handshake is the common greeting. First names are used quickly.</li>
+                        <li><span class="font-medium">Indigenous Culture:</span> Show respect when visiting Aboriginal sites or viewing Indigenous artwork.</li>
+                        <li><span class="font-medium">Wildlife:</span> Never feed or touch wild animals, even if they appear tame.</li>
+                        <li><span class="font-medium">Smoking:</span> Smoking is banned in all enclosed public places, public transport, and many outdoor areas.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+                <h3 class="text-xl font-bold mb-4">Essential Items to Pack</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-passport text-blue-500 mr-2"></i>
+                        <span>Passport & Visa Documents</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-sun text-yellow-500 mr-2"></i>
+                        <span>Sunscreen (SPF 50+)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-hat-cowboy text-amber-700 mr-2"></i>
+                        <span>Sun Hat</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-glasses text-gray-700 mr-2"></i>
+                        <span>Sunglasses</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tshirt text-green-500 mr-2"></i>
+                        <span>Lightweight Clothing</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-socks text-blue-400 mr-2"></i>
+                        <span>Comfortable Walking Shoes</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-camera text-gray-700 mr-2"></i>
+                        <span>Camera</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-plug text-gray-700 mr-2"></i>
+                        <span>Power Adapter (Type I)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-prescription-bottle text-orange-500 mr-2"></i>
+                        <span>Personal Medications</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-water text-blue-500 mr-2"></i>
+                        <span>Reusable Water Bottle</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-credit-card text-purple-500 mr-2"></i>
+                        <span>Credit Cards & Cash</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-backpack text-brown-500 mr-2"></i>
+                        <span>Day Backpack</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Sydney, Australia Travel Handbook</h3>
+                    <p class="mb-4">April 18 - May 1, 2025</p>
+                    <p>Created especially for your visit from the UK to explore Sydney and surrounding areas.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Important Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.australia.com/en-us" class="hover:text-blue-300" target="_blank">Tourism Australia</a></li>
+                        <li><a href="https://www.visitnsw.com/" class="hover:text-blue-300" target="_blank">Visit NSW</a></li>
+                        <li><a href="https://transportnsw.info/" class="hover:text-blue-300" target="_blank">Transport for NSW</a></li>
+                        <li><a href="https://www.sydney.com/" class="hover:text-blue-300" target="_blank">Sydney.com</a></li>
+                        <li><a href="https://www.sydneyoperahouse.com/" class="hover:text-blue-300" target="_blank">Sydney Opera House</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm">
+                <p>&copy; 2025 Sydney Australia Travel Handbook. All information is provided for reference purposes only.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

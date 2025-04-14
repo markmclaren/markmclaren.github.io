@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NSW Attractions Map with Extended Grand Pacific Drive</title>
+    <script src="https://unpkg.com/maplibre-gl@^5.2.0/dist/maplibre-gl.js"></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@^5.2.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 600px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+        color: #333;
+      }
+
+      .legend {
+        background-color: white;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .legend-marker {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+
+      .legend-line {
+        width: 20px;
+        height: 3px;
+        margin-right: 8px;
+      }
+
+      .locations-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+        background-color: #f9f9f9;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .location-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .location-marker {
+        width: 12px;
+        height: 12px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        margin-top: 5px;
+        flex-shrink: 0;
+      }
+
+      .location-details h3 {
+        margin: 0 0 4px 0;
+        font-size: 1rem;
+      }
+
+      .location-details p {
+        margin: 0;
+        font-size: 0.875rem;
+        color: #555;
+      }
+
+      .loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        background-color: #f3f4f6;
+        border-radius: 8px;
+      }
+
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #3b82f6;
+        animation: spin 1s linear infinite;
+        margin-bottom: 16px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .maplibregl-popup {
+        max-width: 250px;
+      }
+
+      .maplibregl-popup-content {
+        padding: 12px;
+      }
+
+      .maplibregl-popup-content h3 {
+        margin: 0 0 5px 0;
+        font-size: 1rem;
+      }
+
+      .maplibregl-popup-content p {
+        margin: 0;
+        font-size: 0.875rem;
+      }
+
+      .official-marker {
+        background-color: #059669;
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .toggle-container {
+        margin-bottom: 20px;
+      }
+
+      .toggle-button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 8px;
+        font-size: 14px;
+      }
+
+      .toggle-button:hover {
+        background-color: #2563eb;
+      }
+
+      .toggle-button.active {
+        background-color: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Extended Grand Pacific Drive - NSW South Coast Attractions</h1>
+
+      <div class="toggle-container">
+        <button id="toggle-all" class="toggle-button active">Show All</button>
+        <button id="toggle-official" class="toggle-button">
+          Official GPD Only
+        </button>
+        <button id="toggle-extended" class="toggle-button">
+          Extended Route Only
+        </button>
+      </div>
+
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading map...</p>
+      </div>
+
+      <div id="map" class="map-container" style="display: none"></div>
+
+      <div id="legend" class="legend" style="display: none">
+        <h3 style="margin-top: 0; margin-bottom: 8px">Legend</h3>
+        <div class="legend-item">
+          <div class="legend-marker" style="background-color: #3b82f6"></div>
+          <span>Attraction</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-marker" style="background-color: #059669"></div>
+          <span>Official Grand Pacific Drive Stop</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-marker" style="background-color: #8b5cf6"></div>
+          <span>Extended Route Destination</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-line" style="background-color: #e11d48"></div>
+          <span>Official Grand Pacific Drive</span>
+        </div>
+        <div class="legend-item">
+          <div
+            class="legend-line"
+            style="
+              background-color: #8b5cf6;
+              border-top: 2px dashed #8b5cf6;
+              height: 0;
+            "
+          ></div>
+          <span>Extended Coastal Route</span>
+        </div>
+        <div class="legend-item">
+          <div
+            class="legend-line"
+            style="
+              background-color: #f59e0b;
+              border-top: 2px dashed #f59e0b;
+              height: 0;
+            "
+          ></div>
+          <span>Southern Highlands Route</span>
+        </div>
+      </div>
+
+      <div class="locations-list" id="locations-list"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Updated locations data with all requested places
+        const locations = [
+          // Original locations from the official Grand Pacific Drive
+          {
+            name: "Royal National Park",
+            lat: -34.055,
+            lng: 151.03,
+            description:
+              "Australia's oldest national park with coastal walks and beaches",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Curra Moor loop walk",
+            lat: -34.1675,
+            lng: 151.0322,
+            description:
+              "Scenic coastal bushwalking track in Royal National Park",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Figure Eight Pools",
+            lat: -34.2226,
+            lng: 151.0538,
+            description:
+              "Natural rock pools in Royal National Park (dangerous at high tide)",
+            category: "official",
+          },
+          {
+            name: "Bald Hill Lookout",
+            lat: -34.2225,
+            lng: 150.9735,
+            description: "Panoramic coastal views and hang gliding spot",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Stanwell Park",
+            lat: -34.2301,
+            lng: 150.9939,
+            description: "Coastal village with beach and paragliding",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Sea Cliff Bridge",
+            lat: -34.2639,
+            lng: 150.9708,
+            description: "Iconic curved elevated coastal road",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Thirroul",
+            lat: -34.3166,
+            lng: 150.9166,
+            description: "Coastal suburb with beaches and cafes",
+            category: "official",
+          },
+          {
+            name: "Wollongong",
+            lat: -34.4278,
+            lng: 150.8933,
+            description: "Major coastal city with beaches and lighthouse",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Port Kembla",
+            lat: -34.4783,
+            lng: 150.8983,
+            description: "Industrial port with beaches",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Shellharbour",
+            lat: -34.5808,
+            lng: 150.8678,
+            description: "Coastal town with beaches and Bass Point Reserve",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Bushrangers Bay Aquatic Reserve",
+            lat: -34.5919,
+            lng: 150.865,
+            description: "Marine protected area with diverse sea life",
+            category: "official",
+          },
+          {
+            name: "Minnamurra Whale Watching Platform",
+            lat: -34.6272,
+            lng: 150.86,
+            description: "Vantage point for whale watching (May-Nov)",
+            category: "official",
+          },
+          {
+            name: "Bombo Headland Geological Site",
+            lat: -34.6541,
+            lng: 150.8602,
+            description:
+              "Distinctive hexagonal basalt columns from ancient lava flow",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Kiama Blowhole",
+            lat: -34.6717,
+            lng: 150.8633,
+            description: "Famous natural sea cave and water spout",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Saddleback Mountain Lookout",
+            lat: -34.695,
+            lng: 150.8067,
+            description: "Panoramic views of the coastline",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Gerringong",
+            lat: -34.7435,
+            lng: 150.8313,
+            description: "Coastal town with whale watching platform",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Seven Mile Beach",
+            lat: -34.7833,
+            lng: 150.8083,
+            description: "Long stretch of beach and national park",
+            isOfficial: true,
+            category: "official",
+          },
+          {
+            name: "Shoalhaven Heads",
+            lat: -34.8511,
+            lng: 150.7528,
+            description: "End of the official Grand Pacific Drive",
+            isOfficial: true,
+            category: "official",
+          },
+
+          // New additions for Southern Highlands and extended coastal route
+          {
+            name: "Bowral",
+            lat: -34.4792,
+            lng: 150.4167,
+            description: "Main town in the Southern Highlands region",
+            isExtended: true,
+            category: "highlands",
+          },
+          {
+            name: "Southern Highlands",
+            lat: -34.5472,
+            lng: 150.4167,
+            description:
+              "Region known for wineries, gardens and historic towns",
+            isExtended: true,
+            category: "highlands",
+          },
+          {
+            name: "Nowra",
+            lat: -34.8733,
+            lng: 150.6,
+            description: "Main town in the Shoalhaven region",
+            isExtended: true,
+            category: "extended",
+          },
+          {
+            name: "Jervis Bay",
+            lat: -35.0533,
+            lng: 150.6919,
+            description: "Bay known for white sand beaches and clear waters",
+            isExtended: true,
+            category: "extended",
+          },
+          {
+            name: "Batemans Bay",
+            lat: -35.7081,
+            lng: 150.1744,
+            description:
+              "Popular holiday destination at the mouth of the Clyde River",
+            isExtended: true,
+            category: "extended",
+          },
+          {
+            name: "Eurobodalla",
+            lat: -36.0,
+            lng: 150.1333,
+            description:
+              "Coastal region with pristine beaches and national parks",
+            isExtended: true,
+            category: "extended",
+          },
+          {
+            name: "Narooma",
+            lat: -36.2167,
+            lng: 150.1333,
+            description: "Coastal town known for the famous Australia Rock",
+            isExtended: true,
+            category: "extended",
+          },
+          {
+            name: "Bermagui",
+            lat: -36.4333,
+            lng: 150.0667,
+            description: "Fishing town with Blue Pool ocean rock pool",
+            isExtended: true,
+            category: "extended",
+          },
+          {
+            name: "Sapphire Coast",
+            lat: -36.9,
+            lng: 149.9,
+            description:
+              "Southernmost coastal region of NSW with beautiful beaches",
+            isExtended: true,
+            category: "extended",
+          },
+
+          // Additional attractions from the original map
+          {
+            name: "Kangaroo Valley Lookout",
+            lat: -34.7365,
+            lng: 150.5365,
+            description: "Scenic views over Kangaroo Valley",
+            category: "highlands",
+          },
+          {
+            name: "Fitzroy Falls",
+            lat: -34.6499,
+            lng: 150.4828,
+            description: "80m waterfall in Morton National Park",
+            category: "highlands",
+          },
+          {
+            name: "Blue Mountains",
+            lat: -33.7,
+            lng: 150.3,
+            description:
+              "Mountain range with forests, waterfalls and hiking trails",
+            category: "highlands",
+          },
+          {
+            name: "Featherdale Wildlife Park",
+            lat: -33.7659137,
+            lng: 150.8841611,
+            description:
+              "Wildlife park with kangaroos, koalas and other native animals",
+          },
+        ];
+
+        // Grand Pacific Drive official route coordinates
+        const officialGrandPacificDriveCoordinates = [
+          [151.03, -34.055], // Royal National Park entrance
+          [151.0322, -34.1675], // Curra Moor/Royal National Park
+          [151.0149, -34.224], // Near Otford Lookout
+          [150.9735, -34.2225], // Bald Hill Lookout
+          [150.9939, -34.2301], // Stanwell Park
+          [150.9708, -34.2639], // Sea Cliff Bridge
+          [150.95, -34.29], // Clifton
+          [150.93, -34.3], // Scarborough
+          [150.9166, -34.3166], // Thirroul
+          [150.9, -34.35], // Bulli
+          [150.8933, -34.4278], // Wollongong
+          [150.8983, -34.4783], // Port Kembla
+          [150.8678, -34.5808], // Shellharbour
+          [150.865, -34.5919], // Near Bushrangers Bay
+          [150.86, -34.6272], // Minnamurra
+          [150.8602, -34.6541], // Bombo Headland
+          [150.8633, -34.6717], // Kiama
+          [150.8067, -34.695], // Saddleback Mountain
+          [150.8313, -34.7435], // Gerringong
+          [150.8083, -34.7833], // Seven Mile Beach
+          [150.7528, -34.8511], // Shoalhaven Heads - End of official route
+        ];
+
+        // Extended coastal route coordinates
+        const extendedCoastalRouteCoordinates = [
+          [150.7528, -34.8511], // Shoalhaven Heads (continuation point)
+          [150.6, -34.8733], // Nowra
+          [150.6919, -35.0533], // Jervis Bay
+          [150.4, -35.3], // Continuing south
+          [150.1744, -35.7081], // Batemans Bay
+          [150.1333, -36.0], // Eurobodalla
+          [150.1333, -36.2167], // Narooma
+          [150.0667, -36.4333], // Bermagui
+          [149.9, -36.9], // Sapphire Coast (approximate center)
+        ];
+
+        // Southern Highlands route coordinates
+        const southernHighlandsRouteCoordinates = [
+          [150.8067, -34.695], // Saddleback Mountain (branch point)
+          [150.6, -34.6], // Heading inland
+          [150.5365, -34.7365], // Kangaroo Valley
+          [150.4828, -34.6499], // Fitzroy Falls
+          [150.4167, -34.5472], // Southern Highlands region
+          [150.4167, -34.4792], // Bowral
+          [150.3, -33.7], // Blue Mountains (not geographically accurate, just for visualization)
+
+        ];
+
+        // Populate locations list
+        const locationsListEl = document.getElementById("locations-list");
+        locations.forEach((location) => {
+          const locationEl = document.createElement("div");
+          locationEl.className = "location-item";
+
+          let markerColor = "#3b82f6"; // Default blue
+          let locationLabel = location.name;
+
+          if (location.isOfficial) {
+            markerColor = "#059669"; // Green for official stops
+            locationLabel = `${location.name} (Official GPD Stop)`;
+          } else if (location.isExtended) {
+            markerColor = "#8b5cf6"; // Purple for extended route destinations
+            locationLabel = `${location.name} (Extended Route)`;
+          }
+
+          locationEl.innerHTML = `
+          <div class="location-marker" style="background-color: ${markerColor};"></div>
+          <div class="location-details">
+            <h3>${locationLabel}</h3>
+            <p>${location.description}</p>
+          </div>
+        `;
+          locationsListEl.appendChild(locationEl);
+        });
+
+        // Initialize map
+        try {
+          const map = new maplibregl.Map({
+            container: "map",
+            style:
+              "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+            center: [150.5, -35.2], // Adjusted center for broader view
+            zoom: 7,
+          });
+
+          // Add toggle functionality
+          document
+            .getElementById("toggle-all")
+            .addEventListener("click", function () {
+              toggleMapLayers("all");
+              updateToggleButtons("toggle-all");
+            });
+
+          document
+            .getElementById("toggle-official")
+            .addEventListener("click", function () {
+              toggleMapLayers("official");
+              updateToggleButtons("toggle-official");
+            });
+
+          document
+            .getElementById("toggle-extended")
+            .addEventListener("click", function () {
+              toggleMapLayers("extended");
+              updateToggleButtons("toggle-extended");
+            });
+
+          function updateToggleButtons(activeId) {
+            document.querySelectorAll(".toggle-button").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+            document.getElementById(activeId).classList.add("active");
+          }
+
+          function toggleMapLayers(mode) {
+            const layers = {
+              official: [
+                "official-grand-pacific-drive",
+                "official-grand-pacific-drive-label",
+                "official-markers",
+              ],
+              extended: [
+                "extended-coastal-route",
+                "extended-coastal-route-label",
+                "southern-highlands-route",
+                "southern-highlands-route-label",
+                "extended-markers",
+              ],
+              all: [
+                "official-grand-pacific-drive",
+                "official-grand-pacific-drive-label",
+                "extended-coastal-route",
+                "extended-coastal-route-label",
+                "southern-highlands-route",
+                "southern-highlands-route-label",
+                "official-markers",
+                "extended-markers",
+              ],
+            };
+
+            const allLayers = [...layers.official, ...layers.extended];
+
+            // First hide all layers
+            allLayers.forEach((layer) => {
+              if (map.getLayer(layer)) {
+                map.setLayoutProperty(layer, "visibility", "none");
+              }
+            });
+
+            // Then show the selected layers
+            const layersToShow = layers[mode] || layers.all;
+            layersToShow.forEach((layer) => {
+              if (map.getLayer(layer)) {
+                map.setLayoutProperty(layer, "visibility", "visible");
+              }
+            });
+          }
+
+          map.on("load", function () {
+            // Hide loading, show map and legend
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("map").style.display = "block";
+            document.getElementById("legend").style.display = "block";
+
+            // Add Official Grand Pacific Drive as a line
+            map.addSource("official-grand-pacific-drive", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                  type: "LineString",
+                  coordinates: officialGrandPacificDriveCoordinates,
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "official-grand-pacific-drive",
+              type: "line",
+              source: "official-grand-pacific-drive",
+              layout: {
+                "line-join": "round",
+                "line-cap": "round",
+                visibility: "visible",
+              },
+              paint: {
+                "line-color": "#e11d48",
+                "line-width": 4,
+                "line-opacity": 0.8,
+              },
+            });
+
+            // Add Extended Coastal Route as a dashed purple line
+            map.addSource("extended-coastal-route", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                  type: "LineString",
+                  coordinates: extendedCoastalRouteCoordinates,
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "extended-coastal-route",
+              type: "line",
+              source: "extended-coastal-route",
+              layout: {
+                "line-join": "round",
+                "line-cap": "round",
+                visibility: "visible",
+              },
+              paint: {
+                "line-color": "#8b5cf6",
+                "line-width": 3,
+                "line-opacity": 0.8,
+                "line-dasharray": [2, 2],
+              },
+            });
+
+            // Add Southern Highlands Route as a dashed orange line
+            map.addSource("southern-highlands-route", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                  type: "LineString",
+                  coordinates: southernHighlandsRouteCoordinates,
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "southern-highlands-route",
+              type: "line",
+              source: "southern-highlands-route",
+              layout: {
+                "line-join": "round",
+                "line-cap": "round",
+                visibility: "visible",
+              },
+              paint: {
+                "line-color": "#f59e0b",
+                "line-width": 3,
+                "line-opacity": 0.8,
+                "line-dasharray": [2, 2],
+              },
+            });
+
+            // Add Grand Pacific Drive label
+            map.addSource("grand-pacific-drive-label", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {
+                  description: "Official Grand Pacific Drive",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [150.9708, -34.2839], // Position near Sea Cliff Bridge
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "official-grand-pacific-drive-label",
+              type: "symbol",
+              source: "grand-pacific-drive-label",
+              layout: {
+                "text-field": ["get", "description"],
+                "text-size": 14,
+                "text-offset": [0, 1.5],
+                "text-anchor": "top",
+                visibility: "visible",
+              },
+              paint: {
+                "text-color": "#e11d48",
+                "text-halo-color": "white",
+                "text-halo-width": 2,
+              },
+            });
+
+            // Add Extended Coastal Route label
+            map.addSource("extended-coastal-route-label", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {
+                  description: "Extended Coastal Route",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [150.1333, -36.0], // Position near Eurobodalla
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "extended-coastal-route-label",
+              type: "symbol",
+              source: "extended-coastal-route-label",
+              layout: {
+                "text-field": ["get", "description"],
+                "text-size": 14,
+                "text-offset": [0, 1.5],
+                "text-anchor": "top",
+                visibility: "visible",
+              },
+              paint: {
+                "text-color": "#8b5cf6",
+                "text-halo-color": "white",
+                "text-halo-width": 2,
+              },
+            });
+
+            // Add Southern Highlands Route label
+            map.addSource("southern-highlands-route-label", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {
+                  description: "Southern Highlands Route",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [150.4167, -34.5472], // Position near Southern Highlands
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "southern-highlands-route-label",
+              type: "symbol",
+              source: "southern-highlands-route-label",
+              layout: {
+                "text-field": ["get", "description"],
+                "text-size": 14,
+                "text-offset": [0, 1.5],
+                "text-anchor": "top",
+                visibility: "visible",
+              },
+              paint: {
+                "text-color": "#f59e0b",
+                "text-halo-color": "white",
+                "text-halo-width": 2,
+              },
+            });
+
+            // Add official end marker
+            map.addSource("official-end", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                properties: {
+                  description: "Official End of Grand Pacific Drive",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [150.7528, -34.8511], // Shoalhaven Heads
+                },
+              },
+            });
+
+            map.addLayer({
+              id: "official-end-marker",
+              type: "circle",
+              source: "official-end",
+              layout: {
+                visibility: "visible",
+              },
+              paint: {
+                "circle-radius": 8,
+                "circle-color": "#e11d48",
+                "circle-opacity": 0.8,
+                "circle-stroke-width": 2,
+                "circle-stroke-color": "white",
+              },
+            });
+
+            map.addLayer({
+              id: "official-end-label",
+              type: "symbol",
+              source: "official-end",
+              layout: {
+                "text-field": ["get", "description"],
+                "text-size": 12,
+                "text-offset": [0, 1.5],
+                "text-anchor": "top",
+                visibility: "visible",
+              },
+              paint: {
+                "text-color": "#e11d48",
+                "text-halo-color": "white",
+                "text-halo-width": 2,
+              },
+            });
+
+            // Create an object to group markers by category for filtering
+            const markersByCategory = {
+              official: [],
+              extended: [],
+              highlands: [],
+            };
+
+            // Add markers for each location
+            locations.forEach((location) => {
+              // Create custom marker element
+              const markerEl = document.createElement("div");
+
+              if (location.isOfficial) {
+                markerEl.className = "official-marker";
+                markerEl.style.backgroundColor = "#059669";
+              } else if (location.isExtended) {
+                markerEl.style.width = "14px";
+                markerEl.style.height = "14px";
+                markerEl.style.backgroundColor = "#8b5cf6";
+                markerEl.style.borderRadius = "50%";
+                markerEl.style.border = "2px solid white";
+                markerEl.style.boxShadow = "0 0 4px rgba(0,0,0,0.3)";
+              } else {
+                markerEl.style.width = "14px";
+                markerEl.style.height = "14px";
+                markerEl.style.backgroundColor = "#3b82f6";
+                markerEl.style.borderRadius = "50%";
+                markerEl.style.border = "2px solid white";
+                markerEl.style.boxShadow = "0 0 4px rgba(0,0,0,0.3)";
+              }
+
+              // Create popup content
+              let popupContent = `<h3>${location.name}</h3>
+                               <p>${location.description}</p>`;
+
+              if (location.isOfficial) {
+                popupContent += `<p><strong>Official Grand Pacific Drive Stop</strong></p>`;
+              } else if (location.isExtended) {
+                popupContent += `<p><strong>Extended Route Destination</strong></p>`;
+              }
+
+              // Create and add the marker
+              const marker = new maplibregl.Marker(markerEl)
+                .setLngLat([location.lng, location.lat])
+                .setPopup(new maplibregl.Popup().setHTML(popupContent))
+                .addTo(map);
+
+              // Store the marker reference for filtering
+              if (location.isOfficial || location.category === "official") {
+                markersByCategory.official.push(marker);
+              } else if (
+                location.isExtended ||
+                location.category === "extended"
+              ) {
+                markersByCategory.extended.push(marker);
+              } else if (location.category === "highlands") {
+                markersByCategory.highlands.push(marker);
+              }
+            });
+
+            // This code should be added to the first file to complete the JavaScript section
+            // Function to filter the markers based on the selected mode
+            function toggleMapLayers(mode) {
+              // First hide all markers
+              Object.values(markersByCategory)
+                .flat()
+                .forEach((marker) => {
+                  marker.getElement().style.display = "none";
+                });
+
+              // Then show only the selected markers
+              if (mode === "all" || mode === "official") {
+                markersByCategory.official.forEach((marker) => {
+                  marker.getElement().style.display = "block";
+                });
+              }
+
+              if (mode === "all" || mode === "extended") {
+                markersByCategory.extended.forEach((marker) => {
+                  marker.getElement().style.display = "block";
+                });
+                markersByCategory.highlands.forEach((marker) => {
+                  marker.getElement().style.display = "block";
+                });
+              }
+            }
+
+            // Add popup on route lines click
+            map.on("click", "official-grand-pacific-drive", function (e) {
+              new maplibregl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(
+                  "<h3>Grand Pacific Drive</h3><p>140km scenic coastal drive from Royal National Park to Shoalhaven Heads</p>"
+                )
+                .addTo(map);
+            });
+
+            map.on("click", "extended-coastal-route", function (e) {
+              new maplibregl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(
+                  "<h3>Extended Coastal Route</h3><p>Continuation of the journey south along the NSW coast to the Sapphire Coast</p>"
+                )
+                .addTo(map);
+            });
+
+            map.on("click", "southern-highlands-route", function (e) {
+              new maplibregl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(
+                  "<h3>Southern Highlands Route</h3><p>Inland detour through the picturesque Southern Highlands region</p>"
+                )
+                .addTo(map);
+            });
+
+            // Change cursor when hovering over the route lines
+            const routeLayers = [
+              "official-grand-pacific-drive",
+              "extended-coastal-route",
+              "southern-highlands-route",
+            ];
+
+            routeLayers.forEach((layer) => {
+              map.on("mouseenter", layer, function () {
+                map.getCanvas().style.cursor = "pointer";
+              });
+
+              map.on("mouseleave", layer, function () {
+                map.getCanvas().style.cursor = "";
+              });
+            });
+          });
+
+          map.on("error", function () {
+            document.getElementById("loading").innerHTML =
+              "<p>Error loading map. Please try again later.</p>";
+          });
+        } catch (error) {
+          document.getElementById("loading").innerHTML =
+            "<p>Error initializing map. Please try again later.</p>";
+          console.error("Error initializing MapLibre:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
