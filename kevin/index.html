@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Enhanced Incident Map with Advanced Features</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+        }
+        
+        #map { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            width: 100%; 
+        }
+        
+        .maplibregl-popup {
+            max-width: 350px;
+            font: 14px/1.5 'Segoe UI', Arial, sans-serif;
+        }
+        
+        .maplibregl-popup-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        .popup-header {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .popup-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 6px 0;
+            padding: 4px 0;
+        }
+        
+        .popup-label {
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .popup-value {
+            font-weight: 500;
+        }
+        
+        .severity-fatal { color: #ff4757; font-weight: bold; }
+        .severity-serious { color: #ffa502; font-weight: bold; }
+        .severity-slight { color: #2ed573; font-weight: bold; }
+        
+        .control-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            z-index: 1000;
+            min-width: 280px;
+        }
+        
+        .control-section {
+            margin-bottom: 20px;
+        }
+        
+        .control-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .control-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .filter-btn {
+            padding: 6px 12px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        
+        .stat-number {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .legend {
+            margin-top: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+            font-size: 12px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid rgba(255,255,255,0.8);
+        }
+        
+        .toggle-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .toggle-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .control-panel {
+                top: auto;
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                max-height: 50vh;
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="toggle-panel">
+        <button class="toggle-btn" onclick="toggleControlPanel()">
+            📊 Controls
+        </button>
+    </div>
+    
+    <div class="control-panel" id="controlPanel">
+        <div class="control-section">
+            <div class="control-label">Filter by Severity</div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-severity="all">All</button>
+                <button class="filter-btn" data-severity="Fatal">Fatal</button>
+                <button class="filter-btn" data-severity="Serious">Serious</button>
+                <button class="filter-btn" data-severity="Slight">Slight</button>
+            </div>
+        </div>
+        
+        <div class="control-section">
+            <div class="control-label">Filter by Year Range</div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-year="all">All Years</button>
+                <button class="filter-btn" data-year="2000-2005">2000-2005</button>
+                <button class="filter-btn" data-year="2006-2010">2006-2010</button>
+                <button class="filter-btn" data-year="2011-2015">2011-2015</button>
+                <button class="filter-btn" data-year="2016-2020">2016-2020</button>
+            </div>
+        </div>
+        
+        <div class="control-section">
+            <div class="control-label">Statistics</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalIncidents">0</span>
+                    <span>Total Incidents</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalCasualties">0</span>
+                    <span>Total Casualties</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="control-section legend">
+            <div class="control-label">Legend</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff4757;"></div>
+                <span>Fatal Incidents</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffa502;"></div>
+                <span>Serious Incidents</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2ed573;"></div>
+                <span>Slight Incidents</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #667eea;"></div>
+                <span>Clusters</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const originalGeojson = {
+            type: 'FeatureCollection',
+            features: [
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '11/03/2000', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '14/03/2000', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '17/11/2000', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '24/11/2000', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '13/02/2001', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '29/12/2001', Severity: 'Slight', Vehicles: 1, Casualties: 2 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '26/10/2001', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '28/04/2001', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '10/07/2002', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '27/06/2002', Severity: 'Slight', Vehicles: 1, Casualties: 2 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '26/10/2002', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252695, 55.85812] },
+                    properties: { Date: '23/07/2002', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.253169, 55.858022] },
+                    properties: { Date: '15/07/2003', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '14/08/2003', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '12/12/2005', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.253009, 55.858025] },
+                    properties: { Date: '05/02/2006', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '10/12/2006', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '28/05/2006', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252685, 55.857941] },
+                    properties: { Date: '29/04/2007', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '18/12/2007', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '02/07/2010', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.253488, 55.858016] },
+                    properties: { Date: '16/01/2010', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '02/07/2012', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.25269, 55.85803] },
+                    properties: { Date: '21/04/2012', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252728, 55.85793] },
+                    properties: { Date: '10/09/2015', Severity: 'Slight', Vehicles: 1, Casualties: 1 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252759, 55.857921] },
+                    properties: { Date: '29/05/2015', Severity: 'Fatal', Vehicles: 1, Casualties: 2 }
+                },
+                {
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [-4.252607, 55.858026] },
+                    properties: { Date: '08/12/2020', Severity: 'Serious', Vehicles: 1, Casualties: 1 }
+                }
+            ]
+        };
+
+        let currentFilters = {
+            severity: 'all',
+            year: 'all'
+        };
+
+        // Enhanced jitter function with better distribution
+        function jitterGeoJSON(geojson, maxJitterDegrees = 0.00003) {
+            const jitteredFeatures = [];
+            const coordinatesMap = new Map();
+
+            geojson.features.forEach(feature => {
+                const coordsKey = JSON.stringify(feature.geometry.coordinates);
+                if (!coordinatesMap.has(coordsKey)) {
+                    coordinatesMap.set(coordsKey, []);
+                }
+                coordinatesMap.get(coordsKey).push(feature);
+            });
+
+            coordinatesMap.forEach((featuresAtCoord) => {
+                if (featuresAtCoord.length > 1) {
+                    const originalLng = featuresAtCoord[0].geometry.coordinates[0];
+                    const originalLat = featuresAtCoord[0].geometry.coordinates[1];
+                    
+                    // Create a spiral pattern for better visual distribution
+                    featuresAtCoord.forEach((feature, index) => {
+                        const radius = maxJitterDegrees * (1 + Math.floor(index / 8) * 0.5);
+                        const angle = (2 * Math.PI * index) / Math.min(featuresAtCoord.length, 8) + 
+                                     (Math.floor(index / 8) * Math.PI / 4);
+                        
+                        const jitterLng = originalLng + radius * Math.cos(angle);
+                        const jitterLat = originalLat + radius * Math.sin(angle);
+
+                        const jitteredFeature = { ...feature };
+                        jitteredFeature.geometry = { 
+                            ...feature.geometry, 
+                            coordinates: [jitterLng, jitterLat] 
+                        };
+                        jitteredFeatures.push(jitteredFeature);
+                    });
+                } else {
+                    jitteredFeatures.push(featuresAtCoord[0]);
+                }
+            });
+
+            return { ...geojson, features: jitteredFeatures };
+        }
+
+        function filterGeoJSON(geojson, filters) {
+            const filteredFeatures = geojson.features.filter(feature => {
+                const severity = feature.properties.Severity;
+                const date = feature.properties.Date;
+                const year = parseInt(date.split('/')[2]);
+
+                // Severity filter
+                if (filters.severity !== 'all' && severity !== filters.severity) {
+                    return false;
+                }
+
+                // Year filter
+                if (filters.year !== 'all') {
+                    const [startYear, endYear] = filters.year.split('-').map(y => parseInt(y));
+                    if (year < startYear || year > endYear) {
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+
+            return { ...geojson, features: filteredFeatures };
+        }
+
+        function updateStatistics(geojson) {
+            const totalIncidents = geojson.features.length;
+            const totalCasualties = geojson.features.reduce((sum, feature) => 
+                sum + parseInt(feature.properties.Casualties), 0);
+            
+            document.getElementById('totalIncidents').textContent = totalIncidents;
+            document.getElementById('totalCasualties').textContent = totalCasualties;
+        }
+
+        function getSeverityColor(severity) {
+            switch(severity) {
+                case 'Fatal': return '#ff4757';
+                case 'Serious': return '#ffa502';
+                case 'Slight': return '#2ed573';
+                default: return '#11b4da';
+            }
+        }
+
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: 'https://tiles.openfreemap.org/styles/liberty',
+            center: [-4.25269, 55.85803],
+            zoom: 15
+        });
+
+        function updateMap() {
+            const filteredData = filterGeoJSON(originalGeojson, currentFilters);
+            const jitteredData = jitterGeoJSON(filteredData);
+            
+            if (map.getSource('incidents')) {
+                map.getSource('incidents').setData(jitteredData);
+            }
+            
+            updateStatistics(filteredData);
+        }
+
+        map.on('load', () => {
+            const initialData = jitterGeoJSON(originalGeojson);
+            
+            map.addSource('incidents', {
+                type: 'geojson',
+                data: initialData,
+                cluster: true,
+                clusterMaxZoom: 16,
+                clusterRadius: 50
+            });
+
+            // Enhanced cluster styling
+            map.addLayer({
+                id: 'clusters',
+                type: 'circle',
+                source: 'incidents',
+                filter: ['has', 'point_count'],
+                paint: {
+                    'circle-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        '#667eea',
+                        10,
+                        '#f093fb',
+                        25,
+                        '#ff6b6b'
+                    ],
+                    'circle-radius': [
+                        'step',
+                        ['get', 'point_count'],
+                        20,
+                        10,
+                        25,
+                        25,
+                        35
+                    ],
+                    'circle-stroke-width': 2,
+                    'circle-stroke-color': '#ffffff',
+                    'circle-opacity': 0.8
+                }
+            });
+
+            map.addLayer({
+                id: 'cluster-count',
+                type: 'symbol',
+                source: 'incidents',
+                filter: ['has', 'point_count'],
+                layout: {
+                    'text-field': '{point_count_abbreviated}',
+                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                    'text-size': 14
+                },
+                paint: {
+                    'text-color': '#ffffff'
+                }
+            });
+
+            // Severity-based coloring for individual points
+            map.addLayer({
+                id: 'unclustered-point',
+                type: 'circle',
+                source: 'incidents',
+                filter: ['!', ['has', 'point_count']],
+                paint: {
+                    'circle-color': [
+                        'match',
+                        ['get', 'Severity'],
+                        'Fatal', '#ff4757',
+                        'Serious', '#ffa502',
+                        'Slight', '#2ed573',
+                        '#11b4da'
+                    ],
+                    'circle-radius': [
+                        'match',
+                        ['get', 'Severity'],
+                        'Fatal', 10,
+                        'Serious', 8,
+                        'Slight', 6,
+                        6
+                    ],
+                    'circle-stroke-width': 2,
+                    'circle-stroke-color': '#ffffff',
+                    'circle-opacity': 0.9
+                }
+            });
+
+            // Enhanced popup
+            map.on('click', 'unclustered-point', (e) => {
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const props = e.features[0].properties;
+                
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+
+                const severityClass = `severity-${props.Severity.toLowerCase()}`;
+                
+                new maplibregl.Popup({ closeButton: true, closeOnClick: false })
+                    .setLngLat(coordinates)
+                    .setHTML(`
+                        <div class="popup-header">🚨 Traffic Incident</div>
+                        <div class="popup-row">
+                            <span class="popup-label">📅 Date:</span>
+                            <span class="popup-value">${props.Date}</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">⚠️ Severity:</span>
+                            <span class="popup-value ${severityClass}">${props.Severity}</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">🚗 Vehicles:</span>
+                            <span class="popup-value">${props.Vehicles}</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">🏥 Casualties:</span>
+                            <span class="popup-value">${props.Casualties}</span>
+                        </div>
+                    `)
+                    .addTo(map);
+            });
+
+            // Cluster click to expand
+            map.on('click', 'clusters', (e) => {
+                const features = map.queryRenderedFeatures(e.point, {
+                    layers: ['clusters']
+                });
+                const clusterId = features[0].properties.cluster_id;
+                
+                map.getSource('incidents').getClusterExpansionZoom(
+                    clusterId,
+                    (err, zoom) => {
+                        if (err) return;
+                        map.easeTo({
+                            center: features[0].geometry.coordinates,
+                            zoom: zoom + 1
+                        });
+                    }
+                );
+            });
+
+            // Cursor changes
+            ['clusters', 'unclustered-point'].forEach(layer => {
+                map.on('mouseenter', layer, () => {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+                map.on('mouseleave', layer, () => {
+                    map.getCanvas().style.cursor = '';
+                });
+            });
+            
+            updateStatistics(originalGeojson);
+        });
+
+        // Filter event listeners
+        document.querySelectorAll('[data-severity]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('[data-severity]').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilters.severity = e.target.dataset.severity;
+                updateMap();
+            });
+        });
+
+        document.querySelectorAll('[data-year]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('[data-year]').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilters.year = e.target.dataset.year;
+                updateMap();
+            });
+        });
+
+        function toggleControlPanel() {
+            const panel = document.getElementById('controlPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close all popups
+                document.querySelectorAll('.maplibregl-popup').forEach(popup => {
+                    popup.remove();
+                });
+            }
+            if (e.ctrlKey && e.key === 'h') {
+                e.preventDefault();
+                toggleControlPanel();
+            }
+        });
+    </script>
+</body>
+</html>
