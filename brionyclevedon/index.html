@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Adventure Guide - Clevedon & Bristol | 3rd-7th August 2025</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Family Adventure Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#gromit" class="nav-link">Gromit Trail</a></li>
+                <li><a href="#activities" class="nav-link">Activities</a></li>
+                <li><a href="#suggestions" class="nav-link">More Ideas</a></li>
+                <li><a href="#practical" class="nav-link">Practical Info</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="images/clevedon_pier.jpg" alt="Clevedon Pier" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Featuring Gromit Unleashed 3!</span>
+            </div>
+            <h1 class="hero-title">Your Perfect Family Adventure Guide</h1>
+            <p class="hero-subtitle">Clevedon & Bristol • 3rd-7th August 2025</p>
+            <p class="hero-description">Discover amazing family-friendly activities perfect for Charlie (5) and Millie (1) with excellent accessibility features throughout!</p>
+            <button class="hero-button" onclick="scrollToSection('gromit')">
+                <i class="fas fa-compass"></i>
+                Start Your Adventure
+            </button>
+        </div>
+    </section>
+
+    <!-- Gromit Unleashed 3 Spotlight -->
+    <section id="gromit" class="gromit-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-calendar-star"></i>
+                    <span>Perfect Timing!</span>
+                </div>
+                <h2>Gromit Unleashed 3 - FREE Family Fun!</h2>
+                <p>The amazing sculpture trail is happening during your visit - what perfect timing!</p>
+            </div>
+            
+            <div class="gromit-content">
+                <div class="gromit-info">
+                    <div class="gromit-card highlight-card">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Perfect Dates</h3>
+                        <p><strong>30 June - 31 August 2025</strong><br>
+                        Your visit (3rd-7th Aug) falls right in the middle!</p>
+                    </div>
+                    
+                    <div class="gromit-card">
+                        <div class="card-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Completely FREE</h3>
+                        <p>No charge to participate! Just download the app and start exploring 53 sculptures around Bristol.</p>
+                    </div>
+                    
+                    <div class="gromit-card">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Interactive App</h3>
+                        <p>Collect rewards for visiting sculptures. Perfect for keeping Charlie engaged!</p>
+                    </div>
+                </div>
+                
+                <div class="gromit-image">
+                    <img src="images/gromit_sculptures.jpg" alt="Gromit Sculptures" class="feature-image">
+                    <div class="image-caption">
+                        <i class="fas fa-info-circle"></i>
+                        <span>53 amazing sculptures to discover across Bristol!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="special-events">
+                <h3><i class="fas fa-star"></i> Special Events During Your Visit</h3>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">6 Aug</div>
+                        <div class="event-details">
+                            <h4>Meet the Artist</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> College Green, 1:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">7 Aug</div>
+                        <div class="event-details">
+                            <h4>Draw Along Session</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> College Green, 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Activities -->
+    <section id="activities" class="activities-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recommended Family Activities</h2>
+                <p>Carefully selected attractions with excellent accessibility and family-friendly features</p>
+            </div>
+            
+            <div class="activities-grid">
+                <!-- Puxton Park -->
+                <div class="activity-card" data-activity="puxton">
+                    <div class="card-image">
+                        <img src="images/puxton_park_main.jpg" alt="Puxton Park">
+                        <div class="accessibility-badge">
+                            <i class="fas fa-wheelchair"></i>
+                            <span>Excellent Accessibility</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Puxton Park Adventure</h3>
+                        <p class="card-description">40-acre family adventure park with indoor soft play, farm animals, and outdoor activities. Perfect for all weather!</p>
+                        
+                        <div class="highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Free carer tickets available</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Wheelchair accessible throughout</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Sensory-friendly environment</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Animal encounters & miniature railway</span>
+                            </div>
+                        </div>
+                        
+                        <div class="perfect-for">
+                            <strong>Perfect for:</strong> Both Charlie and Millie - indoor/outdoor options
+                        </div>
+                        
+                        <button class="learn-more-btn" onclick="toggleDetails('puxton')">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clevedon Seaside -->
+                <div class="activity-card" data-activity="clevedon">
+                    <div class="card-image">
+                        <img src="images/clevedon_families.jpg" alt="Clevedon Seafront">
+                        <div class="accessibility-badge">
+                            <i class="fas fa-baby-carriage"></i>
+                            <span>Pushchair Friendly</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Clevedon Seaside Charm</h3>
+                        <p class="card-description">Victorian pier, marine lake, and beautiful seafront with traditional seaside activities and excellent cafes.</p>
+                        
+                        <div class="highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Level promenade - perfect for pushchairs</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Safe Marine Lake for paddling</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Five The Beach cafe with sea views</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Salthouse Fields playground</span>
+                            </div>
+                        </div>
+                        
+                        <div class="perfect-for">
+                            <strong>Perfect for:</strong> Relaxed family time with stunning views
+                        </div>
+                        
+                        <button class="learn-more-btn" onclick="toggleDetails('clevedon')">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bristol Harbourside Day -->
+                <div class="activity-card" data-activity="bristol-harbour">
+                    <div class="card-image">
+                        <img src="images/ss_great_britain.jpg" alt="SS Great Britain">
+                        <div class="accessibility-badge">
+                            <i class="fas fa-ship"></i>
+                            <span>Harbourside Focus</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bristol Harbourside Day</h3>
+                        <p class="card-description">Relaxed day exploring the historic harbourside with SS Great Britain, We the Curious science center, and ferry rides.</p>
+                        
+                        <div class="highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>SS Great Britain historic ship experience</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>We the Curious - 200+ interactive exhibits</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Ferry rides and harbourside walks</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lunch at The Athenian harbourside</span>
+                            </div>
+                        </div>
+                        
+                        <div class="perfect-for">
+                            <strong>Perfect for:</strong> Educational fun with maritime history and science
+                        </div>
+                        
+                        <button class="learn-more-btn" onclick="toggleDetails('bristol-harbour')">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bristol Bridge & Nature Day -->
+                <div class="activity-card" data-activity="bristol-bridge">
+                    <div class="card-image">
+                        <img src="images/bristol_suspension_bridge.jpg" alt="Bristol Suspension Bridge">
+                        <div class="accessibility-badge">
+                            <i class="fas fa-eye"></i>
+                            <span>Scenic Views</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bristol Bridge & Nature Day</h3>
+                        <p class="card-description">Iconic Suspension Bridge views combined with peaceful Ashton Court Estate for deer spotting and nature walks.</p>
+                        
+                        <div class="highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Clifton Suspension Bridge - engineering marvel</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Ashton Court Estate deer spotting</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Combine with Gromit sculpture spotting</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Pushchair-friendly paths and picnic areas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="perfect-for">
+                            <strong>Perfect for:</strong> Scenic views and gentle nature exploration
+                        </div>
+                        
+                        <button class="learn-more-btn" onclick="toggleDetails('bristol-bridge')">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Suggestions -->
+    <section id="suggestions" class="suggestions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Additional Family Adventures</h2>
+                <p>More wonderful places to explore during your stay</p>
+            </div>
+            
+            <div class="suggestions-grid">
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Ashton Court Estate</h3>
+                    <p>Deer spotting, wide open spaces, and pushchair-friendly paths. Perfect for picnics and gentle walks.</p>
+                    <div class="suggestion-features">
+                        <span class="feature-tag">Free Entry</span>
+                        <span class="feature-tag">Parking Available</span>
+                    </div>
+                </div>
+                
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Aerospace Bristol (Concorde)</h3>
+                    <p>Interactive exhibits and the famous Concorde experience. Indoor attraction with sensory-friendly sessions.</p>
+                    <div class="suggestion-features">
+                        <span class="feature-tag">Educational</span>
+                        <span class="feature-tag">All Weather</span>
+                    </div>
+                </div>
+                
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>We the Curious</h3>
+                    <p>Interactive science center with 200+ exhibits, 3D planetarium, and sensory bags available. Perfect for curious minds!</p>
+                    <div class="suggestion-features">
+                        <span class="feature-tag">Sensory Support</span>
+                        <span class="feature-tag">All Weather</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information -->
+    <section id="practical" class="practical-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Practical Information</h2>
+                <p>Everything you need to know for a smooth family adventure</p>
+            </div>
+            
+            <div class="practical-grid">
+                <div class="practical-card">
+                    <div class="practical-header">
+                        <i class="fas fa-bus"></i>
+                        <h3>Getting Around</h3>
+                    </div>
+                    <div class="practical-content">
+                        <ul>
+                            <li><strong>First Bus:</strong> Children under 16 travel FREE during summer holidays</li>
+                            <li><strong>Gromit App:</strong> Download for sculpture locations and rewards</li>
+                            <li><strong>Parking:</strong> Free at Puxton Park, paid in Bristol city center</li>
+                            <li><strong>Accessibility:</strong> All locations have accessible parking spaces</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="practical-card">
+                    <div class="practical-header">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Family Dining (Lunch Options)</h3>
+                    </div>
+                    <div class="practical-content">
+                        <ul>
+                            <li><strong>Five The Beach:</strong> Seafront dining with outdoor terrace (Clevedon)</li>
+                            <li><strong>The Athenian:</strong> Bristol harbourside location with family menu</li>
+                            <li><strong>Puxton Park:</strong> On-site restaurant and farm shop</li>
+                            <li><strong>All venues:</strong> High chairs and accessible facilities available</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="practical-card">
+                    <div class="practical-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Special Needs Support</h3>
+                    </div>
+                    <div class="practical-content">
+                        <ul>
+                            <li><strong>Puxton Park:</strong> Free carer tickets, sensory-friendly environment</li>
+                            <li><strong>Clevedon:</strong> Level promenade, quiet spaces available</li>
+                            <li><strong>Bristol:</strong> Accessible transport, changing facilities</li>
+                            <li><strong>All locations:</strong> Staff trained to assist families with additional needs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Itinerary -->
+    <section class="itinerary-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Suggested Daily Itineraries</h2>
+                <p>Mix and match these ideas based on weather and energy levels</p>
+            </div>
+            
+            <div class="itinerary-tabs">
+                <button class="tab-button active" onclick="showItinerary('day1')">Day 1</button>
+                <button class="tab-button" onclick="showItinerary('day2')">Day 2</button>
+                <button class="tab-button" onclick="showItinerary('day3')">Day 3</button>
+                <button class="tab-button" onclick="showItinerary('day4')">Day 4</button>
+            </div>
+            
+            <div class="itinerary-content">
+                <div id="day1" class="itinerary-day active">
+                    <h3><i class="fas fa-ice-cream"></i> Clevedon Charm</h3>
+                    <div class="day-schedule">
+                        <div class="schedule-item">
+                            <div class="time">Morning</div>
+                            <div class="activity">Clevedon Pier and seafront exploration</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">Lunch</div>
+                            <div class="activity">Lunch at Five The Beach with sea views</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="day2" class="itinerary-day">
+                    <h3><i class="fas fa-tractor"></i> Adventure & Animals</h3>
+                    <div class="day-schedule">
+                        <div class="schedule-item">
+                            <div class="time">Full Day</div>
+                            <div class="activity">Puxton Park - all activities included in admission</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">Evening</div>
+                            <div class="activity">Relaxed time back in Clevedon</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="day3" class="itinerary-day">
+                    <h3><i class="fas fa-ship"></i> Bristol Harbourside Day & Gromit Spotting</h3>
+                    <div class="day-schedule">
+                        <div class="schedule-item">
+                            <div class="time">Morning</div>
+                            <div class="activity">SS Great Britain historic ship experience</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">Lunch</div>
+                            <div class="activity">The Athenian harbourside restaurant</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">Afternoon</div>
+                            <div class="activity">We the Curious science center & planetarium</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="day4" class="itinerary-day">
+                    <h3><i class="fas fa-leaf"></i> Bristol Bridge & Nature Day</h3>
+                    <div class="day-schedule">
+                        <div class="schedule-item">
+                            <div class="time">Morning</div>
+                            <div class="activity">Clifton Suspension Bridge & Gromit spotting</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">Lunch</div>
+                            <div class="activity">Clifton Fish Bar for traditional fish & chips</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">Afternoon</div>
+                            <div class="activity">Ashton Court Estate for deer spotting & nature walks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-phone"></i> Emergency Contacts</h3>
+                    <p>NHS 111 for non-emergency medical advice</p>
+                    <p>999 for emergencies</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-cloud-rain"></i> Weather Backup</h3>
+                    <p>Indoor options available at all recommended locations</p>
+                    <p>Puxton Park has extensive indoor soft play</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-heart"></i> Additional Resources</h3>
+                    <p>Contact venues directly for specific accessibility needs</p>
+                    <p>All locations welcome families with special requirements</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Family Adventure Guide. Created with love for your perfect family holiday!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
