@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North East England Holiday Map</title>
+    
+    <!-- MapLibre GL JS -->
+    <script src="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Mobile-friendly control panel -->
+    <div class="map-controls">
+        <div class="control-header">
+            <h3><i class="fas fa-map-marked-alt"></i> Holiday Map</h3>
+            <button class="toggle-controls" id="toggleControls">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+        
+        <div class="control-content" id="controlContent">
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="action-btn" id="fitBounds" title="Show all locations">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <span>Fit All</span>
+                </button>
+                <button class="action-btn" id="backToBase" title="Go to Sharperton">
+                    <i class="fas fa-home"></i>
+                    <span>Base</span>
+                </button>
+                <button class="action-btn" id="findLocation" title="Find my location">
+                    <i class="fas fa-location-arrow"></i>
+                    <span>My Location</span>
+                </button>
+                <button class="action-btn" id="showInfo" title="Show information">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Info</span>
+                </button>
+            </div>
+            
+            <!-- Day Filters -->
+            <div class="day-filters">
+                <h4><i class="fas fa-calendar-day"></i> Filter by Day</h4>
+                <div class="day-grid">
+                    <button class="day-btn active" data-day="all">All</button>
+                    <button class="day-btn" data-day="1">Day 1<br /><small>Sun - Travel</small></button>
+                    <button class="day-btn" data-day="2">Day 2<br /><small>Mon - York</small></button>
+                    <button class="day-btn" data-day="3">Day 3<br /><small>Tue - Roman</small></button>
+                    <button class="day-btn" data-day="4">Day 4<br /><small>Wed - Castles</small></button>
+                    <button class="day-btn" data-day="5">Day 5<br /><small>Thu - Coast</small></button>
+                    <button class="day-btn" data-day="6">Day 6<br /><small>Fri - Home</small></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Info Panel -->
+    <div class="info-panel" id="infoPanel">
+        <div class="info-header">
+            <h3>North East England Holiday</h3>
+            <button class="close-info" id="closeInfo">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="info-content">
+            <p><strong>24-29 August 2025</strong> • Family of 4 • 6 Days</p>
+            <div class="route-info">
+                <h4>Route</h4>
+                <p>Portishead → Kettering → York → Sharperton → Carlisle → Home</p>
+            </div>
+            <div class="legend">
+                <h4>Map Legend</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-marker home"><i class="fas fa-home"></i></div>
+                        <span>Your Base (Sharperton)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-marker location"><i class="fas fa-location-dot"></i></div>
+                        <span>Your Current Location</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-marker castle"><i class="fas fa-chess-rook"></i></div>
+                        <span>Castles & Harry Potter Sites</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-marker roman"><i class="fas fa-shield-alt"></i></div>
+                        <span>Roman Heritage</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-marker coastal"><i class="fas fa-water"></i></div>
+                        <span>Coastal & Island Sites</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-marker town"><i class="fas fa-city"></i></div>
+                        <span>Historic Towns</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-marker travel"><i class="fas fa-route"></i></div>
+                        <span>Travel Points</span>
+                    </div>
+                </div>
+            </div>
+            <div class="back-link">
+                <a href="https://qfgczieo.manus.space" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    Back to Full Itinerary
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading indicator -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading your holiday map...</p>
+    </div>
+    
+    <script src="js/map.js"></script>
+</body>
+</html>
+
