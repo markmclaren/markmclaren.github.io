@@ -1,45 +1,3 @@
-    // Type filter buttons
-    const typeButtons = document.querySelectorAll('.type-btn');
-    typeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active state
-            typeButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            // Filter markers
-            const selectedType = button.dataset.type;
-            filterMarkersByType(selectedType);
-        });
-    });
-
-// Filter markers by type
-function filterMarkersByType(type) {
-    markers.forEach(({ element, type: markerType }) => {
-        if (type === 'all' || markerType === type) {
-            element.style.display = 'flex';
-        } else {
-            element.style.display = 'none';
-        }
-    });
-    // Optionally fit map to visible markers
-    if (type !== 'all') {
-        const visibleCoordinates = markers.filter(m => m.type === type).map(m => m.coordinates);
-        if (visibleCoordinates.length > 0) {
-            if (visibleCoordinates.length === 1) {
-                map.flyTo({ center: visibleCoordinates[0], zoom: 12 });
-            } else {
-                const bounds = visibleCoordinates.reduce((bounds, coord) => {
-                    return bounds.extend(coord);
-                }, new maplibregl.LngLatBounds(visibleCoordinates[0], visibleCoordinates[0]));
-                map.fitBounds(bounds, {
-                    padding: { top: 50, bottom: 200, left: 50, right: 50 },
-                    maxZoom: 12
-                });
-            }
-        }
-    } else {
-        fitMapToLocations();
-    }
-}
 // Global variables
 let map;
 let geoJsonData = null;
@@ -90,6 +48,11 @@ function initializeMap() {
         tryLoadData();
     });
     
+    // Add zoom event listener for marker visibility
+    map.on('zoom', function() {
+        updateMarkerVisibility();
+    });
+    
     // Wait for all page resources including CSS to load
     if (document.readyState === 'complete') {
         pageLoaded = true;
@@ -106,6 +69,19 @@ function initializeMap() {
         hideLoading();
         showError('Failed to load map. Please refresh the page.');
     });
+    // Day filter buttons
+    const dayBtns = document.querySelectorAll('.day-btn');
+    dayBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active from all
+            dayBtns.forEach(b => b.classList.remove('active'));
+            // Add active to clicked
+            this.classList.add('active');
+            // Filter markers
+            const day = this.getAttribute('data-day');
+            filterMarkersByDay(day);
+        });
+    });
 }
 
 async function loadGeoJSONData() {
@@ -117,11 +93,14 @@ async function loadGeoJSONData() {
         
         geoJsonData = await response.json();
         
-        // Add markers to map
-        addMarkersToMap();
-        
-        // Fit map to show all locations
-        fitMapToLocations();
+    // Add markers to map
+    addMarkersToMap();
+    // Apply current day filter (default to 'all' if none active)
+    const activeDayBtn = document.querySelector('.day-btn.active');
+    const day = activeDayBtn ? activeDayBtn.getAttribute('data-day') : 'all';
+    filterMarkersByDay(day);
+    // Fit map to show all locations
+    fitMapToLocations();
         
         // Hide loading indicator
         hideLoading();
@@ -130,6 +109,19 @@ async function loadGeoJSONData() {
         hideLoading();
         showError('Failed to load location data. Please refresh the page.');
     }
+}
+
+function updateMarkerVisibility() {
+    const currentZoom = map.getZoom();
+    markers.forEach(marker => {
+        const { element, minZoom, maxZoom } = marker;
+        const shouldShow = (!minZoom || currentZoom >= minZoom) && (!maxZoom || currentZoom <= maxZoom);
+        if (shouldShow && !element.classList.contains('filtered-out')) {
+            element.style.display = 'flex';
+        } else {
+            element.style.display = 'none';
+        }
+    });
 }
 
 function addMarkersToMap() {
@@ -161,7 +153,7 @@ function addMarkersToMap() {
 
     geoJsonData.features.forEach(feature => {
         const { coordinates } = feature.geometry;
-        const { name, type, description, days, dayLabels, distance_from_base } = feature.properties;
+        const { name, type, description, days, dayLabels, distance_from_base, minZoom, maxZoom } = feature.properties;
         // Clean up name to avoid 'undefined' in title
         const safeName = typeof name === 'string' ? name : '';
 
@@ -271,9 +263,14 @@ function addMarkersToMap() {
             days: days,
             type: type,
             name: name,
+            minZoom: minZoom,
+            maxZoom: maxZoom,
             updatePosition: updatePosition
         });
     });
+    
+    // Apply initial zoom-based visibility
+    updateMarkerVisibility();
 }
 
 function createMarkerSVG(iconHtml, color) {
@@ -315,6 +312,8 @@ function getSimpleIcon(type) {
         'travel': '<i class="fas fa-route"></i>',
         'attraction': '<i class="fas fa-star"></i>',
         'supermarket': '<i class="fas fa-shopping-cart"></i>',
+        'pub': '<i class="fas fa-beer"></i>',
+        'restaurant': '<i class="fas fa-utensils"></i>',
         'Starting Point': '<i class="fas fa-play"></i>',
         'Family Pickup': '<i class="fas fa-users"></i>',
         'user-location': '<i class="fas fa-star" style="color: white;"></i>'
@@ -357,7 +356,9 @@ function getLegendColor(type) {
         'town': '#65a30d', // town
         'travel': '#dc2626', // travel
         'attraction': '#059669', // location
-        'supermarket': '#f59e42' // supermarket (orange)
+        'supermarket': '#f59e42', // supermarket (orange)
+        'pub': '#8b5a2b', // pub (brown)
+        'restaurant': '#e11d48' // restaurant (red)
     };
     return legendColors[type] || '#6b7280';
 }
@@ -454,20 +455,6 @@ function removeCurrentLocationMarker() {
         document.getElementById('infoPanel').classList.remove('open');
     });
     
-    // Day filter buttons
-    const dayButtons = document.querySelectorAll('.day-btn');
-    dayButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active state
-            dayButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Filter markers
-            const selectedDay = button.dataset.day;
-            filterMarkersByDay(selectedDay);
-        });
-    });
-    
     // Close info panel when clicking outside
     document.addEventListener('click', (e) => {
         const infoPanel = document.getElementById('infoPanel');
@@ -483,22 +470,21 @@ function removeCurrentLocationMarker() {
 
 function filterMarkersByDay(day) {
     markers.forEach(({ element, days }) => {
-        // Show if 'all' is selected, or if marker has no days (always show), or if marker's days include the selected day
         if (
             day === 'all' ||
-            !Array.isArray(days) || days.length === 0 ||
             (Array.isArray(days) && days.includes(parseInt(day)))
         ) {
-            element.style.display = 'flex';
+            element.classList.remove('filtered-out');
         } else {
-            element.style.display = 'none';
+            element.classList.add('filtered-out');
         }
     });
+    updateMarkerVisibility();
 
     // Fit map to visible markers if not showing all
     if (day !== 'all') {
         const visibleCoordinates = geoJsonData.features
-            .filter(f => !Array.isArray(f.properties.days) || f.properties.days.length === 0 || (Array.isArray(f.properties.days) && f.properties.days.includes(parseInt(day))))
+            .filter(f => Array.isArray(f.properties.days) && f.properties.days.includes(parseInt(day)))
             .map(f => f.geometry.coordinates);
 
         if (visibleCoordinates.length > 0) {

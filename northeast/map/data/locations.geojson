@@ -74,7 +74,9 @@
           "Monday - Full Exploration"
         ],
         "details": "Day 1: Evening arrival, The Shambles • Day 2: Minster, City Walls, JORVIK",
-        "distance_from_base": "120 miles from Sharperton"
+        "distance_from_base": "120 miles from Sharperton",
+        "minZoom": 0,
+        "maxZoom": 11
       }
     },
     {
@@ -275,14 +277,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.90562,
-          55.30903
+          -1.911673,
+          55.3100497
         ]
       },
       "properties": {
         "name": "Co-op Food",
         "address": "Town Foot, Rothbury, NE65 7SL",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
       }
     },
     {
@@ -297,7 +301,9 @@
       "properties": {
         "name": "Sainsbury's",
         "address": "Willowburn Avenue, Alnwick, NE66 2JH",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
       }
     },
     {
@@ -312,7 +318,9 @@
       "properties": {
         "name": "Morrisons",
         "address": "Fenkle Street, Alnwick, NE66 1JE",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
       }
     },
     {
@@ -327,7 +335,9 @@
       "properties": {
         "name": "Lidl",
         "address": "South Road, Alnwick, NE66 2QL",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
       }
     },
     {
@@ -342,7 +352,9 @@
       "properties": {
         "name": "Aldi",
         "address": "South Road, Alnwick, NE66 2PA",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
       }
     },
     {
@@ -357,7 +369,9 @@
       "properties": {
         "name": "Morrisons",
         "address": "Dark Lane, Morpeth, NE61 1HQ",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
       }
     },
     {
@@ -372,7 +386,191 @@
       "properties": {
         "name": "Lidl",
         "address": "Stanley Terrace, Morpeth, NE61 1NQ",
-        "type": "supermarket"
+        "type": "supermarket",
+        "minZoom": 12,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.0833,
+          55.3167
+        ]
+      },
+      "properties": {
+        "name": "The Star Inn",
+        "address": "Harbottle, NE65 7DG",
+        "type": "pub",
+        "description": "Traditional country pub serving local cuisine",
+        "days": [2],
+        "dayLabels": ["Monday - Dinner"],
+        "details": "Monday dinner • Traditional pub • Local cuisine",
+        "minZoom": 10,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9086149,
+          55.3101753
+        ]
+      },
+      "properties": {
+        "name": "La Mensa",
+        "address": "Rothbury, NE65 7SL",
+        "type": "restaurant",
+        "description": "Italian restaurant in Rothbury",
+        "days": [3],
+        "dayLabels": ["Tuesday - Italian Dinner"],
+        "details": "Tuesday dinner • Italian cuisine • Rothbury",
+        "minZoom": 10,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7118,
+          55.6067
+        ]
+      },
+      "properties": {
+        "name": "The Turks Head",
+        "address": "Bamburgh, NE69 7BL",
+        "type": "pub",
+        "description": "Historic pub near Bamburgh Castle",
+        "days": [4],
+        "dayLabels": ["Wednesday - Dinner"],
+        "details": "Wednesday dinner • Historic pub • Near Bamburgh Castle",
+        "minZoom": 10,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.13,
+          55.35
+        ]
+      },
+      "properties": {
+        "name": "Rose & Thistle",
+        "address": "Alwinton, NE65 7RY",
+        "type": "pub",
+        "description": "Traditional village pub in Alwinton",
+        "days": [5],
+        "dayLabels": ["Thursday - Dinner"],
+        "details": "Thursday dinner • Village pub • Alwinton",
+        "minZoom": 10,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0803,
+          53.9583
+        ]
+      },
+      "properties": {
+        "name": "York Minster",
+        "type": "attraction",
+        "description": "Magnificent Gothic cathedral, one of the largest in Northern Europe",
+        "days": [2],
+        "dayLabels": ["Monday - Morning Visit"],
+        "details": "Monday morning • Gothic cathedral • Major attraction",
+        "minZoom": 11,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0833,
+          53.9600
+        ]
+      },
+      "properties": {
+        "name": "The Shambles",
+        "type": "attraction",
+        "description": "Medieval street with overhanging timber-framed buildings, inspiration for Diagon Alley",
+        "days": [1],
+        "dayLabels": ["Sunday - Evening Exploration"],
+        "details": "Sunday evening • Medieval street • Harry Potter inspiration",
+        "minZoom": 11,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0789,
+          53.9578
+        ]
+      },
+      "properties": {
+        "name": "JORVIK Viking Centre",
+        "type": "attraction",
+        "description": "Archaeological museum built on the site of the original Viking settlement",
+        "days": [2],
+        "dayLabels": ["Monday - Afternoon Visit"],
+        "details": "Monday afternoon • Viking history • Archaeological museum",
+        "minZoom": 11,
+        "maxZoom": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.3789,
+          54.9922
+        ]
+      },
+      "properties": {
+        "name": "Vindolanda",
+        "type": "roman",
+        "description": "An active archaeological site with a museum and the remains of a Roman fort and settlement.",
+        "days": [3],
+        "dayLabels": ["Tuesday - Roman Heritage"],
+        "details": "Tuesday visit • 25 miles from base • 2-3 hours • Active archaeological dig",
+        "distance_from_base": "25 miles from Sharperton"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5020,
+          55.0060
+        ]
+      },
+      "properties": {
+        "name": "Roman Army Museum",
+        "type": "roman",
+        "description": "A museum dedicated to the life of a Roman soldier on Hadrian's Wall.",
+        "days": [3],
+        "dayLabels": ["Tuesday - Roman Heritage"],
+        "details": "Tuesday visit • 30 miles from base • 1.5 hours • Museum visit",
+        "distance_from_base": "30 miles from Sharperton"
       }
     }
   ]
