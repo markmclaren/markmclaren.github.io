@@ -215,12 +215,12 @@
         "type": "castle",
         "description": "Dramatic clifftop castle overlooking the North Sea, one of England's most spectacular coastal fortresses.",
         "days": [
-          4
+          5
         ],
         "dayLabels": [
-          "Wednesday - Harry Potter Day"
+          "Thursday - Coastal Adventure"
         ],
-        "details": "Wednesday visit • 25 miles from base • 2 hours • Stunning coastal views",
+        "details": "Thursday visit • 25 miles from base • 2 hours • Stunning coastal views",
         "distance_from_base": "25 miles from Sharperton"
       }
     },
@@ -245,29 +245,6 @@
         ],
         "details": "Thursday visit • 30 miles from base • 3 hours • TIDE DEPENDENT ACCESS",
         "distance_from_base": "30 miles from Sharperton"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -2.0067,
-          55.7708
-        ]
-      },
-      "properties": {
-        "name": "Berwick-upon-Tweed",
-        "type": "town",
-        "description": "Historic border town with complete Elizabethan walls and fascinating Anglo-Scottish heritage.",
-        "days": [
-          5
-        ],
-        "dayLabels": [
-          "Thursday - Coastal Adventure"
-        ],
-        "details": "Thursday visit • 35 miles from base • 2 hours • Historic town walls",
-        "distance_from_base": "35 miles from Sharperton"
       }
     },
     {
