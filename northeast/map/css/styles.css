@@ -329,6 +329,7 @@ body {
 .legend-marker.coastal { background: #0284c7; }
 .legend-marker.town { background: #65a30d; }
 .legend-marker.travel { background: #dc2626; }
+.legend-marker.supermarket { background: #d97706; }
 
 .legend-item span {
     color: #374151;
