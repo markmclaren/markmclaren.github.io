@@ -5,15 +5,24 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-2.7833, 51.4833]
+        "coordinates": [
+          -2.7833,
+          51.4833
+        ]
       },
       "properties": {
         "name": "Portishead",
         "type": "travel",
         "description": "Your journey begins and ends here! Home base before the adventure starts and final destination.",
         "address": "17 Avon Way, Portishead, BS20 6JJ",
-        "days": [1, 6],
-        "dayLabels": ["Sunday - Departure", "Friday - Return Home"],
+        "days": [
+          1,
+          6
+        ],
+        "dayLabels": [
+          "Sunday - Departure",
+          "Friday - Return Home"
+        ],
         "details": "Day 1: Journey start • Day 6: Journey end",
         "distance_from_base": "280 miles from Sharperton"
       }
@@ -22,15 +31,22 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-0.7278, 52.3992]
+        "coordinates": [
+          -0.7278,
+          52.3992
+        ]
       },
       "properties": {
         "name": "Kettering",
         "type": "travel",
         "description": "Collect Frank (17) and Al (15) for the family adventure.",
         "address": "6 Selby Close, Kettering, NN15 5RZ",
-        "days": [1],
-        "dayLabels": ["Sunday - Family Pickup"],
+        "days": [
+          1
+        ],
+        "dayLabels": [
+          "Sunday - Family Pickup"
+        ],
         "details": "Sunday pickup • Collect Frank & Al • Continue to York",
         "distance_from_base": "200 miles from Sharperton"
       }
@@ -39,15 +55,24 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-1.0803, 53.9583]
+        "coordinates": [
+          -1.0803,
+          53.9583
+        ]
       },
       "properties": {
         "name": "York",
         "type": "town",
         "description": "Explore the medieval walls, magnificent Minster, JORVIK Viking Centre, and The Shambles.",
         "address": "16 Green Lane, Acomb, York YO24 3DL",
-        "days": [1, 2],
-        "dayLabels": ["Sunday - Arrival & The Shambles", "Monday - Full Exploration"],
+        "days": [
+          1,
+          2
+        ],
+        "dayLabels": [
+          "Sunday - Arrival & The Shambles",
+          "Monday - Full Exploration"
+        ],
         "details": "Day 1: Evening arrival, The Shambles • Day 2: Minster, City Walls, JORVIK",
         "distance_from_base": "120 miles from Sharperton"
       }
@@ -56,15 +81,30 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-2.072, 55.326]
+        "coordinates": [
+          -2.072,
+          55.326
+        ]
       },
       "properties": {
         "name": "Sharperton",
         "type": "base",
         "description": "Your comfortable base in the heart of Northumberland National Park for 4 magical nights.",
         "address": "Sharperton, NE65 7AE, Northumberland National Park",
-        "days": [2, 3, 4, 5, 6],
-        "dayLabels": ["Monday - Arrival", "Tuesday - Base", "Wednesday - Base", "Thursday - Base", "Friday - Departure"],
+        "days": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "dayLabels": [
+          "Monday - Arrival",
+          "Tuesday - Base",
+          "Wednesday - Base",
+          "Thursday - Base",
+          "Friday - Departure"
+        ],
         "details": "4 nights accommodation • Central location for all attractions • Base camp",
         "distance_from_base": "0 miles (Your base!)"
       }
@@ -73,14 +113,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-2.3275, 55.0142]
+        "coordinates": [
+          -2.3275,
+          55.0142
+        ]
       },
       "properties": {
         "name": "Hadrian's Wall (Housesteads)",
         "type": "roman",
         "description": "Walk along the ancient Roman wall at Housesteads Fort, the best-preserved section with spectacular countryside views.",
-        "days": [3],
-        "dayLabels": ["Tuesday - Roman Heritage"],
+        "days": [
+          3
+        ],
+        "dayLabels": [
+          "Tuesday - Roman Heritage"
+        ],
         "details": "Tuesday visit • 25 miles from base • 2.5 hours • 750m uphill walk",
         "distance_from_base": "25 miles from Sharperton"
       }
@@ -89,14 +136,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-2.3167, 55.0167]
+        "coordinates": [
+          -2.3167,
+          55.0167
+        ]
       },
       "properties": {
         "name": "Sycamore Gap",
         "type": "roman",
         "description": "The famous sycamore tree in a dramatic dip in Hadrian's Wall, featured in Robin Hood: Prince of Thieves.",
-        "days": [3],
-        "dayLabels": ["Tuesday - Roman Heritage"],
+        "days": [
+          3
+        ],
+        "dayLabels": [
+          "Tuesday - Roman Heritage"
+        ],
         "details": "Tuesday visit • Along Hadrian's Wall • Famous filming location • Photo opportunity",
         "distance_from_base": "25 miles from Sharperton"
       }
@@ -105,14 +159,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-1.7067, 55.4150]
+        "coordinates": [
+          -1.7067,
+          55.4150
+        ]
       },
       "properties": {
         "name": "Alnwick Castle",
         "type": "castle",
         "description": "The iconic Hogwarts exterior from the first two Harry Potter films. Experience broomstick training and explore the medieval castle.",
-        "days": [4],
-        "dayLabels": ["Wednesday - Harry Potter Day"],
+        "days": [
+          4
+        ],
+        "dayLabels": [
+          "Wednesday - Harry Potter Day"
+        ],
         "details": "Wednesday visit • 15 miles from base • 3 hours • Pre-book online",
         "distance_from_base": "15 miles from Sharperton"
       }
@@ -121,14 +182,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-1.6915, 55.3721]
+        "coordinates": [
+          -1.6915,
+          55.3721
+        ]
       },
       "properties": {
         "name": "Shilbottle",
         "type": "attraction",
         "description": "Charming Northumberland village famous for its amusing name - perfect for a fun photo opportunity!",
-        "days": [4],
-        "dayLabels": ["Wednesday - Harry Potter Day"],
+        "days": [
+          4
+        ],
+        "dayLabels": [
+          "Wednesday - Harry Potter Day"
+        ],
         "details": "Wednesday visit • 12 miles from base • Quick stop • Fun photo opportunity",
         "distance_from_base": "12 miles from Sharperton"
       }
@@ -137,14 +205,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-1.7092, 55.6092]
+        "coordinates": [
+          -1.7092,
+          55.6092
+        ]
       },
       "properties": {
         "name": "Bamburgh Castle",
         "type": "castle",
         "description": "Dramatic clifftop castle overlooking the North Sea, one of England's most spectacular coastal fortresses.",
-        "days": [4],
-        "dayLabels": ["Wednesday - Harry Potter Day"],
+        "days": [
+          4
+        ],
+        "dayLabels": [
+          "Wednesday - Harry Potter Day"
+        ],
         "details": "Wednesday visit • 25 miles from base • 2 hours • Stunning coastal views",
         "distance_from_base": "25 miles from Sharperton"
       }
@@ -153,14 +228,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-1.7900, 55.6692]
+        "coordinates": [
+          -1.7900,
+          55.6692
+        ]
       },
       "properties": {
         "name": "Lindisfarne (Holy Island)",
         "type": "coastal",
         "description": "Historic monastery ruins and castle on a tidal island. Access depends on tide times - plan carefully!",
-        "days": [5],
-        "dayLabels": ["Thursday - Coastal Adventure"],
+        "days": [
+          5
+        ],
+        "dayLabels": [
+          "Thursday - Coastal Adventure"
+        ],
         "details": "Thursday visit • 30 miles from base • 3 hours • TIDE DEPENDENT ACCESS",
         "distance_from_base": "30 miles from Sharperton"
       }
@@ -169,14 +251,21 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-2.0067, 55.7708]
+        "coordinates": [
+          -2.0067,
+          55.7708
+        ]
       },
       "properties": {
         "name": "Berwick-upon-Tweed",
         "type": "town",
         "description": "Historic border town with complete Elizabethan walls and fascinating Anglo-Scottish heritage.",
-        "days": [5],
-        "dayLabels": ["Thursday - Coastal Adventure"],
+        "days": [
+          5
+        ],
+        "dayLabels": [
+          "Thursday - Coastal Adventure"
+        ],
         "details": "Thursday visit • 35 miles from base • 2 hours • Historic town walls",
         "distance_from_base": "35 miles from Sharperton"
       }
@@ -185,20 +274,129 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-2.9333, 54.8833]
+        "coordinates": [
+          -2.9333,
+          54.8833
+        ]
       },
       "properties": {
         "name": "Carlisle",
         "type": "travel",
         "description": "Drop off Frank and Al with their uncle and enjoy a final family meal together before the journey home.",
-        "days": [6],
-        "dayLabels": ["Friday - Departure & Family Meal"],
+        "days": [
+          6
+        ],
+        "dayLabels": [
+          "Friday - Departure & Family Meal"
+        ],
         "details": "Friday departure • Drop off boys • Family meal • Journey home",
         "distance_from_base": "45 miles from Sharperton"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.90562,
+          55.30903
+        ]
+      },
+      "properties": {
+        "name": "Co-op Food",
+        "address": "Town Foot, Rothbury, NE65 7SL",
+        "type": "supermarket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69614,
+          55.41289
+        ]
+      },
+      "properties": {
+        "name": "Sainsbury's",
+        "address": "Willowburn Avenue, Alnwick, NE66 2JH",
+        "type": "supermarket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69345,
+          55.40938
+        ]
+      },
+      "properties": {
+        "name": "Morrisons",
+        "address": "Fenkle Street, Alnwick, NE66 1JE",
+        "type": "supermarket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69838,
+          55.40879
+        ]
+      },
+      "properties": {
+        "name": "Lidl",
+        "address": "South Road, Alnwick, NE66 2QL",
+        "type": "supermarket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69768,
+          55.40899
+        ]
+      },
+      "properties": {
+        "name": "Aldi",
+        "address": "South Road, Alnwick, NE66 2PA",
+        "type": "supermarket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.68817,
+          55.16335
+        ]
+      },
+      "properties": {
+        "name": "Morrisons",
+        "address": "Dark Lane, Morpeth, NE61 1HQ",
+        "type": "supermarket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69124,
+          55.16358
+        ]
+      },
+      "properties": {
+        "name": "Lidl",
+        "address": "Stanley Terrace, Morpeth, NE61 1NQ",
+        "type": "supermarket"
       }
     }
   ]
 }
-
-
-

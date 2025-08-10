@@ -1,3 +1,45 @@
+    // Type filter buttons
+    const typeButtons = document.querySelectorAll('.type-btn');
+    typeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active state
+            typeButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            // Filter markers
+            const selectedType = button.dataset.type;
+            filterMarkersByType(selectedType);
+        });
+    });
+
+// Filter markers by type
+function filterMarkersByType(type) {
+    markers.forEach(({ element, type: markerType }) => {
+        if (type === 'all' || markerType === type) {
+            element.style.display = 'flex';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+    // Optionally fit map to visible markers
+    if (type !== 'all') {
+        const visibleCoordinates = markers.filter(m => m.type === type).map(m => m.coordinates);
+        if (visibleCoordinates.length > 0) {
+            if (visibleCoordinates.length === 1) {
+                map.flyTo({ center: visibleCoordinates[0], zoom: 12 });
+            } else {
+                const bounds = visibleCoordinates.reduce((bounds, coord) => {
+                    return bounds.extend(coord);
+                }, new maplibregl.LngLatBounds(visibleCoordinates[0], visibleCoordinates[0]));
+                map.fitBounds(bounds, {
+                    padding: { top: 50, bottom: 200, left: 50, right: 50 },
+                    maxZoom: 12
+                });
+            }
+        }
+    } else {
+        fitMapToLocations();
+    }
+}
 // Global variables
 let map;
 let geoJsonData = null;
@@ -39,27 +81,21 @@ function initializeMap() {
     
     const tryLoadData = () => {
         if (mapLoaded && pageLoaded) {
-            console.log('Both map and page resources loaded, adding markers...');
-            console.log('Map container:', map.getContainer());
-            console.log('Map style loaded:', map.isStyleLoaded());
             loadGeoJSONData();
         }
     };
     
     map.on('load', function() {
-        console.log('Map loaded');
         mapLoaded = true;
         tryLoadData();
     });
     
     // Wait for all page resources including CSS to load
     if (document.readyState === 'complete') {
-        console.log('Page already loaded');
         pageLoaded = true;
         tryLoadData();
     } else {
         window.addEventListener('load', () => {
-            console.log('Page load event fired');
             pageLoaded = true;
             tryLoadData();
         });
@@ -67,7 +103,6 @@ function initializeMap() {
 
     // Handle map errors
     map.on('error', function(e) {
-        console.error('Map error:', e);
         hideLoading();
         showError('Failed to load map. Please refresh the page.');
     });
@@ -81,7 +116,6 @@ async function loadGeoJSONData() {
         }
         
         geoJsonData = await response.json();
-        console.log('GeoJSON loaded successfully:', geoJsonData);
         
         // Add markers to map
         addMarkersToMap();
@@ -93,19 +127,13 @@ async function loadGeoJSONData() {
         hideLoading();
         
     } catch (error) {
-        console.error('Error loading GeoJSON:', error);
         hideLoading();
         showError('Failed to load location data. Please refresh the page.');
     }
 }
 
 function addMarkersToMap() {
-    console.log('addMarkersToMap called');
-    console.log('Map ready?', map && map.loaded());
-    console.log('Map container exists?', map.getContainer() != null);
-    
     if (!geoJsonData || !geoJsonData.features) {
-        console.error('No GeoJSON data available');
         return;
     }
     
@@ -121,14 +149,26 @@ function addMarkersToMap() {
     });
     markers = [];
     
+    // Gather all key place coordinates before creating any markers
+    const keyPlaces = ['Portishead', 'Kettering', 'York', 'Sharperton', 'Carlisle'];
+    const coords = {};
+    keyPlaces.forEach(name => { coords[name] = null; });
+    geoJsonData.features.forEach(f => {
+        if (f.properties && keyPlaces.includes(f.properties.name)) {
+            coords[f.properties.name] = f.geometry.coordinates;
+        }
+    });
+
     geoJsonData.features.forEach(feature => {
         const { coordinates } = feature.geometry;
         const { name, type, description, days, dayLabels, distance_from_base } = feature.properties;
-        
-        // Create a DOM element for the marker - following the example exactly
+        // Clean up name to avoid 'undefined' in title
+        const safeName = typeof name === 'string' ? name : '';
+
+        // Create a DOM element for the marker
         const el = document.createElement('div');
         el.className = 'marker';
-        
+
         const markerColor = getLegendColor(type);
         el.style.backgroundColor = markerColor;
         el.style.width = '32px';
@@ -138,92 +178,92 @@ function addMarkersToMap() {
         el.style.fontWeight = 'bold';
         el.style.border = '2px solid white';
         el.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
-        
+
         // Add the icon
         const iconText = getSimpleIcon(type);
         el.innerHTML = iconText;
-        
-        // Debug: Check if element has content
-        console.log(`Marker element created:`, el);
-        console.log(`Element textContent: "${el.textContent}"`);
-        console.log(`Element innerHTML: "${el.innerHTML}"`);
-        console.log(`Element classList:`, el.classList.toString());
-        
-        console.log(`Creating marker for ${name} with icon: "${iconText}" and color: ${markerColor}`);
-        
-        // Create day badges for popup
-        const dayBadges = days.map((day, index) => {
-            const label = dayLabels && dayLabels[index] ? dayLabels[index] : `Day ${day}`;
-            return `<div style="margin: 4px 2px; padding: 4px 8px; background: ${dayColors[day] || '#6b7280'}; color: white; border-radius: 12px; font-size: 0.8rem; display: inline-block;">${label}</div>`;
-        }).join('');
-        
-        // Create popup content
-        const popupContent = `
-            <div style="padding: 8px;">
-                <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.1rem;">${name}</h3>
-                <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 0.9rem;">${description}</p>
-                <div style="margin: 8px 0;">${dayBadges}</div>
-                ${distance_from_base ? `<p style="margin: 8px 0 0 0; color: #6b7280; font-size: 0.8rem;"><i class="fas fa-route"></i> ${distance_from_base}</p>` : ''}
-            </div>
-        `;
-        
+
+        // Helper to generate popup content
+        function generatePopupContent({ name, description, days, dayLabels, distance_from_base, coordinates, coords, dayColors }) {
+            const safeName = typeof name === 'string' ? name : '';
+            // Create day badges for popup
+            const dayBadges = Array.isArray(days) && days.length > 0 ? days.map((day, index) => {
+                const label = dayLabels && dayLabels[index] ? dayLabels[index] : `Day ${day}`;
+                const color = dayColors[day] || '#6b7280';
+                return `<div style="margin: 4px 2px; padding: 4px 8px; background: ${color}; color: white; border-radius: 12px; font-size: 0.8rem; display: inline-block; border: 2px solid ${color};">${label}</div>`;
+            }).join('') : '';
+            let desc = (typeof description === 'string') ? description.trim() : '';
+            if (desc === '' || desc === 'undefined' || typeof description === 'undefined') desc = null;
+            const googleMapsLink = `https://maps.google.com/maps?daddr=${coordinates[1]},${coordinates[0]}`;
+            // Route logic for key places using coordinates
+            let routeLink = '';
+            let routeLabel = '';
+            if (safeName === 'Portishead' && coords['Portishead'] && coords['Kettering']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['Portishead'][1]},${coords['Portishead'][0]}&daddr=${coords['Kettering'][1]},${coords['Kettering'][0]}`;
+                routeLabel = 'Route to Kettering';
+            } else if (safeName === 'Kettering' && coords['Kettering'] && coords['York']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['Kettering'][1]},${coords['Kettering'][0]}&daddr=${coords['York'][1]},${coords['York'][0]}`;
+                routeLabel = 'Route to York';
+            } else if (safeName === 'York' && coords['York'] && coords['Sharperton']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['York'][1]},${coords['York'][0]}&daddr=${coords['Sharperton'][1]},${coords['Sharperton'][0]}`;
+                routeLabel = 'Route to Sharperton';
+            } else if (safeName === 'Sharperton' && coords['Sharperton'] && coords['Carlisle']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['Sharperton'][1]},${coords['Sharperton'][0]}&daddr=${coords['Carlisle'][1]},${coords['Carlisle'][0]}`;
+                routeLabel = 'Route to Carlisle';
+            } else if (safeName === 'Carlisle' && coords['Carlisle'] && coords['Portishead']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['Carlisle'][1]},${coords['Carlisle'][0]}&daddr=${coords['Portishead'][1]},${coords['Portishead'][0]}`;
+                routeLabel = 'Route to Portishead';
+            }
+            return `
+                <div style="padding: 8px;">
+                    <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.1rem;">${safeName}</h3>
+                    ${desc ? `<p style=\"margin: 0 0 8px 0; color: #6b7280; font-size: 0.9rem;\">${desc}</p>` : ''}
+                    ${dayBadges ? `<div style=\"margin: 8px 0;\">${dayBadges}</div>` : ''}
+                    ${distance_from_base ? `<p style=\"margin: 8px 0 0 0; color: #6b7280; font-size: 0.8rem;\"><i class=\"fas fa-route\"></i> ${distance_from_base}</p>` : ''}
+                    <div style=\"margin-top: 10px;\"><a href=\"${googleMapsLink}\" target=\"_blank\" rel=\"noopener\" style=\"color: #2563eb; text-decoration: none; font-size: 0.95rem;\"><i class=\"fas fa-directions\"></i> Directions</a></div>
+                    ${routeLink ? `<div style='margin-top: 6px;'><a href='${routeLink}' target='_blank' rel='noopener' style='color: #059669; text-decoration: none; font-size: 0.95rem;'><i class=\"fas fa-route\"></i> ${routeLabel}</a></div>` : ''}
+                </div>
+            `;
+        }
+
         // Create popup
         const popup = new maplibregl.Popup({
             offset: 25,
             closeButton: true,
             closeOnClick: false
-        }).setHTML(popupContent);
-        
+        }).setHTML(generatePopupContent({ name, description, days, dayLabels, distance_from_base, coordinates, coords, dayColors }));
+
         // Add click event for popup
         el.addEventListener('click', () => {
-            // Create day badges for popup
-            const dayBadges = days && days.length > 0 ? days.map((day, index) => {
-                const label = dayLabels && dayLabels[index] ? dayLabels[index] : `Day ${day}`;
-                return `<div style="margin: 4px 2px; padding: 4px 8px; background: ${dayColors[day] || '#6b7280'}; color: white; border-radius: 12px; font-size: 0.8rem; display: inline-block;">${label}</div>`;
-            }).join('') : '';
-            
-            // Create popup content
-            const popupContent = `
-                <div style="padding: 8px;">
-                    <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.1rem;">${name}</h3>
-                    <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 0.9rem;">${description}</p>
-                    ${dayBadges ? `<div style="margin: 8px 0;">${dayBadges}</div>` : ''}
-                    ${distance_from_base ? `<p style="margin: 8px 0 0 0; color: #6b7280; font-size: 0.8rem;"><i class="fas fa-route"></i> ${distance_from_base}</p>` : ''}
-                </div>
-            `;
-            
             new maplibregl.Popup()
                 .setLngLat(coordinates)
-                .setHTML(popupContent)
+                .setHTML(generatePopupContent({ name, description, days, dayLabels, distance_from_base, coordinates, coords, dayColors }))
                 .addTo(map);
         });
-        
+
         // Use manual positioning approach that we know works, with Font Awesome icons
         const point = map.project(coordinates);
-        console.log(`Projected coordinates for ${name}:`, point);
-        
+
         // Position element manually
         el.style.position = 'absolute';
         el.style.left = `${point.x - 16}px`; // Center the 32px marker
         el.style.top = `${point.y - 16}px`;
         el.style.pointerEvents = 'auto';
-        
+
         // Add directly to map container
         const mapContainer = map.getContainer();
         mapContainer.appendChild(el);
-        
-        console.log(`Manual marker added for ${name}, element in DOM:`, el.parentNode ? 'Yes' : 'No');
-        
+
         // Update position when map moves
         const updatePosition = () => {
             const newPoint = map.project(coordinates);
             el.style.left = `${newPoint.x - 16}px`;
             el.style.top = `${newPoint.y - 16}px`;
         };
-        
+
         map.on('move', updatePosition);
         map.on('zoom', updatePosition);
-        
+
         // Store marker with metadata
         markers.push({
             element: el,
@@ -266,7 +306,6 @@ function createMarkerSVG(iconHtml, color) {
 }
 
 function getSimpleIcon(type) {
-    console.log('getSimpleIcon called with type:', type);
     const icons = {
         'base': '<i class="fas fa-home" style="color: white;"></i>',
         'castle': '<i class="fas fa-chess-rook"></i>',
@@ -275,12 +314,12 @@ function getSimpleIcon(type) {
         'town': '<i class="fas fa-city"></i>',
         'travel': '<i class="fas fa-route"></i>',
         'attraction': '<i class="fas fa-star"></i>',
+        'supermarket': '<i class="fas fa-shopping-cart"></i>',
         'Starting Point': '<i class="fas fa-play"></i>',
         'Family Pickup': '<i class="fas fa-users"></i>',
         'user-location': '<i class="fas fa-star" style="color: white;"></i>'
     };
     const result = icons[type] || '<i class="fas fa-map-marker-alt"></i>';
-    console.log('Returning icon:', result);
     return result;
 }
 
@@ -317,7 +356,8 @@ function getLegendColor(type) {
         'coastal': '#0284c7', // coastal
         'town': '#65a30d', // town
         'travel': '#dc2626', // travel
-        'attraction': '#059669' // location
+        'attraction': '#059669', // location
+        'supermarket': '#f59e42' // supermarket (orange)
     };
     return legendColors[type] || '#6b7280';
 }
@@ -443,19 +483,24 @@ function removeCurrentLocationMarker() {
 
 function filterMarkersByDay(day) {
     markers.forEach(({ element, days }) => {
-        if (day === 'all' || (days && days.includes(parseInt(day)))) {
-            element.style.display = 'flex'; // Use flex to maintain centering
+        // Show if 'all' is selected, or if marker has no days (always show), or if marker's days include the selected day
+        if (
+            day === 'all' ||
+            !Array.isArray(days) || days.length === 0 ||
+            (Array.isArray(days) && days.includes(parseInt(day)))
+        ) {
+            element.style.display = 'flex';
         } else {
             element.style.display = 'none';
         }
     });
-    
+
     // Fit map to visible markers if not showing all
     if (day !== 'all') {
         const visibleCoordinates = geoJsonData.features
-            .filter(f => f.properties.days && f.properties.days.includes(parseInt(day)))
+            .filter(f => !Array.isArray(f.properties.days) || f.properties.days.length === 0 || (Array.isArray(f.properties.days) && f.properties.days.includes(parseInt(day))))
             .map(f => f.geometry.coordinates);
-            
+
         if (visibleCoordinates.length > 0) {
             if (visibleCoordinates.length === 1) {
                 map.flyTo({ center: visibleCoordinates[0], zoom: 12 });
@@ -463,7 +508,7 @@ function filterMarkersByDay(day) {
                 const bounds = visibleCoordinates.reduce((bounds, coord) => {
                     return bounds.extend(coord);
                 }, new maplibregl.LngLatBounds(visibleCoordinates[0], visibleCoordinates[0]));
-                
+
                 map.fitBounds(bounds, {
                     padding: { top: 50, bottom: 200, left: 50, right: 50 },
                     maxZoom: 12
@@ -571,7 +616,6 @@ function getCurrentLocation() {
             button.disabled = false;
         },
         (error) => {
-            console.error('Geolocation error:', error);
             showError('Unable to get your location. Please check your location settings.');
             button.innerHTML = originalContent;
             button.disabled = false;
