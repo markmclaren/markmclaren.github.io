@@ -411,6 +411,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.0811405,
+          53.9593861
+        ]
+      },
+      "properties": {
+        "name": "Doug Eyed",
+        "address": "7 Jubbergate, York, YO1 8RT",
+        "type": "restaurant",
+        "days": [
+          1
+        ],
+        "dayLabels": [
+          "Sunday- Pizza"
+        ],
+        "details": "Sunday dinner • Pizza Restaurant • York",
+        "minZoom": 12,
+        "maxZoom": 20,
+        "phone": "07591 977986",
+        "website": "https://www.dougheyed.uk/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -2.0833,
           55.3167
         ]
@@ -420,8 +446,12 @@
         "address": "Harbottle, NE65 7DG",
         "type": "pub",
         "description": "Traditional country pub serving local cuisine",
-        "days": [2],
-        "dayLabels": ["Monday - Dinner"],
+        "days": [
+          2
+        ],
+        "dayLabels": [
+          "Monday - Dinner"
+        ],
         "details": "Monday dinner • Traditional pub • Local cuisine",
         "minZoom": 10,
         "maxZoom": 20,
@@ -442,12 +472,17 @@
         "address": "Rothbury, NE65 7SL",
         "type": "restaurant",
         "description": "Italian restaurant in Rothbury",
-        "days": [3],
-        "dayLabels": ["Tuesday - Italian Dinner"],
+        "days": [
+          3
+        ],
+        "dayLabels": [
+          "Tuesday - Italian Dinner"
+        ],
         "details": "Tuesday dinner • Italian cuisine • Rothbury",
         "minZoom": 10,
         "maxZoom": 20,
-        "phone": "01669 620666"
+        "phone": "01669 620666",
+        "website": "https://www.tripadvisor.co.uk/Restaurant_Review-g674031-d21225843-Reviews-La_Mensa-Rothbury_Northumberland_National_Park_Northumberland_England.html"
       }
     },
     {
@@ -455,21 +490,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.7118,
-          55.6067
+          -1.652388,
+          55.582207
         ]
       },
       "properties": {
-        "name": "The Turks Head",
-        "address": "Bamburgh, NE69 7BL",
+        "name": "The Olde Ship",
+        "address": "Main Street, Seahouses, NE68 7RD",
         "type": "pub",
         "description": "Historic pub near Bamburgh Castle",
-        "days": [4],
-        "dayLabels": ["Wednesday - Dinner"],
-        "details": "Wednesday dinner • Historic pub • Near Bamburgh Castle",
+        "days": [
+          5
+        ],
+        "dayLabels": [
+          "Thursday - Dinner"
+        ],
+        "details": "Thursday dinner • Historic pub • Near Bamburgh Castle",
         "minZoom": 10,
         "maxZoom": 20,
-        "phone": "01668 214237"
+        "website": "https://www.theoldeship.co.uk/",
+        "phone": "01665 720200"
       }
     },
     {
@@ -486,12 +526,17 @@
         "address": "Alwinton, NE65 7RY",
         "type": "pub",
         "description": "Traditional village pub in Alwinton",
-        "days": [5],
-        "dayLabels": ["Thursday - Dinner"],
-        "details": "Thursday dinner • Village pub • Alwinton",
+        "days": [
+          4
+        ],
+        "dayLabels": [
+          "Wednesday - Dinner"
+        ],
+        "details": "Wednesday dinner • Village pub • Alwinton",
         "minZoom": 10,
         "maxZoom": 20,
-        "phone": "01669 650226"
+        "phone": "01669 650226",
+        "website": "https://www.roseandthistlealwinton.co.uk/"
       }
     },
     {
@@ -507,8 +552,12 @@
         "name": "York Minster",
         "type": "attraction",
         "description": "Magnificent Gothic cathedral, one of the largest in Northern Europe",
-        "days": [2],
-        "dayLabels": ["Monday - Morning Visit"],
+        "days": [
+          2
+        ],
+        "dayLabels": [
+          "Monday - Morning Visit"
+        ],
         "details": "Monday morning • Gothic cathedral • Major attraction",
         "minZoom": 11,
         "maxZoom": 20,
@@ -528,8 +577,12 @@
         "name": "The Shambles",
         "type": "attraction",
         "description": "Medieval street with overhanging timber-framed buildings, inspiration for Diagon Alley",
-        "days": [1],
-        "dayLabels": ["Sunday - Evening Exploration"],
+        "days": [
+          1
+        ],
+        "dayLabels": [
+          "Sunday - Evening Exploration"
+        ],
         "details": "Sunday evening • Medieval street • Harry Potter inspiration",
         "minZoom": 11,
         "maxZoom": 20,
@@ -549,8 +602,12 @@
         "name": "JORVIK Viking Centre",
         "type": "attraction",
         "description": "Archaeological museum built on the site of the original Viking settlement",
-        "days": [2],
-        "dayLabels": ["Monday - Afternoon Visit"],
+        "days": [
+          2
+        ],
+        "dayLabels": [
+          "Monday - Afternoon Visit"
+        ],
         "details": "Monday afternoon • Viking history • Archaeological museum",
         "minZoom": 11,
         "maxZoom": 20,
@@ -570,8 +627,12 @@
         "name": "Vindolanda",
         "type": "roman",
         "description": "An active archaeological site with a museum and the remains of a Roman fort and settlement.",
-        "days": [3],
-        "dayLabels": ["Tuesday - Roman Heritage"],
+        "days": [
+          3
+        ],
+        "dayLabels": [
+          "Tuesday - Roman Heritage"
+        ],
         "details": "Tuesday visit • 25 miles from base • 2-3 hours • Active archaeological dig",
         "distance_from_base": "25 miles from Sharperton",
         "website": "https://www.vindolanda.com/"
@@ -590,8 +651,12 @@
         "name": "Roman Army Museum",
         "type": "roman",
         "description": "A museum dedicated to the life of a Roman soldier on Hadrian's Wall.",
-        "days": [3],
-        "dayLabels": ["Tuesday - Roman Heritage"],
+        "days": [
+          3
+        ],
+        "dayLabels": [
+          "Tuesday - Roman Heritage"
+        ],
         "details": "Tuesday visit • 30 miles from base • 1.5 hours • Museum visit",
         "distance_from_base": "30 miles from Sharperton",
         "website": "https://www.vindolanda.com/roman-army-museum"
