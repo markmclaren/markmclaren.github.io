@@ -76,7 +76,8 @@
         "details": "Day 1: Evening arrival, The Shambles • Day 2: Minster, City Walls, JORVIK",
         "distance_from_base": "120 miles from Sharperton",
         "minZoom": 0,
-        "maxZoom": 11
+        "maxZoom": 11,
+        "website": "https://visityork.org/"
       }
     },
     {
@@ -108,7 +109,8 @@
           "Friday - Departure"
         ],
         "details": "4 nights accommodation • Central location for all attractions • Base camp",
-        "distance_from_base": "0 miles (Your base!)"
+        "distance_from_base": "0 miles (Your base!)",
+        "website": "https://www.northumberlandnationalpark.org.uk/"
       }
     },
     {
@@ -131,7 +133,8 @@
           "Tuesday - Roman Heritage"
         ],
         "details": "Tuesday visit • 25 miles from base • 2.5 hours • 750m uphill walk",
-        "distance_from_base": "25 miles from Sharperton"
+        "distance_from_base": "25 miles from Sharperton",
+        "website": "https://www.english-heritage.org.uk/visit/places/housesteads-roman-fort-hadrians-wall/"
       }
     },
     {
@@ -146,15 +149,16 @@
       "properties": {
         "name": "Sycamore Gap",
         "type": "roman",
-        "description": "The famous sycamore tree in a dramatic dip in Hadrian's Wall, featured in Robin Hood: Prince of Thieves.",
+        "description": "The famous sycamore tree in a dramatic dip in Hadrian's Wall, featured in Robin Hood: Prince of Thieves. Note: The original tree was sadly felled in 2023, but the location remains historically significant.",
         "days": [
           3
         ],
         "dayLabels": [
           "Tuesday - Roman Heritage"
         ],
-        "details": "Tuesday visit • Along Hadrian's Wall • Famous filming location • Photo opportunity",
-        "distance_from_base": "25 miles from Sharperton"
+        "details": "Tuesday visit • Along Hadrian's Wall • Historic filming location • Photo opportunity",
+        "distance_from_base": "25 miles from Sharperton",
+        "website": "https://www.english-heritage.org.uk/visit/places/hadrians-wall/"
       }
     },
     {
@@ -177,7 +181,8 @@
           "Wednesday - Harry Potter Day"
         ],
         "details": "Wednesday visit • 15 miles from base • 3 hours • Pre-book online",
-        "distance_from_base": "15 miles from Sharperton"
+        "distance_from_base": "15 miles from Sharperton",
+        "website": "https://www.alnwickcastle.com/"
       }
     },
     {
@@ -223,7 +228,8 @@
           "Thursday - Coastal Adventure"
         ],
         "details": "Thursday visit • 25 miles from base • 2 hours • Stunning coastal views",
-        "distance_from_base": "25 miles from Sharperton"
+        "distance_from_base": "25 miles from Sharperton",
+        "website": "https://www.bamburghcastle.com/"
       }
     },
     {
@@ -246,7 +252,8 @@
           "Thursday - Coastal Adventure"
         ],
         "details": "Thursday visit • 30 miles from base • 3 hours • TIDE DEPENDENT ACCESS",
-        "distance_from_base": "30 miles from Sharperton"
+        "distance_from_base": "30 miles from Sharperton",
+        "website": "https://www.english-heritage.org.uk/visit/places/lindisfarne-priory/"
       }
     },
     {
@@ -269,7 +276,8 @@
           "Friday - Departure & Family Meal"
         ],
         "details": "Friday departure • Drop off boys • Family meal • Journey home",
-        "distance_from_base": "45 miles from Sharperton"
+        "distance_from_base": "45 miles from Sharperton",
+        "website": "https://www.discovercarlisle.co.uk/"
       }
     },
     {
@@ -286,7 +294,8 @@
         "address": "Town Foot, Rothbury, NE65 7SL",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://www.coop.co.uk/store-finder"
       }
     },
     {
@@ -303,7 +312,8 @@
         "address": "Willowburn Avenue, Alnwick, NE66 2JH",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://stores.sainsburys.co.uk/"
       }
     },
     {
@@ -320,7 +330,8 @@
         "address": "Fenkle Street, Alnwick, NE66 1JE",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://my.morrisons.com/storefinder/"
       }
     },
     {
@@ -337,7 +348,8 @@
         "address": "South Road, Alnwick, NE66 2QL",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://www.lidl.co.uk/store-finder"
       }
     },
     {
@@ -354,7 +366,8 @@
         "address": "South Road, Alnwick, NE66 2PA",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://www.aldi.co.uk/store-finder"
       }
     },
     {
@@ -371,7 +384,8 @@
         "address": "Dark Lane, Morpeth, NE61 1HQ",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://my.morrisons.com/storefinder/"
       }
     },
     {
@@ -388,7 +402,8 @@
         "address": "Stanley Terrace, Morpeth, NE61 1NQ",
         "type": "supermarket",
         "minZoom": 12,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://www.lidl.co.uk/store-finder"
       }
     },
     {
@@ -409,7 +424,8 @@
         "dayLabels": ["Monday - Dinner"],
         "details": "Monday dinner • Traditional pub • Local cuisine",
         "minZoom": 10,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://www.thestarinn-harbottle.co.uk/"
       }
     },
     {
@@ -430,7 +446,8 @@
         "dayLabels": ["Tuesday - Italian Dinner"],
         "details": "Tuesday dinner • Italian cuisine • Rothbury",
         "minZoom": 10,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "phone": "01669 620666"
       }
     },
     {
@@ -451,7 +468,8 @@
         "dayLabels": ["Wednesday - Dinner"],
         "details": "Wednesday dinner • Historic pub • Near Bamburgh Castle",
         "minZoom": 10,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "phone": "01668 214237"
       }
     },
     {
@@ -472,7 +490,8 @@
         "dayLabels": ["Thursday - Dinner"],
         "details": "Thursday dinner • Village pub • Alwinton",
         "minZoom": 10,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "phone": "01669 650226"
       }
     },
     {
@@ -492,7 +511,8 @@
         "dayLabels": ["Monday - Morning Visit"],
         "details": "Monday morning • Gothic cathedral • Major attraction",
         "minZoom": 11,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://yorkminster.org/"
       }
     },
     {
@@ -512,7 +532,8 @@
         "dayLabels": ["Sunday - Evening Exploration"],
         "details": "Sunday evening • Medieval street • Harry Potter inspiration",
         "minZoom": 11,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://visityork.org/explore/the-shambles/"
       }
     },
     {
@@ -532,7 +553,8 @@
         "dayLabels": ["Monday - Afternoon Visit"],
         "details": "Monday afternoon • Viking history • Archaeological museum",
         "minZoom": 11,
-        "maxZoom": 20
+        "maxZoom": 20,
+        "website": "https://www.jorvikvikingcentre.co.uk/"
       }
     },
     {
@@ -551,7 +573,8 @@
         "days": [3],
         "dayLabels": ["Tuesday - Roman Heritage"],
         "details": "Tuesday visit • 25 miles from base • 2-3 hours • Active archaeological dig",
-        "distance_from_base": "25 miles from Sharperton"
+        "distance_from_base": "25 miles from Sharperton",
+        "website": "https://www.vindolanda.com/"
       }
     },
     {
@@ -570,7 +593,8 @@
         "days": [3],
         "dayLabels": ["Tuesday - Roman Heritage"],
         "details": "Tuesday visit • 30 miles from base • 1.5 hours • Museum visit",
-        "distance_from_base": "30 miles from Sharperton"
+        "distance_from_base": "30 miles from Sharperton",
+        "website": "https://www.vindolanda.com/roman-army-museum"
       }
     }
   ]

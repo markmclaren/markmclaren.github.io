@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>National Trust and English Heritage Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="layer-controls" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.95); z-index: 2; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 10px 16px; font-family: sans-serif;">
+    <label style="display: flex; align-items: center; margin-bottom: 6px;">
+        <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#006400;margin-right:7px;border:1px solid #444;"></span>
+        <input type="checkbox" id="toggle-nt" checked style="margin-right:5px;"> National Trust
+    </label>
+    <label style="display: flex; align-items: center;">
+        <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#FF0000;margin-right:7px;border:1px solid #444;"></span>
+        <input type="checkbox" id="toggle-eh" checked style="margin-right:5px;"> English Heritage
+    </label>
+</div>
+<script src="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js"></script>
+<script>
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://tiles.openfreemap.org/styles/liberty',
+        center: [-2.0, 55.2], // Centered on the UK
+        zoom: 5
+    });
+
+    map.on('load', () => {
+        // Layer toggle logic
+        function setLayerVisibility(layerId, visible) {
+            if (map.getLayer(layerId)) {
+                map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none');
+            }
+        }
+        document.getElementById('toggle-nt').addEventListener('change', function() {
+            setLayerVisibility('national-trust-points', this.checked);
+        });
+        document.getElementById('toggle-eh').addEventListener('change', function() {
+            setLayerVisibility('english-heritage-points', this.checked);
+        });
+        // --- Load National Trust Data ---
+        // Fetch the data from the local NationalTrust.geojson file.
+        fetch('NationalTrust.geojson')
+            .then(response => response.json())
+            .then(data => {
+                map.addSource('national-trust', {
+                    type: 'geojson',
+                    data: data
+                });
+
+                map.addLayer({
+                    id: 'national-trust-points',
+                    type: 'circle',
+                    source: 'national-trust',
+                    paint: {
+                        'circle-color': '#006400', // Dark Green
+                        'circle-radius': 6
+                    }
+                });
+
+                // Add a popup on click for National Trust properties
+                map.on('click', 'national-trust-points', (e) => {
+                    const properties = e.features[0].properties;
+                    let popupHtml = `<h3>${properties.title || properties.title || properties.Visitor_Property_Name}</h3><p>${properties.description || properties.Description || ''}</p>`;
+                    // Try to find a website link
+                    let url = properties.websiteUrl || properties.WebURL;
+                    if (!url && Array.isArray(properties.links)) {
+                        const web = properties.links.find(l => l.link && l.link.rel === 'website');
+                        if (web && web.link && web.link.href) url = web.link.href;
+                    }
+                    if (url) {
+                        popupHtml += `<a href="${url}" target="_blank">More Info</a>`;
+                    }
+                    new maplibregl.Popup()
+                        .setLngLat(e.lngLat)
+                        .setHTML(popupHtml)
+                        .addTo(map);
+                });
+            });
+
+        // --- Load English Heritage Data ---
+        // Fetch data from the English Heritage API.
+        fetch('EnglishHeritage.geojson')
+            .then(response => response.json())
+            .then(data => {
+                map.addSource('english-heritage', {
+                    type: 'geojson',
+                    data: data
+                });
+
+                map.addLayer({
+                    id: 'english-heritage-points',
+                    type: 'circle',
+                    source: 'english-heritage',
+                    paint: {
+                        'circle-color': '#FF0000', // Red
+                        'circle-radius': 6
+                    }
+                });
+
+                // Add a popup on click for English Heritage properties
+                map.on('click', 'english-heritage-points', (e) => {
+                    const properties = e.features[0].properties;
+                    let popupHtml = `<h3>${properties.Title || properties.title}</h3><p>${properties.Summary || properties.description || ''}</p>`;
+                    if (properties.Path || properties.link) {
+                        const url = properties.Path ? `https://www.english-heritage.org.uk${properties.Path}` : properties.link;
+                        popupHtml += `<a href="${url}" target="_blank">More Info</a>`;
+                    }
+                    new maplibregl.Popup()
+                        .setLngLat(e.lngLat)
+                        .setHTML(popupHtml)
+                        .addTo(map);
+                });
+            });
+    });
+</script>
+</body>
+</html>

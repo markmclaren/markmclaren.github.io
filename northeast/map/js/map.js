@@ -206,6 +206,13 @@ function addMarkersToMap() {
                 routeLink = `https://maps.google.com/maps?saddr=${coords['Carlisle'][1]},${coords['Carlisle'][0]}&daddr=${coords['Portishead'][1]},${coords['Portishead'][0]}`;
                 routeLabel = 'Route to Portishead';
             }
+            // Add website link if present
+            let websiteLink = '';
+            if (feature.properties && feature.properties.website) {
+                websiteLink = `<div style=\"margin-top: 8px;\"><a href=\"${feature.properties.website}\" target=\"_blank\" rel=\"noopener\" style=\"color: #059669; text-decoration: none; font-size: 0.95rem;\"><i class=\"fas fa-globe\"></i> Website</a></div>`;
+            } else if (feature.properties && feature.properties.url) {
+                websiteLink = `<div style=\"margin-top: 8px;\"><a href=\"${feature.properties.url}\" target=\"_blank\" rel=\"noopener\" style=\"color: #059669; text-decoration: none; font-size: 0.95rem;\"><i class=\"fas fa-globe\"></i> Website</a></div>`;
+            }
             return `
                 <div style="padding: 8px;">
                     <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.1rem;">${safeName}</h3>
@@ -214,6 +221,7 @@ function addMarkersToMap() {
                     ${distance_from_base ? `<p style=\"margin: 8px 0 0 0; color: #6b7280; font-size: 0.8rem;\"><i class=\"fas fa-route\"></i> ${distance_from_base}</p>` : ''}
                     <div style=\"margin-top: 10px;\"><a href=\"${googleMapsLink}\" target=\"_blank\" rel=\"noopener\" style=\"color: #2563eb; text-decoration: none; font-size: 0.95rem;\"><i class=\"fas fa-directions\"></i> Directions</a></div>
                     ${routeLink ? `<div style='margin-top: 6px;'><a href='${routeLink}' target='_blank' rel='noopener' style='color: #059669; text-decoration: none; font-size: 0.95rem;'><i class=\"fas fa-route\"></i> ${routeLabel}</a></div>` : ''}
+                    ${websiteLink}
                 </div>
             `;
         }
