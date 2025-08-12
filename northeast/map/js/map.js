@@ -324,7 +324,8 @@ function getSimpleIcon(type) {
         'restaurant': '<i class="fas fa-utensils"></i>',
         'Starting Point': '<i class="fas fa-play"></i>',
         'Family Pickup': '<i class="fas fa-users"></i>',
-        'user-location': '<i class="fas fa-star" style="color: white;"></i>'
+        'user-location': '<i class="fas fa-star" style="color: white;"></i>',
+        'food': '<i class="fas fa-utensils"></i>',
     };
     const result = icons[type] || '<i class="fas fa-map-marker-alt"></i>';
     return result;
@@ -366,7 +367,8 @@ function getLegendColor(type) {
         'attraction': '#059669', // location
         'supermarket': '#f59e42', // supermarket (orange)
         'pub': '#8b5a2b', // pub (brown)
-        'restaurant': '#e11d48' // restaurant (red)
+        'restaurant': '#e11d48', // restaurant (red)
+        'food': '#0284c7' // food (blue)
     };
     return legendColors[type] || '#6b7280';
 }
