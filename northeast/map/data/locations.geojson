@@ -673,7 +673,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "L. Robson & Sons",
         "description": "Traditional smokehouse for Craster Kippers",
@@ -692,7 +692,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "St Aidan's Winery",
         "description": "Producer of Lindisfarne Mead",
@@ -711,7 +711,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "Doddington Dairy Milk Bar & Cafe",
         "description": "Offers Northumbrian Cheeses and Ice Cream",
@@ -730,7 +730,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "Independent Food & Drink",
         "description": "Features a dedicated cheese counter with Northumbrian Cheeses",
@@ -748,7 +748,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "Alnwick Farmers' Market",
         "description": "Monthly market featuring local produce including Northumbrian Cheeses"
@@ -765,7 +765,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "Turnbull's Northumbrian Food Hall",
         "description": "Offers locally sourced meats and game",
@@ -783,7 +783,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "North Acomb Farm Shop",
         "description": "Known for farm-raised beef, lamb, and pork",
@@ -801,7 +801,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "The Potted Lobster",
         "description": "Restaurant known for dishes using locally caught seafood",
@@ -820,7 +820,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "The Jolly Fisherman",
         "description": "Famed for crab soup and sea views",
@@ -838,7 +838,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "Northumberland Seafood Centre",
         "description": "Champions sustainable fishing",
@@ -856,7 +856,7 @@
       },
       "properties": {
         "type": "food",
-        "minZoom": 12,
+        "minZoom": 10,
         "maxZoom": 20,
         "name": "Morwick Dairy",
         "description": "Popular spot for Northumbrian Ice Cream",
