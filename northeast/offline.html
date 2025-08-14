@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - North East England Holiday</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .offline-container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .cached-content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .cached-content h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .cached-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cached-content li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cached-content li:last-child {
+            border-bottom: none;
+        }
+
+        .cached-content a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .cached-content a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .retry-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .retry-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ff6b6b;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.online {
+            background: #51cf66;
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .offline-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">🏰</div>
+        <h1>You're Offline</h1>
+        <p><span class="status-indicator" id="statusIndicator"></span>No internet connection detected</p>
+        <p>Don't worry! Some content is still available offline thanks to our Progressive Web App features.</p>
+        
+        <div class="cached-content">
+            <h3>Available Offline Content:</h3>
+            <ul>
+                <li><a href="/northeast/">🏠 Main Holiday Page</a></li>
+                <li><a href="/northeast/food.html">🍽️ Food Guide</a></li>
+                <li><a href="/northeast/map/">🗺️ Interactive Map</a></li>
+                <li><a href="/northeast/heritage/">🏛️ Heritage Sites Map</a></li>
+            </ul>
+        </div>
+
+        <p>When you're back online, you'll have access to the latest information and real-time features.</p>
+        
+        <button class="retry-button" onclick="checkConnection()">
+            🔄 Check Connection
+        </button>
+    </div>
+
+    <script>
+        // Check online status
+        function updateConnectionStatus() {
+            const indicator = document.getElementById('statusIndicator');
+            const statusText = indicator.nextSibling;
+            
+            if (navigator.onLine) {
+                indicator.classList.add('online');
+                statusText.textContent = 'Connection restored!';
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                indicator.classList.remove('online');
+                statusText.textContent = 'No internet connection detected';
+            }
+        }
+
+        function checkConnection() {
+            updateConnectionStatus();
+            
+            // Try to fetch a small resource to verify connection
+            fetch('/northeast/manifest.json', { 
+                method: 'HEAD',
+                cache: 'no-cache'
+            })
+            .then(() => {
+                // Connection is working, redirect to main page
+                window.location.href = '/northeast/';
+            })
+            .catch(() => {
+                // Still offline
+                alert('Still offline. Please check your internet connection.');
+            });
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // Initial status check
+        updateConnectionStatus();
+
+        // Periodic connection check
+        setInterval(checkConnection, 30000); // Check every 30 seconds
+    </script>
+</body>
+</html>
+

@@ -4,6 +4,29 @@
     <meta charset="utf-8">
     <title>National Trust and English Heritage Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Your complete guide to North East England - castles, Harry Potter locations, and local cuisine">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="NE Holiday">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="../icons/icon-96.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="../icons/icon-128.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/icon-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="../icons/icon-192.png">
+    <link rel="apple-touch-icon" sizes="384x384" href="../icons/icon-384.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="../icons/icon-512.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/icon-16.png">
     <link href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css" rel="stylesheet" />
     <style>
         body { margin: 0; padding: 0; }
@@ -120,5 +143,8 @@
             });
     });
 </script>
+</body>
+    <!-- PWA Scripts -->
+    <script src="../pwa-init.js"></script>
 </body>
 </html>

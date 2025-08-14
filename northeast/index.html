@@ -1,761 +1,948 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PWA Meta Tags -->
+    <meta
+      name="description"
+      content="Your complete guide to North East England - castles, Harry Potter locations, and local cuisine"
+    />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NE Holiday" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/icon-72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="icons/icon-96.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="384x384" href="icons/icon-384.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png" />
     <title>North East England Holiday Adventure</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-map-marked-alt"></i>
-                <span>North East Adventure</span>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#overview" class="nav-link">Overview</a>
-                <a href="#itinerary" class="nav-link">Itinerary</a>
-                <a href="#attractions" class="nav-link">Attractions</a>
-                <a href="./map/" class="nav-link map-link">
-                    <i class="fas fa-external-link-alt"></i> Interactive Map
-                </a>
-                <a href="./heritage" class="nav-link map-link">
-                    <i class="fas fa-landmark"></i> Heritage Map
-                </a>
-                <a href="#dining" class="nav-link">Dining</a>
-                <a href="food.html" class="nav-link"><i class="fas fa-utensils"></i> Food Guide</a>
-                <a href="#practical" class="nav-link">Practical Info</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-map-marked-alt"></i>
+          <span>North East Adventure</span>
         </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#overview" class="nav-link">Overview</a>
+          <a href="#itinerary" class="nav-link">Itinerary</a>
+          <a href="#attractions" class="nav-link">Attractions</a>
+          <a href="./map/" class="nav-link map-link">
+            <i class="fas fa-external-link-alt"></i> Interactive Map
+          </a>
+          <a href="./heritage" class="nav-link map-link">
+            <i class="fas fa-landmark"></i> Heritage Map
+          </a>
+          <a href="#dining" class="nav-link">Dining</a>
+          <a href="food.html" class="nav-link"
+            ><i class="fas fa-utensils"></i> Food Guide</a
+          >
+          <a href="#practical" class="nav-link">Practical Info</a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">North East England Holiday</h1>
-            <p class="hero-subtitle">A magical journey through history, castles, and Harry Potter filming locations</p>
-            <div class="hero-details">
-                <div class="detail-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>24-29 August 2025</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-users"></i>
-                    <span>Family of 4</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-route"></i>
-                    <span>6 Days, 5 Nights</span>
-                </div>
-            </div>
-            <button class="cta-button" onclick="scrollToSection('itinerary')">
-                <i class="fas fa-compass"></i>
-                Explore Itinerary
-            </button>
+      <div class="hero-content">
+        <h1 class="hero-title">North East England Holiday</h1>
+        <p class="hero-subtitle">
+          A magical journey through history, castles, and Harry Potter filming
+          locations
+        </p>
+        <div class="hero-details">
+          <div class="detail-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>24-29 August 2025</span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-users"></i>
+            <span>Family of 4</span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-route"></i>
+            <span>6 Days, 5 Nights</span>
+          </div>
         </div>
+        <button class="cta-button" onclick="scrollToSection('itinerary')">
+          <i class="fas fa-compass"></i>
+          Explore Itinerary
+        </button>
+      </div>
     </section>
 
     <!-- Overview Section -->
     <section id="overview" class="overview">
-        <div class="container">
-            <h2 class="section-title">Holiday Overview</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Route</h3>
-                    <p>Portishead → Kettering → York → Sharperton → Carlisle → Home</p>
-                </div>
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Harry Potter</h3>
-                    <p>Visit Alnwick Castle (Hogwarts), Bamburgh Castle, and The Shambles</p>
-                </div>
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3>History</h3>
-                    <p>Explore Hadrian's Wall, Roman forts, medieval castles, and Viking heritage</p>
-                </div>
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Dining</h3>
-                    <p>Italian cuisine, vegetarian options, local specialties, and traditional pubs</p>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Holiday Overview</h2>
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="card-icon">
+              <i class="fas fa-map-marker-alt"></i>
             </div>
+            <h3>Route</h3>
+            <p>Portishead → Kettering → York → Sharperton → Carlisle → Home</p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon">
+              <i class="fas fa-magic"></i>
+            </div>
+            <h3>Harry Potter</h3>
+            <p>
+              Visit Alnwick Castle (Hogwarts), Bamburgh Castle, and The Shambles
+            </p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <h3>History</h3>
+            <p>
+              Explore Hadrian's Wall, Roman forts, medieval castles, and Viking
+              heritage
+            </p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Dining</h3>
+            <p>
+              Italian cuisine, vegetarian options, local specialties, and
+              traditional pubs
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Daily Itinerary -->
     <section id="itinerary" class="itinerary">
-        <div class="container">
-            <h2 class="section-title">Daily Itinerary</h2>
-            <div class="timeline">
-                <!-- Day 1 -->
-                <div class="timeline-item" data-day="1">
-                    <div class="timeline-marker">
-                        <span class="day-number">1</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="day-header">
-                            <h3>Sunday 24th August</h3>
-                            <span class="day-theme">Travel Day</span>
-                        </div>
-                        <div class="day-route">
-                            <i class="fas fa-route"></i>
-                            <span>Portishead → Kettering → York</span>
-                        </div>
-                        <div class="day-activities">
-                            <div class="activity">
-                                <span class="time">8:00am</span>
-                                <span class="description">Depart Portishead</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">11:45am</span>
-                                <span class="description">Pickup Frank & Al in Kettering</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">2:45pm</span>
-                                <span class="description">Arrive York, check in</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">4:30pm</span>
-                                <span class="description">Explore The Shambles & Harry Potter shop</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">7:30pm</span>
-                                <span class="description">Dinner at Dough Eyed Pizza</span>
-                            </div>
-                        </div>
-                        <div class="day-highlights">
-                            <span class="highlight">The Shambles</span>
-                            <span class="highlight">Medieval Streets</span>
-                            <span class="highlight">Harry Potter Shop</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 2 -->
-                <div class="timeline-item" data-day="2">
-                    <div class="timeline-marker">
-                        <span class="day-number">2</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="day-header">
-                            <h3>Monday 25th August</h3>
-                            <span class="day-theme">York Exploration</span>
-                        </div>
-                        <div class="day-route">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>York → Sharperton</span>
-                        </div>
-                        <div class="day-activities">
-                            <div class="activity">
-                                <span class="time">9:30am</span>
-                                <span class="description">York Minster visit</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">11:45am</span>
-                                <span class="description">Walk York City Walls (FREE)</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">12:30pm</span>
-                                <span class="description">JORVIK Viking Centre</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">4:30pm</span>
-                                <span class="description">Travel to Sharperton</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">7:30pm</span>
-                                <span class="description">Dinner at The Star Inn, Harbottle</span>
-                            </div>
-                        </div>
-                        <div class="day-highlights">
-                            <span class="highlight">York Minster</span>
-                            <span class="highlight">City Walls</span>
-                            <span class="highlight">Viking Centre</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 3 -->
-                <div class="timeline-item" data-day="3">
-                    <div class="timeline-marker">
-                        <span class="day-number">3</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="day-header">
-                            <h3>Tuesday 26th August</h3>
-                            <span class="day-theme">Hadrian's Wall</span>
-                        </div>
-                        <div class="day-route">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Roman Heritage Day</span>
-                        </div>
-                        <div class="day-activities">
-                            <div class="activity">
-                                <span class="time">10:15am</span>
-                                <span class="description">Housesteads Roman Fort</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">12:45pm</span>
-                                <span class="description">Sycamore Gap area</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">3:30pm</span>
-                                <span class="description">The Sill Discovery Centre</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">6:00pm</span>
-                                <span class="description">Shopping in Rothbury</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">7:30pm</span>
-                                <span class="description">Dinner at La Mensa (Italian)</span>
-                            </div>
-                        </div>
-                        <div class="day-highlights">
-                            <span class="highlight">Roman Fort</span>
-                            <span class="highlight">Hadrian's Wall</span>
-                            <span class="highlight">Sycamore Gap</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 4 -->
-                <div class="timeline-item" data-day="4">
-                    <div class="timeline-marker">
-                        <span class="day-number">4</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="day-header">
-                            <h3>Wednesday 27th August</h3>
-                            <span class="day-theme">Harry Potter Day</span>
-                        </div>
-                        <div class="day-route">
-                            <i class="fas fa-magic"></i>
-                            <span>Hogwarts & Castles</span>
-                        </div>
-                        <div class="day-activities">
-                            <div class="activity">
-                                <span class="time">10:00am</span>
-                                <span class="description">Alnwick Castle (Hogwarts filming location)</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">2:30pm</span>
-                                <span class="description">Alnwick town exploration</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">3:30pm</span>
-                                <span class="description">Shilbottle village sign</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">6:30pm</span>
-                                <span class="description">Local exploration: Lady's Well, Harbottle Castle</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">8:00pm</span>
-                                <span class="description">Dinner at Rose & Thistle, Alwinton</span>
-                            </div>
-                        </div>
-                        <div class="day-highlights">
-                            <span class="highlight">Alnwick Castle</span>
-                            <span class="highlight">Hogwarts</span>
-                            <span class="highlight">Shilbottle</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 5 -->
-                <div class="timeline-item" data-day="5">
-                    <div class="timeline-marker">
-                        <span class="day-number">5</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="day-header">
-                            <h3>Thursday 28th August</h3>
-                            <span class="day-theme">Coastal Adventure</span>
-                        </div>
-                        <div class="day-route">
-                            <i class="fas fa-water"></i>
-                            <span>Holy Island & Coast</span>
-                        </div>
-                        <div class="day-activities">
-                            <div class="activity tide-warning">
-                                <span class="time">⚠️</span>
-                                <span class="description">CHECK TIDE TIMES - Plan around causeway</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">10:00am</span>
-                                <span class="description">Lindisfarne (Holy Island)</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">3:30pm</span>
-                                <span class="description">Bamburgh Castle (dramatic clifftop fortress)</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">8:00pm</span>
-                                <span class="description">Dinner at The Olde Ship, Seahouses</span>
-                            </div>
-                        </div>
-                        <div class="day-highlights">
-                            <span class="highlight">Holy Island</span>
-                            <span class="highlight">Lindisfarne</span>
-                            <span class="highlight">Bamburgh Castle</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 6 -->
-                <div class="timeline-item" data-day="6">
-                    <div class="timeline-marker">
-                        <span class="day-number">6</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="day-header">
-                            <h3>Friday 29th August</h3>
-                            <span class="day-theme">Departure Day</span>
-                        </div>
-                        <div class="day-route">
-                            <i class="fas fa-home"></i>
-                            <span>Sharperton → Carlisle → Portishead</span>
-                        </div>
-                        <div class="day-activities">
-                            <div class="activity">
-                                <span class="time">9:30am</span>
-                                <span class="description">Check out, optional local exploration</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">1:15pm</span>
-                                <span class="description">Drop off boys with uncle in Carlisle</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">1:30pm</span>
-                                <span class="description">Family lunch in Carlisle</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">3:00pm</span>
-                                <span class="description">Depart for Portishead</span>
-                            </div>
-                            <div class="activity">
-                                <span class="time">7:30pm</span>
-                                <span class="description">Arrive home</span>
-                            </div>
-                        </div>
-                        <div class="day-highlights">
-                            <span class="highlight">Family Time</span>
-                            <span class="highlight">Carlisle</span>
-                            <span class="highlight">Journey Home</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Daily Itinerary</h2>
+        <div class="timeline">
+          <!-- Day 1 -->
+          <div class="timeline-item" data-day="1">
+            <div class="timeline-marker">
+              <span class="day-number">1</span>
             </div>
+            <div class="timeline-content">
+              <div class="day-header">
+                <h3>Sunday 24th August</h3>
+                <span class="day-theme">Travel Day</span>
+              </div>
+              <div class="day-route">
+                <i class="fas fa-route"></i>
+                <span>Portishead → Kettering → York</span>
+              </div>
+              <div class="day-activities">
+                <div class="activity">
+                  <span class="time">8:00am</span>
+                  <span class="description">Depart Portishead</span>
+                </div>
+                <div class="activity">
+                  <span class="time">11:45am</span>
+                  <span class="description"
+                    >Pickup Frank & Al in Kettering</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">2:45pm</span>
+                  <span class="description">Arrive York, check in</span>
+                </div>
+                <div class="activity">
+                  <span class="time">4:30pm</span>
+                  <span class="description"
+                    >Explore The Shambles & Harry Potter shop</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">7:30pm</span>
+                  <span class="description">Dinner at Dough Eyed Pizza</span>
+                </div>
+              </div>
+              <div class="day-highlights">
+                <span class="highlight">The Shambles</span>
+                <span class="highlight">Medieval Streets</span>
+                <span class="highlight">Harry Potter Shop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 2 -->
+          <div class="timeline-item" data-day="2">
+            <div class="timeline-marker">
+              <span class="day-number">2</span>
+            </div>
+            <div class="timeline-content">
+              <div class="day-header">
+                <h3>Monday 25th August</h3>
+                <span class="day-theme">York Exploration</span>
+              </div>
+              <div class="day-route">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>York → Sharperton</span>
+              </div>
+              <div class="day-activities">
+                <div class="activity">
+                  <span class="time">9:30am</span>
+                  <span class="description">York Minster visit</span>
+                </div>
+                <div class="activity">
+                  <span class="time">11:45am</span>
+                  <span class="description">Walk York City Walls (FREE)</span>
+                </div>
+                <div class="activity">
+                  <span class="time">12:30pm</span>
+                  <span class="description">JORVIK Viking Centre</span>
+                </div>
+                <div class="activity">
+                  <span class="time">4:30pm</span>
+                  <span class="description">Travel to Sharperton</span>
+                </div>
+                <div class="activity">
+                  <span class="time">7:30pm</span>
+                  <span class="description"
+                    >Dinner at The Star Inn, Harbottle</span
+                  >
+                </div>
+              </div>
+              <div class="day-highlights">
+                <span class="highlight">York Minster</span>
+                <span class="highlight">City Walls</span>
+                <span class="highlight">Viking Centre</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 3 -->
+          <div class="timeline-item" data-day="3">
+            <div class="timeline-marker">
+              <span class="day-number">3</span>
+            </div>
+            <div class="timeline-content">
+              <div class="day-header">
+                <h3>Tuesday 26th August</h3>
+                <span class="day-theme">Hadrian's Wall</span>
+              </div>
+              <div class="day-route">
+                <i class="fas fa-shield-alt"></i>
+                <span>Roman Heritage Day</span>
+              </div>
+              <div class="day-activities">
+                <div class="activity">
+                  <span class="time">10:15am</span>
+                  <span class="description">Housesteads Roman Fort</span>
+                </div>
+                <div class="activity">
+                  <span class="time">12:45pm</span>
+                  <span class="description">Sycamore Gap area</span>
+                </div>
+                <div class="activity">
+                  <span class="time">3:30pm</span>
+                  <span class="description">The Sill Discovery Centre</span>
+                </div>
+                <div class="activity">
+                  <span class="time">6:00pm</span>
+                  <span class="description">Shopping in Rothbury</span>
+                </div>
+                <div class="activity">
+                  <span class="time">7:30pm</span>
+                  <span class="description">Dinner at La Mensa (Italian)</span>
+                </div>
+              </div>
+              <div class="day-highlights">
+                <span class="highlight">Roman Fort</span>
+                <span class="highlight">Hadrian's Wall</span>
+                <span class="highlight">Sycamore Gap</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 4 -->
+          <div class="timeline-item" data-day="4">
+            <div class="timeline-marker">
+              <span class="day-number">4</span>
+            </div>
+            <div class="timeline-content">
+              <div class="day-header">
+                <h3>Wednesday 27th August</h3>
+                <span class="day-theme">Harry Potter Day</span>
+              </div>
+              <div class="day-route">
+                <i class="fas fa-magic"></i>
+                <span>Hogwarts & Castles</span>
+              </div>
+              <div class="day-activities">
+                <div class="activity">
+                  <span class="time">10:00am</span>
+                  <span class="description"
+                    >Alnwick Castle (Hogwarts filming location)</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">2:30pm</span>
+                  <span class="description">Alnwick town exploration</span>
+                </div>
+                <div class="activity">
+                  <span class="time">3:30pm</span>
+                  <span class="description">Shilbottle village sign</span>
+                </div>
+                <div class="activity">
+                  <span class="time">6:30pm</span>
+                  <span class="description"
+                    >Local exploration: Lady's Well, Harbottle Castle</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">8:00pm</span>
+                  <span class="description"
+                    >Dinner at Rose & Thistle, Alwinton</span
+                  >
+                </div>
+              </div>
+              <div class="day-highlights">
+                <span class="highlight">Alnwick Castle</span>
+                <span class="highlight">Hogwarts</span>
+                <span class="highlight">Shilbottle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 5 -->
+          <div class="timeline-item" data-day="5">
+            <div class="timeline-marker">
+              <span class="day-number">5</span>
+            </div>
+            <div class="timeline-content">
+              <div class="day-header">
+                <h3>Thursday 28th August</h3>
+                <span class="day-theme">Coastal Adventure</span>
+              </div>
+              <div class="day-route">
+                <i class="fas fa-water"></i>
+                <span>Holy Island & Coast</span>
+              </div>
+              <div class="day-activities">
+                <div class="activity tide-warning">
+                  <span class="time">⚠️</span>
+                  <span class="description"
+                    >CHECK TIDE TIMES - Plan around causeway</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">10:00am</span>
+                  <span class="description">Lindisfarne (Holy Island)</span>
+                </div>
+                <div class="activity">
+                  <span class="time">3:30pm</span>
+                  <span class="description"
+                    >Bamburgh Castle (dramatic clifftop fortress)</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">8:00pm</span>
+                  <span class="description"
+                    >Dinner at The Olde Ship, Seahouses</span
+                  >
+                </div>
+              </div>
+              <div class="day-highlights">
+                <span class="highlight">Holy Island</span>
+                <span class="highlight">Lindisfarne</span>
+                <span class="highlight">Bamburgh Castle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 6 -->
+          <div class="timeline-item" data-day="6">
+            <div class="timeline-marker">
+              <span class="day-number">6</span>
+            </div>
+            <div class="timeline-content">
+              <div class="day-header">
+                <h3>Friday 29th August</h3>
+                <span class="day-theme">Departure Day</span>
+              </div>
+              <div class="day-route">
+                <i class="fas fa-home"></i>
+                <span>Sharperton → Carlisle → Portishead</span>
+              </div>
+              <div class="day-activities">
+                <div class="activity">
+                  <span class="time">9:30am</span>
+                  <span class="description"
+                    >Check out, optional local exploration</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">1:15pm</span>
+                  <span class="description"
+                    >Drop off boys with uncle in Carlisle</span
+                  >
+                </div>
+                <div class="activity">
+                  <span class="time">1:30pm</span>
+                  <span class="description">Family lunch in Carlisle</span>
+                </div>
+                <div class="activity">
+                  <span class="time">3:00pm</span>
+                  <span class="description">Depart for Portishead</span>
+                </div>
+                <div class="activity">
+                  <span class="time">7:30pm</span>
+                  <span class="description">Arrive home</span>
+                </div>
+              </div>
+              <div class="day-highlights">
+                <span class="highlight">Family Time</span>
+                <span class="highlight">Carlisle</span>
+                <span class="highlight">Journey Home</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Key Attractions -->
     <section id="attractions" class="attractions">
-        <div class="container">
-            <h2 class="section-title">Key Attractions</h2>
-            <div class="attractions-grid">
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <i class="fas fa-castle"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Alnwick Castle</h3>
-                        <p class="attraction-type">Harry Potter Filming Location</p>
-                        <p>The iconic Hogwarts exterior from the first two Harry Potter films. Experience broomstick training and explore the medieval castle.</p>
-                        <div class="attraction-details">
-                            <span><i class="fas fa-clock"></i> 3 hours</span>
-                            <span><i class="fas fa-ticket-alt"></i> Pre-book online</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Hadrian's Wall</h3>
-                        <p class="attraction-type">UNESCO World Heritage Site</p>
-                        <p>Walk along the ancient Roman wall at Housesteads Fort, the best-preserved section with spectacular countryside views.</p>
-                        <div class="attraction-details">
-                            <span><i class="fas fa-clock"></i> 2.5 hours</span>
-                            <span><i class="fas fa-walking"></i> 750m uphill walk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <i class="fas fa-church"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>York Minster</h3>
-                        <p class="attraction-type">Gothic Cathedral</p>
-                        <p>One of the world's most magnificent cathedrals with breathtaking medieval architecture and stunning stained glass windows.</p>
-                        <div class="attraction-details">
-                            <span><i class="fas fa-clock"></i> 2 hours</span>
-                            <span><i class="fas fa-tower-observation"></i> Tower climb available</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Lindisfarne (Holy Island)</h3>
-                        <p class="attraction-type">Tidal Island</p>
-                        <p>Historic monastery ruins and castle on a tidal island. Access depends on tide times - plan carefully!</p>
-                        <div class="attraction-details">
-                            <span><i class="fas fa-clock"></i> 3 hours</span>
-                            <span><i class="fas fa-exclamation-triangle"></i> Tide dependent</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <i class="fas fa-helmet-battle"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>JORVIK Viking Centre</h3>
-                        <p class="attraction-type">Archaeological Experience</p>
-                        <p>Journey through 1,000-year-old Viking streets built on the actual archaeological site where Vikings once lived.</p>
-                        <div class="attraction-details">
-                            <span><i class="fas fa-clock"></i> 1.5 hours</span>
-                            <span><i class="fas fa-phone"></i> Pre-book: 01904 615505</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <i class="fas fa-road"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>The Shambles</h3>
-                        <p class="attraction-type">Medieval Street</p>
-                        <p>One of Europe's best-preserved medieval shopping streets with overhanging timber buildings and Harry Potter merchandise.</p>
-                        <div class="attraction-details">
-                            <span><i class="fas fa-clock"></i> 1 hour</span>
-                            <span><i class="fas fa-pound-sign"></i> Free to explore</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Key Attractions</h2>
+        <div class="attractions-grid">
+          <div class="attraction-card">
+            <div class="card-image">
+              <i class="fas fa-castle"></i>
             </div>
+            <div class="card-content">
+              <h3>Alnwick Castle</h3>
+              <p class="attraction-type">Harry Potter Filming Location</p>
+              <p>
+                The iconic Hogwarts exterior from the first two Harry Potter
+                films. Experience broomstick training and explore the medieval
+                castle.
+              </p>
+              <div class="attraction-details">
+                <span><i class="fas fa-clock"></i> 3 hours</span>
+                <span><i class="fas fa-ticket-alt"></i> Pre-book online</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="card-image">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="card-content">
+              <h3>Hadrian's Wall</h3>
+              <p class="attraction-type">UNESCO World Heritage Site</p>
+              <p>
+                Walk along the ancient Roman wall at Housesteads Fort, the
+                best-preserved section with spectacular countryside views.
+              </p>
+              <div class="attraction-details">
+                <span><i class="fas fa-clock"></i> 2.5 hours</span>
+                <span><i class="fas fa-walking"></i> 750m uphill walk</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="card-image">
+              <i class="fas fa-church"></i>
+            </div>
+            <div class="card-content">
+              <h3>York Minster</h3>
+              <p class="attraction-type">Gothic Cathedral</p>
+              <p>
+                One of the world's most magnificent cathedrals with breathtaking
+                medieval architecture and stunning stained glass windows.
+              </p>
+              <div class="attraction-details">
+                <span><i class="fas fa-clock"></i> 2 hours</span>
+                <span
+                  ><i class="fas fa-tower-observation"></i> Tower climb
+                  available</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="card-image">
+              <i class="fas fa-water"></i>
+            </div>
+            <div class="card-content">
+              <h3>Lindisfarne (Holy Island)</h3>
+              <p class="attraction-type">Tidal Island</p>
+              <p>
+                Historic monastery ruins and castle on a tidal island. Access
+                depends on tide times - plan carefully!
+              </p>
+              <div class="attraction-details">
+                <span><i class="fas fa-clock"></i> 3 hours</span>
+                <span
+                  ><i class="fas fa-exclamation-triangle"></i> Tide
+                  dependent</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="card-image">
+              <i class="fas fa-helmet-battle"></i>
+            </div>
+            <div class="card-content">
+              <h3>JORVIK Viking Centre</h3>
+              <p class="attraction-type">Archaeological Experience</p>
+              <p>
+                Journey through 1,000-year-old Viking streets built on the
+                actual archaeological site where Vikings once lived.
+              </p>
+              <div class="attraction-details">
+                <span><i class="fas fa-clock"></i> 1.5 hours</span>
+                <span><i class="fas fa-phone"></i> Pre-book: 01904 615505</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="card-image">
+              <i class="fas fa-road"></i>
+            </div>
+            <div class="card-content">
+              <h3>The Shambles</h3>
+              <p class="attraction-type">Medieval Street</p>
+              <p>
+                One of Europe's best-preserved medieval shopping streets with
+                overhanging timber buildings and Harry Potter merchandise.
+              </p>
+              <div class="attraction-details">
+                <span><i class="fas fa-clock"></i> 1 hour</span>
+                <span><i class="fas fa-pound-sign"></i> Free to explore</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Interactive Map Link Section -->
     <section class="map-link-section">
-        <div class="container">
-            <div class="map-link-card">
-                <div class="map-link-icon">
-                    <i class="fas fa-map-marked-alt"></i>
-                </div>
-                <div class="map-link-content">
-                    <h2>Interactive Holiday Map</h2>
-                    <p>Explore all your destinations on a full-screen, mobile-friendly interactive map with day-by-day filtering, GPS location, and detailed information about each location.</p>
-                    <div class="map-features">
-                        <div class="feature">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile Optimized</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-location-arrow"></i>
-                            <span>GPS Location</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-filter"></i>
-                            <span>Day Filtering</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                            <span>Full Screen</span>
-                        </div>
-                    </div>
-                    <a href="./map/" class="map-cta-button">
-                        <i class="fas fa-external-link-alt"></i>
-                        Open Interactive Map
-                    </a>
-                </div>
+      <div class="container">
+        <div class="map-link-card">
+          <div class="map-link-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="map-link-content">
+            <h2>Interactive Holiday Map</h2>
+            <p>
+              Explore all your destinations on a full-screen, mobile-friendly
+              interactive map with day-by-day filtering, GPS location, and
+              detailed information about each location.
+            </p>
+            <div class="map-features">
+              <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile Optimized</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-location-arrow"></i>
+                <span>GPS Location</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-filter"></i>
+                <span>Day Filtering</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-expand-arrows-alt"></i>
+                <span>Full Screen</span>
+              </div>
             </div>
+            <a href="./map/" class="map-cta-button">
+              <i class="fas fa-external-link-alt"></i>
+              Open Interactive Map
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Dining Section -->
     <section id="dining" class="dining">
-        <div class="container">
-            <h2 class="section-title">Dining Recommendations</h2>
-            <div class="dining-categories">
-                <div class="category-tabs">
-                    <button class="tab-button active" data-category="local">Local Favorites</button>
-                    <button class="tab-button" data-category="italian">Italian Cuisine</button>
-                    <button class="tab-button" data-category="vegetarian">Vegetarian Options</button>
-                    <button class="tab-button" data-category="carlisle">Carlisle</button>
+      <div class="container">
+        <h2 class="section-title">Dining Recommendations</h2>
+        <div class="dining-categories">
+          <div class="category-tabs">
+            <button class="tab-button active" data-category="local">
+              Local Favorites
+            </button>
+            <button class="tab-button" data-category="italian">
+              Italian Cuisine
+            </button>
+            <button class="tab-button" data-category="vegetarian">
+              Vegetarian Options
+            </button>
+            <button class="tab-button" data-category="carlisle">
+              Carlisle
+            </button>
+          </div>
+
+          <div class="dining-content">
+            <div class="category-content active" data-category="local">
+              <div class="restaurant-grid">
+                <div class="restaurant-card">
+                  <h4>The Star Inn, Harbottle</h4>
+                  <p class="distance">1.8 miles from Sharperton</p>
+                  <p>
+                    Local community pub with Italian specialties, pizza, and
+                    traditional fish & chips. Walkable from cottage on quiet
+                    back roads.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>Pizza</span>
+                    <span>Italian</span>
+                    <span>Vegetarian Options</span>
+                  </div>
                 </div>
-
-                <div class="dining-content">
-                    <div class="category-content active" data-category="local">
-                        <div class="restaurant-grid">
-                            <div class="restaurant-card">
-                                <h4>The Star Inn, Harbottle</h4>
-                                <p class="distance">1.8 miles from Sharperton</p>
-                                <p>Local community pub with Italian specialties, pizza, and traditional fish & chips. Walkable from cottage on quiet back roads.</p>
-                                <div class="restaurant-features">
-                                    <span>Pizza</span>
-                                    <span>Italian</span>
-                                    <span>Vegetarian Options</span>
-                                </div>
-                            </div>
-                            <div class="restaurant-card">
-                                <h4>The Turks Head, Rothbury</h4>
-                                <p class="distance">7 miles from Sharperton</p>
-                                <p>Traditional country pub with extensive outdoor seating and good pub grub. Often features live music.</p>
-                                <div class="restaurant-features">
-                                    <span>Pub Food</span>
-                                    <span>Outdoor Seating</span>
-                                    <span>Live Music</span>
-                                </div>
-                            </div>
-                            <div class="restaurant-card">
-                                <h4>Rose & Thistle, Alwinton</h4>
-                                <p class="distance">3.5 miles from Sharperton</p>
-                                <p>Recently refurbished pub at the head of Coquet valley, edge of Cheviot Hills. Last watering hole before Scottish border.</p>
-                                <div class="restaurant-features">
-                                    <span>Recently Refurbished</span>
-                                    <span>Great Food</span>
-                                    <span>Scenic Location</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category-content" data-category="italian">
-                        <div class="restaurant-grid">
-                            <div class="restaurant-card">
-                                <h4>La Mensa, Rothbury</h4>
-                                <p class="distance">7 miles from Sharperton</p>
-                                <p>Highly recommended Italian restaurant and pizzeria. Hearty Italian meals, great pizza, good value with lively atmosphere.</p>
-                                <div class="restaurant-features">
-                                    <span>7 Locals Recommend</span>
-                                    <span>Great Pizza</span>
-                                    <span>Good Value</span>
-                                </div>
-                            </div>
-                            <div class="restaurant-card">
-                                <h4>Casa Romana, Carlisle</h4>
-                                <p class="distance">Carlisle city center</p>
-                                <p>Long established Italian restaurant serving homemade pizza, pasta, risotto, and tasty main courses.</p>
-                                <div class="restaurant-features">
-                                    <span>Homemade Pizza</span>
-                                    <span>Pasta & Risotto</span>
-                                    <span>Take Out Available</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category-content" data-category="vegetarian">
-                        <div class="restaurant-grid">
-                            <div class="restaurant-card">
-                                <h4>Bewicks, Rothbury</h4>
-                                <p class="distance">7 miles from Sharperton</p>
-                                <p>Upscale café serving modern British cuisine in cozy, informal atmosphere. Dog-friendly with great vegetarian options.</p>
-                                <div class="restaurant-features">
-                                    <span>12 Locals Recommend</span>
-                                    <span>Modern British</span>
-                                    <span>Dog Friendly</span>
-                                </div>
-                            </div>
-                            <div class="restaurant-card">
-                                <h4>In The Meantime, Carlisle</h4>
-                                <p class="distance">Carlisle city center</p>
-                                <p>Independent restaurant with menu designed for everyone, featuring variety of vegan and gluten-free options.</p>
-                                <div class="restaurant-features">
-                                    <span>Vegan Options</span>
-                                    <span>Gluten Free</span>
-                                    <span>Independent</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category-content" data-category="carlisle">
-                        <div class="restaurant-grid">
-                            <div class="restaurant-card">
-                                <h4>Alexandros Greek Restaurant & Deli</h4>
-                                <p class="distance">Carlisle city center</p>
-                                <p>Highly rated Greek restaurant with excellent vegetarian options. Perfect for the family lunch on departure day.</p>
-                                <div class="restaurant-features">
-                                    <span>4.8/5 Rating</span>
-                                    <span>1,735 Reviews</span>
-                                    <span>Vegetarian Friendly</span>
-                                </div>
-                            </div>
-                            <div class="restaurant-card">
-                                <h4>SannaS Restaurant</h4>
-                                <p class="distance">Carlisle city center</p>
-                                <p>Sardinian restaurant serving authentic cuisine in warm and inviting atmosphere.</p>
-                                <div class="restaurant-features">
-                                    <span>Sardinian Cuisine</span>
-                                    <span>Authentic</span>
-                                    <span>Warm Atmosphere</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="restaurant-card">
+                  <h4>The Turks Head, Rothbury</h4>
+                  <p class="distance">7 miles from Sharperton</p>
+                  <p>
+                    Traditional country pub with extensive outdoor seating and
+                    good pub grub. Often features live music.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>Pub Food</span>
+                    <span>Outdoor Seating</span>
+                    <span>Live Music</span>
+                  </div>
                 </div>
+                <div class="restaurant-card">
+                  <h4>Rose & Thistle, Alwinton</h4>
+                  <p class="distance">3.5 miles from Sharperton</p>
+                  <p>
+                    Recently refurbished pub at the head of Coquet valley, edge
+                    of Cheviot Hills. Last watering hole before Scottish border.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>Recently Refurbished</span>
+                    <span>Great Food</span>
+                    <span>Scenic Location</span>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div class="category-content" data-category="italian">
+              <div class="restaurant-grid">
+                <div class="restaurant-card">
+                  <h4>La Mensa, Rothbury</h4>
+                  <p class="distance">7 miles from Sharperton</p>
+                  <p>
+                    Highly recommended Italian restaurant and pizzeria. Hearty
+                    Italian meals, great pizza, good value with lively
+                    atmosphere.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>7 Locals Recommend</span>
+                    <span>Great Pizza</span>
+                    <span>Good Value</span>
+                  </div>
+                </div>
+                <div class="restaurant-card">
+                  <h4>Casa Romana, Carlisle</h4>
+                  <p class="distance">Carlisle city center</p>
+                  <p>
+                    Long established Italian restaurant serving homemade pizza,
+                    pasta, risotto, and tasty main courses.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>Homemade Pizza</span>
+                    <span>Pasta & Risotto</span>
+                    <span>Take Out Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="category-content" data-category="vegetarian">
+              <div class="restaurant-grid">
+                <div class="restaurant-card">
+                  <h4>Bewicks, Rothbury</h4>
+                  <p class="distance">7 miles from Sharperton</p>
+                  <p>
+                    Upscale café serving modern British cuisine in cozy,
+                    informal atmosphere. Dog-friendly with great vegetarian
+                    options.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>12 Locals Recommend</span>
+                    <span>Modern British</span>
+                    <span>Dog Friendly</span>
+                  </div>
+                </div>
+                <div class="restaurant-card">
+                  <h4>In The Meantime, Carlisle</h4>
+                  <p class="distance">Carlisle city center</p>
+                  <p>
+                    Independent restaurant with menu designed for everyone,
+                    featuring variety of vegan and gluten-free options.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>Vegan Options</span>
+                    <span>Gluten Free</span>
+                    <span>Independent</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="category-content" data-category="carlisle">
+              <div class="restaurant-grid">
+                <div class="restaurant-card">
+                  <h4>Alexandros Greek Restaurant & Deli</h4>
+                  <p class="distance">Carlisle city center</p>
+                  <p>
+                    Highly rated Greek restaurant with excellent vegetarian
+                    options. Perfect for the family lunch on departure day.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>4.8/5 Rating</span>
+                    <span>1,735 Reviews</span>
+                    <span>Vegetarian Friendly</span>
+                  </div>
+                </div>
+                <div class="restaurant-card">
+                  <h4>SannaS Restaurant</h4>
+                  <p class="distance">Carlisle city center</p>
+                  <p>
+                    Sardinian restaurant serving authentic cuisine in warm and
+                    inviting atmosphere.
+                  </p>
+                  <div class="restaurant-features">
+                    <span>Sardinian Cuisine</span>
+                    <span>Authentic</span>
+                    <span>Warm Atmosphere</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Practical Information -->
     <section id="practical" class="practical">
-        <div class="container">
-            <h2 class="section-title">Practical Information</h2>
-            <div class="practical-grid">
-                <div class="practical-card">
-                    <div class="card-icon">
-                        <i class="fas fa-ticket-alt"></i>
-                    </div>
-                    <h3>Essential Bookings</h3>
-                    <ul>
-                        <li><strong>York Minster:</strong> Pre-book online for better prices</li>
-                        <li><strong>JORVIK Viking Centre:</strong> Pre-book essential (01904 615505)</li>
-                        <li><strong>Alnwick Castle:</strong> Book online, consider combined tickets</li>
-                        <li><strong>Housesteads Roman Fort:</strong> Advance booking recommended</li>
-                    </ul>
-                </div>
-
-                <div class="practical-card tide-card">
-                    <div class="card-icon">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3>Tide Times - CRITICAL</h3>
-                    <div class="tide-warning">
-                        <p><strong>Lindisfarne (Holy Island):</strong></p>
-                        <p>Check crossing times at: <br><a href="https://holyislandcrossingtimes.northumberland.gov.uk" target="_blank"><strong>Holy Island Crossing Times</strong></a></p>
-                        <p>Plan entire Thursday around tide timetable. Allow 3+ hours on island between safe crossings.</p>
-                    </div>
-                </div>
-
-                <div class="practical-card">
-                    <div class="card-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>Supermarket Shopping</h3>
-                    <p><strong>Rothbury</strong> (7 miles from Sharperton):</p>
-                    <ul>
-                        <li>Morrisons</li>
-                        <li>Co-op</li>
-                        <li>Sainsbury's</li>
-                        <li>M&S Foodhall</li>
-                    </ul>
-                    <p>Stock up Tuesday evening for rest of stay</p>
-                </div>
-
-                <div class="practical-card">
-                    <div class="card-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Driving Information</h3>
-                    <ul>
-                        <li><strong>Total driving:</strong> ~1,200 miles over 6 days</li>
-                        <li><strong>Longest day:</strong> Friday return (280 miles, 4.5 hours)</li>
-                        <li><strong>Fuel estimate:</strong> £150-200</li>
-                        <li><strong>Parking:</strong> Most attractions have dedicated parking</li>
-                        <li><strong>Navigation:</strong> Some rural areas have limited mobile signal</li>
-                    </ul>
-                </div>
-
-                <div class="practical-card">
-                    <div class="card-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Harry Potter Highlights</h3>
-                    <ul>
-                        <li><strong>Alnwick Castle:</strong> Main Hogwarts filming location</li>
-                        <li><strong>Bamburgh Castle:</strong> Additional filming location</li>
-                        <li><strong>The Shambles, York:</strong> Harry Potter merchandise shop</li>
-                        <li><strong>Northumberland:</strong> Multiple filming locations throughout</li>
-                    </ul>
-                </div>
-
-                <div class="practical-card">
-                    <div class="card-icon">
-                        <i class="fas fa-pound-sign"></i>
-                    </div>
-                    <h3>Budget Estimates</h3>
-                    <ul>
-                        <li><strong>Fuel:</strong> £150-200</li>
-                        <li><strong>Attractions:</strong> £200-300</li>
-                        <li><strong>Meals:</strong> £400-500</li>
-                        <li><strong>Shopping/Souvenirs:</strong> £100-200</li>
-                        <li><strong>Total estimated:</strong> £850-1,200</li>
-                    </ul>
-                    <p><em>Accommodation already booked</em></p>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Practical Information</h2>
+        <div class="practical-grid">
+          <div class="practical-card">
+            <div class="card-icon">
+              <i class="fas fa-ticket-alt"></i>
             </div>
+            <h3>Essential Bookings</h3>
+            <ul>
+              <li>
+                <strong>York Minster:</strong> Pre-book online for better prices
+              </li>
+              <li>
+                <strong>JORVIK Viking Centre:</strong> Pre-book essential (01904
+                615505)
+              </li>
+              <li>
+                <strong>Alnwick Castle:</strong> Book online, consider combined
+                tickets
+              </li>
+              <li>
+                <strong>Housesteads Roman Fort:</strong> Advance booking
+                recommended
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-card tide-card">
+            <div class="card-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <h3>Tide Times - CRITICAL</h3>
+            <div class="tide-warning">
+              <p><strong>Lindisfarne (Holy Island):</strong></p>
+              <p>
+                Check crossing times at: <br /><a
+                  href="https://holyislandcrossingtimes.northumberland.gov.uk"
+                  target="_blank"
+                  ><strong>Holy Island Crossing Times</strong></a
+                >
+              </p>
+              <p>
+                Plan entire Thursday around tide timetable. Allow 3+ hours on
+                island between safe crossings.
+              </p>
+            </div>
+          </div>
+
+          <div class="practical-card">
+            <div class="card-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>Supermarket Shopping</h3>
+            <p><strong>Rothbury</strong> (7 miles from Sharperton):</p>
+            <ul>
+              <li>Morrisons</li>
+              <li>Co-op</li>
+              <li>Sainsbury's</li>
+              <li>M&S Foodhall</li>
+            </ul>
+            <p>Stock up Tuesday evening for rest of stay</p>
+          </div>
+
+          <div class="practical-card">
+            <div class="card-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3>Driving Information</h3>
+            <ul>
+              <li><strong>Total driving:</strong> ~1,200 miles over 6 days</li>
+              <li>
+                <strong>Longest day:</strong> Friday return (280 miles, 4.5
+                hours)
+              </li>
+              <li><strong>Fuel estimate:</strong> £150-200</li>
+              <li>
+                <strong>Parking:</strong> Most attractions have dedicated
+                parking
+              </li>
+              <li>
+                <strong>Navigation:</strong> Some rural areas have limited
+                mobile signal
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-card">
+            <div class="card-icon">
+              <i class="fas fa-magic"></i>
+            </div>
+            <h3>Harry Potter Highlights</h3>
+            <ul>
+              <li>
+                <strong>Alnwick Castle:</strong> Main Hogwarts filming location
+              </li>
+              <li>
+                <strong>Bamburgh Castle:</strong> Additional filming location
+              </li>
+              <li>
+                <strong>The Shambles, York:</strong> Harry Potter merchandise
+                shop
+              </li>
+              <li>
+                <strong>Northumberland:</strong> Multiple filming locations
+                throughout
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-card">
+            <div class="card-icon">
+              <i class="fas fa-pound-sign"></i>
+            </div>
+            <h3>Budget Estimates</h3>
+            <ul>
+              <li><strong>Fuel:</strong> £150-200</li>
+              <li><strong>Attractions:</strong> £200-300</li>
+              <li><strong>Meals:</strong> £400-500</li>
+              <li><strong>Shopping/Souvenirs:</strong> £100-200</li>
+              <li><strong>Total estimated:</strong> £850-1,200</li>
+            </ul>
+            <p><em>Accommodation already booked</em></p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="https://www.visitnorthumberland.com/">Visit Northumberland</a></li>
-                        <li><a href="https://www.northumberlandnationalpark.org.uk/">Northumberland National Park</a></li>
-                        <li><a href="https://fabulousnorth.com/">Fabulous North</a></li>
-                        <li><a href="https://www.northeastfamilyfun.co.uk/">North East Family Fun</a></li>
-                        <li><a href="food.html">Food Guide</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Important Contacts</h4>
-                    <ul>
-                        <li>JORVIK Viking Centre: 01904 615505</li>
-                        <li>Holy Island Crossing Times: Northumberland County Council</li>
-                        <li>Emergency: 999</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Weather Contingency</h4>
-                    <ul>
-                        <li>Indoor alternatives: Museums, castles, shopping</li>
-                        <li>Wet weather: York indoor attractions</li>
-                        <li>Coastal areas can be windy - bring layers</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 North East England Holiday Adventure. Created for an unforgettable family journey.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <a href="https://www.visitnorthumberland.com/"
+                  >Visit Northumberland</a
+                >
+              </li>
+              <li>
+                <a href="https://www.northumberlandnationalpark.org.uk/"
+                  >Northumberland National Park</a
+                >
+              </li>
+              <li><a href="https://fabulousnorth.com/">Fabulous North</a></li>
+              <li>
+                <a href="https://www.northeastfamilyfun.co.uk/"
+                  >North East Family Fun</a
+                >
+              </li>
+              <li><a href="food.html">Food Guide</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Important Contacts</h4>
+            <ul>
+              <li>JORVIK Viking Centre: 01904 615505</li>
+              <li>Holy Island Crossing Times: Northumberland County Council</li>
+              <li>Emergency: 999</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Weather Contingency</h4>
+            <ul>
+              <li>Indoor alternatives: Museums, castles, shopping</li>
+              <li>Wet weather: York indoor attractions</li>
+              <li>Coastal areas can be windy - bring layers</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 North East England Holiday Adventure. Created for an
+            unforgettable family journey.
+          </p>
+        </div>
+      </div>
     </footer>
     <script src="./js/script.js"></script>
-</body>
+    <!-- PWA Scripts -->
+    <script src="pwa-init.js"></script>
+  </body>
 </html>

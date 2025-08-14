@@ -1,0 +1,118 @@
+{
+  "name": "North East England Holiday Adventure",
+  "short_name": "NE Holiday",
+  "description": "Your complete guide to North East England - castles, Harry Potter locations, and local cuisine",
+  "start_url": "/northeast/",
+  "scope": "/northeast/",
+  "display": "standalone",
+  "background_color": "#6366f1",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "categories": ["travel", "tourism", "lifestyle"],
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-screenshot.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Holiday itinerary and interactive maps"
+    },
+    {
+      "src": "screenshots/mobile-screenshot.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile-friendly holiday planning"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Interactive Map",
+      "short_name": "Map",
+      "description": "View holiday locations on interactive map",
+      "url": "/northeast/map/",
+      "icons": [
+        {
+          "src": "icons/map-icon-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Food Guide",
+      "short_name": "Food",
+      "description": "Discover local cuisine and restaurants",
+      "url": "/northeast/food.html",
+      "icons": [
+        {
+          "src": "icons/food-icon-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Heritage Map",
+      "short_name": "Heritage",
+      "description": "Explore National Trust and English Heritage sites",
+      "url": "/northeast/heritage/",
+      "icons": [
+        {
+          "src": "icons/heritage-icon-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
+

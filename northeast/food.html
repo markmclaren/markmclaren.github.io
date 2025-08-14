@@ -1,620 +1,837 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PWA Meta Tags -->
+    <meta
+      name="description"
+      content="Your complete guide to North East England - castles, Harry Potter locations, and local cuisine"
+    />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NE Holiday" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/icon-72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="icons/icon-96.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="384x384" href="icons/icon-384.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png" />
     <title>Culinary Adventures - North East England Holiday</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8fafc;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8fafc;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* Header and Navigation - matching main site */
-        .header {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+      /* Header and Navigation - matching main site */
+      .header {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-        }
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
 
-        .logo i {
-            margin-right: 0.5rem;
-            font-size: 2rem;
-        }
+      .logo i {
+        margin-right: 0.5rem;
+        font-size: 2rem;
+      }
 
-        .nav-tabs {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
+      .nav-tabs {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
 
-        .nav-tab {
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border: none;
-            border-radius: 20px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
+      .nav-tab {
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 20px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
 
-        .nav-tab:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
+      .nav-tab:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
 
-        .nav-tab.active {
-            background: #f59e0b;
-            color: white;
-        }
+      .nav-tab.active {
+        background: #f59e0b;
+        color: white;
+      }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
 
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .trip-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .trip-detail {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .trip-detail i {
+        font-size: 1.2rem;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 3rem 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+
+      .section-header p {
+        font-size: 1.1rem;
+        color: #6b7280;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Food Cards Grid */
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #e5e7eb;
+      }
+
+      .food-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .food-card h3 {
+        color: #6366f1;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .food-card h3 i {
+        font-size: 1.2rem;
+      }
+
+      .food-card p {
+        color: #4b5563;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .food-card h4 {
+        color: #374151;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 0.5rem;
+      }
+
+      .location-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .location-list li {
+        margin-bottom: 0.8rem;
+        padding: 0.5rem;
+        background: #f8fafc;
+        border-radius: 8px;
+        border-left: 3px solid #6366f1;
+      }
+
+      .location-name {
+        font-weight: bold;
+        color: #6366f1;
+      }
+
+      .location-name a {
+        color: #6366f1;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .location-name a:hover {
+        color: #4f46e5;
+        text-decoration: underline;
+      }
+
+      /* Explore More Section */
+      .explore-more {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-top: 3rem;
+      }
+
+      .explore-more h2 {
+        color: #6366f1;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .explore-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .explore-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .explore-item:hover {
+        background: #e0e7ff;
+        transform: translateX(5px);
+      }
+
+      .explore-item i {
+        font-size: 1.5rem;
+        color: #6366f1;
+        width: 30px;
+        text-align: center;
+      }
+
+      /* Footer */
+      .footer {
+        background: #1f2937;
+        color: white;
+        padding: 3rem 0 2rem;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h4 {
+        color: #6366f1;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-section a {
+        color: #d1d5db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: #6366f1;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #374151;
+        color: #9ca3af;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+          font-size: 2rem;
         }
 
         .trip-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
+          flex-direction: column;
+          gap: 1rem;
         }
 
-        .trip-detail {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .trip-detail i {
-            font-size: 1.2rem;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 3rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #6b7280;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Food Cards Grid */
         .food-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+          grid-template-columns: 1fr;
         }
 
-        .food-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
+        .nav-tabs {
+          justify-content: center;
         }
 
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        .header-content {
+          flex-direction: column;
+          text-align: center;
         }
+      }
 
-        .food-card h3 {
-            color: #6366f1;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #6366f1;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      }
 
-        .food-card h3 i {
-            font-size: 1.2rem;
-        }
-
-        .food-card p {
-            color: #4b5563;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .food-card h4 {
-            color: #374151;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 0.5rem;
-        }
-
-        .location-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .location-list li {
-            margin-bottom: 0.8rem;
-            padding: 0.5rem;
-            background: #f8fafc;
-            border-radius: 8px;
-            border-left: 3px solid #6366f1;
-        }
-
-        .location-name {
-            font-weight: bold;
-            color: #6366f1;
-        }
-
-        .location-name a {
-            color: #6366f1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .location-name a:hover {
-            color: #4f46e5;
-            text-decoration: underline;
-        }
-
-        /* Explore More Section */
-        .explore-more {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            margin-top: 3rem;
-        }
-
-        .explore-more h2 {
-            color: #6366f1;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .explore-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .explore-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .explore-item:hover {
-            background: #e0e7ff;
-            transform: translateX(5px);
-        }
-
-        .explore-item i {
-            font-size: 1.5rem;
-            color: #6366f1;
-            width: 30px;
-            text-align: center;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1f2937;
-            color: white;
-            padding: 3rem 0 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: #6366f1;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #6366f1;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .trip-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .food-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-tabs {
-                justify-content: center;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #6366f1;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-        }
-
-        .back-to-top:hover {
-            background: #4f46e5;
-            transform: translateY(-3px);
-        }
+      .back-to-top:hover {
+        background: #4f46e5;
+        transform: translateY(-3px);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header with Navigation -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-map-marked-alt"></i>
-                    North East Adventure
-                </a>
-                <nav class="nav-tabs">
-                    <a href="index.html" class="nav-tab">Overview</a>
-                    <a href="index.html#itinerary" class="nav-tab">Itinerary</a>
-                    <a href="index.html#attractions" class="nav-tab">Attractions</a>
-                    <a href="map/" class="nav-tab">Interactive Map</a>
-                    <a href="heritage/" class="nav-tab">Heritage Map</a>
-                    <a href="food.html" class="nav-tab active">Dining</a>
-                    <a href="index.html#practical" class="nav-tab">Practical Info</a>
-                </nav>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <i class="fas fa-map-marked-alt"></i>
+            North East Adventure
+          </a>
+          <nav class="nav-tabs">
+            <a href="index.html" class="nav-tab">Overview</a>
+            <a href="index.html#itinerary" class="nav-tab">Itinerary</a>
+            <a href="index.html#attractions" class="nav-tab">Attractions</a>
+            <a href="map/" class="nav-tab">Interactive Map</a>
+            <a href="heritage/" class="nav-tab">Heritage Map</a>
+            <a href="food.html" class="nav-tab active">Dining</a>
+            <a href="index.html#practical" class="nav-tab">Practical Info</a>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Culinary Adventures in North East England</h1>
-            <p>Discover the authentic flavors and local specialties during your August 2025 holiday</p>
-            
-            <div class="trip-info">
-                <div class="trip-detail">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>24-29 August 2025</span>
-                </div>
-                <div class="trip-detail">
-                    <i class="fas fa-users"></i>
-                    <span>Family of 4</span>
-                </div>
-                <div class="trip-detail">
-                    <i class="fas fa-utensils"></i>
-                    <span>Local Specialties</span>
-                </div>
-            </div>
+      <div class="container">
+        <h1>Culinary Adventures in North East England</h1>
+        <p>
+          Discover the authentic flavors and local specialties during your
+          August 2025 holiday
+        </p>
+
+        <div class="trip-info">
+          <div class="trip-detail">
+            <i class="fas fa-calendar-alt"></i>
+            <span>24-29 August 2025</span>
+          </div>
+          <div class="trip-detail">
+            <i class="fas fa-users"></i>
+            <span>Family of 4</span>
+          </div>
+          <div class="trip-detail">
+            <i class="fas fa-utensils"></i>
+            <span>Local Specialties</span>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
-            <div class="section-header">
-                <h2>Must-Try Local Specialties</h2>
-                <p>From famous Craster kippers to traditional stottie cakes, discover the authentic tastes that make Northumberland special</p>
-            </div>
-
-            <div class="food-grid">
-                <div class="food-card">
-                    <h3><i class="fas fa-fish"></i>Craster Kippers</h3>
-                    <p>These famous smoked herrings are a true taste of the Northumberland coast. Split and brined, then cold-smoked, they offer a distinctive flavor. Enjoy them on their own or in a traditional Kedgeree.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li><span class="location-name"><a href="https://www.kipper.co.uk/" target="_blank">L. Robson & Sons</a>:</span> The traditional smokehouse in Craster</li>
-                        <li>Local fishmongers and restaurants along the Northumberland coast</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-wine-bottle"></i>Lindisfarne Mead</h3>
-                    <p>Experience a taste of Holy Island's history with this fortified mead, blending honey with grapes. Enjoy it dry, sweet, or as a spiced version for a warming treat.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li><span class="location-name"><a href="https://www.lindisfarne.org.uk/mead/" target="_blank">St Aidan's Winery</a>:</span> Located on Holy Island, where it's produced</li>
-                        <li>Speciality food shops across Northumberland</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-cheese"></i>Northumbrian Cheeses</h3>
-                    <p>Explore a variety of artisanal cheeses crafted by local producers in Northumberland. Look out for award-winning options like Berwick Edge and Cuddy's Cave from Doddington Dairy.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li><span class="location-name"><a href="http://www.doddingtonmilkbar.co.uk/" target="_blank">Doddington Dairy Milk Bar & Cafe</a>:</span> In Wooler, offers cheese and ice cream</li>
-                        <li><span class="location-name"><a href="https://www.indiefood.co.uk/" target="_blank">Independent Food & Drink</a>:</span> In Seahouses, boasts a dedicated cheese counter</li>
-                        <li><span class="location-name">Alnwick Farmers' Market:</span> On the last Friday of each month</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-drumstick-bite"></i>Northumbrian Meats & Game</h3>
-                    <p>From succulent hill lamb to flavorful beef and game birds, Northumberland boasts a rich tradition of high-quality meat production.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li><span class="location-name"><a href="https://www.turnbullsfood.co.uk/" target="_blank">Turnbull's Northumbrian Food Hall</a>:</span> In Alnwick, offers a selection of locally sourced meats</li>
-                        <li><span class="location-name"><a href="https://www.northacombfarmshop.co.uk/" target="_blank">North Acomb Farm Shop</a>:</span> Known for its farm-raised beef, lamb, and pork</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-shrimp"></i>Fresh Seafood</h3>
-                    <p>With its long coastline, Northumberland offers an abundance of fresh seafood. Indulge in everything from turbot and oysters to crab sandwiches and lobster.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li><span class="location-name"><a href="https://thepottedlobster.co.uk/" target="_blank">The Potted Lobster</a>:</span> In Bamburgh, known for dishes using locally caught seafood</li>
-                        <li><span class="location-name"><a href="https://thejollyfishermancraster.co.uk/" target="_blank">The Jolly Fisherman</a>:</span> In Craster, famed for its crab soup and sea views</li>
-                        <li><span class="location-name"><a href="https://www.northumberlandseafood.co.uk/" target="_blank">Northumberland Seafood Centre</a>:</span> In Amble, champions sustainable fishing</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-bread-slice"></i>Northumbrian Stottie Cake</h3>
-                    <p>A dense, round flatbread with an indent in the center. Traditionally halved and filled to make a hearty sandwich. A local favorite pairing is with ham and pease pudding.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li>Many local bakeries and cafes across Northumberland</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-seedling"></i>Pease Pudding</h3>
-                    <p>A thick, smooth paste made from split yellow peas, often served with ham, gammon, or sausages. It can also accompany fish and chips or be spread on a stottie.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li>Many traditional eateries and cafes across the region</li>
-                        <li>Found alongside other local produce at farmers' markets and food shops</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-cookie-bite"></i>Singin' Hinnies</h3>
-                    <p>These traditional griddle scones are rich with butter, currants, and make a "singing" sound as they cook. Enjoy them warm with a cup of tea.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li>Many local cafes and bakeries in Northumberland</li>
-                        <li>Some holiday accommodations may even offer them for guests to try</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-ice-cream"></i>Northumbrian Ice Cream</h3>
-                    <p>Indulge in delicious ice cream made on local dairy farms in Northumberland.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li><span class="location-name"><a href="http://www.doddingtonmilkbar.co.uk/" target="_blank">Doddington Dairy Milk Bar & Cafe</a>:</span> In Wooler</li>
-                        <li><span class="location-name"><a href="https://www.morwickdairy.co.uk/" target="_blank">Morwick Dairy</a>:</span> A popular spot for ice cream</li>
-                    </ul>
-                </div>
-
-                <div class="food-card">
-                    <h3><i class="fas fa-fire"></i>Pan Haggerty</h3>
-                    <p>This hearty Northumbrian dish is a variation of dauphinoise potatoes, made with thinly sliced potatoes, mature cheddar cheese, and fried onions. Enjoy it as a warming meal or as a side dish.</p>
-                    <h4>Where to Find Them:</h4>
-                    <ul class="location-list">
-                        <li>Restaurants and pubs featuring traditional Northumberland cuisine</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Explore More Section -->
-            <div class="explore-more">
-                <h2>Explore More Culinary Delights</h2>
-                <p>Beyond these specialties, Northumberland's food scene also offers:</p>
-                
-                <div class="explore-grid">
-                    <div class="explore-item">
-                        <i class="fas fa-beer"></i>
-                        <span>Locally brewed ales and spirits</span>
-                    </div>
-                    <div class="explore-item">
-                        <i class="fas fa-wheat-awn"></i>
-                        <span>Artisan breads from historic water mills</span>
-                    </div>
-                    <div class="explore-item">
-                        <i class="fas fa-carrot"></i>
-                        <span>Heritage potatoes and asparagus</span>
-                    </div>
-                    <div class="explore-item">
-                        <i class="fas fa-award"></i>
-                        <span>Award-winning pies</span>
-                    </div>
-                </div>
-                
-                <p style="margin-top: 2rem; text-align: center;">
-                    Look out for establishments marked with the 
-                    <a href="https://producedin.northumberland.gov.uk/GoodFor/Visitors.aspx" target="_blank" style="color: #6366f1; font-weight: bold;">"Produced in Northumberland"</a> 
-                    stamp, which verifies that the food you're enjoying has come straight from the county.
-                </p>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Must-Try Local Specialties</h2>
+          <p>
+            From famous Craster kippers to traditional stottie cakes, discover
+            the authentic tastes that make Northumberland special
+          </p>
         </div>
+
+        <div class="food-grid">
+          <div class="food-card">
+            <h3><i class="fas fa-fish"></i>Craster Kippers</h3>
+            <p>
+              These famous smoked herrings are a true taste of the
+              Northumberland coast. Split and brined, then cold-smoked, they
+              offer a distinctive flavor. Enjoy them on their own or in a
+              traditional Kedgeree.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                <span class="location-name"
+                  ><a href="https://www.kipper.co.uk/" target="_blank"
+                    >L. Robson & Sons</a
+                  >:</span
+                >
+                The traditional smokehouse in Craster
+              </li>
+              <li>
+                Local fishmongers and restaurants along the Northumberland coast
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-wine-bottle"></i>Lindisfarne Mead</h3>
+            <p>
+              Experience a taste of Holy Island's history with this fortified
+              mead, blending honey with grapes. Enjoy it dry, sweet, or as a
+              spiced version for a warming treat.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                <span class="location-name"
+                  ><a
+                    href="https://www.lindisfarne.org.uk/mead/"
+                    target="_blank"
+                    >St Aidan's Winery</a
+                  >:</span
+                >
+                Located on Holy Island, where it's produced
+              </li>
+              <li>Speciality food shops across Northumberland</li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-cheese"></i>Northumbrian Cheeses</h3>
+            <p>
+              Explore a variety of artisanal cheeses crafted by local producers
+              in Northumberland. Look out for award-winning options like Berwick
+              Edge and Cuddy's Cave from Doddington Dairy.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                <span class="location-name"
+                  ><a href="http://www.doddingtonmilkbar.co.uk/" target="_blank"
+                    >Doddington Dairy Milk Bar & Cafe</a
+                  >:</span
+                >
+                In Wooler, offers cheese and ice cream
+              </li>
+              <li>
+                <span class="location-name"
+                  ><a href="https://www.indiefood.co.uk/" target="_blank"
+                    >Independent Food & Drink</a
+                  >:</span
+                >
+                In Seahouses, boasts a dedicated cheese counter
+              </li>
+              <li>
+                <span class="location-name">Alnwick Farmers' Market:</span> On
+                the last Friday of each month
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3>
+              <i class="fas fa-drumstick-bite"></i>Northumbrian Meats & Game
+            </h3>
+            <p>
+              From succulent hill lamb to flavorful beef and game birds,
+              Northumberland boasts a rich tradition of high-quality meat
+              production.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                <span class="location-name"
+                  ><a href="https://www.turnbullsfood.co.uk/" target="_blank"
+                    >Turnbull's Northumbrian Food Hall</a
+                  >:</span
+                >
+                In Alnwick, offers a selection of locally sourced meats
+              </li>
+              <li>
+                <span class="location-name"
+                  ><a
+                    href="https://www.northacombfarmshop.co.uk/"
+                    target="_blank"
+                    >North Acomb Farm Shop</a
+                  >:</span
+                >
+                Known for its farm-raised beef, lamb, and pork
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-shrimp"></i>Fresh Seafood</h3>
+            <p>
+              With its long coastline, Northumberland offers an abundance of
+              fresh seafood. Indulge in everything from turbot and oysters to
+              crab sandwiches and lobster.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                <span class="location-name"
+                  ><a href="https://thepottedlobster.co.uk/" target="_blank"
+                    >The Potted Lobster</a
+                  >:</span
+                >
+                In Bamburgh, known for dishes using locally caught seafood
+              </li>
+              <li>
+                <span class="location-name"
+                  ><a
+                    href="https://thejollyfishermancraster.co.uk/"
+                    target="_blank"
+                    >The Jolly Fisherman</a
+                  >:</span
+                >
+                In Craster, famed for its crab soup and sea views
+              </li>
+              <li>
+                <span class="location-name"
+                  ><a
+                    href="https://www.northumberlandseafood.co.uk/"
+                    target="_blank"
+                    >Northumberland Seafood Centre</a
+                  >:</span
+                >
+                In Amble, champions sustainable fishing
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-bread-slice"></i>Northumbrian Stottie Cake</h3>
+            <p>
+              A dense, round flatbread with an indent in the center.
+              Traditionally halved and filled to make a hearty sandwich. A local
+              favorite pairing is with ham and pease pudding.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>Many local bakeries and cafes across Northumberland</li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-seedling"></i>Pease Pudding</h3>
+            <p>
+              A thick, smooth paste made from split yellow peas, often served
+              with ham, gammon, or sausages. It can also accompany fish and
+              chips or be spread on a stottie.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>Many traditional eateries and cafes across the region</li>
+              <li>
+                Found alongside other local produce at farmers' markets and food
+                shops
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-cookie-bite"></i>Singin' Hinnies</h3>
+            <p>
+              These traditional griddle scones are rich with butter, currants,
+              and make a "singing" sound as they cook. Enjoy them warm with a
+              cup of tea.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>Many local cafes and bakeries in Northumberland</li>
+              <li>
+                Some holiday accommodations may even offer them for guests to
+                try
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-ice-cream"></i>Northumbrian Ice Cream</h3>
+            <p>
+              Indulge in delicious ice cream made on local dairy farms in
+              Northumberland.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                <span class="location-name"
+                  ><a href="http://www.doddingtonmilkbar.co.uk/" target="_blank"
+                    >Doddington Dairy Milk Bar & Cafe</a
+                  >:</span
+                >
+                In Wooler
+              </li>
+              <li>
+                <span class="location-name"
+                  ><a href="https://www.morwickdairy.co.uk/" target="_blank"
+                    >Morwick Dairy</a
+                  >:</span
+                >
+                A popular spot for ice cream
+              </li>
+            </ul>
+          </div>
+
+          <div class="food-card">
+            <h3><i class="fas fa-fire"></i>Pan Haggerty</h3>
+            <p>
+              This hearty Northumbrian dish is a variation of dauphinoise
+              potatoes, made with thinly sliced potatoes, mature cheddar cheese,
+              and fried onions. Enjoy it as a warming meal or as a side dish.
+            </p>
+            <h4>Where to Find Them:</h4>
+            <ul class="location-list">
+              <li>
+                Restaurants and pubs featuring traditional Northumberland
+                cuisine
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Explore More Section -->
+        <div class="explore-more">
+          <h2>Explore More Culinary Delights</h2>
+          <p>
+            Beyond these specialties, Northumberland's food scene also offers:
+          </p>
+
+          <div class="explore-grid">
+            <div class="explore-item">
+              <i class="fas fa-beer"></i>
+              <span>Locally brewed ales and spirits</span>
+            </div>
+            <div class="explore-item">
+              <i class="fas fa-wheat-awn"></i>
+              <span>Artisan breads from historic water mills</span>
+            </div>
+            <div class="explore-item">
+              <i class="fas fa-carrot"></i>
+              <span>Heritage potatoes and asparagus</span>
+            </div>
+            <div class="explore-item">
+              <i class="fas fa-award"></i>
+              <span>Award-winning pies</span>
+            </div>
+          </div>
+
+          <p style="margin-top: 2rem; text-align: center">
+            Look out for establishments marked with the
+            <a
+              href="https://producedin.northumberland.gov.uk/GoodFor/Visitors.aspx"
+              target="_blank"
+              style="color: #6366f1; font-weight: bold"
+              >"Produced in Northumberland"</a
+            >
+            stamp, which verifies that the food you're enjoying has come
+            straight from the county.
+          </p>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="https://www.visitnorthumberland.com/">Visit Northumberland</a></li>
-                        <li><a href="https://www.northumberlandnationalpark.org.uk/">Northumberland National Park</a></li>
-                        <li><a href="https://fabulousnorth.com/">Fabulous North</a></li>
-                        <li><a href="https://www.northeastfamilyfun.co.uk/">North East Family Fun</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Food Resources</h4>
-                    <ul>
-                        <li><a href="https://coquetcottages.co.uk/made-in-northumberland/">Made in Northumberland</a></li>
-                        <li><a href="https://www.bbcgoodfood.com/travel/uk/10-things-eat-northumberland">BBC Good Food Guide</a></li>
-                        <li><a href="https://producedin.northumberland.gov.uk/">Produced in Northumberland</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Trip Planning</h4>
-                    <ul>
-                        <li>Restaurant reservations recommended</li>
-                        <li>Check seasonal opening hours</li>
-                        <li>Many venues are family-friendly</li>
-                        <li>Local markets offer great variety</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 North East England Holiday Adventure. Created for an unforgettable culinary journey.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <a href="https://www.visitnorthumberland.com/"
+                  >Visit Northumberland</a
+                >
+              </li>
+              <li>
+                <a href="https://www.northumberlandnationalpark.org.uk/"
+                  >Northumberland National Park</a
+                >
+              </li>
+              <li><a href="https://fabulousnorth.com/">Fabulous North</a></li>
+              <li>
+                <a href="https://www.northeastfamilyfun.co.uk/"
+                  >North East Family Fun</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Food Resources</h4>
+            <ul>
+              <li>
+                <a href="https://coquetcottages.co.uk/made-in-northumberland/"
+                  >Made in Northumberland</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.bbcgoodfood.com/travel/uk/10-things-eat-northumberland"
+                  >BBC Good Food Guide</a
+                >
+              </li>
+              <li>
+                <a href="https://producedin.northumberland.gov.uk/"
+                  >Produced in Northumberland</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Trip Planning</h4>
+            <ul>
+              <li>Restaurant reservations recommended</li>
+              <li>Check seasonal opening hours</li>
+              <li>Many venues are family-friendly</li>
+              <li>Local markets offer great variety</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            © 2025 North East England Holiday Adventure. Created for an
+            unforgettable culinary journey.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <i class="fas fa-arrow-up"></i>
+    <button
+      class="back-to-top"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    >
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-        // Show/hide back to top button
-        window.addEventListener('scroll', function() {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.pageYOffset > 300) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
+      // Show/hide back to top button
+      window.addEventListener("scroll", function () {
+        const backToTop = document.querySelector(".back-to-top");
+        if (window.pageYOffset > 300) {
+          backToTop.style.display = "block";
+        } else {
+          backToTop.style.display = "none";
+        }
+      });
 
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
         });
+      });
     </script>
-</body>
+    <!-- PWA Scripts -->
+    <script src="pwa-init.js"></script>
+  </body>
 </html>
-
