@@ -56,13 +56,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.0803,
-          53.9583
+          -1.1255548,
+          53.9531675
         ]
       },
       "properties": {
         "name": "York",
-        "type": "town",
+        "type": "base",
         "description": "Explore the medieval walls, magnificent Minster, JORVIK Viking Centre, and The Shambles.",
         "address": "16 Green Lane, Acomb, York YO24 3DL",
         "days": [
@@ -76,7 +76,7 @@
         "details": "Day 1: Evening arrival, The Shambles • Day 2: Minster, City Walls, JORVIK",
         "distance_from_base": "120 miles from Sharperton",
         "minZoom": 0,
-        "maxZoom": 11,
+        "maxZoom": 20,
         "website": "https://visityork.org/"
       }
     },
