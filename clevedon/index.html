@@ -111,6 +111,7 @@
       var markers = {
         Places: [],
         Supermarkets: [],
+        Broadchurch: [],
       };
       
       // Track the currently active walk
@@ -128,7 +129,8 @@
         Walk2: "#6A0DAD",  // Purple
         Walk3: "#007bff",  // Blue
         Places: "#00A896", // Teal
-        Supermarkets: "#E63946" // Red
+        Supermarkets: "#E63946", // Red
+        Broadchurch: "#FFD700" // Gold
       };
 
       map.on("load", async () => {
@@ -140,9 +142,10 @@
         addWalkLayer("Walk2", "Walk_2.geojson", colors.Walk2, "none");
         addWalkLayer("Walk3", "Walk_3.geojson", colors.Walk3, "none");
 
-        // Load places and supermarkets as markers
-        loadMarkers("Places", "Clevedon_Places.geojson", colors.Places);
-        loadMarkers("Supermarkets", "Clevedon_Supermarkets.geojson", colors.Supermarkets);
+  // Load places, supermarkets, and Broadchurch filming locations as markers
+  loadMarkers("Places", "Clevedon_Places.geojson", colors.Places);
+  loadMarkers("Supermarkets", "Clevedon_Supermarkets.geojson", colors.Supermarkets);
+  loadMarkers("Broadchurch", "Clevedon_Broadchurch.json", colors.Broadchurch);
 
         // Create menu container
         var layersList = document.getElementById("menu");
@@ -207,25 +210,26 @@
         poiLabel.className = "category-label";
         poiLabel.textContent = "Points of Interest";
         layersList.appendChild(poiLabel);
-        
-        // Add POI toggle buttons
-        var poiLayers = ["Places", "Supermarkets"];
+
+        // Add POI toggle buttons (including Broadchurch)
+        var poiLayers = ["Places", "Supermarkets", "Broadchurch"];
+        var poiLabels = { Places: "Places", Supermarkets: "Supermarkets", Broadchurch: "Broadchurch Locations" };
         poiLayers.forEach(function (id) {
           var link = document.createElement("a");
           link.href = "#";
           link.className = "active";
-          
+
           // Add color indicator
           var colorIndicator = document.createElement("span");
           colorIndicator.className = "color-indicator";
           colorIndicator.style.backgroundColor = colors[id];
           link.appendChild(colorIndicator);
-          
+
           // Add text
           var textSpan = document.createElement("span");
-          textSpan.textContent = id;
+          textSpan.textContent = poiLabels[id] || id;
           link.appendChild(textSpan);
-          
+
           link.onclick = function (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -297,10 +301,11 @@
               el.style.border = "2px solid #fff";
               el.style.cursor = "pointer";
 
-              // Create popup with name
-              var name = feature.properties.Name || "Unnamed Location";
+              // Create popup with name and description (for all sources)
+              var name = feature.properties.name || feature.properties.Name || "Unnamed Location";
+              var desc = feature.properties.description || "";
               var popup = new maplibregl.Popup({ offset: [0, -10] }).setHTML(
-                "<h3>" + name + "</h3>"
+                "<h3>" + name + "</h3>" + (desc ? "<div>" + desc + "</div>" : "")
               );
 
               // Create the marker
