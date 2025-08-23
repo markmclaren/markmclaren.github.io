@@ -138,6 +138,30 @@
       }
     },
     {
+      "type":"Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.220502,
+       55.035744
+        ]
+      },
+      "properties": {
+        "name": "Temple of Mithras",
+        "type": "roman",
+        "description": "Visit the remains of this Roman temple dedicated to the god Mithras.",
+        "days": [
+          3
+        ],
+        "dayLabels": [
+          "Tuesday - Roman Heritage"
+        ],
+        "details": "Tuesday visit",
+        "distance_from_base": "25 miles from Sharperton",
+        "website": "https://www.english-heritage.org.uk/visit/places/temple-of-mithras-carrawburgh-hadrians-wall"
+      }
+    },
+    {
       "type": "Feature",
       "geometry": {
         "type": "Point",
@@ -261,12 +285,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.9333,
-          54.8833
+          -2.784703,
+          54.6475643
         ]
       },
       "properties": {
-        "name": "Carlisle",
+        "name": "Rheged",
         "type": "travel",
         "description": "Drop off Frank and Al with their uncle and enjoy a final family meal together before the journey home.",
         "days": [
@@ -276,8 +300,8 @@
           "Friday - Departure & Family Meal"
         ],
         "details": "Friday departure • Drop off boys • Family meal • Journey home",
-        "distance_from_base": "45 miles from Sharperton",
-        "website": "https://www.discovercarlisle.co.uk/"
+        "distance_from_base": "90 miles from Sharperton",
+        "website": "https://rheged.com/"
       }
     },
     {

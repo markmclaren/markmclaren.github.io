@@ -142,7 +142,7 @@ function addMarkersToMap() {
     markers = [];
     
     // Gather all key place coordinates before creating any markers
-    const keyPlaces = ['Portishead', 'Kettering', 'York', 'Sharperton', 'Carlisle'];
+    const keyPlaces = ['Portishead', 'Kettering', 'York', 'Sharperton', 'Rheged'];
     const coords = {};
     keyPlaces.forEach(name => { coords[name] = null; });
     geoJsonData.features.forEach(f => {
@@ -199,11 +199,11 @@ function addMarkersToMap() {
             } else if (safeName === 'York' && coords['York'] && coords['Sharperton']) {
                 routeLink = `https://maps.google.com/maps?saddr=${coords['York'][1]},${coords['York'][0]}&daddr=${coords['Sharperton'][1]},${coords['Sharperton'][0]}`;
                 routeLabel = 'Route to Sharperton';
-            } else if (safeName === 'Sharperton' && coords['Sharperton'] && coords['Carlisle']) {
-                routeLink = `https://maps.google.com/maps?saddr=${coords['Sharperton'][1]},${coords['Sharperton'][0]}&daddr=${coords['Carlisle'][1]},${coords['Carlisle'][0]}`;
-                routeLabel = 'Route to Carlisle';
-            } else if (safeName === 'Carlisle' && coords['Carlisle'] && coords['Portishead']) {
-                routeLink = `https://maps.google.com/maps?saddr=${coords['Carlisle'][1]},${coords['Carlisle'][0]}&daddr=${coords['Portishead'][1]},${coords['Portishead'][0]}`;
+            } else if (safeName === 'Sharperton' && coords['Sharperton'] && coords['Rheged']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['Sharperton'][1]},${coords['Sharperton'][0]}&daddr=${coords['Rheged'][1]},${coords['Rheged'][0]}`;
+                routeLabel = 'Route to Rheged';
+            } else if (safeName === 'Rheged' && coords['Rheged'] && coords['Portishead']) {
+                routeLink = `https://maps.google.com/maps?saddr=${coords['Rheged'][1]},${coords['Rheged'][0]}&daddr=${coords['Portishead'][1]},${coords['Portishead'][0]}`;
                 routeLabel = 'Route to Portishead';
             }
             // Add website link if present
