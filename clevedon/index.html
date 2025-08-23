@@ -142,69 +142,69 @@
         addWalkLayer("Walk2", "Walk_2.geojson", colors.Walk2, "none");
         addWalkLayer("Walk3", "Walk_3.geojson", colors.Walk3, "none");
 
-  // Load places, supermarkets, and Broadchurch filming locations as markers
-  loadMarkers("Places", "Clevedon_Places.geojson", colors.Places);
-  loadMarkers("Supermarkets", "Clevedon_Supermarkets.geojson", colors.Supermarkets);
-  loadMarkers("Broadchurch", "Clevedon_Broadchurch.json", colors.Broadchurch);
+        // Load places, supermarkets, and Broadchurch filming locations as markers
+        loadMarkers("Places", "Clevedon_Places.geojson", colors.Places);
+        loadMarkers("Supermarkets", "Clevedon_Supermarkets.geojson", colors.Supermarkets);
+        loadMarkers("Broadchurch", "Clevedon_Broadchurch.json", colors.Broadchurch);
 
         // Create menu container
         var layersList = document.getElementById("menu");
-        
+
         // Add walks category label
         var walksLabel = document.createElement("div");
         walksLabel.className = "category-label";
         walksLabel.textContent = "Walks (Select One)";
         layersList.appendChild(walksLabel);
-        
+
         // Add walk toggle buttons
         walkLayers.forEach(function (id) {
           var link = document.createElement("a");
           link.href = "#";
           link.className = id === activeWalk ? "active" : "";
-          
+
           // Add color indicator
           var colorIndicator = document.createElement("span");
           colorIndicator.className = "color-indicator";
           colorIndicator.style.backgroundColor = colors[id];
           link.appendChild(colorIndicator);
-          
+
           // Add text
           var textSpan = document.createElement("span");
           textSpan.textContent = id;
           link.appendChild(textSpan);
-          
+
           link.setAttribute("data-walk-id", id);
-          
+
           // Store reference to the link element
           walkLinks[id] = link;
-          
+
           link.onclick = function (e) {
             e.preventDefault();
             e.stopPropagation();
-            
+
             // If clicked on already active walk, do nothing
             if (id === activeWalk) return;
-            
+
             // Hide the currently active walk
             map.setLayoutProperty(activeWalk, "visibility", "none");
             map.setLayoutProperty(activeWalk + "-arrows", "visibility", "none");
-            
+
             // Update active status in menu using stored reference
             walkLinks[activeWalk].className = "";
-            
+
             // Set new active walk
             activeWalk = id;
-            
+
             // Show the newly selected walk
             map.setLayoutProperty(id, "visibility", "visible");
             map.setLayoutProperty(id + "-arrows", "visibility", "visible");
-            
+
             // Update active status in menu
             link.className = "active";
           };
           layersList.appendChild(link);
         });
-        
+
         // Add POI category label
         var poiLabel = document.createElement("div");
         poiLabel.className = "category-label";
@@ -243,6 +243,26 @@
           };
           layersList.appendChild(link);
         });
+
+        // Add user location indicator (small blue circle)
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var userLngLat = [position.coords.longitude, position.coords.latitude];
+            // Create a small blue circle element
+            var userEl = document.createElement('div');
+            userEl.style.width = '16px';
+            userEl.style.height = '16px';
+            userEl.style.borderRadius = '50%';
+            userEl.style.background = '#2196f3';
+            userEl.style.border = '2px solid #fff';
+            userEl.style.boxShadow = '0 0 6px #2196f3';
+            userEl.style.opacity = '0.85';
+            userEl.title = 'Your location';
+            new maplibregl.Marker({element: userEl, anchor: 'center'})
+              .setLngLat(userLngLat)
+              .addTo(map);
+          });
+        }
       });
 
       function addWalkLayer(id, geojsonUrl, color, initialVisibility) {
