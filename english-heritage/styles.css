@@ -1,0 +1,157 @@
+/* Custom styles for English Heritage Map */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Map container */
+#map {
+    background: #f8f9fa;
+}
+
+/* Draggable filter panel */
+#filter-panel {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+#filter-panel .card-header {
+    cursor: move;
+    user-select: none;
+}
+
+#filter-panel .card-header:hover {
+    background-color: #0056b3 !important;
+}
+
+/* Property markers */
+.property-marker {
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.property-marker:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+}
+
+.property-marker.free {
+    background-color: #28a745;
+}
+
+.property-marker.paid {
+    background-color: #dc3545;
+}
+
+.property-marker.top-site {
+    border-color: #ffc107;
+    border-width: 3px;
+}
+
+.property-marker.free {
+    background-color: #28a745;
+}
+
+.property-marker.paid {
+    background-color: #dc3545;
+}
+
+.property-marker.top-site {
+    border-color: #ffc107;
+    border-width: 3px;
+}
+
+/* Property sidebar */
+#property-sidebar {
+    transition: all 0.3s ease;
+}
+
+.property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.property-badges {
+    margin-bottom: 15px;
+}
+
+.property-location {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.property-summary {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Filter animations */
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.form-check-label {
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.form-check-label i {
+    margin-right: 4px;
+}
+
+/* Loading overlay */
+#loading-overlay {
+    backdrop-filter: blur(2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #filter-panel {
+        width: 260px !important;
+        margin: 10px !important;
+    }
+    
+    #property-sidebar {
+        width: 100% !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1500;
+    }
+}
+
+/* Dragging styles */
+.dragging {
+    opacity: 0.8;
+    transform: rotate(2deg);
+}
+
+/* Custom scrollbar for sidebar */
+#property-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+#property-sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#property-sidebar::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+#property-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
