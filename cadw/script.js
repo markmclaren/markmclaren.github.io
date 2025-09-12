@@ -1,6 +1,6 @@
 // English Heritage Properties Map - Vanilla JavaScript Implementation
 
-class EnglishHeritageMap {
+class CADWHeritageMap {
     constructor() {
         this.map = null;
         this.geojsonData = null;
@@ -22,29 +22,36 @@ class EnglishHeritageMap {
         this.showLoading(false);
     }
 
-    // Load GeoJSON data from english-heritage.geojson
+    // Load GeoJSON data from cadw.geojson
     async loadGeoJSON() {
         try {
             // Load GeoJSON from local file
-            const response = await fetch('english-heritage.geojson');
+            const response = await fetch('cadw.geojson');
             
             this.geojsonData = await response.json();
             this.filteredData = JSON.parse(JSON.stringify(this.geojsonData)); // Deep copy
-            console.log(`Loaded ${this.geojsonData.features.length} properties from english-heritage.geojson`);
-            console.log('First property:', this.geojsonData.features[0]);
+            console.log(`Loaded ${this.geojsonData.features.length} properties from cadw.geojson`);
+            
+            // Debug: Check a specific property to see the data structure
+            const tretower = this.geojsonData.features.find(f => f.properties.name && f.properties.name.includes('Tretower'));
+            if (tretower) {
+                console.log('Tretower raw data:', tretower.properties);
+                console.log('location_type type:', typeof tretower.properties.location_type);
+                console.log('location_type value:', tretower.properties.location_type);
+                console.log('period type:', typeof tretower.properties.period);
+                console.log('period value:', tretower.properties.period);
+            }
         } catch (error) {
             console.error('Error loading GeoJSON:', error);
-            this.showError('Failed to load English Heritage properties. Please try again later.');
+            this.showError('Failed to load CADW heritage properties. Please try again later.');
         }
-    }
-
-    // Initialize MapLibre GL JS map
+    }    // Initialize MapLibre GL JS map
     initMap() {
         this.map = new maplibregl.Map({
             container: 'map',
             style: 'https://tiles.openfreemap.org/styles/liberty',            
-            center: [-2.0, 54.0], // Center on UK
-            zoom: 6
+            center: [-3.7, 52.3], // Center on Wales
+            zoom: 7
         });
 
         // Add navigation controls
@@ -75,26 +82,17 @@ class EnglishHeritageMap {
             type: 'circle',
             source: 'properties',
             paint: {
-                'circle-radius': [
-                    'case',
-                    ['get', 'isTopHeritageSite'], 12, // Top heritage sites are larger
-                    8 // Regular sites
-                ],
+                'circle-radius': 8, // All sites same size since no "top" designation
                 'circle-color': [
                     'case',
-                    ['get', 'isFreeEntry'], '#28a745', // Green for free entry
-                    '#dc3545' // Red for paid entry
+                    ['==', ['get', 'location_type'], 'Castles'], '#dc3545', // Red for castles
+                    ['==', ['get', 'location_type'], 'Religious sites'], '#28a745', // Green for religious sites
+                    ['==', ['get', 'location_type'], 'Historic houses'], '#ffc107', // Yellow for historic houses
+                    ['==', ['get', 'location_type'], 'Burial chamber'], '#6f42c1', // Purple for burial chambers
+                    '#007bff' // Blue as default
                 ],
-                'circle-stroke-color': [
-                    'case',
-                    ['get', 'isTopHeritageSite'], '#ffc107', // Gold border for top sites
-                    '#ffffff' // White border for regular sites
-                ],
-                'circle-stroke-width': [
-                    'case',
-                    ['get', 'isTopHeritageSite'], 3, // Thicker border for top sites
-                    2
-                ],
+                'circle-stroke-color': '#ffffff', // White border for all sites
+                'circle-stroke-width': 2,
                 'circle-opacity': 0.8,
                 'circle-stroke-opacity': 1
             }
@@ -113,7 +111,7 @@ class EnglishHeritageMap {
                 'circle-stroke-width': 2,
                 'circle-stroke-opacity': 0.8
             },
-            filter: ['==', 'id', '']
+            filter: ['==', 'location_id', '']
         });
 
         // Add click handler
@@ -126,12 +124,12 @@ class EnglishHeritageMap {
         this.map.on('mouseenter', 'properties-circles', (e) => {
             this.map.getCanvas().style.cursor = 'pointer';
             const feature = e.features[0];
-            this.map.setFilter('properties-hover', ['==', 'id', feature.properties.id]);
+            this.map.setFilter('properties-hover', ['==', 'location_id', feature.properties.location_id]);
         });
 
         this.map.on('mouseleave', 'properties-circles', () => {
             this.map.getCanvas().style.cursor = '';
-            this.map.setFilter('properties-hover', ['==', 'id', '']);
+            this.map.setFilter('properties-hover', ['==', 'location_id', '']);
         });
 
         // Fit map to show all features on initial load
@@ -161,7 +159,7 @@ class EnglishHeritageMap {
         const bounds = new maplibregl.LngLatBounds();
         this.filteredData.features.forEach(feature => {
             const coords = feature.geometry.coordinates;
-            console.log(`Adding to bounds: ${feature.properties.title} at [${coords[0]}, ${coords[1]}]`);
+            console.log(`Adding to bounds: ${feature.properties.name} at [${coords[0]}, ${coords[1]}]`);
             bounds.extend(coords);
         });
 
@@ -196,28 +194,29 @@ class EnglishHeritageMap {
         });
     }
 
-    // Apply filters to properties - entry type required, others additive
+    // Apply filters to properties - period and location type based
     applyFilters() {
         const filters = {
-            free: document.getElementById('filter-free').checked,
-            paid: document.getElementById('filter-paid').checked,
-            topSites: document.getElementById('filter-top-sites').checked,
-            abbey: document.getElementById('filter-abbey').checked,
-            castle: document.getElementById('filter-castle').checked,
-            house: document.getElementById('filter-house').checked,
+            castles: document.getElementById('filter-castle').checked,
+            religious: document.getElementById('filter-abbey').checked, // Repurpose abbey filter for religious sites
+            houses: document.getElementById('filter-house').checked,
+            burial: document.getElementById('filter-prehistoric').checked, // Repurpose prehistoric for burial chambers
+            
+            medieval: document.getElementById('filter-free').checked, // Repurpose free filter for medieval period
             roman: document.getElementById('filter-roman').checked,
-            prehistoric: document.getElementById('filter-prehistoric').checked
+            tudor: document.getElementById('filter-paid').checked, // Repurpose paid filter for tudor period
+            industrial: document.getElementById('filter-top-sites').checked, // Repurpose top sites for industrial period
+            prehistoric: document.getElementById('filter-prehistoric-period').checked // New prehistoric period filter
         };
 
         console.log('Applying filters:', filters);
         console.log('Total features before filtering:', this.geojsonData.features.length);
 
-        // Check if any entry type filters are selected
-        const entryTypeSelected = filters.free || filters.paid;
-        const otherFiltersSelected = filters.topSites || filters.abbey || filters.castle || filters.house || filters.roman || filters.prehistoric;
+        // Check if any filters are selected
+        const anyFilterSelected = Object.values(filters).some(filter => filter);
 
         // If no filters are selected, show all properties
-        if (!entryTypeSelected && !otherFiltersSelected) {
+        if (!anyFilterSelected) {
             console.log('No filters selected - showing all properties');
             this.filteredData = JSON.parse(JSON.stringify(this.geojsonData)); // Deep copy
             this.updateGeoJSONSource();
@@ -229,44 +228,25 @@ class EnglishHeritageMap {
         const filteredFeatures = this.geojsonData.features.filter(feature => {
             const props = feature.properties;
             
-            // First check: Must match entry type if any entry type filter is selected
-            if (entryTypeSelected) {
-                const matchesEntryType = (filters.free && props.isFreeEntry) || (filters.paid && !props.isFreeEntry);
-                if (!matchesEntryType) {
-                    return false; // Property doesn't match required entry type
-                }
-            }
+            // Check location type matches
+            const locationTypeMatches = [
+                filters.castles && this.propertyIncludes(props.location_type, 'Castles'),
+                filters.religious && this.propertyIncludes(props.location_type, 'Religious sites'),
+                filters.houses && this.propertyIncludes(props.location_type, 'Historic houses'),
+                filters.burial && this.propertyIncludes(props.location_type, 'Burial chamber')
+            ].some(match => match);
 
-            // If only entry type is selected, property passes
-            if (entryTypeSelected && !otherFiltersSelected) {
-                return true;
-            }
+            // Check period matches
+            const periodMatches = [
+                filters.medieval && this.propertyIncludes(props.period, 'Medieval'),
+                filters.roman && this.propertyIncludes(props.period, 'Roman'),
+                filters.tudor && this.propertyIncludes(props.period, 'Tudor'),
+                filters.industrial && this.propertyIncludes(props.period, 'Industrial'),
+                filters.prehistoric && this.propertyIncludes(props.period, 'Prehistoric')
+            ].some(match => match);
 
-            // If other filters are selected, check if property matches any of them
-            if (otherFiltersSelected) {
-                const additionalMatches = [];
-
-                // Top sites filter
-                if (filters.topSites && props.isTopHeritageSite) {
-                    additionalMatches.push('top heritage site');
-                }
-
-                // Property type filters (additive)
-                if (this.matchesPropertyTypeFilters(props, filters)) {
-                    additionalMatches.push('property type match');
-                }
-
-                // If no entry type is selected but other filters are, property must match at least one other filter
-                if (!entryTypeSelected) {
-                    return additionalMatches.length > 0;
-                }
-
-                // If entry type is selected, property must match entry type AND at least one other filter
-                return additionalMatches.length > 0;
-            }
-
-            // Property passes entry type requirement
-            return true;
+            // Return true if either location type or period matches (OR logic)
+            return locationTypeMatches || periodMatches;
         });
 
         // Update filtered data
@@ -279,28 +259,6 @@ class EnglishHeritageMap {
 
         this.updateGeoJSONSource();
         this.updateStats();
-    }
-
-    // Check if property matches property type filters (additive logic)
-    matchesPropertyTypeFilters(properties, filters) {
-        const title = properties.title.toLowerCase();
-        const summary = properties.summary.toLowerCase();
-        const text = `${title} ${summary}`;
-
-        // Check if any property type filters are selected
-        const anyPropertyTypeSelected = filters.abbey || filters.castle || filters.house || filters.roman || filters.prehistoric;
-        if (!anyPropertyTypeSelected) return false;
-
-        // Check individual type matches (return true if ANY match)
-        const matches = [
-            filters.abbey && (text.includes('abbey') || text.includes('church') || text.includes('priory') || text.includes('monastery')),
-            filters.castle && (text.includes('castle') || text.includes('fort') || text.includes('tower')),
-            filters.house && (text.includes('house') || text.includes('palace') || text.includes('hall') || text.includes('manor')),
-            filters.roman && (text.includes('roman') || text.includes('villa')),
-            filters.prehistoric && (text.includes('stone') || text.includes('henge') || text.includes('barrow') || text.includes('prehistoric'))
-        ];
-
-        return matches.some(match => match);
     }
 
     // Reset all filters
@@ -396,39 +354,112 @@ class EnglishHeritageMap {
         const title = document.getElementById('property-title');
         const content = document.getElementById('property-content');
 
-        title.textContent = property.title;
+        title.textContent = property.name;
         content.innerHTML = this.createSidebarContent(property);
 
         sidebar.classList.remove('d-none');
     }
 
+    // Helper function to check if a property value includes a target value (handles arrays and stringified arrays)
+    propertyIncludes(propertyValue, targetValue) {
+        if (!propertyValue) return false;
+        
+        // Parse the value first to handle stringified arrays
+        const parsedValue = this.parseArrayValue(propertyValue);
+        
+        if (Array.isArray(parsedValue)) {
+            return parsedValue.includes(targetValue);
+        }
+        return parsedValue === targetValue;
+    }
+
+    // Helper function to parse potentially stringified arrays
+    parseArrayValue(value) {
+        if (!value) return value;
+        
+        // If it's already an array, return it
+        if (Array.isArray(value)) {
+            return value;
+        }
+        
+        // If it's a string that looks like an array, try to parse it
+        if (typeof value === 'string' && value.startsWith('[') && value.endsWith(']')) {
+            try {
+                const parsed = JSON.parse(value);
+                return Array.isArray(parsed) ? parsed : value;
+            } catch (e) {
+                console.log('Failed to parse array string:', value, e);
+                return value;
+            }
+        }
+        
+        return value;
+    }
+
     // Create sidebar content HTML
     createSidebarContent(property) {
-        const imageUrl = property.imagePath ? 
-            `https://www.english-heritage.org.uk${property.imagePath}` : null;
+        const imageUrl = property.image_url || null;
+
+        console.log('=== createSidebarContent Debug ===');
+        console.log('Property name:', property.name);
+        console.log('location_type type:', typeof property.location_type);
+        console.log('location_type value:', property.location_type);
+        console.log('location_type is array?', Array.isArray(property.location_type));
+        console.log('period type:', typeof property.period);
+        console.log('period value:', property.period);
+        console.log('period is array?', Array.isArray(property.period));
+
+        // Parse potentially stringified arrays
+        const locationTypeArray = this.parseArrayValue(property.location_type);
+        const periodArray = this.parseArrayValue(property.period);
+
+        console.log('Parsed location_type:', locationTypeArray, 'is array?', Array.isArray(locationTypeArray));
+        console.log('Parsed period:', periodArray, 'is array?', Array.isArray(periodArray));
+
+        // Handle location types - ensure proper formatting
+        let locationTypesText = '';
+        if (locationTypeArray) {
+            if (Array.isArray(locationTypeArray)) {
+                locationTypesText = locationTypeArray.join(', ');
+                console.log('Joined location types:', locationTypesText);
+            } else {
+                locationTypesText = String(locationTypeArray);
+                console.log('String location type:', locationTypesText);
+            }
+        }
+
+        // Handle periods - ensure proper formatting  
+        let periodsText = '';
+        if (periodArray) {
+            if (Array.isArray(periodArray)) {
+                periodsText = periodArray.join(', ');
+                console.log('Joined periods:', periodsText);
+            } else {
+                periodsText = String(periodArray);
+                console.log('String period:', periodsText);
+            }
+        }
 
         return `
-            ${imageUrl ? `<img src="${imageUrl}" alt="${property.imageAlt || property.title}" class="property-image">` : ''}
+            ${imageUrl ? `<img src="${imageUrl}" alt="${property.name}" class="property-image">` : ''}
             
             <div class="property-badges">
-                <span class="badge ${property.isFreeEntry ? 'bg-success' : 'bg-danger'} me-2">
-                    <i class="bi bi-${property.isFreeEntry ? 'check-circle' : 'currency-pound'}"></i>
-                    ${property.isFreeEntry ? 'Free Entry' : 'Paid Entry'}
-                </span>
-                ${property.isTopHeritageSite ? '<span class="badge bg-warning text-dark"><i class="bi bi-star"></i> Top Heritage Site</span>' : ''}
-            </div>
-
-            <div class="property-location">
-                <i class="bi bi-geo-alt"></i>
-                ${property.county}, ${property.region}
+                ${locationTypesText ? `<span class="badge bg-primary me-2">
+                    <i class="bi bi-building"></i>
+                    ${locationTypesText}
+                </span>` : ''}
+                ${periodsText ? `<span class="badge bg-secondary">
+                    <i class="bi bi-clock"></i>
+                    ${periodsText}
+                </span>` : ''}
             </div>
 
             <div class="property-summary">
-                ${property.summary}
+                ${property.description}
             </div>
 
             <div class="d-grid">
-                <a href="https://www.english-heritage.org.uk${property.path}" 
+                <a href="${property.visit_url}" 
                    target="_blank" 
                    class="btn btn-primary">
                     <i class="bi bi-box-arrow-up-right"></i>
@@ -447,12 +478,12 @@ class EnglishHeritageMap {
     // Update statistics in header
     updateStats() {
         const totalCount = document.getElementById('total-count');
-        const freeCount = document.getElementById('free-count');
+        const castleCount = document.getElementById('free-count'); // Repurpose this element
 
         totalCount.textContent = `${this.filteredData.features.length} Properties`;
         
-        const freeProperties = this.filteredData.features.filter(f => f.properties.isFreeEntry).length;
-        freeCount.textContent = `${freeProperties} Free Entry`;
+        const castleProperties = this.filteredData.features.filter(f => f.properties.location_type === 'Castles').length;
+        castleCount.textContent = `${castleProperties} Castles`;
     }
 
     // Show/hide loading overlay
@@ -484,6 +515,6 @@ class EnglishHeritageMap {
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new EnglishHeritageMap();
+    new CADWHeritageMap();
 });
 
