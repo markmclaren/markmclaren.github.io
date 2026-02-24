@@ -1,0 +1,216 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Coastal Mediterranean Minimalism Design System
+   - Sun-bleached color palette inspired by Turkish coastal towns
+   - Soft, organic shapes with generous whitespace
+   - Photography-first with warm, desaturated tones
+*/
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Coastal Mediterranean palette - warm off-whites, terracotta, dusty blues, sandy beiges */
+  --primary: oklch(0.55 0.12 240);  /* Dusty blue - Aegean sea */
+  --primary-foreground: oklch(0.98 0.01 60);  /* Warm off-white */
+  --sidebar-primary: oklch(0.6 0.1 240);
+  --sidebar-primary-foreground: oklch(0.98 0.01 60);
+  --chart-1: oklch(0.65 0.1 240);
+  --chart-2: oklch(0.6 0.08 35);
+  --chart-3: oklch(0.55 0.1 240);
+  --chart-4: oklch(0.5 0.12 240);
+  --chart-5: oklch(0.45 0.14 240);
+  --radius: 1.5rem;  /* Soft, organic rounded corners */
+  --background: oklch(0.98 0.01 60);  /* Warm off-white, sun-bleached */
+  --foreground: oklch(0.3 0.02 40);  /* Warm dark gray */
+  --card: oklch(0.99 0.005 60);  /* Slightly lighter than background */
+  --card-foreground: oklch(0.3 0.02 40);
+  --popover: oklch(0.99 0.005 60);
+  --popover-foreground: oklch(0.3 0.02 40);
+  --secondary: oklch(0.7 0.08 35);  /* Sandy beige */
+  --secondary-foreground: oklch(0.25 0.02 40);
+  --muted: oklch(0.92 0.02 60);  /* Soft neutral */
+  --muted-foreground: oklch(0.5 0.03 40);
+  --accent: oklch(0.6 0.12 35);  /* Terracotta accent */
+  --accent-foreground: oklch(0.98 0.01 60);
+  --destructive: oklch(0.55 0.2 25);  /* Warm red */
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.02 60);  /* Soft border */
+  --input: oklch(0.88 0.02 60);
+  --ring: oklch(0.55 0.12 240);
+  --sidebar: oklch(0.98 0.01 60);
+  --sidebar-foreground: oklch(0.3 0.02 40);
+  --sidebar-accent: oklch(0.92 0.02 60);
+  --sidebar-accent-foreground: oklch(0.25 0.02 40);
+  --sidebar-border: oklch(0.88 0.02 60);
+  --sidebar-ring: oklch(0.55 0.12 240);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+  
+  /* Coastal wave divider utility */
+  .wave-divider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .wave-divider::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23faf9f7'/%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
+  }
+}
+
+/* Custom Bootstrap overrides for Coastal Mediterranean aesthetic */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: #4a4038;
+  background-color: #faf9f7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #2d2520;
+}
+
+.btn {
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7b9fb0 0%, #6b8fa0 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(123, 159, 176, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(123, 159, 176, 0.4);
+}
+
+.card {
+  border-radius: 1.5rem;
+  border: none;
+  box-shadow: 0 8px 24px rgba(74, 64, 56, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(74, 64, 56, 0.12);
+}
+
+.card-img-top {
+  border-radius: 0;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
