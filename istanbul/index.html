@@ -4,54 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Istanbul Cat Lovers & History Buffs Itinerary</title>
-    <meta name="description" content="A 3-night journey through cats, history, food, and the Bosphorus">
-    <meta name="theme-color" content="#7b9fb0">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Coastal Mediterranean Minimalism Design System */
-        :root {
-            --color-primary: #7b9fb0;
-            --color-background: #faf9f7;
-            --color-text: #4a4038;
-            --color-heading: #2d2520;
-        }
-        
         body {
             font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            color: var(--color-text);
-            background-color: var(--color-background);
+            color: #4a4038;
+            background: #faf9f7;
         }
         
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: var(--color-heading);
+            color: #2d2520;
         }
         
-        .btn {
-            border-radius: 2rem;
-            padding: 0.75rem 2rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.875rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(45,37,32,0.3), rgba(45,37,32,0.5)), 
+                        url('hero-istanbul-bosphorus.webp') center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         
         .btn-primary {
             background: linear-gradient(135deg, #7b9fb0 0%, #6b8fa0 100%);
             border: none;
-            box-shadow: 0 4px 12px rgba(123, 159, 176, 0.3);
+            border-radius: 2rem;
+            padding: 0.75rem 2rem;
         }
         
         .btn-primary:hover {
@@ -62,224 +51,141 @@
         .card {
             border-radius: 1.5rem;
             border: none;
-            box-shadow: 0 8px 24px rgba(74, 64, 56, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(74, 64, 56, 0.12);
+            box-shadow: 0 8px 24px rgba(74,64,56,0.08);
         }
         
         html {
             scroll-behavior: smooth;
         }
-        
-        .offline-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            background: #f0ad4e;
-            color: white;
-            padding: 0.5rem;
-            text-align: center;
-            display: none;
-        }
-        
-        .offline-indicator.show {
-            display: block;
-        }
     </style>
 </head>
 <body>
-    <!-- Offline Indicator -->
-    <div id="offlineIndicator" class="offline-indicator">
-        📡 You're viewing this offline - some features may be limited
-    </div>
 
     <!-- Hero Section -->
-    <section class="position-relative overflow-hidden" style="min-height: 100vh; background: linear-gradient(rgba(45, 37, 32, 0.3), rgba(45, 37, 32, 0.5)), url('https://private-us-east-1.manuscdn.com/sessionFile/PfJNmbjm10qEOCGGxlKtBP/sandbox/5lVTSWjBBUZSMUFTZmnOlo-img-1_1770369545000_na1fn_aGVyby1pc3RhbmJ1bC1ib3NwaG9ydXM.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvUGZKTm1iam0xMHFFT0NHR3hsS3RCUC9zYW5kYm94LzVsVlRTV2pCQlVaU01VRlRabW5PbG8taW1nLTFfMTc3MDM2OTU0NTAwMF9uYTFmbl9hR1Z5YnkxcGMzUmhibUoxYkMxaWIzTndhRzl5ZFhNLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=GHfaqHLbmOFdjfz9blgTe5kZMSIl7CAa4gRrqfmk9T0qwSf8GrWtYg5~aZrDAqUxriT6EsJtdWAh5-pyFAVvrJFJjlUOnff8VlQZ~SoOQOW5L9V6Nx0Vkv6r6gjc~5-WhOVp9rnml4lctlUzbsUncT8f6oocjtQ4dtjhA2iYotAF16sBv5QdpqtLw9Hs4SXLEjb0Liq-359vzCbymmGmm6nkOwZxeLa227QaZWRhmqc~A4g12se096I1hrdTp9R7yrJGrLex0ZnBfcxWlWazuNXHqLp-HgXioHt3EUj31xve5fXHp1YxF38Y4TtWQFYRf3e0ZlbAUsEX8C-G8LbwoA__') center/cover no-repeat;">
-        <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-            <div class="text-center text-white py-5">
-                <h1 class="display-1 fw-bold mb-4" style="font-size: clamp(2.5rem, 8vw, 5rem); text-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    Istanbul Awaits
-                </h1>
-                <p class="lead mb-5" style="font-size: clamp(1.1rem, 3vw, 1.5rem); max-width: 700px; margin: 0 auto 2rem; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
-                    A 3-night journey through cats, history, food, and the Bosphorus
-                </p>
-                <a href="#overview" class="btn btn-primary btn-lg">
-                    Explore Your Itinerary
-                </a>
-            </div>
+    <div class="hero">
+        <div class="container">
+            <h1 class="display-1 fw-bold mb-4">Istanbul Awaits</h1>
+            <p class="lead mb-5">A 3-night journey through cats, history, food, and the Bosphorus</p>
+            <a href="#overview" class="btn btn-primary btn-lg">Explore Your Itinerary</a>
         </div>
-        
-        <!-- Wave divider -->
-        <div class="position-absolute bottom-0 start-0 w-100" style="height: 100px;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: 100px;">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#faf9f7"/>
-            </svg>
-        </div>
-    </section>
+    </div>
 
     <!-- Overview Section -->
-    <section id="overview" class="py-5" style="background: #faf9f7;">
+    <section id="overview" class="py-5">
         <div class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h2 class="display-4 mb-4">Your Perfect Istanbul Escape</h2>
-                    <p class="lead mb-4" style="color: #5a4f45;">
-                        Welcome to your personalized 3-night Istanbul adventure, designed for cat lovers and history enthusiasts who appreciate good food, authentic experiences, and budget-friendly travel.
-                    </p>
-                    <div class="row g-4 mb-4">
-                        <div class="col-6">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3" style="font-size: 2rem;">🐱</div>
-                                <div>
-                                    <h5 class="mb-1">Famous Cats</h5>
-                                    <p class="mb-0 small" style="color: #7a6f65;">Meet Istanbul's celebrity felines</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3" style="font-size: 2rem;">🏛️</div>
-                                <div>
-                                    <h5 class="mb-1">Rich History</h5>
-                                    <p class="mb-0 small" style="color: #7a6f65;">Byzantine & Ottoman wonders</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3" style="font-size: 2rem;">🚢</div>
-                                <div>
-                                    <h5 class="mb-1">Bosphorus Ferry</h5>
-                                    <p class="mb-0 small" style="color: #7a6f65;">Scenic water journey</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3" style="font-size: 2rem;">⚽</div>
-                                <div>
-                                    <h5 class="mb-1">Football Shirts</h5>
-                                    <p class="mb-0 small" style="color: #7a6f65;">Best replica shopping spots</p>
-                                </div>
-                            </div>
-                        </div>
+            <h2 class="display-4 text-center mb-5">Your Perfect Istanbul Escape</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🐱</div>
+                        <h5 class="mt-3">Famous Cats</h5>
+                        <p class="small">Meet Istanbul's celebrity felines</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card border-0" style="border-radius: 2rem; overflow: hidden;">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/106356824/nTcnpWMelsHglgJa.png" 
-                             alt="Cat at Hagia Sophia" 
-                             class="img-fluid"
-                             style="object-fit: cover; height: 500px; width: 100%;">
+                <div class="col-md-3">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🏛️</div>
+                        <h5 class="mt-3">Rich History</h5>
+                        <p class="small">Byzantine & Ottoman wonders</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🚢</div>
+                        <h5 class="mt-3">Bosphorus Ferry</h5>
+                        <p class="small">Scenic water journey</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">⚽</div>
+                        <h5 class="mt-3">Football Shirts</h5>
+                        <p class="small">Best replica shopping spots</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Flight & Accommodation Info -->
+    <!-- Flight & Hotel Info -->
     <section class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
         <div class="container py-5">
             <h2 class="display-5 text-center mb-5">Travel Details</h2>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-4">✈️ Flights</h3>
-                            <div class="mb-4">
-                                <h5 class="text-primary mb-2">Bristol → Istanbul</h5>
-                                <p class="mb-1"><strong>Departure:</strong> 12:55 (Bristol time)</p>
-                                <p class="mb-1"><strong>Arrival:</strong> 19:40 (Istanbul time)</p>
-                                <p class="mb-0 small text-muted">Flight duration: 3h 45m | Time difference: +3 hours</p>
-                            </div>
-                            <div>
-                                <h5 class="text-primary mb-2">Istanbul → Bristol</h5>
-                                <p class="mb-1"><strong>Departure:</strong> 21:00 (Istanbul time)</p>
-                                <p class="mb-1"><strong>Arrival:</strong> 22:10 (Bristol time)</p>
-                                <p class="mb-0 small text-muted">Flight duration: 4h 10m</p>
-                            </div>
+                    <div class="card h-100 p-4">
+                        <h3 class="h4 mb-4">✈️ Flights</h3>
+                        <div class="mb-4">
+                            <h5 class="text-primary">Bristol → Istanbul</h5>
+                            <p class="mb-1"><strong>Departure:</strong> 12:55 (Bristol time)</p>
+                            <p class="mb-1"><strong>Arrival:</strong> 19:40 (Istanbul time)</p>
+                            <p class="small text-muted">Flight duration: 3h 45m | Time difference: +3 hours</p>
+                        </div>
+                        <div>
+                            <h5 class="text-primary">Istanbul → Bristol</h5>
+                            <p class="mb-1"><strong>Departure:</strong> 21:00 (Istanbul time)</p>
+                            <p class="mb-1"><strong>Arrival:</strong> 22:10 (Bristol time)</p>
+                            <p class="small text-muted">Flight duration: 4h 10m</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-4">🏨 Accommodation</h3>
-                            <h5 class="mb-3">Hippodrome Hotel</h5>
-                            <p class="mb-3" style="color: #5a4f45;">
-                                Nestled in the heart of Sultanahmet, this beautifully restored Ottoman-era building puts you steps away from Hagia Sophia, Blue Mosque, and Topkapı Palace.
-                            </p>
-                            <ul class="list-unstyled mb-3">
-                                <li class="mb-2">📍 Cankurtaran, Mimar Mehmet Ağa Street</li>
-                                <li class="mb-2">🍳 Buffet breakfast included</li>
-                                <li class="mb-2">📶 Free Wi-Fi</li>
-                                <li class="mb-2">🌙 3 nights</li>
-                            </ul>
-                            <a href="https://hippodromehotel.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
-                                Visit Hotel Website
-                            </a>
-                        </div>
+                    <div class="card h-100 p-4">
+                        <h3 class="h4 mb-4">🏨 Hippodrome Hotel</h3>
+                        <p class="mb-3">Nestled in the heart of Sultanahmet, steps away from Hagia Sophia, Blue Mosque, and Topkapı Palace.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">📍 Cankurtaran, Mimar Mehmet Ağa Street</li>
+                            <li class="mb-2">🍳 Buffet breakfast included</li>
+                            <li class="mb-2">📶 Free Wi-Fi</li>
+                            <li class="mb-2">🌙 3 nights</li>
+                        </ul>
+                        <a href="https://hippodromehotel.com/" target="_blank" class="btn btn-outline-primary btn-sm mt-3">Visit Hotel Website</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MegaPass Tour Info -->
-    <section class="py-5" style="background: #faf9f7;">
+    <!-- MegaPass Section -->
+    <section class="py-5">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <div class="badge bg-success mb-3" style="font-size: 0.875rem; padding: 0.5rem 1rem; border-radius: 1rem;">✓ Booked</div>
+                <span class="badge bg-success mb-3" style="font-size: 0.875rem; padding: 0.5rem 1rem;">✓ Booked</span>
                 <h2 class="display-5 mb-3">Your MegaPass Combo Tour</h2>
-                <p class="lead" style="color: #5a4f45; max-width: 700px; margin: 0 auto;">
-                    Skip-the-line access to Hagia Sophia, Topkapı Palace, and Basilica Cistern with audio guide
-                </p>
+                <p class="lead">Skip-the-line access to Hagia Sophia, Topkapı Palace, and Basilica Cistern with audio guide</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body p-4">
-                            <div class="mb-3" style="font-size: 3rem;">🕌</div>
-                            <h4 class="mb-3">Hagia Sophia</h4>
-                            <p class="mb-2"><strong>Hours:</strong></p>
-                            <p class="mb-1 small">Daily: 9AM - 7PM</p>
-                            <p class="mb-3 small"><strong>Fridays: 2PM - 7PM</strong></p>
-                            <p class="small text-muted">💡 Visit before 10AM or after 4PM for shorter security lines</p>
-                        </div>
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🕌</div>
+                        <h4 class="my-3">Hagia Sophia</h4>
+                        <p class="mb-2"><strong>Hours:</strong></p>
+                        <p class="mb-1 small">Daily: 9AM - 7PM</p>
+                        <p class="mb-3 small"><strong>Fridays: 2PM - 7PM</strong></p>
+                        <p class="small text-muted">💡 Visit before 10AM or after 4PM for shorter security lines</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body p-4">
-                            <div class="mb-3" style="font-size: 3rem;">🏰</div>
-                            <h4 class="mb-3">Topkapı Palace</h4>
-                            <p class="mb-2"><strong>Entry Times:</strong></p>
-                            <p class="mb-3 small">9:30AM, 10:30AM, 11:00AM, 11:30AM, 12:30PM, 1:00PM, 1:30PM, 2:30PM, 3:00PM, 3:30PM</p>
-                            <p class="small text-danger"><strong>Closed Tuesdays</strong></p>
-                        </div>
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🏰</div>
+                        <h4 class="my-3">Topkapı Palace</h4>
+                        <p class="mb-2"><strong>Entry Times:</strong></p>
+                        <p class="mb-3 small">9:30AM, 10:30AM, 11:00AM, 11:30AM, 12:30PM, 1:00PM, 1:30PM, 2:30PM, 3:00PM, 3:30PM</p>
+                        <p class="small text-danger"><strong>Closed Tuesdays</strong></p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body p-4">
-                            <div class="mb-3" style="font-size: 3rem;">💧</div>
-                            <h4 class="mb-3">Basilica Cistern</h4>
-                            <p class="mb-2"><strong>Hours:</strong></p>
-                            <p class="mb-3 small">Daily: 9AM - 7PM</p>
-                            <p class="small text-muted">Underground Byzantine wonder with Medusa heads</p>
-                        </div>
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">💧</div>
+                        <h4 class="my-3">Basilica Cistern</h4>
+                        <p class="mb-2"><strong>Hours:</strong></p>
+                        <p class="mb-3 small">Daily: 9AM - 7PM</p>
+                        <p class="small text-muted">Underground Byzantine wonder with Medusa heads</p>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4">
-                <div class="alert alert-info d-inline-block" style="max-width: 600px;">
+                <div class="alert alert-info d-inline-block">
                     <strong>Important:</strong> Your MegaPass skips ticket lines but not security lines. Security can take 15-60 minutes during peak times. Valid for 3 days from first use.
                 </div>
             </div>
@@ -291,8 +197,317 @@
         <div class="container py-5">
             <h2 class="display-4 text-center mb-5">Your 4-Day Adventure</h2>
             
-            <!-- Continue with all days... Due to length, I'll create a separate file -->
-            <p class="text-center">Full itinerary with all 4 days included in complete file...</p>
+            <!-- Day 1 - Friday -->
+            <div class="card mb-5 p-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <span class="badge bg-primary mb-3">Day 1 - Friday</span>
+                        <h3 class="mb-3">Late Arrival & Dinner</h3>
+                        <p class="mb-3">Arrive around 19:40 (possibly 22:00) and settle into your hotel.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Take Havaist shuttle or taxi to Sultanahmet (~1 hour)</li>
+                            <li class="mb-2">✓ Check in at Hippodrome Hotel</li>
+                            <li class="mb-2">✓ <strong>Late dinner near hotel (vegetarian-friendly):</strong></li>
+                        </ul>
+                        <div class="card mt-3" style="background: #f5f0eb;">
+                            <div class="card-body">
+                                <h6 class="mb-2">🥗 Recommended: Sultanahmet Köftecisi</h6>
+                                <p class="small mb-1">5-minute walk from hotel. Open until midnight.</p>
+                                <p class="small mb-0">Excellent vegetarian mezze, lentil soup, salads. Partner can enjoy traditional dishes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <img src="istanbul-evening.webp" alt="Istanbul evening" class="img-fluid rounded" style="max-height: 400px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 - Saturday -->
+            <div class="card mb-5 p-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <span class="badge bg-primary mb-3">Day 2 - Saturday</span>
+                        <h3 class="mb-3">MegaPass Tour Day</h3>
+                        <p class="mb-3">Use your MegaPass to explore three iconic sites with skip-the-line access.</p>
+                        <div class="mb-3">
+                            <h5>Morning (9:00 AM - 12:30 PM)</h5>
+                            <ul class="small">
+                                <li class="mb-2">• <strong>9:00 AM - Hagia Sophia</strong> (arrive early for shorter lines)</li>
+                                <li class="mb-2">• Meet the celebrity cats & explore with audio guide (~1.5 hours)</li>
+                                <li class="mb-2">• <strong>10:45 AM - Basilica Cistern</strong> (short walk away)</li>
+                                <li class="mb-2">• Underground Byzantine wonder (~45 min)</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <h5>Afternoon (1:00 PM - 5:00 PM)</h5>
+                            <ul class="small">
+                                <li class="mb-2">• Lunch break with vegetarian mezze & seafood</li>
+                                <li class="mb-2">• <strong>2:30 PM - Topkapı Palace</strong> (timed entry)</li>
+                                <li class="mb-2">• Ottoman sultans' residence with cat colonies (~2 hours)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Evening</h5>
+                            <ul class="small">
+                                <li class="mb-2">• Explore Blue Mosque courtyard & spot cats</li>
+                                <li class="mb-2">• Shop for football shirts near Spice Bazaar</li>
+                                <li class="mb-2">• Dinner at local restaurant</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 mt-4 mt-lg-0">
+                        <img src="hagia-sophia-cats.png" alt="Hagia Sophia with cats" class="img-fluid rounded" style="max-height: 400px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 - Sunday -->
+            <div class="card mb-5 p-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <span class="badge bg-primary mb-3">Day 3 - Sunday</span>
+                        <h3 class="mb-3">Bosphorus Ferry & Cat Parks</h3>
+                        <p class="mb-3">Experience Istanbul from the water on an authentic public ferry cruise.</p>
+                        <div class="mb-3">
+                            <h5>Morning (9:00 AM - 3:00 PM)</h5>
+                            <ul class="small">
+                                <li class="mb-2">• Walk to Eminönü via <strong>Galata Bridge</strong></li>
+                                <li class="mb-2">• See fishermen on bridge & fish restaurants underneath</li>
+                                <li class="mb-2">• <strong>Şehir Hatları Ferry</strong> from Eminönü to Anadolu Kavağı</li>
+                                <li class="mb-2">• Only ~£1.50 with Istanbulkart!</li>
+                                <li class="mb-2">• Pass Dolmabahçe Palace, Bosphorus Bridge, Rumeli Fortress</li>
+                                <li class="mb-2">• Lunch at fishing village with fresh seafood & vegetarian options</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Afternoon & Evening</h5>
+                            <ul class="small">
+                                <li class="mb-2">• Visit <strong>Maçka Art Park (Cat Park)</strong> - hundreds of cats!</li>
+                                <li class="mb-2">• Explore trendy Cihangir neighborhood</li>
+                                <li class="mb-2">• <strong>Sunday dinner option: Zorlu Center Mall</strong></li>
+                                <li class="mb-2">• (Many restaurants closed Sundays - mall is reliable!)</li>
+                            </ul>
+                        </div>
+                        <div class="alert alert-warning mt-3">
+                            <strong>Note:</strong> Grand Bazaar is <strong>closed on Sundays</strong>. Shop for football shirts on Saturday instead!
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <img src="bosphorus-ferry.jpeg" alt="Bosphorus ferry" class="img-fluid rounded" style="max-height: 400px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 - Monday -->
+            <div class="card mb-5 p-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <span class="badge bg-primary mb-3">Day 4 - Monday</span>
+                        <h3 class="mb-3">Full Day Before Evening Flight</h3>
+                        <p class="mb-3">You have the whole day! Flight departs at 21:00, so plenty of time for a final adventure.</p>
+                        <div class="mb-3">
+                            <h5>Morning (8:00 AM - 12:00 PM)</h5>
+                            <ul class="small">
+                                <li class="mb-2">• <strong>Breakfast at hotel</strong> (included)</li>
+                                <li class="mb-2">• <strong>Gülhane Park</strong> - Peaceful morning stroll with cats</li>
+                                <li class="mb-2">• Optional: Walk across <strong>Galata Bridge</strong> for photos</li>
+                                <li class="mb-2">• <strong>Grand Bazaar</strong> - Open Mondays! Last chance for shopping</li>
+                                <li class="mb-2">• Final football shirt bargaining or souvenirs</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <h5>Lunch & Afternoon (12:00 PM - 5:00 PM)</h5>
+                            <ul class="small">
+                                <li class="mb-2">• <strong>Lunch in Sultanahmet</strong> - vegetarian mezze & seafood</li>
+                                <li class="mb-2">• Check out from hotel (store luggage if needed)</li>
+                                <li class="mb-2">• Optional: Visit Spice Bazaar or waterfront</li>
+                                <li class="mb-2">• Relax at a café with Bosphorus views</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Evening Departure</h5>
+                            <ul class="small">
+                                <li class="mb-2">• Head to airport around 18:00-18:30 (2.5-3 hours before)</li>
+                                <li class="mb-2">• Flight departs 21:00, arrives Bristol 22:10</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 mt-4 mt-lg-0">
+                        <img src="grand-bazaar-shopping.webp" alt="Shopping in Istanbul" class="img-fluid rounded" style="max-height: 400px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="display-4 text-center mb-5">Budget-Friendly Adventure</h2>
+            <p class="lead text-center mb-5">Experience Istanbul without breaking the bank. Here's what to expect per person (excluding flights & hotel).</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🎫</div>
+                        <h4 class="my-3">Attractions</h4>
+                        <div class="display-6 text-primary mb-3">€119</div>
+                        <ul class="list-unstyled small text-start">
+                            <li class="mb-2">• MegaPass Combo: €119</li>
+                            <li class="mb-2">  - Hagia Sophia (skip-the-line)</li>
+                            <li class="mb-2">  - Topkapı Palace (skip-the-line)</li>
+                            <li class="mb-2">  - Basilica Cistern (skip-the-line)</li>
+                            <li class="mb-2">  - Audio guide included</li>
+                            <li class="mb-2">• Bosphorus Ferry: £1.50</li>
+                            <li class="mb-2">• Blue Mosque: Free</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🚇</div>
+                        <h4 class="my-3">Transport</h4>
+                        <div class="display-6 text-primary mb-3">£25-30</div>
+                        <ul class="list-unstyled small text-start">
+                            <li class="mb-2">• Airport transfers: £15-20</li>
+                            <li class="mb-2">• Istanbulkart: £10</li>
+                            <li class="mb-2">• Unlimited tram, ferry, bus</li>
+                            <li class="mb-2">• Much cheaper than taxis!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div style="font-size: 3rem;">🍽️</div>
+                        <h4 class="my-3">Food (3 days)</h4>
+                        <div class="display-6 text-primary mb-3">£60-90</div>
+                        <ul class="list-unstyled small text-start">
+                            <li class="mb-2">• Budget: £20-30/day</li>
+                            <li class="mb-2">• Mix of restaurants & street food</li>
+                            <li class="mb-2">• Breakfast included at hotel</li>
+                            <li class="mb-2">• Fresh, delicious, affordable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 mx-auto">
+                    <div class="card text-center p-4" style="background: linear-gradient(135deg, #7b9fb0 0%, #6b8fa0 100%); color: white;">
+                        <h4 class="mb-3">Total Budget</h4>
+                        <div class="display-4 mb-2">£200-240</div>
+                        <p class="mb-0">per person (excluding flights & accommodation)</p>
+                        <p class="small mb-0 mt-2">Includes MegaPass €119 (~£100)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
+        <div class="container py-5">
+            <h2 class="display-4 text-center mb-5">Essential Tips</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-4">
+                        <div style="font-size: 2.5rem;">🐱</div>
+                        <h5 class="my-3">Cat Etiquette</h5>
+                        <p class="small mb-0">Istanbul's street cats are friendly but respect their space. They're well-fed by locals, but appreciate gentle pets. Don't feed cats in restaurants or mosques without permission.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-4">
+                        <div style="font-size: 2.5rem;">💰</div>
+                        <h5 class="my-3">Money Matters</h5>
+                        <p class="small mb-0">Turkish Lira (TL) is the currency. Credit cards widely accepted, but carry cash for small shops and street food. ATMs available throughout Sultanahmet.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-4">
+                        <div style="font-size: 2.5rem;">🤝</div>
+                        <h5 class="my-3">Bargaining</h5>
+                        <p class="small mb-0">Expected at bazaars and for football shirts. Start at 40-50% of asking price. Be friendly and patient. Walk away if price is too high—they'll often call you back!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-4">
+                        <div style="font-size: 2.5rem;">🕌</div>
+                        <h5 class="my-3">Dress Code</h5>
+                        <p class="small mb-0">Modest dress for mosques (shoulders and knees covered). Headscarves provided for women at mosque entrances. Remove shoes before entering mosques.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card p-5 text-center" style="background: linear-gradient(135deg, #9fb7c4 0%, #7b9fb0 100%); color: white;">
+                        <h4 class="mb-3">⚽ Football Shirt Shopping Pro Tips</h4>
+                        <p class="mb-4">The shops just outside the <strong>Spice Bazaar (Egyptian Bazaar)</strong> are known for high-quality replica jerseys. <strong>Shop on Saturday</strong> since Grand Bazaar is closed Sundays!</p>
+                        <div class="row g-3 text-start">
+                            <div class="col-md-6">
+                                <p class="mb-2"><strong>Expected Prices:</strong></p>
+                                <ul class="mb-0">
+                                    <li>Good quality replicas: 200-400 TL (£6-12)</li>
+                                    <li>Lower quality: 100-200 TL (£3-6)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb-2"><strong>Bargaining Tips:</strong></p>
+                                <ul class="mb-0">
+                                    <li>Start at 30-40% of asking price</li>
+                                    <li>Check stitching and logos carefully</li>
+                                    <li>Ask "En iyi fiyat nedir?" (Best price?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cat Spotting Locations -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="display-4 text-center mb-5">🐾 Famous Cat Spotting Locations</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="mb-3">Hagia Sophia</h5>
+                        <p class="mb-0 small">Home to descendants of Gli, the legendary celebrity cat who lived here. These cats are Instagram famous and very photogenic!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="mb-3">Maçka Art Park</h5>
+                        <p class="mb-0 small">Known as Istanbul's "Cat Park" with hundreds of cats. The municipality provides food and shelter. A true cat lover's paradise!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="mb-3">Topkapı Palace</h5>
+                        <p class="mb-0 small">Large cat colonies roam the palace grounds. These cats live like royalty among the Ottoman treasures!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="mb-3">Blue Mosque Courtyard</h5>
+                        <p class="mb-0 small">Friendly street cats lounging in the beautiful courtyard. Perfect for photos with the mosque in the background.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="mb-3">Cihangir Neighborhood</h5>
+                        <p class="mb-0 small">Trendy hillside area with cats on the steps and in cafes. Very photogenic and Instagram-worthy!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="mb-3">Gülhane Park</h5>
+                        <p class="mb-0 small">Peaceful park next to Topkapı Palace with many friendly cats. Great for a morning stroll before your flight.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -300,9 +515,7 @@
     <footer class="py-5 text-center" style="background: linear-gradient(135deg, #7b9fb0 0%, #6b8fa0 100%); color: white;">
         <div class="container">
             <h3 class="mb-4">Ready for Your Istanbul Adventure?</h3>
-            <p class="lead mb-4" style="max-width: 600px; margin: 0 auto;">
-                This itinerary combines everything you love: cats, history, football shirts, delicious food, and scenic water travel—all on a budget!
-            </p>
+            <p class="lead mb-4">This itinerary combines everything you love: cats, history, football shirts, delicious food, and scenic water travel—all on a budget!</p>
             <div class="mb-4">
                 <p class="mb-2"><strong>Useful Turkish Phrases:</strong></p>
                 <p class="mb-1">Merhaba = Hello | Teşekkür ederim = Thank you | Kedi = Cat!</p>
@@ -314,7 +527,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Vanilla JavaScript -->
+    <!-- Pure Vanilla JavaScript - NO REACT -->
     <script>
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -327,33 +540,7 @@
             });
         });
         
-        // Offline indicator
-        const offlineIndicator = document.getElementById('offlineIndicator');
-        
-        function updateOnlineStatus() {
-            if (!navigator.onLine) {
-                offlineIndicator.classList.add('show');
-            } else {
-                offlineIndicator.classList.remove('show');
-            }
-        }
-        
-        window.addEventListener('online', updateOnlineStatus);
-        window.addEventListener('offline', updateOnlineStatus);
-        updateOnlineStatus();
-        
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker registered successfully:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('Service Worker registration failed:', error);
-                    });
-            });
-        }
+        console.log('Istanbul Itinerary loaded - Pure Vanilla JavaScript, NO React!');
     </script>
 </body>
 </html>
