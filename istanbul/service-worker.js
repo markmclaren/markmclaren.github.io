@@ -12,7 +12,11 @@ const urlsToCache = [
   'grand-bazaar-shopping.webp',
   'hagia-sophia-cats.png',
   'hero-istanbul-bosphorus.webp',
-  'istanbul-evening.webp'
+  'istanbul-evening.webp',
+  'https://tiles.openfreemap.org/styles/liberty',
+  'https://tiles.openfreemap.org/styles/liberty/{z}/{x}/{y}.png',
+  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  'https://tile.openstreetmap.org/styles/liberty/{z}/{x}/{y}.png'
 ];
 
 // Install service worker and cache resources
@@ -91,6 +95,35 @@ self.addEventListener('fetch', (event) => {
         // For navigation requests, return the fallback page
         if (event.request.mode === 'navigate') {
           return caches.match(FALLBACK_PAGE);
+        }
+        
+        // For map tile requests, try to return cached version
+        if (event.request.url.includes('tiles.openfreemap.org') || event.request.url.includes('tile.openstreetmap.org')) {
+          return caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            
+            // Clone the request
+            const fetchRequest = event.request.clone();
+            
+            return fetch(fetchRequest).then((response) => {
+              // Check if valid response
+              if (!response || response.status !== 200 || response.type !== 'basic') {
+                return response;
+              }
+              
+              // Clone the response
+              const responseToCache = response.clone();
+              
+              caches.open(CACHE_NAME)
+                .then((cache) => {
+                  cache.put(event.request, responseToCache);
+                });
+              
+              return response;
+            });
+          });
         }
         
         return fetch(event.request);
