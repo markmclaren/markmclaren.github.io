@@ -779,7 +779,7 @@
                 
                 // Create popup
                 const popup = new maplibregl.Popup({ offset: 25 })
-                    .setHTML(`<strong>${location.name}</strong><br><small>${location.type}</small>`);
+                    .setHTML(`<strong>${location.name}</strong><br><small>${location.type}</small><br><a href="https://maps.google.com/maps?daddr=${location.coords[1]},${location.coords[0]}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none; font-size: 0.95rem;"><i class="fas fa-directions"></i> Directions</a>`);
                 
                 // Add marker to map
                 new maplibregl.Marker(el)
