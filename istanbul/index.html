@@ -767,6 +767,48 @@
             { name: 'Laleli Market', coords: [28.953986, 41.00817], type: 'shopping', icon: '⚽' }
         ];
         
+        // Get current location
+        let currentLocation = null;
+        
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        currentLocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                            accuracy: position.coords.accuracy
+                        };
+                        console.log('Current location obtained', currentLocation);
+                    },
+                    (error) => {
+                        console.warn('Geolocation error:', error.message);
+                        // Fallback to hotel location if geolocation fails
+                        currentLocation = {
+                            lat: 28.9729339,
+                            lng: 41.010313,
+                            accuracy: 50
+                        };
+                    },
+                    {
+                        timeout: 10000,
+                        maximumAge: 60000
+                    }
+                );
+            } else {
+                console.warn('Geolocation not supported');
+                // Fallback to hotel location
+                currentLocation = {
+                    lat: 28.9729339,
+                    lng: 41.010313,
+                    accuracy: 50
+                };
+            }
+        }
+        
+        // Initialize current location
+        getCurrentLocation();
+        
         // Add markers to map
         map.on('load', function() {
             locations.forEach(location => {
@@ -777,9 +819,9 @@
                 el.style.fontSize = '24px';
                 el.style.cursor = 'pointer';
                 
-                // Create popup
+                // Create popup with directions from current location
                 const popup = new maplibregl.Popup({ offset: 25 })
-                    .setHTML(`<strong>${location.name}</strong><br><small>${location.type}</small><br><a href="https://maps.google.com/maps?daddr=${location.coords[1]},${location.coords[0]}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none; font-size: 0.95rem;"><i class="fas fa-directions"></i> Directions</a>`);
+                    .setHTML(`<strong>${location.name}</strong><br><small>${location.type}</small><br><a href="https://maps.google.com/maps?saddr=${currentLocation ? currentLocation.lat : 28.9729339},${currentLocation ? currentLocation.lng : 41.010313}&daddr=${location.coords[1]},${location.coords[0]}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none; font-size: 0.95rem;"><i class="fas fa-directions"></i> Directions</a>`);
                 
                 // Add marker to map
                 new maplibregl.Marker(el)
