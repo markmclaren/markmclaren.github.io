@@ -8,6 +8,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- MapLibre GL JS -->
+    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +60,17 @@
         
         html {
             scroll-behavior: smooth;
+        }
+        
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 1.5rem;
+        }
+        
+        .maplibregl-popup-content {
+            font-family: 'Inter', sans-serif;
+            border-radius: 0.5rem;
         }
     </style>
 </head>
@@ -107,8 +122,17 @@
         </div>
     </section>
 
+    <!-- Interactive Map Section -->
+    <section id="map-section" class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
+        <div class="container-fullwidth py-5">
+            <h2 class="display-5 text-center mb-4">Your Istanbul Map</h2>
+            <p class="text-center mb-4">All your destinations in one place</p>
+            <div id="map"></div>
+        </div>
+    </section>
+
     <!-- Flight & Hotel Info -->
-    <section class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
+    <section class="py-5">
         <div class="container py-5">
             <h2 class="display-5 text-center mb-5">Travel Details</h2>
             <div class="row g-4">
@@ -147,7 +171,7 @@
     </section>
 
     <!-- MegaPass Section -->
-    <section class="py-5">
+    <section class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <span class="badge bg-success mb-3" style="font-size: 0.875rem; padding: 0.5rem 1rem;">✓ Booked</span>
@@ -193,7 +217,7 @@
     </section>
 
     <!-- Day by Day Itinerary -->
-    <section id="itinerary" class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
+    <section id="itinerary" class="py-5">
         <div class="container py-5">
             <h2 class="display-4 text-center mb-5">Your 4-Day Adventure</h2>
             
@@ -251,8 +275,9 @@
                             <h5>Evening</h5>
                             <ul class="small">
                                 <li class="mb-2">• Explore Blue Mosque courtyard & spot cats</li>
-                                <li class="mb-2">• Shop for football shirts near Spice Bazaar</li>
+                                <li class="mb-2">• Shop for football shirts at <strong>Laleli Market</strong> or near Spice Bazaar</li>
                                 <li class="mb-2">• Dinner at local restaurant</li>
+                                <li class="mb-2">• <strong>Optional: Whirling Dervish show at Hodjapasha</strong> (cultural experience)</li>
                             </ul>
                         </div>
                     </div>
@@ -285,6 +310,7 @@
                             <ul class="small">
                                 <li class="mb-2">• Visit <strong>Maçka Art Park (Cat Park)</strong> - hundreds of cats!</li>
                                 <li class="mb-2">• Explore trendy Cihangir neighborhood</li>
+                                <li class="mb-2">• <strong>Dessert at Hakkı Zade Hafiz Mustafa 1864</strong> - Famous Turkish sweets!</li>
                                 <li class="mb-2">• <strong>Sunday dinner option: Zorlu Center Mall</strong></li>
                                 <li class="mb-2">• (Many restaurants closed Sundays - mall is reliable!)</li>
                             </ul>
@@ -334,7 +360,144 @@
                         </div>
                     </div>
                     <div class="col-lg-6 order-lg-1 mt-4 mt-lg-0">
-                        <img src="grand-bazaar-shopping.webp" alt="Shopping in Istanbul" class="img-fluid rounded" style="max-height: 400px; width: 100%; object-fit: cover;">
+                        <img src="https://private-us-east-1.manuscdn.com/sessionFile/PfJNmbjm10qEOCGGxlKtBP/sandbox/5lVTSWjBBUZSMUFTZmnOlo-img-4_1770369547000_na1fn_Z3JhbmQtYmF6YWFyLXNob3BwaW5n.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvUGZKTm1iam0xMHFFT0NHR3hsS3RCUC9zYW5kYm94LzVsVlRTV2pCQlVaU01VRlRabW5PbG8taW1nLTRfMTc3MDM2OTU0NzAwMF9uYTFmbl9aM0poYm1RdFltRjZZV0Z5TFhOb2IzQndhVzVuLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Z4nok9DTS3VJKO8mYFFAZ1CSNTI686tyFBFSvdsjEr6FdRegFV3veZBc20psHvhTo8QYTxDlBdp7tOTF~G3H8-Eyh2AQLBJi1QgsmICFR5ZFdNflpEJZJOdOzS8O5CQPa4FsJpGqo2qyqA2Hn4~ytyk1TD-IFtVtRt~L3hfXMeS6hmWzgEfXLQ1AD5t7c6m8N8UUsXabI6Eqen-f3dbAza-1NIbssfSYgaXlib~Ies8cSjDDHX32V0CNh90gFGxReDfV7bnDlLIkJNLz3qE4QgK8rKozKqheOJ-sbOQf0QAFdiOay94DpzMMqFHS7qf6m1dH6DIxPo8-e9jMKP0Ptw__" alt="Shopping in Istanbul" class="img-fluid rounded" style="max-height: 400px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turkish Vegetarian Dishes Guide -->
+    <section class="py-5" style="background: linear-gradient(135deg, #e8dfd6 0%, #f5f0eb 100%);">
+        <div class="container py-5">
+            <h2 class="display-4 text-center mb-5">🥗 Turkish Vegetarian Dishes Guide</h2>
+            <p class="lead text-center mb-5">Essential phrases and dishes to make ordering easy!</p>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="card h-100 p-4">
+                        <h4 class="mb-4">📢 Useful Phrases</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Etsiz</strong> (Et-seez)</td>
+                                    <td>No meat / Without meat</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Et var mı?</strong></td>
+                                    <td>Is there meat?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Etsiz yemek var mı?</strong></td>
+                                    <td>Do you have dishes without meat?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ben bir vejetaryen</strong></td>
+                                    <td>I am vegetarian</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Et suyu</strong></td>
+                                    <td>Meat stock (beware!)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-warning mt-3 mb-0">
+                            <strong>⚠️ Warning:</strong> Lentil soup (Mercimek Çorbası) is often made with meat stock. Always ask "etsiz?" to confirm!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 p-4">
+                        <h4 class="mb-4">🍳 Breakfast Dishes</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <strong>Kahvaltı</strong> - Turkish breakfast plate<br>
+                                <small class="text-muted">Cheese, olives, cucumber, tomatoes, bread, butter, jams</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Menemen</strong> - Scrambled egg casserole<br>
+                                <small class="text-muted">With onion, tomato, and green pepper</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Simit</strong> - Sesame seed bread ring<br>
+                                <small class="text-muted">Perfect for breakfast or snacks</small>
+                            </li>
+                            <li class="mb-0">
+                                <strong>Gözleme</strong> - Turkish quesadilla<br>
+                                <small class="text-muted">With cheese, spinach, or potato</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="card h-100 p-4">
+                        <h4 class="mb-4">🥙 Meze (Appetizers)</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">• <strong>Hummus</strong> - Chickpea dip</li>
+                            <li class="mb-2">• <strong>Baba Ghanoush</strong> - Smoky eggplant dip</li>
+                            <li class="mb-2">• <strong>Dolma</strong> - Stuffed grape leaves</li>
+                            <li class="mb-2">• <strong>Cacık</strong> - Yogurt with cucumber and garlic</li>
+                            <li class="mb-2">• <strong>Ezme</strong> - Spicy tomato and pepper dip</li>
+                            <li class="mb-2">• <strong>Patlıcan Salatası</strong> - Eggplant salad</li>
+                            <li class="mb-0">• <strong>Haydari</strong> - Thick yogurt with herbs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 p-4">
+                        <h4 class="mb-4">🍽️ Main Dishes</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <strong>Çiğ Köfte</strong> - Spicy bulgur balls<br>
+                                <small class="text-muted">Now vegetarian-friendly! Cheap and tasty</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Pide</strong> - Turkish pizza<br>
+                                <small class="text-muted">Order "Kaşarlı Pide" (cheese pide)</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Börek</strong> - Flaky pastry<br>
+                                <small class="text-muted">With cheese (peynirli) or spinach (ıspanaklı)</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Imam Bayıldı</strong> - Stuffed eggplant<br>
+                                <small class="text-muted">With tomatoes and onions in olive oil</small>
+                            </li>
+                            <li class="mb-0">
+                                <strong>Mantı</strong> - Turkish dumplings<br>
+                                <small class="text-muted">With yogurt (vegetarian version available)</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card p-4" style="background: linear-gradient(135deg, #9fb7c4 0%, #7b9fb0 100%); color: white;">
+                        <h4 class="mb-3">🍰 Must-Try Desserts</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="mb-0">
+                                    <li class="mb-2"><strong>Baklava</strong> - Layers of filo pastry with nuts and syrup</li>
+                                    <li class="mb-2"><strong>Lokum</strong> - Turkish delight</li>
+                                    <li class="mb-2"><strong>Künefe</strong> - Shredded pastry with cheese and syrup</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="mb-0">
+                                    <li class="mb-2"><strong>Halva</strong> - Sweet made from tahini or semolina</li>
+                                    <li class="mb-2"><strong>Sütlaç</strong> - Rice pudding</li>
+                                    <li class="mb-0"><strong>Tulumba</strong> - Fried dough in syrup</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="alert alert-light mt-3 mb-0">
+                            <strong>🍨 Don't miss:</strong> Hakkı Zade Hafiz Mustafa 1864 - Famous for traditional Turkish sweets and desserts since 1864!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -360,6 +523,7 @@
                             <li class="mb-2">  - Audio guide included</li>
                             <li class="mb-2">• Bosphorus Ferry: £1.50</li>
                             <li class="mb-2">• Blue Mosque: Free</li>
+                            <li class="mb-2">• Whirling Dervish (optional): ~£15-20</li>
                         </ul>
                     </div>
                 </div>
@@ -442,7 +606,7 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="card p-5 text-center" style="background: linear-gradient(135deg, #9fb7c4 0%, #7b9fb0 100%); color: white;">
                         <h4 class="mb-3">⚽ Football Shirt Shopping Pro Tips</h4>
-                        <p class="mb-4">The shops just outside the <strong>Spice Bazaar (Egyptian Bazaar)</strong> are known for high-quality replica jerseys. <strong>Shop on Saturday</strong> since Grand Bazaar is closed Sundays!</p>
+                        <p class="mb-4">The shops just outside the <strong>Spice Bazaar (Egyptian Bazaar)</strong> and <strong>Laleli Market</strong> are known for high-quality replica jerseys. <strong>Shop on Saturday</strong> since Grand Bazaar is closed Sundays!</p>
                         <div class="row g-3 text-start">
                             <div class="col-md-6">
                                 <p class="mb-2"><strong>Expected Prices:</strong></p>
@@ -518,7 +682,7 @@
             <p class="lead mb-4">This itinerary combines everything you love: cats, history, football shirts, delicious food, and scenic water travel—all on a budget!</p>
             <div class="mb-4">
                 <p class="mb-2"><strong>Useful Turkish Phrases:</strong></p>
-                <p class="mb-1">Merhaba = Hello | Teşekkür ederim = Thank you | Kedi = Cat!</p>
+                <p class="mb-1">Merhaba = Hello | Teşekkür ederim = Thank you | Kedi = Cat! | Etsiz = No meat</p>
             </div>
             <p class="small mb-0">Have an amazing trip! 🐱🏛️⚽🚢</p>
         </div>
@@ -540,7 +704,77 @@
             });
         });
         
-        console.log('Istanbul Itinerary loaded - Pure Vanilla JavaScript, NO React!');
+        // Initialize MapLibre GL JS map with OpenStreetMap tiles
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: 'https://tiles.openfreemap.org/styles/liberty',
+            /*
+            style: {
+                'version': 8,
+                'sources': {
+                    'osm': {
+                        'type': 'raster',
+                        'tiles': ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+                        'tileSize': 256,
+                        'attribution': '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }
+                },
+                'layers': [{
+                    'id': 'osm',
+                    'type': 'raster',
+                    'source': 'osm'
+                }]
+            },
+            */
+            center: [28.9784, 41.0082], // Istanbul center
+            zoom: 12
+        });
+        
+        // Add navigation controls
+        map.addControl(new maplibregl.NavigationControl());
+        
+        // Define locations with coordinates
+        const locations = [
+            { name: 'Hippodrome Hotel', coords: [28.9729339, 41.010313], type: 'hotel', icon: '🏨' },
+            { name: 'Hagia Sophia', coords: [28.9802, 41.0086], type: 'attraction', icon: '🕌' },
+            { name: 'Blue Mosque', coords: [28.9769, 41.0054], type: 'attraction', icon: '🕌' },
+            { name: 'Topkapı Palace', coords: [28.9833, 41.0115], type: 'attraction', icon: '🏰' },
+            { name: 'Basilica Cistern', coords: [28.9778, 41.0084], type: 'attraction', icon: '💧' },
+            { name: 'Grand Bazaar', coords: [28.9683, 41.0108], type: 'shopping', icon: '🛍️' },
+            { name: 'Spice Bazaar', coords: [28.9704, 41.0166], type: 'shopping', icon: '🌶️' },
+            { name: 'Galata Bridge', coords: [28.9741, 41.0199], type: 'landmark', icon: '🌉' },
+            { name: 'Bosphorus Ferry Terminal', coords: [28.9704, 41.0166], type: 'transport', icon: '🚢' },
+            { name: 'Maçka Art Park (Cat Park)', coords: [28.9947, 41.0465], type: 'park', icon: '🐱' },
+            { name: 'Gülhane Park', coords: [28.9813, 41.0134], type: 'park', icon: '🌳' },
+            { name: 'Cihangir', coords: [28.9836, 41.0315], type: 'neighborhood', icon: '🏘️' },
+            { name: 'Hakkı Zade Hafiz Mustafa 1864', coords: [28.9729339, 41.010313], type: 'dessert', icon: '🍰' },
+            { name: 'Hodjapasha (Whirling Dervish)', coords: [28.9794013, 41.0113753], type: 'culture', icon: '💃' },
+            { name: 'Laleli Market', coords: [28.953986, 41.00817], type: 'shopping', icon: '⚽' }
+        ];
+        
+        // Add markers to map
+        map.on('load', function() {
+            locations.forEach(location => {
+                // Create a marker element
+                const el = document.createElement('div');
+                el.className = 'marker';
+                el.innerHTML = location.icon;
+                el.style.fontSize = '24px';
+                el.style.cursor = 'pointer';
+                
+                // Create popup
+                const popup = new maplibregl.Popup({ offset: 25 })
+                    .setHTML(`<strong>${location.name}</strong><br><small>${location.type}</small>`);
+                
+                // Add marker to map
+                new maplibregl.Marker(el)
+                    .setLngLat(location.coords)
+                    .setPopup(popup)
+                    .addTo(map);
+            });
+        });
+        
+        console.log('Istanbul Itinerary loaded - Pure Vanilla JavaScript with MapLibre GL JS, NO React!');
     </script>
 </body>
 </html>
