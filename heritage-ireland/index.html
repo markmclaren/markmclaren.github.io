@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heritage Ireland – Places to Visit</title>
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #1a3a2a;
+      padding: 9px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 3px solid #c8a84b;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+
+    .header-logo {
+      width: 34px; height: 34px;
+      background: #c8a84b;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 0.95rem; font-weight: 700;
+      color: #c8a84b; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+
+    header .subtitle { font-size: 0.72rem; color: #a0b8a0; margin-top: 1px; }
+
+    header .count-badge {
+      margin-left: auto;
+      background: #c8a84b; color: #1a3a2a;
+      font-weight: 700; font-size: 0.78rem;
+      padding: 3px 11px; border-radius: 20px;
+    }
+
+    #layout {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ── Filter sidebar ─────────────────────────────────── */
+    #sidebar {
+      width: 210px;
+      flex-shrink: 0;
+      background: #f8f4ec;
+      border-right: 1px solid #ddd5c0;
+      overflow-y: auto;
+      padding: 12px 10px;
+      z-index: 1;
+    }
+
+    #sidebar h2 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #1a3a2a;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #d0c8b8;
+    }
+
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      background: none;
+      border: 1.5px solid transparent;
+      border-radius: 6px;
+      padding: 6px 8px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      color: #333;
+      text-align: left;
+      margin-bottom: 4px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .filter-btn:hover { background: #ede8dc; }
+
+    .filter-btn.active {
+      background: #fff;
+      border-color: currentColor;
+    }
+
+    .filter-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1.5px solid rgba(0,0,0,0.25);
+    }
+
+    .filter-count {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: #888;
+      font-weight: 600;
+    }
+
+    .filter-btn.active .filter-count { color: #555; }
+
+    #btn-all {
+      display: block;
+      width: 100%;
+      background: #1a3a2a;
+      color: #c8a84b;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      transition: background 0.15s;
+    }
+    #btn-all:hover { background: #2a5a3a; }
+
+    /* ── Map ─────────────────────────────────────────────── */
+    #map { flex: 1; }
+
+    /* ── Popup ───────────────────────────────────────────── */
+    .maplibregl-popup { max-width: 270px !important; }
+
+    .maplibregl-popup-content {
+      background: #fff;
+      border-radius: 8px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      border: 1px solid #e0d8cc;
+    }
+
+    .popup-img {
+      width: 100%; height: 120px;
+      object-fit: cover; display: block;
+    }
+
+    .popup-body { padding: 9px 11px 11px; }
+
+    .popup-cats {
+      display: flex; flex-wrap: wrap; gap: 4px;
+      margin-bottom: 5px;
+    }
+
+    .popup-cat-tag {
+      font-size: 0.64rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 2px 6px; border-radius: 3px;
+      color: #fff;
+    }
+
+    .popup-status {
+      font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: #8b5e00; background: #fdf3d0;
+      display: inline-block; padding: 2px 6px;
+      border-radius: 3px; margin-bottom: 5px;
+    }
+
+    .popup-name {
+      font-size: 0.92rem; font-weight: 700;
+      color: #1a3a2a; margin-bottom: 2px; line-height: 1.3;
+    }
+
+    .popup-tagline {
+      font-size: 0.77rem; color: #666;
+      margin-bottom: 8px; font-style: italic; line-height: 1.4;
+    }
+
+    .popup-link {
+      display: inline-block;
+      background: #1a3a2a; color: #c8a84b;
+      font-weight: 700; font-size: 0.75rem;
+      padding: 4px 11px; border-radius: 4px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .popup-link:hover { background: #2a5a3a; }
+
+    .maplibregl-popup-close-button { color: #888; font-size: 1rem; padding: 5px 9px; }
+    .maplibregl-popup-tip { border-top-color: #fff !important; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">🏛</div>
+  <div>
+    <h1>Heritage Ireland</h1>
+    <div class="subtitle">Places to Visit — Interactive Map</div>
+  </div>
+  <div class="count-badge" id="place-count">Loading…</div>
+</header>
+
+<div id="layout">
+  <div id="sidebar">
+    <h2>Filter by type</h2>
+    <button id="btn-all" onclick="showAll()">Show all</button>
+    <div id="filter-buttons"></div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script>
+// ── Category colour palette ──────────────────────────────
+const CATEGORIES = [
+  { label: 'Castles',                   color: '#c0392b' },
+  { label: 'Religious sites',           color: '#8e44ad' },
+  { label: 'Gardens',                   color: '#27ae60' },
+  { label: 'Prehistoric monuments',     color: '#d35400' },
+  { label: 'Historic Houses & Estates', color: '#2980b9' },
+  { label: 'Rebellion & Revolution',    color: '#c0392b' },
+  { label: 'Parks',                     color: '#16a085' },
+  { label: 'Iconic Sites',              color: '#f39c12' },
+];
+
+// Rebellion & Revolution shares red with Castles — give it a slightly different shade
+CATEGORIES[5].color = '#922b21';
+
+const CAT_COLOR = Object.fromEntries(CATEGORIES.map(c => [c.label, c.color]));
+const DEFAULT_COLOR = '#7f8c8d';
+
+// Active filter state: null = all shown, otherwise a category label string
+let activeCategory = null;
+
+// ── MapLibre init ────────────────────────────────────────
+const mapInstance = new maplibregl.Map({
+  container: 'map',
+  style: 'https://tiles.openfreemap.org/styles/positron',
+  center: [-8.0, 53.3],
+  zoom: 6.2,
+  attributionControl: true,
+});
+
+mapInstance.addControl(new maplibregl.NavigationControl(), 'top-right');
+mapInstance.addControl(new maplibregl.FullscreenControl(), 'top-right');
+mapInstance.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
+
+let allFeatures = [];
+
+mapInstance.on('load', () => {
+  fetch('heritage_ireland.geojson')
+    .then(r => r.json())
+    .then(geojson => {
+      allFeatures = geojson.features;
+      const count = allFeatures.length;
+      document.getElementById('place-count').textContent = `${count} places`;
+
+      // Build category counts
+      const catCounts = {};
+      CATEGORIES.forEach(c => { catCounts[c.label] = 0; });
+      allFeatures.forEach(f => {
+        (f.properties.categories || []).forEach(cat => {
+          if (catCounts[cat] !== undefined) catCounts[cat]++;
+        });
+      });
+
+      // Build filter buttons
+      const container = document.getElementById('filter-buttons');
+      CATEGORIES.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.category = cat.label;
+        btn.innerHTML = `
+          <span class="filter-dot" style="background:${cat.color}"></span>
+          <span>${cat.label}</span>
+          <span class="filter-count">${catCounts[cat.label] || 0}</span>
+        `;
+        btn.addEventListener('click', () => filterByCategory(cat.label, btn));
+        container.appendChild(btn);
+      });
+
+      // Add GeoJSON source
+      mapInstance.addSource('heritage', {
+        type: 'geojson',
+        data: geojson,
+      });
+
+      // Build a MapLibre expression for colour by first category
+      // ['match', ['get', 'first_cat'], 'Castles', '#c0392b', ...]
+      const colorExpr = ['match', ['get', 'first_cat']];
+      CATEGORIES.forEach(c => { colorExpr.push(c.label, c.color); });
+      colorExpr.push(DEFAULT_COLOR); // fallback
+
+      // Add a first_cat property for colour expression
+      // We do this by pre-processing features
+      geojson.features.forEach(f => {
+        const cats = f.properties.categories || [];
+        f.properties.first_cat = cats.length > 0 ? cats[0] : 'Uncategorised';
+      });
+      mapInstance.getSource('heritage').setData(geojson);
+
+      // Dot layer
+      mapInstance.addLayer({
+        id: 'heritage-points',
+        type: 'circle',
+        source: 'heritage',
+        paint: {
+          'circle-color': colorExpr,
+          'circle-radius': [
+            'interpolate', ['linear'], ['zoom'],
+            5, 5, 10, 8, 14, 12
+          ],
+          'circle-stroke-width': 1.5,
+          'circle-stroke-color': 'rgba(0,0,0,0.25)',
+          'circle-opacity': 0.92,
+        },
+      });
+
+      // Click → popup
+      mapInstance.on('click', 'heritage-points', (e) => {
+        const props = e.features[0].properties;
+        const coords = e.features[0].geometry.coordinates.slice();
+
+        // categories is JSON-encoded string in MapLibre feature properties
+        let cats = [];
+        try { cats = JSON.parse(props.categories); } catch(err) { cats = []; }
+
+        const catTagsHtml = cats.map(cat => {
+          const col = CAT_COLOR[cat] || DEFAULT_COLOR;
+          return `<span class="popup-cat-tag" style="background:${col}">${cat}</span>`;
+        }).join('');
+
+        const statusHtml = props.status && props.status !== ''
+          ? `<div class="popup-status">${props.status}</div>` : '';
+
+        const imgHtml = props.thumbnail
+          ? `<img class="popup-img" src="${props.thumbnail}" alt="${props.name}" loading="lazy" onerror="this.style.display='none'">` : '';
+
+        const html = `
+          ${imgHtml}
+          <div class="popup-body">
+            ${statusHtml}
+            <div class="popup-cats">${catTagsHtml}</div>
+            <div class="popup-name">${props.name}</div>
+            <div class="popup-tagline">${props.tagline || ''}</div>
+            <a class="popup-link" href="${props.url}" target="_blank" rel="noopener">Visit page ↗</a>
+          </div>`;
+
+        new maplibregl.Popup({ offset: 12 })
+          .setLngLat(coords)
+          .setHTML(html)
+          .addTo(mapInstance);
+      });
+
+      mapInstance.on('mouseenter', 'heritage-points', () => {
+        mapInstance.getCanvas().style.cursor = 'pointer';
+      });
+      mapInstance.on('mouseleave', 'heritage-points', () => {
+        mapInstance.getCanvas().style.cursor = '';
+      });
+    })
+    .catch(err => {
+      console.error('Failed to load GeoJSON:', err);
+      document.getElementById('place-count').textContent = 'Error';
+    });
+});
+
+// ── Filter logic ─────────────────────────────────────────
+function filterByCategory(label, btn) {
+  if (activeCategory === label) {
+    // Toggle off → show all
+    showAll();
+    return;
+  }
+  activeCategory = label;
+
+  // Update button states
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Filter: show only features that include this category
+  const filtered = {
+    type: 'FeatureCollection',
+    features: allFeatures.filter(f =>
+      (f.properties.categories || []).includes(label)
+    )
+  };
+
+  mapInstance.getSource('heritage').setData(filtered);
+
+  const count = filtered.features.length;
+  document.getElementById('place-count').textContent = `${count} of ${allFeatures.length} places`;
+}
+
+function showAll() {
+  activeCategory = null;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  mapInstance.getSource('heritage').setData({
+    type: 'FeatureCollection',
+    features: allFeatures
+  });
+  document.getElementById('place-count').textContent = `${allFeatures.length} places`;
+}
+</script>
+</body>
+</html>
