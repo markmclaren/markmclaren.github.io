@@ -623,6 +623,16 @@ function escapeHtml(str) {
   return str.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>');
 }
 
+/* ── RETURN TO START ───────────────────────────────────────────────────── */
+function returnToStart() {
+  document.getElementById('hero').classList.remove('d-none');
+  document.getElementById('progress-bar-wrap').classList.add('d-none');
+  document.getElementById('steps-container').classList.add('d-none');
+  state.currentStep = 0;
+  saveState();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 /* ── PRINT ──────────────────────────────────────────────────────────────── */
 function printSummary() {
   window.print();
