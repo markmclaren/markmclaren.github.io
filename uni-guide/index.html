@@ -136,7 +136,7 @@
             <i class="bi bi-question-circle me-2"></i>If my results turn out better than I fear, will I regret changing my plan?
           </button>
           <div id="q3b" class="collapse acc-body">
-            <p>Imagine opening your results and they're exactly what you hoped for. How would you feel if you'd already switched to a local uni? Would you wish you'd waited?</p>
+            <p>Imagine opening your results and they're exactly what you hoped for. How would you feel if you'd already switched to an alternative option? Would you wish you'd waited?</p>
             <textarea class="form-control note-input mt-2" placeholder="Your thoughts..." rows="2"></textarea>
           </div>
         </div>
@@ -191,7 +191,7 @@
           <i class="bi bi-send-fill me-2"></i>My original uni choice
         </button>
         <button class="choice-btn" id="choice-local" onclick="selectChoice('local')">
-          <i class="bi bi-house-heart-fill me-2"></i>A local uni
+          <i class="bi bi-house-heart-fill me-2"></i>An alternative option
         </button>
         <button class="choice-btn" id="choice-unsure" onclick="selectChoice('unsure')">
           <i class="bi bi-question-lg me-2"></i>I'm still not sure
@@ -223,7 +223,7 @@
           <div class="future-label">Confidence</div>
           <div class="future-slider-wrap">
             <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-confidence" oninput="updateSlider('confidence')" />
-            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+            <div class="slider-labels"><span>Original uni</span><span>Alternative option</span></div>
           </div>
           <div class="slider-val" id="sv-confidence">Balanced</div>
         </div>
@@ -232,7 +232,7 @@
           <div class="future-label">Independence</div>
           <div class="future-slider-wrap">
             <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-independence" oninput="updateSlider('independence')" />
-            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+            <div class="slider-labels"><span>Original uni</span><span>Alternative option</span></div>
           </div>
           <div class="slider-val" id="sv-independence">Balanced</div>
         </div>
@@ -241,7 +241,7 @@
           <div class="future-label">Opportunities</div>
           <div class="future-slider-wrap">
             <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-opportunities" oninput="updateSlider('opportunities')" />
-            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+            <div class="slider-labels"><span>Original uni</span><span>Alternative option</span></div>
           </div>
           <div class="slider-val" id="sv-opportunities">Balanced</div>
         </div>
@@ -250,7 +250,7 @@
           <div class="future-label">Freedom</div>
           <div class="future-slider-wrap">
             <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-freedom" oninput="updateSlider('freedom')" />
-            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+            <div class="slider-labels"><span>Original uni</span><span>Alternative option</span></div>
           </div>
           <div class="slider-val" id="sv-freedom">Balanced</div>
         </div>
@@ -281,7 +281,7 @@
           <p class="col-card-sub">Which choice feels <strong>easier</strong> right now?</p>
           <div class="radio-group">
             <label class="radio-item"><input type="radio" name="short-term" value="original" /> Original uni</label>
-            <label class="radio-item"><input type="radio" name="short-term" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="short-term" value="local" /> Alternative option</label>
             <label class="radio-item"><input type="radio" name="short-term" value="same" /> About the same</label>
           </div>
         </div>
@@ -290,7 +290,7 @@
           <p class="col-card-sub">Which choice <strong>benefits you more</strong> in the long run?</p>
           <div class="radio-group">
             <label class="radio-item"><input type="radio" name="long-term" value="original" /> Original uni</label>
-            <label class="radio-item"><input type="radio" name="long-term" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="long-term" value="local" /> Alternative option</label>
             <label class="radio-item"><input type="radio" name="long-term" value="same" /> About the same</label>
           </div>
         </div>
@@ -302,7 +302,7 @@
           <p class="col-card-sub">Which choice gives you <strong>more options</strong> later?</p>
           <div class="radio-group">
             <label class="radio-item"><input type="radio" name="options-later" value="original" /> Original uni</label>
-            <label class="radio-item"><input type="radio" name="options-later" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="options-later" value="local" /> Alternative option</label>
             <label class="radio-item"><input type="radio" name="options-later" value="same" /> About the same</label>
           </div>
         </div>
@@ -311,7 +311,7 @@
           <p class="col-card-sub">Which choice might you <strong>regret</strong> if things change?</p>
           <div class="radio-group">
             <label class="radio-item"><input type="radio" name="regret" value="original" /> Original uni</label>
-            <label class="radio-item"><input type="radio" name="regret" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="regret" value="local" /> Alternative option</label>
             <label class="radio-item"><input type="radio" name="regret" value="same" /> Neither</label>
           </div>
         </div>
@@ -468,7 +468,7 @@
       </div>
 
       <div class="fear-check mt-5">
-        <p class="note-label">If you choose the local uni — is it because of genuine preference, or because of fear?</p>
+        <p class="note-label">If you choose the alternative option — is it because of genuine preference, or because of fear?</p>
         <div class="fear-options mt-3">
           <label class="fear-option" id="fo-genuine">
             <input type="radio" name="fear-check" value="genuine" onchange="updateFearCheck()" />

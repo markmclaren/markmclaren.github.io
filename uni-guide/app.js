@@ -144,7 +144,7 @@ function restoreState() {
       resp.classList.remove('d-none');
       const messages = {
         original: '✨ That\'s a strong signal. When you remove the noise — the worry, the pressure — your instinct points to your original choice. That instinct is worth listening to.',
-        local: '🏠 That\'s honest. It might mean the local uni genuinely suits you better — or it might mean the comfort of familiarity is pulling hard. Either way, it\'s worth exploring why.',
+        local: '🏠 That\'s honest. It might mean the alternative option genuinely suits you better — or it might mean the comfort of familiarity is pulling hard. Either way, it\'s worth exploring why.',
         unsure: '🤔 That\'s completely okay. Uncertainty is normal. Keep going through this guide — the comparison and reflection steps ahead may help things become clearer.',
       };
       resp.innerHTML = `<i class="bi bi-lightbulb-fill me-2"></i>${messages[data.choice4]}`;
@@ -362,7 +362,7 @@ function selectChoice(val) {
 
   const messages = {
     original: '✨ That\'s a strong signal. When you remove the noise — the worry, the pressure — your instinct points to your original choice. That instinct is worth listening to.',
-    local: '🏠 That\'s honest. It might mean the local uni genuinely suits you better — or it might mean the comfort of familiarity is pulling hard. Either way, it\'s worth exploring why.',
+    local: '🏠 That\'s honest. It might mean the alternative option genuinely suits you better — or it might mean the comfort of familiarity is pulling hard. Either way, it\'s worth exploring why.',
     unsure: '🤔 That\'s completely okay. Uncertainty is normal. Keep going through this guide — the comparison and reflection steps ahead may help things become clearer.',
   };
   resp.innerHTML = `<i class="bi bi-lightbulb-fill me-2"></i>${messages[val]}`;
@@ -375,8 +375,8 @@ function updateSlider(key) {
   const label = document.getElementById('sv-' + key);
 
   let text = '';
-  if (val <= 3)      text = 'Leans local uni';
-  else if (val <= 4) text = 'Slightly local';
+  if (val <= 3)      text = 'Leans alternative option';
+  else if (val <= 4) text = 'Slightly alternative';
   else if (val === 5) text = 'Balanced';
   else if (val <= 6) text = 'Slightly original';
   else               text = 'Leans original uni';
@@ -396,7 +396,7 @@ function updateSlider(key) {
   if (avg >= 6.5) {
     summary.innerHTML = '<i class="bi bi-send-fill me-2"></i><strong>Your future self seems to lean towards your original uni</strong> — you\'ve rated it higher across most of these dimensions. That\'s worth noting.';
   } else if (avg <= 4.5) {
-    summary.innerHTML = '<i class="bi bi-house-heart-fill me-2"></i><strong>Your future self seems to lean towards the local uni</strong> — you\'ve rated it higher across most dimensions. Is that a genuine preference or a comfort pull?';
+    summary.innerHTML = '<i class="bi bi-house-heart-fill me-2"></i><strong>Your future self seems to lean towards the alternative option</strong> — you\'ve rated it higher across most dimensions. Is that a genuine preference or a comfort pull?';
   } else {
     summary.innerHTML = '<i class="bi bi-yin-yang me-2"></i><strong>You see it as fairly balanced</strong> — both options have merit. The other steps in this guide may help you find the tiebreaker.';
   }
@@ -461,7 +461,7 @@ function updateRatingResult() {
   if (o > l) {
     result.innerHTML = `<i class="bi bi-send-fill me-2"></i><strong>You've rated your original uni higher (${o} vs ${l} stars).</strong> That's a meaningful signal — even after thinking through all the factors, it still comes out on top.`;
   } else if (l > o) {
-    result.innerHTML = `<i class="bi bi-house-heart-fill me-2"></i><strong>You've rated the local uni higher (${l} vs ${o} stars).</strong> That's worth sitting with. Is it because it genuinely suits you better, or because it feels safer right now?`;
+    result.innerHTML = `<i class="bi bi-house-heart-fill me-2"></i><strong>You've rated the alternative option higher (${l} vs ${o} stars).</strong> That's worth sitting with. Is it because it genuinely suits you better, or because it feels safer right now?`;
   } else if (o && l) {
     result.innerHTML = `<i class="bi bi-yin-yang me-2"></i><strong>You've rated them equally (${o} stars each).</strong> They're genuinely close for you. The final steps may help you find the deciding factor.`;
   }
@@ -476,7 +476,7 @@ function updateFearCheck() {
   resp.classList.remove('d-none');
 
   const messages = {
-    genuine: '✅ <strong>That\'s a solid foundation for a decision.</strong> If the local uni genuinely fits your goals, your course, your future — then it\'s a legitimate choice. Just make sure you can articulate <em>why</em> it\'s better, not just why it feels easier.',
+    genuine: '✅ <strong>That\'s a solid foundation for a decision.</strong> If the alternative option genuinely fits your goals, your course, your future — then it\'s a legitimate choice. Just make sure you can articulate <em>why</em> it\'s better, not just why it feels easier.',
     mixed: '🤔 <strong>Mixed feelings are honest.</strong> Most big decisions feel this way. The question is which part of the mix is louder — and whether the fear part is making the call. Try to separate the two and see what\'s left.',
     fear: '⚠️ <strong>That\'s a really important thing to recognise.</strong> Choosing a uni out of fear — of results, of distance, of change — is a choice you might regret when the fear fades. Fear is a feeling, not a plan. Your future deserves better than a fear-based decision.',
   };
@@ -545,7 +545,7 @@ function buildSummaryHTML() {
   sections.push(summarySection('03 — Exam Results Reflection', [], note3));
 
   // Step 4 — clean slate choice
-  const choiceLabels = { original: 'Original uni', local: 'Local uni', unsure: 'Still unsure' };
+  const choiceLabels = { original: 'Original uni', local: 'Alternative option', unsure: 'Still unsure' };
   const note4 = document.getElementById('note-4')?.value?.trim();
   const choiceText = state.choice4 ? `Clean-slate choice: <strong>${choiceLabels[state.choice4]}</strong>` : '';
   sections.push(summarySection('04 — Clean Slate Choice', [], note4, choiceText));
@@ -576,7 +576,7 @@ function buildSummaryHTML() {
   // Step 8 — comparison + ratings
   const note8 = '';
   const ratingText = (state.ratings.original || state.ratings.local)
-    ? `Original uni: <strong>${'★'.repeat(state.ratings.original)}${'☆'.repeat(5 - state.ratings.original)}</strong> &nbsp;|&nbsp; Local uni: <strong>${'★'.repeat(state.ratings.local)}${'☆'.repeat(5 - state.ratings.local)}</strong>`
+    ? `Original uni: <strong>${'★'.repeat(state.ratings.original)}${'☆'.repeat(5 - state.ratings.original)}</strong> &nbsp;|&nbsp; Alternative option: <strong>${'★'.repeat(state.ratings.local)}${'☆'.repeat(5 - state.ratings.local)}</strong>`
     : '';
   sections.push(summarySection('08 — Comparison Ratings', [], note8, ratingText));
 
