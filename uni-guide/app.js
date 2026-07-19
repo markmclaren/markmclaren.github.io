@@ -339,7 +339,8 @@ function updateProgress() {
 /* ── CHECKBOX ITEMS ─────────────────────────────────────────────────────── */
 function initCheckItems() {
   document.querySelectorAll('.check-item').forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
       item.classList.toggle('checked');
       const cb = item.querySelector('input[type="checkbox"]');
       if (cb) cb.checked = item.classList.contains('checked');
