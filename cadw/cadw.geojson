@@ -39,7 +39,8 @@
         "location_id": "68c3d38171732",
         "data_index": "1",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Industrial"
+        "period": "Industrial",
+        "location_type": "Industrial Heritage"
       }
     },
     {
@@ -59,7 +60,8 @@
         "location_id": "68c3d38174baa",
         "data_index": "2",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Military"
       }
     },
     {
@@ -436,7 +438,8 @@
         "location_id": "68c3d381b50b3",
         "data_index": "20",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "location_type": "Religious sites"
+        "location_type": "Religious sites",
+        "period": "Medieval"
       }
     },
     {
@@ -479,7 +482,8 @@
         "location_id": "68c3d381bd813",
         "data_index": "22",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "location_type": "Religious sites"
+        "location_type": "Religious sites",
+        "period": "Medieval"
       }
     },
     {
@@ -499,7 +503,8 @@
         "location_id": "68c3d381c14a0",
         "data_index": "23",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "location_type": "Religious sites"
+        "location_type": "Religious sites",
+        "period": "Medieval"
       }
     },
     {
@@ -546,7 +551,8 @@
         "location_id": "68c3d381c768a",
         "data_index": "25",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "location_type": "Religious sites"
+        "location_type": "Religious sites",
+        "period": "Medieval"
       }
     },
     {
@@ -566,7 +572,8 @@
         "location_id": "68c3d381cb58e",
         "data_index": "26",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "location_type": "Castles"
+        "location_type": "Castles",
+        "period": "Medieval"
       }
     },
     {
@@ -670,7 +677,8 @@
         "location_id": "68c3d381e361e",
         "data_index": "31",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Military"
       }
     },
     {
@@ -732,7 +740,8 @@
         "location_id": "68c3d381f208e",
         "data_index": "34",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Industrial"
+        "period": "Industrial",
+        "location_type": "Industrial Heritage"
       }
     },
     {
@@ -773,7 +782,8 @@
         "location_id": "68c3d382068c0",
         "data_index": "36",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Military"
       }
     },
     {
@@ -813,7 +823,8 @@
         "location_id": "68c3d3820dd8b",
         "data_index": "38",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Roman Military"
       }
     },
     {
@@ -833,7 +844,8 @@
         "location_id": "68c3d38213813",
         "data_index": "39",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Military"
       }
     },
     {
@@ -853,7 +865,8 @@
         "location_id": "68c3d3821645a",
         "data_index": "40",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Settlement"
       }
     },
     {
@@ -915,7 +928,8 @@
         "location_id": "68c3d38223edc",
         "data_index": "43",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Medieval"
+        "period": "Medieval",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -956,7 +970,8 @@
         "location_id": "68c3d3822b3ea",
         "data_index": "45",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Medieval"
+        "period": "Medieval",
+        "location_type": "Historic houses"
       }
     },
     {
@@ -976,7 +991,8 @@
         "location_id": "68c3d38231095",
         "data_index": "46",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Prehistoric Settlement"
       }
     },
     {
@@ -1017,7 +1033,8 @@
         "location_id": "68c3d38237173",
         "data_index": "48",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Prehistoric Settlement"
       }
     },
     {
@@ -1205,7 +1222,8 @@
         "location_id": "68c3d3825bf19",
         "data_index": "57",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Medieval"
+        "period": "Medieval",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -1249,7 +1267,8 @@
         "period": [
           "Prehistoric",
           "Roman"
-        ]
+        ],
+        "location_type": "Roman Settlement"
       }
     },
     {
@@ -1374,7 +1393,8 @@
         "location_id": "68c3d38281076",
         "data_index": "65",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Industrial"
+        "period": "Industrial",
+        "location_type": "Industrial Heritage"
       }
     },
     {
@@ -1394,7 +1414,8 @@
         "location_id": "68c3d3828d3dc",
         "data_index": "66",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Medieval"
+        "period": "Medieval",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -1665,7 +1686,8 @@
         "location_id": "68c3d382c02e4",
         "data_index": "79",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Prehistoric Settlement"
       }
     },
     {
@@ -1748,7 +1770,8 @@
         "location_id": "68c3d382d2174",
         "data_index": "83",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "location_type": "Castles"
+        "location_type": "Castles",
+        "period": "Medieval"
       }
     },
     {
@@ -1810,7 +1833,8 @@
         "location_id": "68c3d382dcd92",
         "data_index": "86",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Medieval"
+        "period": "Medieval",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -2043,7 +2067,8 @@
         "location_id": "68c3d38319181",
         "data_index": "97",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -2083,7 +2108,8 @@
         "image_url": "https://cadw.gov.wales/sites/default/files/styles/promo/public/2019-05/NCX-SC01-1516-0564.jpg?itok=2KMhaefW",
         "location_id": "68c3d38324afe",
         "data_index": "99",
-        "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png"
+        "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
+        "period": "Medieval"
       }
     },
     {
@@ -2379,7 +2405,8 @@
         "location_id": "68c3d3836c535",
         "data_index": "113",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -2420,7 +2447,8 @@
         "location_id": "68c3d38375ed6",
         "data_index": "115",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Prehistoric"
+        "period": "Prehistoric",
+        "location_type": "Standing Stone/Monument"
       }
     },
     {
@@ -2482,7 +2510,8 @@
         "location_id": "68c3d38385ddd",
         "data_index": "118",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Tudor"
+        "period": "Tudor",
+        "location_type": "Historic Infrastructure"
       }
     },
     {
@@ -2502,7 +2531,8 @@
         "location_id": "68c3d3838d258",
         "data_index": "119",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Military"
       }
     },
     {
@@ -2563,7 +2593,9 @@
         "image_url": "https://cadw.gov.wales/sites/default/files/styles/promo/public/2019-05/NVW-C23-1011-0001.jpg?itok=HyphNQPK",
         "location_id": "68c3d3839d2fe",
         "data_index": "122",
-        "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png"
+        "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
+        "location_type": "Historic houses",
+        "period": "Medieval"
       }
     },
     {
@@ -2583,7 +2615,8 @@
         "location_id": "68c3d383a44cc",
         "data_index": "123",
         "icon_url": "https://cadw.gov.wales/themes/custom/cadw/img/icons/pin.png",
-        "period": "Roman"
+        "period": "Roman",
+        "location_type": "Roman Military"
       }
     }
   ],

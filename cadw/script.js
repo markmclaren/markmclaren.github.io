@@ -89,7 +89,13 @@ class CADWHeritageMap {
                     ['==', ['get', 'location_type'], 'Religious sites'], '#28a745', // Green for religious sites
                     ['==', ['get', 'location_type'], 'Historic houses'], '#ffc107', // Yellow for historic houses
                     ['==', ['get', 'location_type'], 'Burial chamber'], '#6f42c1', // Purple for burial chambers
-                    '#007bff' // Blue as default
+                    ['==', ['get', 'location_type'], 'Industrial Heritage'], '#6c757d', // Gray for industrial heritage
+                    ['==', ['get', 'location_type'], 'Roman Military'], '#007bff', // Blue for roman military
+                    ['==', ['get', 'location_type'], 'Roman Settlement'], '#17a2b8', // Cyan for roman settlement
+                    ['==', ['get', 'location_type'], 'Prehistoric Settlement'], '#fd7e14', // Orange for prehistoric settlement
+                    ['==', ['get', 'location_type'], 'Standing Stone/Monument'], '#6c757d', // Dark gray for standing stones
+                    ['==', ['get', 'location_type'], 'Historic Infrastructure'], '#e83e8c', // Pink for historic infrastructure
+                    '#20c997' // Teal as default for any unmatched types
                 ],
                 'circle-stroke-color': '#ffffff', // White border for all sites
                 'circle-stroke-width': 2,
@@ -197,11 +203,19 @@ class CADWHeritageMap {
     // Apply filters to properties - period and location type based
     applyFilters() {
         const filters = {
+            // Location type filters
             castles: document.getElementById('filter-castle').checked,
             religious: document.getElementById('filter-abbey').checked, // Repurpose abbey filter for religious sites
             houses: document.getElementById('filter-house').checked,
             burial: document.getElementById('filter-prehistoric').checked, // Repurpose prehistoric for burial chambers
+            industrialHeritage: document.getElementById('filter-industrial-heritage').checked,
+            romanMilitary: document.getElementById('filter-roman-military').checked,
+            romanSettlement: document.getElementById('filter-roman-settlement').checked,
+            prehistoricSettlement: document.getElementById('filter-prehistoric-settlement').checked,
+            standingStone: document.getElementById('filter-standing-stone').checked,
+            historicInfrastructure: document.getElementById('filter-historic-infrastructure').checked,
             
+            // Period filters
             medieval: document.getElementById('filter-free').checked, // Repurpose free filter for medieval period
             roman: document.getElementById('filter-roman').checked,
             tudor: document.getElementById('filter-paid').checked, // Repurpose paid filter for tudor period
@@ -233,7 +247,13 @@ class CADWHeritageMap {
                 filters.castles && this.propertyIncludes(props.location_type, 'Castles'),
                 filters.religious && this.propertyIncludes(props.location_type, 'Religious sites'),
                 filters.houses && this.propertyIncludes(props.location_type, 'Historic houses'),
-                filters.burial && this.propertyIncludes(props.location_type, 'Burial chamber')
+                filters.burial && this.propertyIncludes(props.location_type, 'Burial chamber'),
+                filters.industrialHeritage && this.propertyIncludes(props.location_type, 'Industrial Heritage'),
+                filters.romanMilitary && this.propertyIncludes(props.location_type, 'Roman Military'),
+                filters.romanSettlement && this.propertyIncludes(props.location_type, 'Roman Settlement'),
+                filters.prehistoricSettlement && this.propertyIncludes(props.location_type, 'Prehistoric Settlement'),
+                filters.standingStone && this.propertyIncludes(props.location_type, 'Standing Stone/Monument'),
+                filters.historicInfrastructure && this.propertyIncludes(props.location_type, 'Historic Infrastructure')
             ].some(match => match);
 
             // Check period matches
