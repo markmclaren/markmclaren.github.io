@@ -375,11 +375,11 @@ function updateSlider(key) {
   const label = document.getElementById('sv-' + key);
 
   let text = '';
-  if (val <= 3)      text = 'Leans alternative option';
-  else if (val <= 4) text = 'Slightly alternative';
+  if (val <= 3)      text = 'Leans original uni';
+  else if (val <= 4) text = 'Slightly original';
   else if (val === 5) text = 'Balanced';
-  else if (val <= 6) text = 'Slightly original';
-  else               text = 'Leans original uni';
+  else if (val <= 6) text = 'Slightly alternative';
+  else               text = 'Leans alternative option';
 
   label.textContent = text;
 
@@ -394,9 +394,9 @@ function updateSlider(key) {
   const summary = document.getElementById('future-summary');
   summary.classList.remove('d-none');
   if (avg >= 6.5) {
-    summary.innerHTML = '<i class="bi bi-send-fill me-2"></i><strong>Your future self seems to lean towards your original uni</strong> — you\'ve rated it higher across most of these dimensions. That\'s worth noting.';
-  } else if (avg <= 4.5) {
     summary.innerHTML = '<i class="bi bi-house-heart-fill me-2"></i><strong>Your future self seems to lean towards the alternative option</strong> — you\'ve rated it higher across most dimensions. Is that a genuine preference or a comfort pull?';
+  } else if (avg <= 4.5) {
+    summary.innerHTML = '<i class="bi bi-send-fill me-2"></i><strong>Your future self seems to lean towards your original uni</strong> — you\'ve rated it higher across most of these dimensions. That\'s worth noting.';
   } else {
     summary.innerHTML = '<i class="bi bi-yin-yang me-2"></i><strong>You see it as fairly balanced</strong> — both options have merit. The other steps in this guide may help you find the tiebreaker.';
   }
