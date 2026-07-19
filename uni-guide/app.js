@@ -6,12 +6,289 @@ const state = {
   choice4: null,
 };
 
+const STORAGE_KEY = 'uni-guide-state';
+
+/* ── PERSISTENCE ─────────────────────────────────────────────────────────── */
+function saveState() {
+  const data = {
+    // Checkboxes: step 1
+    s1: [...document.querySelectorAll('input[name="s1"]:checked')].map(cb => cb.value),
+    // Checkboxes: step 2
+    s2: [...document.querySelectorAll('input[name="s2"]:checked')].map(cb => cb.value),
+    // Textareas
+    note1: document.getElementById('note-1')?.value || '',
+    note2: document.getElementById('note-2')?.value || '',
+    note3: document.getElementById('note-3')?.value || '',
+    note4: document.getElementById('note-4')?.value || '',
+    note5: document.getElementById('note-5')?.value || '',
+    note6: document.getElementById('note-6')?.value || '',
+    note7: document.getElementById('note-7')?.value || '',
+    note9: document.getElementById('note-9')?.value || '',
+    note10: document.getElementById('note-10')?.value || '',
+    // Step 3 accordion textareas
+    q3a: document.querySelector('#q3a textarea')?.value || '',
+    q3b: document.querySelector('#q3b textarea')?.value || '',
+    q3c: document.querySelector('#q3c textarea')?.value || '',
+    q3d: document.querySelector('#q3d textarea')?.value || '',
+    // Step 4 choice
+    choice4: state.choice4,
+    // Step 5 sliders
+    fs_confidence: document.getElementById('fs-confidence')?.value || 5,
+    fs_independence: document.getElementById('fs-independence')?.value || 5,
+    fs_opportunities: document.getElementById('fs-opportunities')?.value || 5,
+    fs_freedom: document.getElementById('fs-freedom')?.value || 5,
+    // Step 6 radio buttons
+    short_term: document.querySelector('input[name="short-term"]:checked')?.value || '',
+    long_term: document.querySelector('input[name="long-term"]:checked')?.value || '',
+    options_later: document.querySelector('input[name="options-later"]:checked')?.value || '',
+    regret: document.querySelector('input[name="regret"]:checked')?.value || '',
+    // Step 7 relationship slider
+    rel_confidence: document.getElementById('rel-confidence')?.value || 5,
+    // Step 8 comparison table
+    c_orig_opp: document.getElementById('c-orig-opp')?.value || '',
+    c_loc_opp: document.getElementById('c-loc-opp')?.value || '',
+    c_orig_ind: document.getElementById('c-orig-ind')?.value || '',
+    c_loc_ind: document.getElementById('c-loc-ind')?.value || '',
+    c_orig_grow: document.getElementById('c-orig-grow')?.value || '',
+    c_loc_grow: document.getElementById('c-loc-grow')?.value || '',
+    c_orig_lt: document.getElementById('c-orig-lt')?.value || '',
+    c_loc_lt: document.getElementById('c-loc-lt')?.value || '',
+    c_orig_com: document.getElementById('c-orig-com')?.value || '',
+    c_loc_com: document.getElementById('c-loc-com')?.value || '',
+    c_orig_goal: document.getElementById('c-orig-goal')?.value || '',
+    c_loc_goal: document.getElementById('c-loc-goal')?.value || '',
+    // Step 8 star ratings
+    rating_original: state.ratings.original || 0,
+    rating_local: state.ratings.local || 0,
+    // Step 9 fear check
+    fear_check: document.querySelector('input[name="fear-check"]:checked')?.value || '',
+    // Current step
+    currentStep: state.currentStep,
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    // Silently fail if localStorage is unavailable
+  }
+}
+
+function restoreState() {
+  let data;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    data = JSON.parse(raw);
+  } catch (e) {
+    return;
+  }
+
+  // Restore checkboxes: step 1
+  if (data.s1) {
+    data.s1.forEach(val => {
+      const cb = document.querySelector(`input[name="s1"][value="${val}"]`);
+      if (cb) {
+        cb.checked = true;
+        cb.closest('.check-item')?.classList.add('checked');
+      }
+    });
+  }
+
+  // Restore checkboxes: step 2
+  if (data.s2) {
+    data.s2.forEach(val => {
+      const cb = document.querySelector(`input[name="s2"][value="${val}"]`);
+      if (cb) {
+        cb.checked = true;
+        cb.closest('.check-item')?.classList.add('checked');
+      }
+    });
+  }
+
+  // Restore textareas
+  const textareaMap = {
+    note1: 'note-1', note2: 'note-2', note3: 'note-3', note4: 'note-4',
+    note5: 'note-5', note6: 'note-6', note7: 'note-7', note9: 'note-9', note10: 'note-10',
+  };
+  Object.entries(textareaMap).forEach(([key, id]) => {
+    if (data[key]) {
+      const el = document.getElementById(id);
+      if (el) el.value = data[key];
+    }
+  });
+
+  // Restore step 3 accordion textareas
+  if (data.q3a) {
+    const ta = document.querySelector('#q3a textarea');
+    if (ta) ta.value = data.q3a;
+  }
+  if (data.q3b) {
+    const ta = document.querySelector('#q3b textarea');
+    if (ta) ta.value = data.q3b;
+  }
+  if (data.q3c) {
+    const ta = document.querySelector('#q3c textarea');
+    if (ta) ta.value = data.q3c;
+  }
+  if (data.q3d) {
+    const ta = document.querySelector('#q3d textarea');
+    if (ta) ta.value = data.q3d;
+  }
+
+  // Restore step 4 choice
+  if (data.choice4) {
+    state.choice4 = data.choice4;
+    const btn = document.getElementById('choice-' + data.choice4);
+    if (btn) btn.classList.add('selected-' + data.choice4);
+    const resp = document.getElementById('choice-response');
+    if (resp) {
+      resp.classList.remove('d-none');
+      const messages = {
+        original: '✨ That\'s a strong signal. When you remove the noise — the worry, the pressure — your instinct points to your original choice. That instinct is worth listening to.',
+        local: '🏠 That\'s honest. It might mean the local uni genuinely suits you better — or it might mean the comfort of familiarity is pulling hard. Either way, it\'s worth exploring why.',
+        unsure: '🤔 That\'s completely okay. Uncertainty is normal. Keep going through this guide — the comparison and reflection steps ahead may help things become clearer.',
+      };
+      resp.innerHTML = `<i class="bi bi-lightbulb-fill me-2"></i>${messages[data.choice4]}`;
+    }
+  }
+
+  // Restore step 5 sliders
+  const sliderMap = {
+    fs_confidence: 'fs-confidence',
+    fs_independence: 'fs-independence',
+    fs_opportunities: 'fs-opportunities',
+    fs_freedom: 'fs-freedom',
+  };
+  Object.entries(sliderMap).forEach(([key, id]) => {
+    if (data[key]) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.value = data[key];
+        // Derive key name for updateSlider
+        const sliderKey = id.replace('fs-', '');
+        updateSlider(sliderKey);
+      }
+    }
+  });
+
+  // Restore step 6 radio buttons
+  const radioMap = {
+    short_term: 'short-term',
+    long_term: 'long-term',
+    options_later: 'options-later',
+    regret: 'regret',
+  };
+  Object.entries(radioMap).forEach(([key, name]) => {
+    if (data[key]) {
+      const rb = document.querySelector(`input[name="${name}"][value="${data[key]}"]`);
+      if (rb) rb.checked = true;
+    }
+  });
+
+  // Restore step 7 relationship slider
+  if (data.rel_confidence) {
+    const el = document.getElementById('rel-confidence');
+    if (el) {
+      el.value = data.rel_confidence;
+      updateRelConfidence();
+    }
+  }
+
+  // Restore step 8 comparison table
+  const compMap = {
+    c_orig_opp: 'c-orig-opp', c_loc_opp: 'c-loc-opp',
+    c_orig_ind: 'c-orig-ind', c_loc_ind: 'c-loc-ind',
+    c_orig_grow: 'c-orig-grow', c_loc_grow: 'c-loc-grow',
+    c_orig_lt: 'c-orig-lt', c_loc_lt: 'c-loc-lt',
+    c_orig_com: 'c-orig-com', c_loc_com: 'c-loc-com',
+    c_orig_goal: 'c-orig-goal', c_loc_goal: 'c-loc-goal',
+  };
+  Object.entries(compMap).forEach(([key, id]) => {
+    if (data[key]) {
+      const el = document.getElementById(id);
+      if (el) el.value = data[key];
+    }
+  });
+
+  // Restore step 8 star ratings
+  if (data.rating_original) {
+    state.ratings.original = parseInt(data.rating_original);
+    const container = document.getElementById('stars-original');
+    if (container) highlightStars(container, state.ratings.original);
+  }
+  if (data.rating_local) {
+    state.ratings.local = parseInt(data.rating_local);
+    const container = document.getElementById('stars-local');
+    if (container) highlightStars(container, state.ratings.local);
+  }
+  if (data.rating_original || data.rating_local) {
+    updateRatingResult();
+  }
+
+  // Restore step 9 fear check
+  if (data.fear_check) {
+    const rb = document.querySelector(`input[name="fear-check"][value="${data.fear_check}"]`);
+    if (rb) {
+      rb.checked = true;
+      updateFearCheck();
+    }
+  }
+
+  // Restore current step (but don't auto-navigate — user will click "Start the Guide")
+  if (data.currentStep && data.currentStep > 0) {
+    state.currentStep = data.currentStep;
+  }
+}
+
+function clearSavedState() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (e) {
+    // Silently fail
+  }
+  // Reset state
+  state.ratings = { original: 0, local: 0 };
+  state.choice4 = null;
+  state.currentStep = 0;
+  // Reload the page to reset all UI
+  location.reload();
+}
+
+/* ── AUTO-SAVE ON INPUT ──────────────────────────────────────────────────── */
+function setupAutoSave() {
+  // Save on checkbox changes (delegated)
+  document.addEventListener('change', (e) => {
+    if (e.target.matches('input[type="checkbox"][name^="s"]') ||
+        e.target.matches('input[type="radio"]') ||
+        e.target.matches('input[type="range"]')) {
+      saveState();
+    }
+  });
+
+  // Save on textarea input (debounced)
+  let saveTimer;
+  document.addEventListener('input', (e) => {
+    if (e.target.matches('textarea') || e.target.matches('.comp-input')) {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(saveState, 300);
+    }
+  });
+
+  // Save on star clicks (delegated)
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.star-rating') || e.target.closest('.choice-btn')) {
+      // Save after a tiny delay to let state update first
+      setTimeout(saveState, 50);
+    }
+  });
+}
+
 /* ── INIT ───────────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initCheckItems();
   initStarRatings();
   updateRelConfidence();
-  // Trigger truth card / scenario card animations when steps become visible
+  restoreState();
+  setupAutoSave();
 });
 
 /* ── START GUIDE ────────────────────────────────────────────────────────── */
@@ -19,7 +296,7 @@ function startGuide() {
   document.getElementById('hero').classList.add('d-none');
   document.getElementById('progress-bar-wrap').classList.remove('d-none');
   document.getElementById('steps-container').classList.remove('d-none');
-  goToStep(1);
+  goToStep(state.currentStep > 0 ? state.currentStep : 1);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -39,6 +316,7 @@ function goToStep(n) {
     updateProgress();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     triggerStepAnimations(n);
+    saveState();
   }
 }
 
@@ -335,7 +613,7 @@ function summarySection(title, chips, note, extra) {
 }
 
 function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return str.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>');
 }
 
 /* ── PRINT ──────────────────────────────────────────────────────────────── */
