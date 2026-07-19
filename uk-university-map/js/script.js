@@ -453,12 +453,6 @@ function addMarkers() {
       e.stopPropagation();
       showInfoPanel(inst);
       marker.togglePopup();
-      // Ensure sidebar is open on mobile
-      if (!sidebarOpen && window.innerWidth <= 768) {
-        sidebarOpen = true;
-        sidebar.classList.remove('collapsed');
-        toggleIcon.className = 'bi bi-layout-sidebar-reverse';
-      }
     });
 
     markers.push({ marker, institution: inst });
