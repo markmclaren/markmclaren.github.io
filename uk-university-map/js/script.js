@@ -310,7 +310,7 @@ function buildPopupHTML(inst) {
 function initMap() {
   map = new maplibregl.Map({
     container: 'map',
-    style: 'https://tiles.openfreemap.org/styles/positron',
+    style: 'custom-style.json',
     center: [-2.5, 54.5],
     zoom: 5.5,
     minZoom: 4,
