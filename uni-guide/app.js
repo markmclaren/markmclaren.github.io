@@ -37,6 +37,8 @@ function saveState() {
     fs_independence: document.getElementById('fs-independence')?.value || 5,
     fs_opportunities: document.getElementById('fs-opportunities')?.value || 5,
     fs_freedom: document.getElementById('fs-freedom')?.value || 5,
+    fs_belonging: document.getElementById('fs-belonging')?.value || 5,
+    fs_stability: document.getElementById('fs-stability')?.value || 5,
     // Step 6 radio buttons
     short_term: document.querySelector('input[name="short-term"]:checked')?.value || '',
     long_term: document.querySelector('input[name="long-term"]:checked')?.value || '',
@@ -157,6 +159,8 @@ function restoreState() {
     fs_independence: 'fs-independence',
     fs_opportunities: 'fs-opportunities',
     fs_freedom: 'fs-freedom',
+    fs_belonging: 'fs-belonging',
+    fs_stability: 'fs-stability',
   };
   Object.entries(sliderMap).forEach(([key, id]) => {
     if (data[key]) {
@@ -361,8 +365,8 @@ function selectChoice(val) {
   resp.classList.remove('d-none');
 
   const messages = {
-    original: '✨ That\'s a strong signal. When you remove the noise — the worry, the pressure — your instinct points to your original choice. That instinct is worth listening to.',
-    local: '🏠 That\'s honest. It might mean the alternative option genuinely suits you better — or it might mean the comfort of familiarity is pulling hard. Either way, it\'s worth exploring why.',
+    original: '✨ That\'s worth noting. When you remove the noise — the worry, the pressure — your instinct points to your original choice. It\'s worth asking whether that\'s genuine preference or just familiarity.',
+    local: '🏠 That\'s worth noting. When you remove the noise, your instinct points to the alternative. It\'s worth asking whether that\'s genuine preference or comfort pulling you.',
     unsure: '🤔 That\'s completely okay. Uncertainty is normal. Keep going through this guide — the comparison and reflection steps ahead may help things become clearer.',
   };
   resp.innerHTML = `<i class="bi bi-lightbulb-fill me-2"></i>${messages[val]}`;
@@ -384,7 +388,7 @@ function updateSlider(key) {
   label.textContent = text;
 
   // Compute overall lean
-  const keys = ['confidence', 'independence', 'opportunities', 'freedom'];
+  const keys = ['confidence', 'independence', 'opportunities', 'freedom', 'belonging', 'stability'];
   const total = keys.reduce((sum, k) => {
     const s = document.getElementById('fs-' + k);
     return sum + (s ? parseInt(s.value) : 5);
@@ -394,9 +398,9 @@ function updateSlider(key) {
   const summary = document.getElementById('future-summary');
   summary.classList.remove('d-none');
   if (avg >= 6.5) {
-    summary.innerHTML = '<i class="bi bi-house-heart-fill me-2"></i><strong>Your future self seems to lean towards the alternative option</strong> — you\'ve rated it higher across most dimensions. Is that a genuine preference or a comfort pull?';
+    summary.innerHTML = '<i class="bi bi-house-heart-fill me-2"></i><strong>Your future self seems to lean towards the alternative option</strong> — you\'ve rated it higher across most dimensions. That\'s worth noting, and worth asking whether it\'s genuine preference or comfort pulling you.';
   } else if (avg <= 4.5) {
-    summary.innerHTML = '<i class="bi bi-send-fill me-2"></i><strong>Your future self seems to lean towards your original uni</strong> — you\'ve rated it higher across most of these dimensions. That\'s worth noting.';
+    summary.innerHTML = '<i class="bi bi-send-fill me-2"></i><strong>Your future self seems to lean towards your original uni</strong> — you\'ve rated it higher across most of these dimensions. That\'s worth noting, and worth asking whether it\'s genuine preference or familiarity pulling you.';
   } else {
     summary.innerHTML = '<i class="bi bi-yin-yang me-2"></i><strong>You see it as fairly balanced</strong> — both options have merit. The other steps in this guide may help you find the tiebreaker.';
   }
@@ -411,11 +415,11 @@ function updateRelConfidence() {
 
   const msg = document.getElementById('rel-conf-msg');
   if (val >= 8) {
-    msg.innerHTML = '<i class="bi bi-heart-fill me-2"></i><strong>High confidence.</strong> If you genuinely believe your relationship can handle distance, then it shouldn\'t be the deciding factor in your uni choice. Go where\'s right for your future.';
+    msg.innerHTML = '<i class="bi bi-heart-fill me-2"></i><strong>High confidence.</strong> If you genuinely believe your relationship can handle distance, that\'s worth factoring in either way — it means distance is less of a risk, whichever uni you choose.';
   } else if (val >= 5) {
     msg.innerHTML = '<i class="bi bi-heart-half me-2"></i><strong>Moderate confidence.</strong> It\'s worth having an honest conversation with your partner about what distance would mean for you both. That conversation might give you more clarity than any guide can.';
   } else {
-    msg.innerHTML = '<i class="bi bi-question-circle me-2"></i><strong>Lower confidence.</strong> That\'s honest. But remember — staying local doesn\'t guarantee the relationship survives. It\'s worth asking whether you\'d be making a major life decision to protect something that may not be certain anyway.';
+    msg.innerHTML = '<i class="bi bi-question-circle me-2"></i><strong>Lower confidence.</strong> That\'s honest. It\'s worth asking what\'s driving that — and whether staying local would actually resolve it, or just postpone the question.';
   }
 }
 
@@ -459,7 +463,7 @@ function updateRatingResult() {
   result.classList.remove('d-none');
 
   if (o > l) {
-    result.innerHTML = `<i class="bi bi-send-fill me-2"></i><strong>You've rated your original uni higher (${o} vs ${l} stars).</strong> That's a meaningful signal — even after thinking through all the factors, it still comes out on top.`;
+    result.innerHTML = `<i class="bi bi-send-fill me-2"></i><strong>You've rated your original uni higher (${o} vs ${l} stars).</strong> That's worth sitting with. Is it because it genuinely suits you better, or because it's the familiar, expected choice?`;
   } else if (l > o) {
     result.innerHTML = `<i class="bi bi-house-heart-fill me-2"></i><strong>You've rated the alternative option higher (${l} vs ${o} stars).</strong> That's worth sitting with. Is it because it genuinely suits you better, or because it feels safer right now?`;
   } else if (o && l) {
@@ -476,9 +480,9 @@ function updateFearCheck() {
   resp.classList.remove('d-none');
 
   const messages = {
-    genuine: '✅ <strong>That\'s a solid foundation for a decision.</strong> If the alternative option genuinely fits your goals, your course, your future — then it\'s a legitimate choice. Just make sure you can articulate <em>why</em> it\'s better, not just why it feels easier.',
-    mixed: '🤔 <strong>Mixed feelings are honest.</strong> Most big decisions feel this way. The question is which part of the mix is louder — and whether the fear part is making the call. Try to separate the two and see what\'s left.',
-    fear: '⚠️ <strong>That\'s a really important thing to recognise.</strong> Choosing a uni out of fear — of results, of distance, of change — is a choice you might regret when the fear fades. Fear is a feeling, not a plan. Your future deserves better than a fear-based decision.',
+    genuine: '✅ <strong>That\'s a solid foundation for a decision.</strong> If it genuinely fits your goals, your course, your future — then it\'s a legitimate choice, whichever option it is. Just make sure you can articulate <em>why</em> it\'s better, not just why it feels easier or more expected.',
+    mixed: '🤔 <strong>Mixed feelings are honest.</strong> Most big decisions feel this way. The question is which part of the mix is louder — and whether fear (of change, or of missing out) is making the call rather than your own judgement. Try to separate the two and see what\'s left.',
+    fear: '⚠️ <strong>That\'s a really important thing to recognise.</strong> Choosing a uni out of fear — of results, of distance, of change, of what other people think — is a choice you might regret when the fear fades. Fear is a feeling, not a plan. Your future deserves a decision made with a clear head.',
   };
   resp.innerHTML = `<i class="bi bi-lightbulb-fill me-2"></i>${messages[val]}`;
 }
@@ -530,8 +534,10 @@ function buildSummaryHTML() {
   // Step 2 — new factors
   const s2Checked = [...document.querySelectorAll('input[name="s2"]:checked')].map(cb => {
     const labels = {
-      'exam-worry': 'Worried about exam results', relationship: 'Wanting to stay close to someone',
-      'fomo-rel': 'Fear of missing out on relationship', 'fear-distance': 'Fear of distance',
+      'exam-worry': 'Worried about exam results', relationship: 'Valuing a relationship that matters',
+      'excited-away': 'Excited about independence of moving away',
+      'fomo-rel': 'Fear of missing out on relationship', 'fomo-independence': 'Fear of missing out on independence',
+      'fear-distance': 'Fear of distance',
       'fear-change': 'Fear of change', 'fear-loss': 'Fear of losing something good',
       'results-pressure': 'Pressure from results day'
     };

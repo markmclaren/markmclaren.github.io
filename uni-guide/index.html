@@ -90,8 +90,10 @@
 
       <div class="checklist-grid mt-4">
         <label class="check-item"><input type="checkbox" name="s2" value="exam-worry" /><span><i class="bi bi-file-earmark-text"></i> Worried about exam results</span></label>
-        <label class="check-item"><input type="checkbox" name="s2" value="relationship" /><span><i class="bi bi-heart"></i> Wanting to stay close to someone</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="relationship" /><span><i class="bi bi-heart"></i> Valuing a relationship that matters to me</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="excited-away" /><span><i class="bi bi-stars"></i> Excited about the independence of moving away</span></label>
         <label class="check-item"><input type="checkbox" name="s2" value="fomo-rel" /><span><i class="bi bi-emoji-frown"></i> Fear of missing out on the relationship</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="fomo-independence" /><span><i class="bi bi-emoji-frown"></i> Fear of missing out on independence or new experiences</span></label>
         <label class="check-item"><input type="checkbox" name="s2" value="fear-distance" /><span><i class="bi bi-geo-alt"></i> Fear of distance</span></label>
         <label class="check-item"><input type="checkbox" name="s2" value="fear-change" /><span><i class="bi bi-arrow-repeat"></i> Fear of change</span></label>
         <label class="check-item"><input type="checkbox" name="s2" value="fear-loss" /><span><i class="bi bi-lock"></i> Fear of losing something good</span></label>
@@ -254,6 +256,24 @@
           </div>
           <div class="slider-val" id="sv-freedom">Balanced</div>
         </div>
+        <div class="future-item" id="fi-belonging">
+          <div class="future-icon"><i class="bi bi-people-fill"></i></div>
+          <div class="future-label">Belonging & support</div>
+          <div class="future-slider-wrap">
+            <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-belonging" oninput="updateSlider('belonging')" />
+            <div class="slider-labels"><span>Original uni</span><span>Alternative option</span></div>
+          </div>
+          <div class="slider-val" id="sv-belonging">Balanced</div>
+        </div>
+        <div class="future-item" id="fi-stability">
+          <div class="future-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+          <div class="future-label">Emotional stability</div>
+          <div class="future-slider-wrap">
+            <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-stability" oninput="updateSlider('stability')" />
+            <div class="slider-labels"><span>Original uni</span><span>Alternative option</span></div>
+          </div>
+          <div class="slider-val" id="sv-stability">Balanced</div>
+        </div>
       </div>
 
       <div id="future-summary" class="insight-box mt-4 d-none"></div>
@@ -387,33 +407,33 @@
         </div>
         <div class="comp-row" id="cr-opportunities">
           <div class="comp-label-col"><i class="bi bi-briefcase me-2"></i>Opportunities</div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Top-ranked course, industry links..." id="c-orig-opp"></textarea></div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Solid course, closer to home..." id="c-loc-opp"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Course, industry links, city..." id="c-orig-opp"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Course, industry links, city..." id="c-loc-opp"></textarea></div>
         </div>
         <div class="comp-row">
           <div class="comp-label-col"><i class="bi bi-person-check me-2"></i>Independence</div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. New city, living alone..." id="c-orig-ind"></textarea></div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Stay at home or nearby..." id="c-loc-ind"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. What living arrangement would look like..." id="c-orig-ind"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. What living arrangement would look like..." id="c-loc-ind"></textarea></div>
         </div>
         <div class="comp-row">
           <div class="comp-label-col"><i class="bi bi-graph-up-arrow me-2"></i>Growth</div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Pushed out of comfort zone..." id="c-orig-grow"></textarea></div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Familiar environment..." id="c-loc-grow"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. What would push or support your growth..." id="c-orig-grow"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. What would push or support your growth..." id="c-loc-grow"></textarea></div>
         </div>
         <div class="comp-row">
           <div class="comp-label-col"><i class="bi bi-calendar-check me-2"></i>Long-term</div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Better graduate prospects..." id="c-orig-lt"></textarea></div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Lower debt, stay connected..." id="c-loc-lt"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Graduate prospects, cost, connections..." id="c-orig-lt"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Graduate prospects, cost, connections..." id="c-loc-lt"></textarea></div>
         </div>
         <div class="comp-row">
-          <div class="comp-label-col"><i class="bi bi-emoji-smile me-2"></i>Comfort</div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Exciting but daunting..." id="c-orig-com"></textarea></div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Feels safe and familiar..." id="c-loc-com"></textarea></div>
+          <div class="comp-label-col"><i class="bi bi-emoji-smile me-2"></i>Emotional wellbeing</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. How this option would feel day to day..." id="c-orig-com"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. How this option would feel day to day..." id="c-loc-com"></textarea></div>
         </div>
         <div class="comp-row">
           <div class="comp-label-col"><i class="bi bi-bullseye me-2"></i>Fits my goals</div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Yes — this was always the plan..." id="c-orig-goal"></textarea></div>
-          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Partly — but it wasn't the original plan..." id="c-loc-goal"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. How well this fits what you actually want..." id="c-orig-goal"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. How well this fits what you actually want..." id="c-loc-goal"></textarea></div>
         </div>
       </div>
 
@@ -459,16 +479,20 @@
         </div>
         <div class="scenario-card" id="sc2">
           <div class="scenario-icon"><i class="bi bi-check-circle-fill"></i></div>
-          <p>If you choose the <strong>original uni</strong> and your results are fine — <strong>you'll be exactly where you planned to be.</strong></p>
+          <p>If you choose the <strong>original uni</strong> and the relationship doesn't last — <strong>you still have the opportunities you earned.</strong></p>
         </div>
         <div class="scenario-card" id="sc3">
           <div class="scenario-icon"><i class="bi bi-check-circle-fill"></i></div>
-          <p>If you choose the <strong>original uni</strong> and the relationship doesn't last — <strong>you still have the opportunities you earned.</strong></p>
+          <p>If you choose the <strong>alternative option</strong> and it's genuinely the better fit — <strong>you'll have chosen it with a clear head, not by default.</strong></p>
+        </div>
+        <div class="scenario-card" id="sc4">
+          <div class="scenario-icon"><i class="bi bi-check-circle-fill"></i></div>
+          <p>If you choose the <strong>alternative option</strong> and the relationship changes anyway — <strong>you'll still have learned what mattered most to you.</strong></p>
         </div>
       </div>
 
       <div class="fear-check mt-5">
-        <p class="note-label">If you choose the alternative option — is it because of genuine preference, or because of fear?</p>
+        <p class="note-label">Whichever way you're leaning — is it because of genuine preference, or because of fear?</p>
         <div class="fear-options mt-3">
           <label class="fear-option" id="fo-genuine">
             <input type="radio" name="fear-check" value="genuine" onchange="updateFearCheck()" />
@@ -488,7 +512,7 @@
             <input type="radio" name="fear-check" value="fear" onchange="updateFearCheck()" />
             <div class="fear-option-inner">
               <i class="bi bi-exclamation-triangle-fill"></i>
-              <span>Mainly fear — results, distance, or losing something</span>
+              <span>Mainly fear — of results, distance, change, or missing out</span>
             </div>
           </label>
         </div>
@@ -516,8 +540,9 @@
         <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not your parents'</span></div>
         <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not your girlfriend's</span></div>
         <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not your exam anxiety</span></div>
-        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not fear</span></div>
-        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not pressure</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not fear of change</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not fear of missing out</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not pressure to prove you're independent</span></div>
         <div class="own-item own-yes-item"><i class="bi bi-check-circle-fill own-yes"></i><span>Your life. Your future. Your decision.</span></div>
       </div>
 
