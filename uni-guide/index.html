@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Uni Decision Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+<section id="hero" class="hero-section d-flex align-items-center">
+  <div class="container text-center">
+    <div class="hero-badge mb-3">Decision Guide</div>
+    <h1 class="hero-title">Your Uni Choice,<br><span class="hero-accent">Your Future</span></h1>
+    <p class="hero-sub mt-3 mb-5">A calm, honest guide to help you think clearly — about results, relationships, and what you actually want.</p>
+    <button class="btn btn-primary btn-hero" onclick="startGuide()">
+      Start the Guide <i class="bi bi-arrow-right ms-2"></i>
+    </button>
+    <div class="mt-4 hero-steps-hint">
+      <span class="step-dot active"></span>
+      <span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span>
+      <span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span>
+      <span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span>
+      <span class="step-dot"></span>
+      <p class="mt-2 text-muted small">10 steps · takes about 15 minutes</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRESS BAR ──────────────────────────────────────────────────────── -->
+<div id="progress-bar-wrap" class="progress-bar-wrap d-none">
+  <div class="container-fluid px-0">
+    <div class="progress-track">
+      <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-label-row container d-flex justify-content-between align-items-center py-2">
+      <span id="progress-label" class="small fw-semibold text-muted">Step 1 of 10</span>
+      <button class="btn btn-sm btn-outline-secondary" onclick="showSummary()"><i class="bi bi-journal-text me-1"></i>My Notes</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── STEP CONTAINER ────────────────────────────────────────────────────── -->
+<main id="steps-container" class="d-none">
+  <div class="container py-5">
+
+    <!-- STEP 1 -->
+    <div class="step-card" id="step-1">
+      <div class="step-number">01</div>
+      <h2 class="step-title">Start with your original reasons</h2>
+      <p class="step-intro">Before anything changed — before results, before relationships — you chose a uni for specific reasons. Those reasons still matter.</p>
+      <p class="step-body">Write them down so you can see them clearly. Tick the ones that applied to you, and add your own thoughts below.</p>
+
+      <div class="checklist-grid mt-4">
+        <label class="check-item"><input type="checkbox" name="s1" value="course" /><span><i class="bi bi-book"></i> The course itself</span></label>
+        <label class="check-item"><input type="checkbox" name="s1" value="campus" /><span><i class="bi bi-building"></i> The campus & city</span></label>
+        <label class="check-item"><input type="checkbox" name="s1" value="opportunities" /><span><i class="bi bi-briefcase"></i> Career opportunities</span></label>
+        <label class="check-item"><input type="checkbox" name="s1" value="environment" /><span><i class="bi bi-people"></i> The social environment</span></label>
+        <label class="check-item"><input type="checkbox" name="s1" value="independence" /><span><i class="bi bi-house-door"></i> Living independently</span></label>
+        <label class="check-item"><input type="checkbox" name="s1" value="future" /><span><i class="bi bi-stars"></i> The future I imagined</span></label>
+      </div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">Your original reasons (in your own words):</label>
+        <textarea class="form-control note-input" id="note-1" rows="3" placeholder="e.g. I wanted to study Computer Science at a top-ranked uni and move to a new city..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-primary btn-next" onclick="nextStep(1)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-card d-none" id="step-2">
+      <div class="step-number">02</div>
+      <h2 class="step-title">Acknowledge the new factors honestly</h2>
+      <p class="step-intro">A lot has changed since you made your first choice. It's okay to admit that.</p>
+      <p class="step-body">These might be influencing you now. Tick any that feel true — there's no wrong answer here.</p>
+
+      <div class="checklist-grid mt-4">
+        <label class="check-item"><input type="checkbox" name="s2" value="exam-worry" /><span><i class="bi bi-file-earmark-text"></i> Worried about exam results</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="relationship" /><span><i class="bi bi-heart"></i> Wanting to stay close to someone</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="fomo-rel" /><span><i class="bi bi-emoji-frown"></i> Fear of missing out on the relationship</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="fear-distance" /><span><i class="bi bi-geo-alt"></i> Fear of distance</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="fear-change" /><span><i class="bi bi-arrow-repeat"></i> Fear of change</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="fear-loss" /><span><i class="bi bi-lock"></i> Fear of losing something good</span></label>
+        <label class="check-item"><input type="checkbox" name="s2" value="results-pressure" /><span><i class="bi bi-calendar-event"></i> Pressure from results day</span></label>
+      </div>
+
+      <div class="insight-box mt-4">
+        <i class="bi bi-lightbulb-fill me-2"></i>
+        <strong>None of these make you weak or irrational.</strong> They're normal reactions to a big transition. The key is making sure they don't drown out the long-term picture.
+      </div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">Anything else influencing you right now?</label>
+        <textarea class="form-control note-input" id="note-2" rows="3" placeholder="Write freely — this is just for you..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(2)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(2)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step-card d-none" id="step-3">
+      <div class="step-number">03</div>
+      <h2 class="step-title">Think about exam results realistically</h2>
+      <p class="step-intro">It's easy to assume the worst before results come out. But assumptions aren't facts.</p>
+      <p class="step-body">Answer these reflection questions honestly. Tap each one to reveal a prompt.</p>
+
+      <div class="accordion mt-4" id="acc-3">
+        <div class="acc-item">
+          <button class="acc-btn" data-bs-toggle="collapse" data-bs-target="#q3a">
+            <i class="bi bi-question-circle me-2"></i>Am I changing my uni choice based on <em>actual</em> results or <em>imagined</em> ones?
+          </button>
+          <div id="q3a" class="collapse acc-body">
+            <p>Results day hasn't happened yet. Any decision made now is based on a prediction — and predictions are often more pessimistic than reality. It might be worth waiting before making any changes.</p>
+            <textarea class="form-control note-input mt-2" placeholder="Your thoughts..." rows="2"></textarea>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" data-bs-toggle="collapse" data-bs-target="#q3b">
+            <i class="bi bi-question-circle me-2"></i>If my results turn out better than I fear, will I regret changing my plan?
+          </button>
+          <div id="q3b" class="collapse acc-body">
+            <p>Imagine opening your results and they're exactly what you hoped for. How would you feel if you'd already switched to a local uni? Would you wish you'd waited?</p>
+            <textarea class="form-control note-input mt-2" placeholder="Your thoughts..." rows="2"></textarea>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" data-bs-toggle="collapse" data-bs-target="#q3c">
+            <i class="bi bi-question-circle me-2"></i>If my results are lower, what options will I still have at the original uni?
+          </button>
+          <div id="q3c" class="collapse acc-body">
+            <p>Many unis have clearing, foundation years, or alternative entry routes. Lower results don't always mean the door is closed — it's worth checking before assuming.</p>
+            <textarea class="form-control note-input mt-2" placeholder="Your thoughts..." rows="2"></textarea>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" data-bs-toggle="collapse" data-bs-target="#q3d">
+            <i class="bi bi-question-circle me-2"></i>Does staying local actually solve the exam worry, or just avoid the feeling of uncertainty?
+          </button>
+          <div id="q3d" class="collapse acc-body">
+            <p>Staying local might feel safer, but it doesn't change your results. It just removes one unknown. Is that trade-off worth it for your long-term goals?</p>
+            <textarea class="form-control note-input mt-2" placeholder="Your thoughts..." rows="2"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">Your overall thoughts on the exam factor:</label>
+        <textarea class="form-control note-input" id="note-3" rows="3" placeholder="e.g. I think I'm catastrophising. My predicted grades are actually fine..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(3)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(3)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step-card d-none" id="step-4">
+      <div class="step-number">04</div>
+      <h2 class="step-title">Clear the fog — imagine a clean slate</h2>
+      <p class="step-intro">This isn't about denying your relationship or your worries. It's just a way to see past the noise.</p>
+
+      <div class="fog-box mt-4">
+        <div class="fog-question">
+          <i class="bi bi-magic me-2"></i>
+          <strong>If you were single AND confident in your results — which uni would you choose?</strong>
+        </div>
+      </div>
+
+      <p class="step-body mt-4">That answer often reveals what your long-term self actually wants. Write it down below.</p>
+
+      <div class="choice-buttons mt-4" id="choice-4">
+        <button class="choice-btn" id="choice-original" onclick="selectChoice('original')">
+          <i class="bi bi-send-fill me-2"></i>My original uni choice
+        </button>
+        <button class="choice-btn" id="choice-local" onclick="selectChoice('local')">
+          <i class="bi bi-house-heart-fill me-2"></i>A local uni
+        </button>
+        <button class="choice-btn" id="choice-unsure" onclick="selectChoice('unsure')">
+          <i class="bi bi-question-lg me-2"></i>I'm still not sure
+        </button>
+      </div>
+
+      <div id="choice-response" class="insight-box mt-4 d-none"></div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">What does that tell you?</label>
+        <textarea class="form-control note-input" id="note-4" rows="3" placeholder="Write what came to mind when you imagined the clean slate..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(4)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(4)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step-card d-none" id="step-5">
+      <div class="step-number">05</div>
+      <h2 class="step-title">Think about your future self</h2>
+      <p class="step-intro">Picture yourself at 25. You've graduated. You're choosing jobs. You're deciding where to live. You're building your life.</p>
+
+      <div class="future-self-visual mt-4">
+        <div class="future-item" id="fi-confidence">
+          <div class="future-icon"><i class="bi bi-trophy-fill"></i></div>
+          <div class="future-label">Confidence</div>
+          <div class="future-slider-wrap">
+            <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-confidence" oninput="updateSlider('confidence')" />
+            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+          </div>
+          <div class="slider-val" id="sv-confidence">Balanced</div>
+        </div>
+        <div class="future-item" id="fi-independence">
+          <div class="future-icon"><i class="bi bi-person-check-fill"></i></div>
+          <div class="future-label">Independence</div>
+          <div class="future-slider-wrap">
+            <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-independence" oninput="updateSlider('independence')" />
+            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+          </div>
+          <div class="slider-val" id="sv-independence">Balanced</div>
+        </div>
+        <div class="future-item" id="fi-opportunities">
+          <div class="future-icon"><i class="bi bi-briefcase-fill"></i></div>
+          <div class="future-label">Opportunities</div>
+          <div class="future-slider-wrap">
+            <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-opportunities" oninput="updateSlider('opportunities')" />
+            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+          </div>
+          <div class="slider-val" id="sv-opportunities">Balanced</div>
+        </div>
+        <div class="future-item" id="fi-freedom">
+          <div class="future-icon"><i class="bi bi-wind"></i></div>
+          <div class="future-label">Freedom</div>
+          <div class="future-slider-wrap">
+            <input type="range" class="future-slider" min="1" max="10" value="5" id="fs-freedom" oninput="updateSlider('freedom')" />
+            <div class="slider-labels"><span>Original uni</span><span>Local uni</span></div>
+          </div>
+          <div class="slider-val" id="sv-freedom">Balanced</div>
+        </div>
+      </div>
+
+      <div id="future-summary" class="insight-box mt-4 d-none"></div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">What does your future self need most?</label>
+        <textarea class="form-control note-input" id="note-5" rows="3" placeholder="e.g. I think future-me needs to have taken the risk and gone somewhere new..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(5)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(5)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step-card d-none" id="step-6">
+      <div class="step-number">06</div>
+      <h2 class="step-title">Separate short-term feelings from long-term impact</h2>
+      <p class="step-intro">Short-term feelings matter — they're real. But they're temporary. Long-term consequences stick around.</p>
+
+      <div class="two-col-cards mt-4">
+        <div class="col-card short-term">
+          <div class="col-card-header"><i class="bi bi-clock me-2"></i>Right Now</div>
+          <p class="col-card-sub">Which choice feels <strong>easier</strong> right now?</p>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="short-term" value="original" /> Original uni</label>
+            <label class="radio-item"><input type="radio" name="short-term" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="short-term" value="same" /> About the same</label>
+          </div>
+        </div>
+        <div class="col-card long-term">
+          <div class="col-card-header"><i class="bi bi-calendar-range me-2"></i>Long Term</div>
+          <p class="col-card-sub">Which choice <strong>benefits you more</strong> in the long run?</p>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="long-term" value="original" /> Original uni</label>
+            <label class="radio-item"><input type="radio" name="long-term" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="long-term" value="same" /> About the same</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col-cards mt-3">
+        <div class="col-card options">
+          <div class="col-card-header"><i class="bi bi-diagram-3 me-2"></i>Options Later</div>
+          <p class="col-card-sub">Which choice gives you <strong>more options</strong> later?</p>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="options-later" value="original" /> Original uni</label>
+            <label class="radio-item"><input type="radio" name="options-later" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="options-later" value="same" /> About the same</label>
+          </div>
+        </div>
+        <div class="col-card regret">
+          <div class="col-card-header"><i class="bi bi-arrow-counterclockwise me-2"></i>Regret Test</div>
+          <p class="col-card-sub">Which choice might you <strong>regret</strong> if things change?</p>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="regret" value="original" /> Original uni</label>
+            <label class="radio-item"><input type="radio" name="regret" value="local" /> Local uni</label>
+            <label class="radio-item"><input type="radio" name="regret" value="same" /> Neither</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">What pattern do you notice in your answers?</label>
+        <textarea class="form-control note-input" id="note-6" rows="3" placeholder="e.g. Local feels easier now but original feels better long-term..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(6)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(6)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step-card d-none" id="step-7">
+      <div class="step-number">07</div>
+      <h2 class="step-title">Look at the relationship realistically but positively</h2>
+      <p class="step-intro">Your relationship matters. It's okay that it's part of your thinking. But it shouldn't be the only part.</p>
+
+      <div class="relationship-truths mt-4">
+        <div class="truth-card" id="tc1">
+          <div class="truth-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+          <p><strong>Distance doesn't break strong relationships.</strong><br>Closeness doesn't save weak ones.</p>
+        </div>
+        <div class="truth-card" id="tc2">
+          <div class="truth-icon"><i class="bi bi-shield-check-fill"></i></div>
+          <p><strong>If your relationship is solid, it will survive distance.</strong><br>If it isn't, staying local won't fix that.</p>
+        </div>
+        <div class="truth-card" id="tc3">
+          <div class="truth-icon"><i class="bi bi-arrows-expand"></i></div>
+          <p><strong>You don't have to choose between your future and your relationship.</strong><br>Healthy relationships make space for both people to grow.</p>
+        </div>
+      </div>
+
+      <div class="relationship-slider mt-5">
+        <label class="note-label">How confident are you that your relationship would survive distance?</label>
+        <div class="confidence-track mt-3">
+          <input type="range" class="form-range" min="1" max="10" value="5" id="rel-confidence" oninput="updateRelConfidence()" />
+          <div class="d-flex justify-content-between mt-1">
+            <small class="text-muted">Not very</small>
+            <small class="text-muted fw-semibold" id="rel-conf-val">5 / 10</small>
+            <small class="text-muted">Very confident</small>
+          </div>
+        </div>
+        <div id="rel-conf-msg" class="insight-box mt-3"></div>
+      </div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">What does your relationship mean to this decision?</label>
+        <textarea class="form-control note-input" id="note-7" rows="3" placeholder="e.g. We've talked about it and we think we could handle distance..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(7)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(7)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 8 -->
+    <div class="step-card d-none" id="step-8">
+      <div class="step-number">08</div>
+      <h2 class="step-title">Make a simple comparison</h2>
+      <p class="step-intro">Seeing things side by side helps. Fill out both columns honestly. The stronger option usually becomes obvious.</p>
+
+      <div class="comparison-table mt-4">
+        <div class="comp-header-row">
+          <div class="comp-label-col"></div>
+          <div class="comp-col original-col"><i class="bi bi-send-fill me-2"></i>Original Uni</div>
+          <div class="comp-col local-col"><i class="bi bi-house-heart-fill me-2"></i>Local Uni</div>
+        </div>
+        <div class="comp-row" id="cr-opportunities">
+          <div class="comp-label-col"><i class="bi bi-briefcase me-2"></i>Opportunities</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Top-ranked course, industry links..." id="c-orig-opp"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Solid course, closer to home..." id="c-loc-opp"></textarea></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label-col"><i class="bi bi-person-check me-2"></i>Independence</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. New city, living alone..." id="c-orig-ind"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Stay at home or nearby..." id="c-loc-ind"></textarea></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label-col"><i class="bi bi-graph-up-arrow me-2"></i>Growth</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Pushed out of comfort zone..." id="c-orig-grow"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Familiar environment..." id="c-loc-grow"></textarea></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label-col"><i class="bi bi-calendar-check me-2"></i>Long-term</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Better graduate prospects..." id="c-orig-lt"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Lower debt, stay connected..." id="c-loc-lt"></textarea></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label-col"><i class="bi bi-emoji-smile me-2"></i>Comfort</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Exciting but daunting..." id="c-orig-com"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Feels safe and familiar..." id="c-loc-com"></textarea></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label-col"><i class="bi bi-bullseye me-2"></i>Fits my goals</div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Yes — this was always the plan..." id="c-orig-goal"></textarea></div>
+          <div class="comp-col"><textarea class="comp-input" placeholder="e.g. Partly — but it wasn't the original plan..." id="c-loc-goal"></textarea></div>
+        </div>
+      </div>
+
+      <div class="rating-row mt-5">
+        <p class="note-label">After filling that in, how do you rate each option overall?</p>
+        <div class="d-flex gap-4 flex-wrap mt-3">
+          <div class="rating-block">
+            <label class="rating-label"><i class="bi bi-send-fill me-1"></i> Original Uni</label>
+            <div class="star-rating" id="stars-original" data-target="original">
+              <i class="bi bi-star" data-val="1"></i><i class="bi bi-star" data-val="2"></i>
+              <i class="bi bi-star" data-val="3"></i><i class="bi bi-star" data-val="4"></i>
+              <i class="bi bi-star" data-val="5"></i>
+            </div>
+          </div>
+          <div class="rating-block">
+            <label class="rating-label"><i class="bi bi-house-heart-fill me-1"></i> Local Uni</label>
+            <div class="star-rating" id="stars-local" data-target="local">
+              <i class="bi bi-star" data-val="1"></i><i class="bi bi-star" data-val="2"></i>
+              <i class="bi bi-star" data-val="3"></i><i class="bi bi-star" data-val="4"></i>
+              <i class="bi bi-star" data-val="5"></i>
+            </div>
+          </div>
+        </div>
+        <div id="rating-result" class="insight-box mt-3 d-none"></div>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(8)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(8)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 9 -->
+    <div class="step-card d-none" id="step-9">
+      <div class="step-number">09</div>
+      <h2 class="step-title">The final question</h2>
+      <p class="step-intro">Before you decide, consider these three scenarios honestly.</p>
+
+      <div class="scenario-cards mt-4">
+        <div class="scenario-card" id="sc1">
+          <div class="scenario-icon"><i class="bi bi-check-circle-fill"></i></div>
+          <p>If you choose the <strong>original uni</strong> and your relationship is strong — <strong>it will still be there.</strong></p>
+        </div>
+        <div class="scenario-card" id="sc2">
+          <div class="scenario-icon"><i class="bi bi-check-circle-fill"></i></div>
+          <p>If you choose the <strong>original uni</strong> and your results are fine — <strong>you'll be exactly where you planned to be.</strong></p>
+        </div>
+        <div class="scenario-card" id="sc3">
+          <div class="scenario-icon"><i class="bi bi-check-circle-fill"></i></div>
+          <p>If you choose the <strong>original uni</strong> and the relationship doesn't last — <strong>you still have the opportunities you earned.</strong></p>
+        </div>
+      </div>
+
+      <div class="fear-check mt-5">
+        <p class="note-label">If you choose the local uni — is it because of genuine preference, or because of fear?</p>
+        <div class="fear-options mt-3">
+          <label class="fear-option" id="fo-genuine">
+            <input type="radio" name="fear-check" value="genuine" onchange="updateFearCheck()" />
+            <div class="fear-option-inner">
+              <i class="bi bi-heart-fill"></i>
+              <span>Genuine preference — it's actually the better choice for me</span>
+            </div>
+          </label>
+          <label class="fear-option" id="fo-mixed">
+            <input type="radio" name="fear-check" value="mixed" onchange="updateFearCheck()" />
+            <div class="fear-option-inner">
+              <i class="bi bi-yin-yang"></i>
+              <span>A mix of both — I'm not entirely sure</span>
+            </div>
+          </label>
+          <label class="fear-option" id="fo-fear">
+            <input type="radio" name="fear-check" value="fear" onchange="updateFearCheck()" />
+            <div class="fear-option-inner">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <span>Mainly fear — results, distance, or losing something</span>
+            </div>
+          </label>
+        </div>
+        <div id="fear-response" class="insight-box mt-4 d-none"></div>
+      </div>
+
+      <div class="note-area mt-4">
+        <label class="note-label">What's your honest answer to the final question?</label>
+        <textarea class="form-control note-input" id="note-9" rows="3" placeholder="Write what you really think..."></textarea>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(9)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+        <button class="btn btn-primary btn-next" onclick="nextStep(9)">Next <i class="bi bi-arrow-right ms-1"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 10 -->
+    <div class="step-card d-none" id="step-10">
+      <div class="step-number">10</div>
+      <h2 class="step-title">Whatever you choose, make sure it's yours</h2>
+      <p class="step-intro">This is the most important step. Not a checklist. Not a formula. Just a reminder.</p>
+
+      <div class="ownership-list mt-4">
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not your parents'</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not your girlfriend's</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not your exam anxiety</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not fear</span></div>
+        <div class="own-item"><i class="bi bi-x-circle-fill own-no"></i><span>Not pressure</span></div>
+        <div class="own-item own-yes-item"><i class="bi bi-check-circle-fill own-yes"></i><span>Your life. Your future. Your decision.</span></div>
+      </div>
+
+      <div class="final-statement mt-5">
+        <p>You deserve to make this decision with a <strong>clear head</strong> and <strong>full confidence</strong>.</p>
+      </div>
+
+      <div class="final-commitment mt-5">
+        <label class="note-label">Write your decision — or where you are right now:</label>
+        <textarea class="form-control note-input" id="note-10" rows="4" placeholder="e.g. I've decided to go with my original choice. I know it's right for me because..."></textarea>
+      </div>
+
+      <div class="text-center mt-5">
+        <button class="btn btn-primary btn-hero" onclick="showSummary()">
+          <i class="bi bi-journal-text me-2"></i>See My Full Summary
+        </button>
+      </div>
+
+      <div class="step-nav mt-4">
+        <button class="btn btn-outline-secondary btn-prev me-2" onclick="prevStep(10)"><i class="bi bi-arrow-left me-1"></i> Back</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── SUMMARY MODAL ─────────────────────────────────────────────────────── -->
+<div class="modal fade" id="summaryModal" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content summary-modal">
+      <div class="modal-header summary-modal-header">
+        <h5 class="modal-title" id="summaryModalLabel"><i class="bi bi-journal-text me-2"></i>My Decision Notes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="summary-body">
+        <!-- Populated by JS -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" onclick="printSummary()"><i class="bi bi-printer me-1"></i> Print / Save as PDF</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="site-footer text-center py-4">
+  <p class="mb-0 text-muted small">This guide is just for you. Your answers are stored only in your browser and never sent anywhere.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
