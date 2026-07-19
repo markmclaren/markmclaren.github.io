@@ -54,7 +54,7 @@ function markerSVG(color, type, size = 16) {
 let allInstitutions = [];
 let markers = [];
 let map = null;
-let activeFilters = new Set(TYPE_ORDER);
+let activeFilters = new Set(TYPE_ORDER.slice(0, 4));
 let selectedInstitution = null;
 let sidebarOpen = true;
 
@@ -344,7 +344,6 @@ function loadData() {
       }));
 
       totalCount.textContent = allInstitutions.length;
-      visibleCount.textContent = allInstitutions.length;
 
       buildLegend();
       addMarkers();
