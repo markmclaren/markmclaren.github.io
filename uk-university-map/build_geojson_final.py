@@ -213,7 +213,7 @@ for ukprn, provider in providers.items():
     founded = wiki_data.get("founded")
     
     # Discover Uni URL (using UKPRN)
-    discover_uni_url = f"https://discoveruni.gov.uk/institution-overview/{ukprn}/" if ukprn else ""
+    discover_uni_url = f"https://discoveruni.gov.uk/institution-details/{ukprn}/" if ukprn else ""
     
     feature = {
         "type": "Feature",

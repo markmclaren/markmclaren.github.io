@@ -30,7 +30,7 @@
         "postcode": "TR11 4RH",
         "website": "http://www.falmouth.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_College_Falmouth",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10008640/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10008640/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -59,7 +59,7 @@
         "postcode": "OX1 2JD",
         "website": "http://www.ox.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Oxford",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007774/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007774/",
         "groups": [
           "Science_and_Engineering_South",
           "Russell_Group",
@@ -96,7 +96,7 @@
         "postcode": "LA1 4YW",
         "website": "http://www.lancs.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Lancaster_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007768/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007768/",
         "groups": [
           "1994_Group",
           "N8_Research_Partnership"
@@ -131,7 +131,7 @@
         "postcode": "BA2 9BN",
         "website": "http://www.bathspa.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Bath_Spa_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000571/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000571/",
         "groups": [
           "Million_Plus"
         ],
@@ -164,7 +164,7 @@
         "postcode": "CF10 3AT",
         "website": "http://www.cardiff.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Cardiff_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007814/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007814/",
         "groups": [
           "GW4",
           "Russell_Group"
@@ -199,7 +199,7 @@
         "postcode": "SO17 1BJ",
         "website": "http://www.soton.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Southampton",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007158/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007158/",
         "groups": [
           "Science_and_Engineering_South",
           "Russell_Group"
@@ -234,7 +234,7 @@
         "postcode": "NW1 0TU",
         "website": "http://www.rvc.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Veterinary_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007779/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007779/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_medical",
@@ -263,7 +263,7 @@
         "postcode": "DE22 1GB",
         "website": "http://www.derby.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Derby",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007851/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007851/",
         "groups": [
           "Million_Plus"
         ],
@@ -296,7 +296,7 @@
         "postcode": "BH12 5BB",
         "website": "http://www.bournemouth.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Bournemouth_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000824/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000824/",
         "groups": [
           "University_Alliance"
         ],
@@ -329,7 +329,7 @@
         "postcode": "WC1V 7EY",
         "website": "http://www.arts.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_Arts_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007162/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007162/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -358,7 +358,7 @@
         "postcode": "FK9 4LA",
         "website": "http://www.stir.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Stirling",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007804/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007804/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -387,7 +387,7 @@
         "postcode": "L39 4QP",
         "website": "http://www.edgehill.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Edge_Hill_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007823/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007823/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -416,7 +416,7 @@
         "postcode": "GU2 7XH",
         "website": "http://www.surrey.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Surrey",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007160/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007160/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -445,7 +445,7 @@
         "postcode": "CO4 3SQ",
         "website": "http://www.essex.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Essex",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007791/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007791/",
         "groups": [
           "1994_Group"
         ],
@@ -478,7 +478,7 @@
         "postcode": "L1 9HF",
         "website": "http://www.lipa.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Liverpool_Institute_for_Performing_Arts",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003945/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003945/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -507,7 +507,7 @@
         "postcode": "RG6 6UR",
         "website": "http://www.reading.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Reading",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007802/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007802/",
         "groups": [
           "1994_Group"
         ],
@@ -540,7 +540,7 @@
         "postcode": "BN1 9RH",
         "website": "http://www.sussex.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Sussex",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007806/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007806/",
         "groups": [
           "1994_Group"
         ],
@@ -573,7 +573,7 @@
         "postcode": "LU1 3JU",
         "website": "http://www.beds.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bedfordshire",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007152/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007152/",
         "groups": [
           "Million_Plus"
         ],
@@ -606,7 +606,7 @@
         "postcode": "CT2 7NZ",
         "website": "http://www.kent.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Kent",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007150/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007150/",
         "groups": [
           "NCUK"
         ],
@@ -639,7 +639,7 @@
         "postcode": "B32 3NT",
         "website": "http://www.newman.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Newman_University_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007832/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007832/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -672,7 +672,7 @@
         "postcode": "CB2 1TN",
         "website": "http://www.cam.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Cambridge",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007788/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007788/",
         "groups": [
           "Russell_Group",
           "Oxbridge"
@@ -707,7 +707,7 @@
         "postcode": "LE1 9BH",
         "website": "http://www.dmu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/De_Montfort_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10001883/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10001883/",
         "groups": [
           "University_Alliance"
         ],
@@ -740,7 +740,7 @@
         "postcode": "EH1 1HT",
         "website": "http://www.ed.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Edinburgh",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007790/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007790/",
         "groups": [
           "Russell_Group"
         ],
@@ -773,7 +773,7 @@
         "postcode": "LS2 9JT",
         "website": "http://www.leeds.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Leeds",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007795/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007795/",
         "groups": [
           "N8_Research_Partnership",
           "White_Rose_University_Consortium",
@@ -810,7 +810,7 @@
         "postcode": "LS7 4BH",
         "website": "http://www.nscd.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Chapeltown,_West_Yorkshire#Northern_School_of_Contemporary_Dance",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10008816/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10008816/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -839,7 +839,7 @@
         "postcode": "BT7 1NN",
         "website": "http://www.qub.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Queen%27s_University_Belfast",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005343/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005343/",
         "groups": [
           "NCUK",
           "Russell_Group"
@@ -874,7 +874,7 @@
         "postcode": "LS1 3HE",
         "website": "http://www.leedsmet.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Leeds_Metropolitan_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003861/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003861/",
         "groups": [
           "Million_Plus"
         ],
@@ -907,7 +907,7 @@
         "postcode": "EH11 4BN",
         "website": "http://www.napier.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Edinburgh_Napier_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007772/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007772/",
         "groups": [
           "Million_Plus"
         ],
@@ -940,7 +940,7 @@
         "postcode": "CF5 2SG",
         "website": "http://www.cardiffmet.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Cardiff_Metropolitan_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007854/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007854/",
         "groups": [
           "University_Alliance"
         ],
@@ -973,7 +973,7 @@
         "postcode": "DD1 1HG",
         "website": "http://www.abertay.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Abertay_Dundee",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007849/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007849/",
         "groups": [
           "Million_Plus"
         ],
@@ -1006,7 +1006,7 @@
         "postcode": "BS16 1QY",
         "website": "http://www.uwe.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_West_of_England",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007164/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007164/",
         "groups": [
           "University_Alliance"
         ],
@@ -1039,7 +1039,7 @@
         "postcode": "WC2R 0RN",
         "website": "http://www.courtauld.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Courtauld_Institute_of_Art",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007761/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007761/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -1068,7 +1068,7 @@
         "postcode": "UB8 3PH",
         "website": "http://www.brunel.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Brunel_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000961/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000961/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1097,7 +1097,7 @@
         "postcode": "SW7 2BS",
         "website": "http://www.rcm.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_College_of_Music",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007778/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007778/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -1126,7 +1126,7 @@
         "postcode": "M15 6BH",
         "website": "http://www.mmu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Manchester_Metropolitan_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004180/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004180/",
         "groups": [
           "University_Alliance"
         ],
@@ -1159,7 +1159,7 @@
         "postcode": "LN1 3DY",
         "website": "http://www.bishopg.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Bishop_Grosseteste_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007811/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007811/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -1192,7 +1192,7 @@
         "postcode": "SE10 0EW",
         "website": "http://www.rave.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Ravensbourne_College_of_Design_and_Communication",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005389/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005389/",
         "groups": [],
         "groups_display": [],
         "institution_type": "higher_education",
@@ -1221,7 +1221,7 @@
         "postcode": "KT1 1LQ",
         "website": "http://www.kingston.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Kingston_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003678/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003678/",
         "groups": [
           "University_Alliance",
           "NCUK"
@@ -1256,7 +1256,7 @@
         "postcode": "WV1 1LY",
         "website": "http://www.wlv.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Wolverhampton",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007166/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007166/",
         "groups": [
           "Million_Plus"
         ],
@@ -1289,7 +1289,7 @@
         "postcode": "EC1V 0HB",
         "website": "http://www.city.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/City_University,_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10001478/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10001478/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1318,7 +1318,7 @@
         "postcode": "WC1N 1AX",
         "website": "http://www.pharmacy.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/School_of_Pharmacy,_University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007781/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007781/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_medical",
@@ -1347,7 +1347,7 @@
         "postcode": "GU9 7DS",
         "website": "http://www.ucreative.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_for_the_Creative_Arts",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006427/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006427/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -1376,7 +1376,7 @@
         "postcode": "BT12 6FE",
         "website": "http://www.stmarys-belfast.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/St._Mary%27s_University_College_%28Belfast%29",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10008026/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10008026/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1405,7 +1405,7 @@
         "postcode": "AB10 7FY",
         "website": "http://www.rgu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Robert_Gordon_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005500/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005500/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1434,7 +1434,7 @@
         "postcode": "SE10 9JF",
         "website": "http://www.trinitylaban.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Trinity_Laban_Conservatoire_of_Music_and_Dance",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10008017/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10008017/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -1463,7 +1463,7 @@
         "postcode": "IV3 5SQ",
         "website": "http://www.uhi.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_Highlands_%26_Islands",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007114/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007114/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1492,7 +1492,7 @@
         "postcode": "E1 4NS",
         "website": "http://www.qmul.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Queen_Mary,_University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007775/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007775/",
         "groups": [
           "Science_and_Engineering_South",
           "NCUK",
@@ -1529,7 +1529,7 @@
         "postcode": "E16 2RD",
         "website": "http://www.uel.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_East_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007144/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007144/",
         "groups": [
           "Million_Plus"
         ],
@@ -1562,7 +1562,7 @@
         "postcode": "SE14 6NW",
         "website": "http://www.gold.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Goldsmiths,_University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10002718/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10002718/",
         "groups": [
           "1994_Group"
         ],
@@ -1595,7 +1595,7 @@
         "postcode": "WC1E 7HU",
         "website": "http://www.lon.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007797/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007797/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1624,7 +1624,7 @@
         "postcode": "TS1 3BA",
         "website": "http://www.tees.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Teesside_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007161/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007161/",
         "groups": [
           "University_Alliance"
         ],
@@ -1657,7 +1657,7 @@
         "postcode": "NE1 8ST",
         "website": "http://www.northumbria.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Northumbria_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10001282/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10001282/",
         "groups": [
           "University_Alliance"
         ],
@@ -1690,7 +1690,7 @@
         "postcode": "ST4 2DE",
         "website": "http://www.staffs.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Staffordshire_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006299/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006299/",
         "groups": [
           "Million_Plus"
         ],
@@ -1723,7 +1723,7 @@
         "postcode": "GL50 2RH",
         "website": "http://www.glos.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Gloucestershire",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007145/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007145/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -1756,7 +1756,7 @@
         "postcode": "B42 2SU",
         "website": "http://www.bcu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Birmingham_City_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007140/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007140/",
         "groups": [
           "Million_Plus"
         ],
@@ -1789,7 +1789,7 @@
         "postcode": "NW3 3HY",
         "website": "http://www.cssd.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Central_School_of_Speech_and_Drama",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007816/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007816/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -1818,7 +1818,7 @@
         "postcode": "G12 8QQ",
         "website": "http://www.gla.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Glasgow",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007794/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007794/",
         "groups": [
           "Russell_Group"
         ],
@@ -1851,7 +1851,7 @@
         "postcode": "CV1 5FB",
         "website": "http://www.coventry.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Coventry_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10001726/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10001726/",
         "groups": [
           "University_Alliance"
         ],
@@ -1884,7 +1884,7 @@
         "postcode": "PO1 2UP",
         "website": "http://www.port.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Portsmouth",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007155/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007155/",
         "groups": [
           "University_Alliance"
         ],
@@ -1917,7 +1917,7 @@
         "postcode": "TF10 8NB",
         "website": "http://www.harper-adams.ac.uk/",
         "wikipedia": "https://en.wikipedia.org/wiki/Harper_Adams_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10040812/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10040812/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -1946,7 +1946,7 @@
         "postcode": "LS2 7PD",
         "website": "http://www.lcm.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Leeds_College_of_Music",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10034449/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10034449/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -1975,7 +1975,7 @@
         "postcode": "G3 6RQ",
         "website": "http://www.gsa.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Glasgow_School_of_Art",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10002681/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10002681/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -2004,7 +2004,7 @@
         "postcode": "SY23 2AX",
         "website": "http://www.aber.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Aberystwyth_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007856/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007856/",
         "groups": [
           "ABSA"
         ],
@@ -2037,7 +2037,7 @@
         "postcode": "SO22 4NR",
         "website": "http://www.winchester.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Winchester",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003614/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003614/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -2070,7 +2070,7 @@
         "postcode": "PL4 8AA",
         "website": "http://www.plymouth.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Plymouth",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007801/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007801/",
         "groups": [
           "University_Alliance"
         ],
@@ -2103,7 +2103,7 @@
         "postcode": "NR4 7TJ",
         "website": "http://www.uea.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_East_Anglia",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007789/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007789/",
         "groups": [
           "1994_Group"
         ],
@@ -2136,7 +2136,7 @@
         "postcode": "BS8 1TH",
         "website": "http://www.bristol.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bristol",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007786/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007786/",
         "groups": [
           "GW4",
           "NCUK",
@@ -2173,7 +2173,7 @@
         "postcode": "KY16 9AJ",
         "website": "http://www.st-andrews.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_St_Andrews",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007803/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007803/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2202,7 +2202,7 @@
         "postcode": "BL3 5AB",
         "website": "http://www.bolton.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bolton",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006841/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006841/",
         "groups": [
           "Million_Plus"
         ],
@@ -2235,7 +2235,7 @@
         "postcode": "EH21 6UU",
         "website": "http://www.qmu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Queen_Margaret_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005337/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005337/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2264,7 +2264,7 @@
         "postcode": "BT52 1SA",
         "website": "http://www.ulster.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Ulster",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007807/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007807/",
         "groups": [
           "NCUK"
         ],
@@ -2297,7 +2297,7 @@
         "postcode": "CV4 7AL",
         "website": "http://www.warwick.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Warwick",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007163/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007163/",
         "groups": [
           "M5_Universities",
           "Russell_Group"
@@ -2332,7 +2332,7 @@
         "postcode": "NN2 5PH",
         "website": "http://www.northampton.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Northampton",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007138/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007138/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2361,7 +2361,7 @@
         "postcode": "LE1 7RH",
         "website": "http://www.le.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Leicester",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007796/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007796/",
         "groups": [
           "1994_Group",
           "M5_Universities"
@@ -2396,7 +2396,7 @@
         "postcode": "B3 1JB",
         "website": "http://www.ucb.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_College_Birmingham",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000712/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000712/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2425,7 +2425,7 @@
         "postcode": "G4 0BA",
         "website": "http://www.gcu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Glasgow_Caledonian_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007762/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007762/",
         "groups": [
           "University_Alliance"
         ],
@@ -2458,7 +2458,7 @@
         "postcode": "W1B 2HW",
         "website": "http://www.westminster.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Westminster",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007165/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007165/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2487,7 +2487,7 @@
         "postcode": "HD1 3DH",
         "website": "http://www.hud.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Huddersfield",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007148/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007148/",
         "groups": [
           "University_Alliance"
         ],
@@ -2520,7 +2520,7 @@
         "postcode": "GL7 6JS",
         "website": "http://www.rac.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Agricultural_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005545/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005545/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2549,7 +2549,7 @@
         "postcode": "W8 5HN",
         "website": "http://www.heythrop.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Heythrop_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007765/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007765/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -2582,7 +2582,7 @@
         "postcode": "CF10 3ER",
         "website": "http://www.rwcmd.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Welsh_College_of_Music_%26_Drama",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007838/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007838/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -2611,7 +2611,7 @@
         "postcode": "DA15 9DF",
         "website": "http://www.bruford.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Rose_Bruford_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005523/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005523/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2640,7 +2640,7 @@
         "postcode": "M5 4WT",
         "website": "http://www.salford.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Salford",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007156/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007156/",
         "groups": [
           "University_Alliance"
         ],
@@ -2673,7 +2673,7 @@
         "postcode": "CM1 3RR",
         "website": "http://www.writtle.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Writtle_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007657/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007657/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2702,7 +2702,7 @@
         "postcode": "WC2A 2AE",
         "website": "http://www.lse.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/London_School_of_Economics",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004063/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004063/",
         "groups": [
           "Russell_Group"
         ],
@@ -2735,7 +2735,7 @@
         "postcode": "NW4 4BT",
         "website": "http://www.mdx.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Middlesex_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004351/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004351/",
         "groups": [
           "Million_Plus"
         ],
@@ -2768,7 +2768,7 @@
         "postcode": "MK7 6AA",
         "website": "http://www.open.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/The_Open_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007773/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007773/",
         "groups": [
           "University_Alliance"
         ],
@@ -2801,7 +2801,7 @@
         "postcode": "SO14 0YN",
         "website": "http://www.solent.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Southampton_Solent_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006022/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006022/",
         "groups": [
           "Million_Plus"
         ],
@@ -2834,7 +2834,7 @@
         "postcode": "HP11 2JZ",
         "website": "http://www.bucks.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Buckinghamshire_New_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000975/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000975/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2863,7 +2863,7 @@
         "postcode": "YO10 5DD",
         "website": "http://www.york.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_York",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007167/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007167/",
         "groups": [
           "N8_Research_Partnership",
           "White_Rose_University_Consortium",
@@ -2900,7 +2900,7 @@
         "postcode": "LN6 7TS",
         "website": "http://www.lincoln.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Lincoln",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007151/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007151/",
         "groups": [
           "University_Alliance"
         ],
@@ -2933,7 +2933,7 @@
         "postcode": "WC1E 6BT",
         "website": "http://www.ucl.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_College_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007784/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007784/",
         "groups": [
           "Science_and_Engineering_South",
           "Russell_Group"
@@ -2968,7 +2968,7 @@
         "postcode": "BN2 4AT",
         "website": "http://www.brighton.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Brighton",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000886/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000886/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -2997,7 +2997,7 @@
         "postcode": "LE11 3TU",
         "website": "http://www.lboro.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Loughborough_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004113/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004113/",
         "groups": [
           "1994_Group",
           "M5_Universities"
@@ -3032,7 +3032,7 @@
         "postcode": "LL11 2AW",
         "website": "http://www.glyndwr.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Glynd%C5%B5r_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007833/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007833/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3061,7 +3061,7 @@
         "postcode": "WC1E 7HT",
         "website": "http://www.lshtm.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/London_School_of_Hygiene_and_Tropical_Medicine",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007771/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007771/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_medical",
@@ -3090,7 +3090,7 @@
         "postcode": "L16 9JD",
         "website": "http://www.hope.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Liverpool_Hope_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003956/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003956/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -3123,7 +3123,7 @@
         "postcode": "AL10 9AB",
         "website": "http://www.herts.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Hertfordshire",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007147/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007147/",
         "groups": [
           "University_Alliance"
         ],
@@ -3156,7 +3156,7 @@
         "postcode": "S10 2TN",
         "website": "http://www.shef.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Sheffield",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007157/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007157/",
         "groups": [
           "N8_Research_Partnership",
           "White_Rose_University_Consortium",
@@ -3193,7 +3193,7 @@
         "postcode": "DH1 3LE",
         "website": "http://www.dur.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Durham_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007143/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007143/",
         "groups": [
           "N8_Research_Partnership",
           "Russell_Group"
@@ -3228,7 +3228,7 @@
         "postcode": "NG1 4BU",
         "website": "http://www.ntu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Nottingham_Trent_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004797/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004797/",
         "groups": [
           "University_Alliance"
         ],
@@ -3261,7 +3261,7 @@
         "postcode": "G1 1XQ",
         "website": "http://www.strath.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Strathclyde",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007805/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007805/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3290,7 +3290,7 @@
         "postcode": "PO19 6PE",
         "website": "http://www.chi.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Chichester",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007137/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007137/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -3323,7 +3323,7 @@
         "postcode": "EH14 4AS",
         "website": "http://www.hw.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Heriot-Watt_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007764/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007764/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3352,7 +3352,7 @@
         "postcode": "NW1 4SA",
         "website": "http://www.london.edu/",
         "wikipedia": "http://en.wikipedia.org/wiki/London_Business_School",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007769/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007769/",
         "groups": [],
         "groups_display": [],
         "institution_type": "higher_education",
@@ -3381,7 +3381,7 @@
         "postcode": "B15 2TT",
         "website": "http://www.birmingham.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Birmingham",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006840/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006840/",
         "groups": [
           "NCUK",
           "M5_Universities",
@@ -3418,7 +3418,7 @@
         "postcode": "CA1 2HH",
         "website": "http://www.cumbria.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Cumbria",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007842/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007842/",
         "groups": [
           "Million_Plus",
           "Cathedrals_Group"
@@ -3453,7 +3453,7 @@
         "postcode": "EX4 4PY",
         "website": "http://www.exeter.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Exeter",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007792/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007792/",
         "groups": [
           "GW4",
           "Russell_Group"
@@ -3488,7 +3488,7 @@
         "postcode": "S1 1WB",
         "website": "http://www.shu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Sheffield_Hallam_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005790/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005790/",
         "groups": [
           "University_Alliance"
         ],
@@ -3521,7 +3521,7 @@
         "postcode": "DD1 4HN",
         "website": "http://www.dundee.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Dundee",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007852/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007852/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3550,7 +3550,7 @@
         "postcode": "EH9 3JG",
         "website": "http://www.sruc.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Scotland%27s_Rural_University_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005700/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005700/",
         "groups": [],
         "groups_display": [],
         "institution_type": "higher_education",
@@ -3579,7 +3579,7 @@
         "postcode": "SW15 5PJ",
         "website": "http://www.roehampton.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Roehampton_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007776/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007776/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -3612,7 +3612,7 @@
         "postcode": "SR1 3SD",
         "website": "http://www.sunderland.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Sunderland",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007159/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007159/",
         "groups": [
           "Million_Plus"
         ],
@@ -3645,7 +3645,7 @@
         "postcode": "CM1 1SQ",
         "website": "http://www.anglia.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Anglia_Ruskin_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000291/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000291/",
         "groups": [
           "Million_Plus"
         ],
@@ -3678,7 +3678,7 @@
         "postcode": "WC1H 0AL",
         "website": "http://www.ioe.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Institute_of_Education",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007766/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007766/",
         "groups": [
           "1994_Group"
         ],
@@ -3711,7 +3711,7 @@
         "postcode": "SA2 8PP",
         "website": "http://www.swan.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Swansea_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007855/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007855/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3740,7 +3740,7 @@
         "postcode": "TW20 0EX",
         "website": "http://www.rhul.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Holloway,_University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005553/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005553/",
         "groups": [
           "1994_Group"
         ],
@@ -3773,7 +3773,7 @@
         "postcode": "SW7 2EU",
         "website": "http://www.rca.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_College_of_Art",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007777/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007777/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -3802,7 +3802,7 @@
         "postcode": "MK43 0AL",
         "website": "http://www.cranfield.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Cranfield_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007822/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007822/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3831,7 +3831,7 @@
         "postcode": "ST5 5BG",
         "website": "http://www.keele.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Keele_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007767/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007767/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -3860,7 +3860,7 @@
         "postcode": "LS18 5HD",
         "website": "http://www.leedstrinity.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Leeds_Trinity_University_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003863/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003863/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -3893,7 +3893,7 @@
         "postcode": "WC2R 2LS",
         "website": "http://www.kcl.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/King%27s_College_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003645/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003645/",
         "groups": [
           "Science_and_Engineering_South",
           "Russell_Group"
@@ -3928,7 +3928,7 @@
         "postcode": "SW17 0RE",
         "website": "http://www.sgul.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/St_George%27s,_University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007782/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007782/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_medical",
@@ -3957,7 +3957,7 @@
         "postcode": "NR2 4SN",
         "website": "http://www.nua.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Norwich_University_College_of_the_Arts",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004775/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004775/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -3986,7 +3986,7 @@
         "postcode": "LS2 9AQ",
         "website": "http://www.leeds-art.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Leeds_College_of_Art",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003854/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003854/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -4015,7 +4015,7 @@
         "postcode": "B4 7ET",
         "website": "http://www.aston.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Aston_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007759/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007759/",
         "groups": [
           "NCUK",
           "M5_Universities"
@@ -4050,7 +4050,7 @@
         "postcode": "CH1 4BJ",
         "website": "http://www.chester.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Chester",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007848/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007848/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -4083,7 +4083,7 @@
         "postcode": "AB24 3FX",
         "website": "http://www.abdn.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Aberdeen",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007783/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007783/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4112,7 +4112,7 @@
         "postcode": "M13 9PL",
         "website": "http://www.manchester.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Manchester",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007798/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007798/",
         "groups": [
           "N8_Research_Partnership",
           "Russell_Group"
@@ -4147,7 +4147,7 @@
         "postcode": "G2 3DB",
         "website": "http://www.rcs.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Conservatoire_of_Scotland",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10005561/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10005561/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -4176,7 +4176,7 @@
         "postcode": "NG7 2RD",
         "website": "http://www.nottingham.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Nottingham",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007154/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007154/",
         "groups": [
           "M5_Universities",
           "Russell_Group"
@@ -4211,7 +4211,7 @@
         "postcode": "BT9 5DY",
         "website": "http://www.stran.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Stranmillis_University_College",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10008010/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10008010/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4240,7 +4240,7 @@
         "postcode": "NE1 7RU",
         "website": "http://www.ncl.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Newcastle_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007799/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007799/",
         "groups": [
           "N8_Research_Partnership",
           "Russell_Group"
@@ -4275,7 +4275,7 @@
         "postcode": "LL57 2DG",
         "website": "http://www.bangor.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Bangor_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007857/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007857/",
         "groups": [
           "ABSA"
         ],
@@ -4308,7 +4308,7 @@
         "postcode": "PL6 8BH",
         "website": "http:///",
         "wikipedia": "https://en.wikipedia.org/wiki/University_of_St_Mark_%26_St_John",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10037449/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10037449/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -4341,7 +4341,7 @@
         "postcode": "MK18 1EG",
         "website": "http://www.buckingham.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Buckingham",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007787/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007787/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4370,7 +4370,7 @@
         "postcode": "HU6 7RX",
         "website": "http://www.hull.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Hull",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007149/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007149/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4399,7 +4399,7 @@
         "postcode": "CF37 1DL",
         "website": "http://www.southwales.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Glamorgan",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007793/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007793/",
         "groups": [
           "University_Alliance"
         ],
@@ -4432,7 +4432,7 @@
         "postcode": "NW1 5HT",
         "website": "http://www.ram.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Academy_of_Music",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007835/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007835/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -4461,7 +4461,7 @@
         "postcode": "N7 8DB",
         "website": "http://www.londonmet.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/London_Metropolitan_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004048/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004048/",
         "groups": [
           "Million_Plus"
         ],
@@ -4494,7 +4494,7 @@
         "postcode": "TW1 4SX",
         "website": "http://www.smuc.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/St._Mary%27s_University_College_%28Twickenham%29",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007843/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007843/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -4527,7 +4527,7 @@
         "postcode": "CT1 1UT",
         "website": "http://www.canterbury.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Canterbury_Christ_Church_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10001143/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10001143/",
         "groups": [
           "Million_Plus",
           "Cathedrals_Group"
@@ -4562,7 +4562,7 @@
         "postcode": "WC1H 9JJ",
         "website": "http://www.cdd.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Conservatoire_for_Dance_and_Drama",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10001653/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10001653/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -4591,7 +4591,7 @@
         "postcode": "WC1E 7HX",
         "website": "http://www.bbk.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Birkbeck,_University_of_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007760/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007760/",
         "groups": [
           "1994_Group"
         ],
@@ -4624,7 +4624,7 @@
         "postcode": "L69 3BX",
         "website": "http://www.liv.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Liverpool",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006842/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006842/",
         "groups": [
           "N8_Research_Partnership",
           "Russell_Group"
@@ -4659,7 +4659,7 @@
         "postcode": "SW7 3RP",
         "website": "http://www.icr.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Institute_of_Cancer_Research",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003324/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003324/",
         "groups": [],
         "groups_display": [],
         "institution_type": "higher_education",
@@ -4688,7 +4688,7 @@
         "postcode": "SE10 9LS",
         "website": "http://www.greenwich.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Greenwich",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007146/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007146/",
         "groups": [
           "Million_Plus"
         ],
@@ -4721,7 +4721,7 @@
         "postcode": "YO31 7EX",
         "website": "http://www.yorksj.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/York_St_John_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007713/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007713/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -4754,7 +4754,7 @@
         "postcode": "SA31 3EP",
         "website": "http://www.trinitysaintdavid.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Wales,_Trinity_Saint_David",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007858/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007858/",
         "groups": [
           "Cathedrals_Group"
         ],
@@ -4787,7 +4787,7 @@
         "postcode": "SA1 6ED",
         "website": "http://www.smu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Swansea_Metropolitan_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007846/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007846/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4816,7 +4816,7 @@
         "postcode": "EC2Y 8DT",
         "website": "http://www.gsmd.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Guildhall_School_of_Music_and_Drama",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007825/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007825/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -4845,7 +4845,7 @@
         "postcode": "BD7 1DP",
         "website": "http://www.bradford.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bradford",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007785/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007785/",
         "groups": [
           "University_Alliance"
         ],
@@ -4878,7 +4878,7 @@
         "postcode": "SE1 0AA",
         "website": "http://www.lsbu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/London_South_Bank_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004078/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004078/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4907,7 +4907,7 @@
         "postcode": "IP4 1QJ",
         "website": "http://www.ucs.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_Campus_Suffolk",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10014001/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10014001/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -4936,7 +4936,7 @@
         "postcode": "PA1 2BE",
         "website": "http://www.uws.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_West_of_Scotland",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007800/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007800/",
         "groups": [
           "Million_Plus"
         ],
@@ -4969,7 +4969,7 @@
         "postcode": "L3 5UX",
         "website": "http://www.ljmu.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Liverpool_John_Moores_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003957/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003957/",
         "groups": [
           "University_Alliance"
         ],
@@ -5002,7 +5002,7 @@
         "postcode": "BA2 7AY",
         "website": "http://www.bath.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bath",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007850/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007850/",
         "groups": [
           "GW4"
         ],
@@ -5035,7 +5035,7 @@
         "postcode": "BH12 5HH",
         "website": "http://www.aub.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/The_Arts_University_College_at_Bournemouth",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10000385/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10000385/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -5064,7 +5064,7 @@
         "postcode": "W5 5RF",
         "website": "http://www.uwl.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_West_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10006566/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10006566/",
         "groups": [
           "Million_Plus"
         ],
@@ -5097,7 +5097,7 @@
         "postcode": "OX3 0BP",
         "website": "http://www.brookes.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Oxford_Brookes_University",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10004930/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10004930/",
         "groups": [
           "University_Alliance"
         ],
@@ -5130,7 +5130,7 @@
         "postcode": "WC1H 0XG",
         "website": "http://www.soas.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/School_of_Oriental_and_African_Studies",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007780/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007780/",
         "groups": [
           "1994_Group"
         ],
@@ -5163,7 +5163,7 @@
         "postcode": "M13 9RD",
         "website": "http://www.rncm.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Royal_Northern_College_of_Music",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007837/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007837/",
         "groups": [],
         "groups_display": [],
         "institution_type": "specialist_arts",
@@ -5192,7 +5192,7 @@
         "postcode": "PR1 2HE",
         "website": "http://www.uclan.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Central_Lancashire",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007141/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007141/",
         "groups": [
           "Million_Plus"
         ],
@@ -5225,7 +5225,7 @@
         "postcode": "SW7 2AZ",
         "website": "http://www.imperial.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/Imperial_College_London",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10003270/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10003270/",
         "groups": [
           "Science_and_Engineering_South",
           "Russell_Group"
@@ -5260,7 +5260,7 @@
         "postcode": "CF10 3NS",
         "website": "http://www.wales.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Wales",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10008574/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10008574/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
@@ -5289,7 +5289,7 @@
         "postcode": "WR2 6AJ",
         "website": "http://www.worc.ac.uk/",
         "wikipedia": "http://en.wikipedia.org/wiki/University_of_Worcester",
-        "discover_uni_url": "https://discoveruni.gov.uk/institution-overview/10007139/",
+        "discover_uni_url": "https://discoveruni.gov.uk/institution-details/10007139/",
         "groups": [],
         "groups_display": [],
         "institution_type": "university",
