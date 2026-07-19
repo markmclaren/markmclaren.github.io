@@ -89,6 +89,71 @@ toggleBtn.addEventListener('click', () => {
     : 'bi bi-layout-sidebar';
 });
 
+// ── Mobile close button ──────────────────────────────────────────────────────
+const mobileClose = document.getElementById('mobile-close');
+if (mobileClose) {
+  mobileClose.addEventListener('click', () => {
+    sidebarOpen = false;
+    sidebar.classList.add('collapsed');
+    toggleIcon.className = 'bi bi-layout-sidebar';
+  });
+}
+
+// ── Close sidebar on map click (mobile only) ─────────────────────────────────
+function closeSidebarOnMobile() {
+  if (window.innerWidth <= 768 && sidebarOpen) {
+    sidebarOpen = false;
+    sidebar.classList.add('collapsed');
+    toggleIcon.className = 'bi bi-layout-sidebar';
+  }
+}
+
+// ── Swipe-to-close sidebar on mobile ─────────────────────────────────────────
+let touchStartX = 0;
+let touchStartY = 0;
+let touchDeltaX = 0;
+let isSwiping = false;
+
+sidebar.addEventListener('touchstart', e => {
+  if (window.innerWidth > 768) return;
+  const touch = e.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+  touchDeltaX = 0;
+  isSwiping = true;
+}, { passive: true });
+
+sidebar.addEventListener('touchmove', e => {
+  if (!isSwiping || window.innerWidth > 768) return;
+  const touch = e.touches[0];
+  touchDeltaX = touch.clientX - touchStartX;
+  const deltaY = Math.abs(touch.clientY - touchStartY);
+  // Only treat as horizontal swipe if horizontal movement > vertical
+  if (deltaY > Math.abs(touchDeltaX) * 0.5) {
+    isSwiping = false;
+    return;
+  }
+  // Apply a slight visual resistance
+  if (touchDeltaX < 0) {
+    sidebar.style.transform = `translateX(${Math.max(touchDeltaX, -60)}px)`;
+    sidebar.style.transition = 'none';
+  }
+}, { passive: true });
+
+sidebar.addEventListener('touchend', () => {
+  if (!isSwiping || window.innerWidth > 768) return;
+  sidebar.style.transform = '';
+  sidebar.style.transition = '';
+  if (touchDeltaX < -30) {
+    // Swiped left far enough — close
+    sidebarOpen = false;
+    sidebar.classList.add('collapsed');
+    toggleIcon.className = 'bi bi-layout-sidebar';
+  }
+  isSwiping = false;
+  touchDeltaX = 0;
+}, { passive: true });
+
 // ── Build legend ─────────────────────────────────────────────────────────────
 function buildLegend() {
   const heading = legend.querySelector('.legend-heading');
@@ -327,9 +392,10 @@ function initMap() {
     loadData();
   });
 
-  // Close search on map click
+  // Close search on map click; also close sidebar on mobile
   map.on('click', () => {
     searchResults.style.display = 'none';
+    closeSidebarOnMobile();
   });
 }
 
