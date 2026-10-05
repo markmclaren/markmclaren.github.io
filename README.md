@@ -2,7 +2,7 @@
 
 [![GitHub Profile](https://img.shields.io/badge/GitHub-markmclaren-181717?style=flat-square&logo=github)](https://github.com/markmclaren) 
 [![Original Repositories](https://img.shields.io/badge/Repositories-45_Original-38bdf8?style=flat-square)](https://github.com/markmclaren?tab=repositories) 
-[![Live Web Demos](https://img.shields.io/badge/Live_Demos-20_Hosted-10b981?style=flat-square)](https://markmclaren.github.io/) 
+[![Live Web Demos](https://img.shields.io/badge/Live_Demos-22_Hosted-10b981?style=flat-square)](https://markmclaren.github.io/) 
 [![Web Showcase](https://img.shields.io/badge/Web_Showcase-GitHub_Pages-818cf8?style=flat-square)](https://markmclaren.github.io/)
 
 > Curated directory of original public open-source repositories and live web applications by [@markmclaren](https://github.com/markmclaren).
@@ -10,7 +10,7 @@
 
 ---
 
-## 🚀 Featured Live Web Demos (20)
+## 🚀 Featured Live Web Demos (22)
 
 The following web applications and interactive maps are deployed and running directly on GitHub Pages:
 
@@ -35,7 +35,9 @@ The following web applications and interactive maps are deployed and running dir
 | [**StoryMapCore**](https://github.com/markmclaren/StoryMapCore) | Core reusable components and layout utilities for building interactive narrative story maps on the web. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/StoryMapCore/) &bull; [GitHub](https://github.com/markmclaren/StoryMapCore) |
 | [**SimpleStoryMapJS**](https://github.com/markmclaren/SimpleStoryMapJS) | Lightweight, code-first JavaScript story map library for building interactive narrative maps with JSON and HTML. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/SimpleStoryMapJS/) &bull; [GitHub](https://github.com/markmclaren/SimpleStoryMapJS) |
 | [**maplibre-gl-starfield**](https://github.com/markmclaren/maplibre-gl-starfield) | Lightweight starfield sky background plugin for MapLibre GL JS. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/maplibre-gl-starfield/) &bull; [GitHub](https://github.com/markmclaren/maplibre-gl-starfield) |
+| [**china-migrants-maplibre**](https://github.com/markmclaren/china-migrants-maplibre) | Re-implementation of the China internal migrant flow visualization using MapLibre GL. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/china-migrants-maplibre/) &bull; [GitHub](https://github.com/markmclaren/china-migrants-maplibre) |
 | [**storytellingmap-retold**](https://github.com/markmclaren/storytellingmap-retold) | Re-implementation of an animated map for interactive geospatial storytelling and narrative tours. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/storytellingmap-retold/) &bull; [GitHub](https://github.com/markmclaren/storytellingmap-retold) |
+| [**interestingtools**](https://github.com/markmclaren/interestingtools) | Curated catalog of notable developer utilities, open-source libraries, and creative tech tools. | `Games` | [**Live Demo ↗**](https://markmclaren.github.io/interestingtools/) &bull; [GitHub](https://github.com/markmclaren/interestingtools) |
 
 ---
 
@@ -48,7 +50,6 @@ _Interactive geospatial visualizations, PMTiles web maps, MapLibre apps, and geo
 | Repository | Description | Language | Links |
 | :--- | :--- | :---: | :--- |
 | [**overpass-syntax-checker**](https://github.com/markmclaren/overpass-syntax-checker) | Syntax checker, parser, and validator for Overpass QL queries in Python. | `Python` | [GitHub](https://github.com/markmclaren/overpass-syntax-checker) |
-| [**china-migrants-maplibre**](https://github.com/markmclaren/china-migrants-maplibre) | Re-implementation of the China internal migrant flow visualization using MapLibre GL. | `JavaScript` | [GitHub](https://github.com/markmclaren/china-migrants-maplibre) |
 | [**stlucia**](https://github.com/markmclaren/stlucia) | Interactive fog-of-war exploration game in St. Lucia featuring an animated draggable frog and Turf.js spatial geometry. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/stlucia/) &bull; [GitHub](https://github.com/markmclaren/stlucia) |
 | [**mapping-historical-hong-kong**](https://github.com/markmclaren/mapping-historical-hong-kong) | Historical vector map of Hong Kong featuring PMTiles serverless vector tiles protocol and historical road/coastline layers. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/mapping-historical-hong-kong/) &bull; [GitHub](https://github.com/markmclaren/mapping-historical-hong-kong) |
 | [**heritage**](https://github.com/markmclaren/heritage) | Unified interactive heritage map of UK & Ireland combining National Trust, English Heritage, Cadw, and Heritage Ireland. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/heritage/) &bull; [GitHub](https://github.com/markmclaren/heritage) |
@@ -63,6 +64,7 @@ _Interactive geospatial visualizations, PMTiles web maps, MapLibre apps, and geo
 | [**StoryMapCore**](https://github.com/markmclaren/StoryMapCore) | Core reusable components and layout utilities for building interactive narrative story maps on the web. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/StoryMapCore/) &bull; [GitHub](https://github.com/markmclaren/StoryMapCore) |
 | [**SimpleStoryMapJS**](https://github.com/markmclaren/SimpleStoryMapJS) | Lightweight, code-first JavaScript story map library for building interactive narrative maps with JSON and HTML. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/SimpleStoryMapJS/) &bull; [GitHub](https://github.com/markmclaren/SimpleStoryMapJS) |
 | [**maplibre-gl-starfield**](https://github.com/markmclaren/maplibre-gl-starfield) | Lightweight starfield sky background plugin for MapLibre GL JS. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/maplibre-gl-starfield/) &bull; [GitHub](https://github.com/markmclaren/maplibre-gl-starfield) |
+| [**china-migrants-maplibre**](https://github.com/markmclaren/china-migrants-maplibre) | Re-implementation of the China internal migrant flow visualization using MapLibre GL. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/china-migrants-maplibre/) &bull; [GitHub](https://github.com/markmclaren/china-migrants-maplibre) |
 | [**storytellingmap-retold**](https://github.com/markmclaren/storytellingmap-retold) | Re-implementation of an animated map for interactive geospatial storytelling and narrative tours. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/storytellingmap-retold/) &bull; [GitHub](https://github.com/markmclaren/storytellingmap-retold) |
 
 ### ⚡ Apps & AI Tools (10)
@@ -105,7 +107,6 @@ _Interactive prototypes, voxel bot clients, procedural mechanics, and creative w
 
 | Repository | Description | Language | Links |
 | :--- | :--- | :---: | :--- |
-| [**interestingtools**](https://github.com/markmclaren/interestingtools) | Curated catalog of notable developer utilities, open-source libraries, and creative tech tools. | `HTML` | [GitHub](https://github.com/markmclaren/interestingtools) |
 | [**medieval**](https://github.com/markmclaren/medieval) | Historical medieval map and architectural explorer web application. | `HTML` | [GitHub](https://github.com/markmclaren/medieval) |
 | [**all-cities-weather-service**](https://github.com/markmclaren/all-cities-weather-service) | Weather aggregation microservice fetching multi-city meteorological forecasts. | `Java` | [GitHub](https://github.com/markmclaren/all-cities-weather-service) |
 | [**weather-service**](https://github.com/markmclaren/weather-service) | Lightweight JavaScript weather data microservice and client. | `Java` | [GitHub](https://github.com/markmclaren/weather-service) |
@@ -113,15 +114,7 @@ _Interactive prototypes, voxel bot clients, procedural mechanics, and creative w
 | [**stuff**](https://github.com/markmclaren/stuff) | Sandbox of miscellaneous web experiments, snippets, and creative UI tests. | `HTML` | [GitHub](https://github.com/markmclaren/stuff) |
 | [**TestGameMakerProject**](https://github.com/markmclaren/TestGameMakerProject) | 2D game physics and player movement mechanics prototype built in GameMaker Studio. | `Game Maker Language` | [GitHub](https://github.com/markmclaren/TestGameMakerProject) |
 | [**minetest-bot-java**](https://github.com/markmclaren/minetest-bot-java) | Autonomous bot client written in Java that connects to and interacts with Minetest voxel servers. | `Java` | [GitHub](https://github.com/markmclaren/minetest-bot-java) |
-
----
-
-## 🌐 Interactive Showcase
-
-To browse these repositories with interactive category filtering, live demo toggles, language filtering, and instant search:
-
-- **Web Page:** Visit [markmclaren.github.io](https://markmclaren.github.io/)
-- **Source Code:** [index.html](index.html)
+| [**interestingtools**](https://github.com/markmclaren/interestingtools) | Curated catalog of notable developer utilities, open-source libraries, and creative tech tools. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/interestingtools/) &bull; [GitHub](https://github.com/markmclaren/interestingtools) |
 
 ---
 
