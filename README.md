@@ -1,8 +1,8 @@
 # Mark McLaren · Open Source Showcase
 
 [![GitHub Profile](https://img.shields.io/badge/GitHub-markmclaren-181717?style=flat-square&logo=github)](https://github.com/markmclaren) 
-[![Original Repositories](https://img.shields.io/badge/Repositories-45_Original-38bdf8?style=flat-square)](https://github.com/markmclaren?tab=repositories) 
-[![Live Web Demos](https://img.shields.io/badge/Live_Demos-22_Hosted-10b981?style=flat-square)](https://markmclaren.github.io/) 
+[![Original Repositories](https://img.shields.io/badge/Repositories-44_Original-38bdf8?style=flat-square)](https://github.com/markmclaren?tab=repositories) 
+[![Live Web Demos](https://img.shields.io/badge/Live_Demos-21_Hosted-10b981?style=flat-square)](https://markmclaren.github.io/) 
 [![Web Showcase](https://img.shields.io/badge/Web_Showcase-GitHub_Pages-818cf8?style=flat-square)](https://markmclaren.github.io/)
 
 > Curated directory of original public open-source repositories and live web applications by [@markmclaren](https://github.com/markmclaren).
@@ -10,7 +10,7 @@
 
 ---
 
-## 🚀 Featured Live Web Demos (22)
+## 🚀 Featured Live Web Demos (21)
 
 The following web applications and interactive maps are deployed and running directly on GitHub Pages:
 
@@ -19,7 +19,6 @@ The following web applications and interactive maps are deployed and running dir
 | [**stlucia**](https://github.com/markmclaren/stlucia) | Interactive fog-of-war exploration game in St. Lucia featuring an animated draggable frog and Turf.js spatial geometry. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/stlucia/) &bull; [GitHub](https://github.com/markmclaren/stlucia) |
 | [**mapping-historical-hong-kong**](https://github.com/markmclaren/mapping-historical-hong-kong) | Historical vector map of Hong Kong featuring PMTiles serverless vector tiles protocol and historical road/coastline layers. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/mapping-historical-hong-kong/) &bull; [GitHub](https://github.com/markmclaren/mapping-historical-hong-kong) |
 | [**heritage**](https://github.com/markmclaren/heritage) | Unified interactive heritage map of UK & Ireland combining National Trust, English Heritage, Cadw, and Heritage Ireland. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/heritage/) &bull; [GitHub](https://github.com/markmclaren/heritage) |
-| [**clevedon**](https://github.com/markmclaren/clevedon) | Interactive local map of Clevedon, UK with landmarks, coastal walks, pier, pubs, and live geolocation. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/clevedon/) &bull; [GitHub](https://github.com/markmclaren/clevedon) |
 | [**uk-fuel-prices**](https://github.com/markmclaren/uk-fuel-prices) | UK retail fuel price data aggregator and tracker using open government and retailer pricing API feeds. | `Apps` | [**Live Demo ↗**](https://markmclaren.github.io/uk-fuel-prices/) &bull; [GitHub](https://github.com/markmclaren/uk-fuel-prices) |
 | [**mytinyjesus**](https://github.com/markmclaren/mytinyjesus) | Interactive miniature web graphics application and canvas experiment. | `Apps` | [**Live Demo ↗**](https://markmclaren.github.io/mytinyjesus) &bull; [GitHub](https://github.com/markmclaren/mytinyjesus) |
 | [**mytinytrump**](https://github.com/markmclaren/mytinytrump) | Interactive micro satirical web application and canvas toy. | `Apps` | [**Live Demo ↗**](https://markmclaren.github.io/mytinytrump/) &bull; [GitHub](https://github.com/markmclaren/mytinytrump) |
@@ -43,7 +42,7 @@ The following web applications and interactive maps are deployed and running dir
 
 ## 📚 Repositories by Domain
 
-### 🗺️ Maps & GIS (17)
+### 🗺️ Maps & GIS (16)
 
 _Interactive geospatial visualizations, PMTiles web maps, MapLibre apps, and geographic data tools._
 
@@ -53,7 +52,6 @@ _Interactive geospatial visualizations, PMTiles web maps, MapLibre apps, and geo
 | [**stlucia**](https://github.com/markmclaren/stlucia) | Interactive fog-of-war exploration game in St. Lucia featuring an animated draggable frog and Turf.js spatial geometry. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/stlucia/) &bull; [GitHub](https://github.com/markmclaren/stlucia) |
 | [**mapping-historical-hong-kong**](https://github.com/markmclaren/mapping-historical-hong-kong) | Historical vector map of Hong Kong featuring PMTiles serverless vector tiles protocol and historical road/coastline layers. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/mapping-historical-hong-kong/) &bull; [GitHub](https://github.com/markmclaren/mapping-historical-hong-kong) |
 | [**heritage**](https://github.com/markmclaren/heritage) | Unified interactive heritage map of UK & Ireland combining National Trust, English Heritage, Cadw, and Heritage Ireland. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/heritage/) &bull; [GitHub](https://github.com/markmclaren/heritage) |
-| [**clevedon**](https://github.com/markmclaren/clevedon) | Interactive local map of Clevedon, UK with landmarks, coastal walks, pier, pubs, and live geolocation. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/clevedon/) &bull; [GitHub](https://github.com/markmclaren/clevedon) |
 | [**uk-university-map**](https://github.com/markmclaren/uk-university-map) | Interactive geographic map and locator of universities and higher education institutions across the UK. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/uk-university-map/) &bull; [GitHub](https://github.com/markmclaren/uk-university-map) |
 | [**climate-webmap-zarr**](https://github.com/markmclaren/climate-webmap-zarr) | 2D map & 3D globe streaming WorldClim climate data directly from cloud-hosted Zarr archives with zero backend. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/climate-webmap-zarr/) &bull; [GitHub](https://github.com/markmclaren/climate-webmap-zarr) |
 | [**inspired-postcodes**](https://github.com/markmclaren/inspired-postcodes) | Interactive web map of GB postcode boundaries built from HM Land Registry INSPIRE and ONS NSUL datasets. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/inspired-postcodes/) &bull; [GitHub](https://github.com/markmclaren/inspired-postcodes) |
