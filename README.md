@@ -1,8 +1,8 @@
 # Mark McLaren · Open Source Showcase
 
 [![GitHub Profile](https://img.shields.io/badge/GitHub-markmclaren-181717?style=flat-square&logo=github)](https://github.com/markmclaren) 
-[![Original Repositories](https://img.shields.io/badge/Repositories-44_Original-38bdf8?style=flat-square)](https://github.com/markmclaren?tab=repositories) 
-[![Live Web Demos](https://img.shields.io/badge/Live_Demos-21_Hosted-10b981?style=flat-square)](https://markmclaren.github.io/) 
+[![Original Repositories](https://img.shields.io/badge/Repositories-45_Original-38bdf8?style=flat-square)](https://github.com/markmclaren?tab=repositories) 
+[![Live Web Demos](https://img.shields.io/badge/Live_Demos-22_Hosted-10b981?style=flat-square)](https://markmclaren.github.io/) 
 [![Web Showcase](https://img.shields.io/badge/Web_Showcase-GitHub_Pages-818cf8?style=flat-square)](https://markmclaren.github.io/)
 
 > Curated directory of original public open-source repositories and live web applications by [@markmclaren](https://github.com/markmclaren).
@@ -10,12 +10,13 @@
 
 ---
 
-## 🚀 Featured Live Web Demos (21)
+## 🚀 Featured Live Web Demos (22)
 
 The following web applications and interactive maps are deployed and running directly on GitHub Pages:
 
 | Project | Description | Category | Links |
 | :--- | :--- | :--- | :--- |
+| [**heritage-extra**](https://github.com/markmclaren/heritage-extra) | Unified UK & Ireland heritage map explorer featuring ~1,304 historic sites with in-browser spatial SQL powered by DuckDB-Wasm and MapLibre GL JS. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/heritage-extra/) &bull; [GitHub](https://github.com/markmclaren/heritage-extra) |
 | [**stlucia**](https://github.com/markmclaren/stlucia) | Interactive fog-of-war exploration game in St. Lucia featuring an animated draggable frog and Turf.js spatial geometry. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/stlucia/) &bull; [GitHub](https://github.com/markmclaren/stlucia) |
 | [**mapping-historical-hong-kong**](https://github.com/markmclaren/mapping-historical-hong-kong) | Historical vector map of Hong Kong featuring PMTiles serverless vector tiles protocol and historical road/coastline layers. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/mapping-historical-hong-kong/) &bull; [GitHub](https://github.com/markmclaren/mapping-historical-hong-kong) |
 | [**heritage**](https://github.com/markmclaren/heritage) | Unified interactive heritage map of UK & Ireland combining National Trust, English Heritage, Cadw, and Heritage Ireland. | `Maps` | [**Live Demo ↗**](https://markmclaren.github.io/heritage/) &bull; [GitHub](https://github.com/markmclaren/heritage) |
@@ -42,12 +43,13 @@ The following web applications and interactive maps are deployed and running dir
 
 ## 📚 Repositories by Domain
 
-### 🗺️ Maps & GIS (16)
+### 🗺️ Maps & GIS (17)
 
 _Interactive geospatial visualizations, PMTiles web maps, MapLibre apps, and geographic data tools._
 
 | Repository | Description | Language | Links |
 | :--- | :--- | :---: | :--- |
+| [**heritage-extra**](https://github.com/markmclaren/heritage-extra) | Unified UK & Ireland heritage map explorer featuring ~1,304 historic sites with in-browser spatial SQL powered by DuckDB-Wasm and MapLibre GL JS. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/heritage-extra/) &bull; [GitHub](https://github.com/markmclaren/heritage-extra) |
 | [**overpass-syntax-checker**](https://github.com/markmclaren/overpass-syntax-checker) | Syntax checker, parser, and validator for Overpass QL queries in Python. | `Python` | [GitHub](https://github.com/markmclaren/overpass-syntax-checker) |
 | [**stlucia**](https://github.com/markmclaren/stlucia) | Interactive fog-of-war exploration game in St. Lucia featuring an animated draggable frog and Turf.js spatial geometry. | `HTML` | [**Live Demo ↗**](https://markmclaren.github.io/stlucia/) &bull; [GitHub](https://github.com/markmclaren/stlucia) |
 | [**mapping-historical-hong-kong**](https://github.com/markmclaren/mapping-historical-hong-kong) | Historical vector map of Hong Kong featuring PMTiles serverless vector tiles protocol and historical road/coastline layers. | `JavaScript` | [**Live Demo ↗**](https://markmclaren.github.io/mapping-historical-hong-kong/) &bull; [GitHub](https://github.com/markmclaren/mapping-historical-hong-kong) |
